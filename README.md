@@ -21,7 +21,7 @@ Spring, 2017
     - transportation/flights (challenge feature)
     - budget
 
-### developed by:
+### contributors:
 Justin Chao  
 Julianne Crea  
 Connie Liu  
