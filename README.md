@@ -9,7 +9,17 @@ Spring, 2017
   * docs:   documentations for project idea
   * source: Xcode source files for app
 
-
+### Deadlines
+  * 3/22 alpha
+    - login/registration
+    - configuration/settings
+    - itinerary
+  * 4/12 beta
+    - pull food
+    - pull places
+  * 5/3 final
+    - transportation/flights (challenge feature)
+    - budget
 
 ### developed by:
 Justin Chao  
