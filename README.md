@@ -12,6 +12,6 @@ Spring, 2017
 
 
 ### developed by:
-Justin Chao
-Julianne Crea
-Connie Liu
+Justin Chao  
+Julianne Crea  
+Connie Liu  
