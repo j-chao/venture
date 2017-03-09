@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50512A81E70F37A003F8ACA /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = B50512A71E70F37A003F8ACA /* nyc.png */; };
+		B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AB1E70F3C3003F8ACA /* flights.storyboard */; };
+		B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AD1E70F3CA003F8ACA /* places.storyboard */; };
+		B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AF1E70F3D4003F8ACA /* food.storyboard */; };
 		B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333D1E6DE7CA0007A23D /* AppDelegate.swift */; };
-		B55333401E6DE7CA0007A23D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333F1E6DE7CA0007A23D /* ViewController.swift */; };
-		B55333431E6DE7CA0007A23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333411E6DE7CA0007A23D /* Main.storyboard */; };
+		B55333401E6DE7CA0007A23D /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333F1E6DE7CA0007A23D /* loginVC.swift */; };
+		B55333431E6DE7CA0007A23D /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333411E6DE7CA0007A23D /* login.storyboard */; };
 		B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B55333441E6DE7CA0007A23D /* venture.xcdatamodeld */; };
 		B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55333471E6DE7CA0007A23D /* Assets.xcassets */; };
 		B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */; };
@@ -35,10 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B50512A71E70F37A003F8ACA /* nyc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyc.png; sourceTree = "<group>"; };
+		B50512AB1E70F3C3003F8ACA /* flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = flights.storyboard; sourceTree = "<group>"; };
+		B50512AD1E70F3CA003F8ACA /* places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = places.storyboard; sourceTree = "<group>"; };
+		B50512AF1E70F3D4003F8ACA /* food.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = food.storyboard; sourceTree = "<group>"; };
 		B553333A1E6DE7CA0007A23D /* venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553333D1E6DE7CA0007A23D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B553333F1E6DE7CA0007A23D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B55333421E6DE7CA0007A23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B553333F1E6DE7CA0007A23D /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
+		B55333421E6DE7CA0007A23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/login.storyboard; sourceTree = "<group>"; };
 		B55333451E6DE7CA0007A23D /* venture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = venture.xcdatamodel; sourceTree = "<group>"; };
 		B55333471E6DE7CA0007A23D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B553334A1E6DE7CA0007A23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +84,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50512A91E70F37E003F8ACA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B50512A71E70F37A003F8ACA /* nyc.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		B50512AA1E70F39D003F8ACA /* supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				B553333D1E6DE7CA0007A23D /* AppDelegate.swift */,
+				B55333471E6DE7CA0007A23D /* Assets.xcassets */,
+				B553334C1E6DE7CA0007A23D /* Info.plist */,
+				B55333441E6DE7CA0007A23D /* venture.xcdatamodeld */,
+			);
+			name = "supporting files";
+			sourceTree = "<group>";
+		};
+		B50512B11E70F3DB003F8ACA /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B55333411E6DE7CA0007A23D /* login.storyboard */,
+				B50512AB1E70F3C3003F8ACA /* flights.storyboard */,
+				B50512AD1E70F3CA003F8ACA /* places.storyboard */,
+				B50512AF1E70F3D4003F8ACA /* food.storyboard */,
+				B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		B50512B21E70F3E8003F8ACA /* login VC */ = {
+			isa = PBXGroup;
+			children = (
+				B553333F1E6DE7CA0007A23D /* loginVC.swift */,
+			);
+			name = "login VC";
+			sourceTree = "<group>";
+		};
 		B55333311E6DE7C90007A23D = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +146,10 @@
 		B553333C1E6DE7CA0007A23D /* venture */ = {
 			isa = PBXGroup;
 			children = (
-				B553333D1E6DE7CA0007A23D /* AppDelegate.swift */,
-				B553333F1E6DE7CA0007A23D /* ViewController.swift */,
-				B55333411E6DE7CA0007A23D /* Main.storyboard */,
-				B55333471E6DE7CA0007A23D /* Assets.xcassets */,
-				B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */,
-				B553334C1E6DE7CA0007A23D /* Info.plist */,
-				B55333441E6DE7CA0007A23D /* venture.xcdatamodeld */,
+				B50512B21E70F3E8003F8ACA /* login VC */,
+				B50512B11E70F3DB003F8ACA /* storyboards */,
+				B50512AA1E70F39D003F8ACA /* supporting files */,
+				B50512A91E70F37E003F8ACA /* images */,
 			);
 			path = venture;
 			sourceTree = "<group>";
@@ -235,9 +279,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */,
+				B50512A81E70F37A003F8ACA /* nyc.png in Resources */,
+				B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */,
+				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,
-				B55333431E6DE7CA0007A23D /* Main.storyboard in Resources */,
+				B55333431E6DE7CA0007A23D /* login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
-				B55333401E6DE7CA0007A23D /* ViewController.swift in Sources */,
+				B55333401E6DE7CA0007A23D /* loginVC.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,12 +348,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B55333411E6DE7CA0007A23D /* Main.storyboard */ = {
+		B55333411E6DE7CA0007A23D /* login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B55333421E6DE7CA0007A23D /* Base */,
 			);
-			name = Main.storyboard;
+			name = login.storyboard;
 			sourceTree = "<group>";
 		};
 		B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */ = {
@@ -507,6 +555,7 @@
 				B55333671E6DE7CA0007A23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B55333681E6DE7CA0007A23D /* Build configuration list for PBXNativeTarget "ventureTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +564,7 @@
 				B553336A1E6DE7CA0007A23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B553336B1E6DE7CA0007A23D /* Build configuration list for PBXNativeTarget "ventureUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +573,7 @@
 				B553336D1E6DE7CA0007A23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
