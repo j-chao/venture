@@ -13,13 +13,14 @@
 		B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AD1E70F3CA003F8ACA /* places.storyboard */; };
 		B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AF1E70F3D4003F8ACA /* food.storyboard */; };
 		B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333D1E6DE7CA0007A23D /* AppDelegate.swift */; };
-		B55333401E6DE7CA0007A23D /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333F1E6DE7CA0007A23D /* loginVC.swift */; };
+		B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333F1E6DE7CA0007A23D /* LoginVC.swift */; };
 		B55333431E6DE7CA0007A23D /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333411E6DE7CA0007A23D /* login.storyboard */; };
 		B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B55333441E6DE7CA0007A23D /* venture.xcdatamodeld */; };
 		B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55333471E6DE7CA0007A23D /* Assets.xcassets */; };
 		B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */; };
 		B55333561E6DE7CA0007A23D /* ventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333551E6DE7CA0007A23D /* ventureTests.swift */; };
 		B55333611E6DE7CA0007A23D /* ventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333601E6DE7CA0007A23D /* ventureUITests.swift */; };
+		B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A176721E7B38EF00307B5C /* RegistrationVC.swift */; };
 		B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467261E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467271E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
@@ -58,7 +59,7 @@
 		B50512AF1E70F3D4003F8ACA /* food.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = food.storyboard; sourceTree = "<group>"; };
 		B553333A1E6DE7CA0007A23D /* venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553333D1E6DE7CA0007A23D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B553333F1E6DE7CA0007A23D /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
+		B553333F1E6DE7CA0007A23D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B55333421E6DE7CA0007A23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/login.storyboard; sourceTree = "<group>"; };
 		B55333451E6DE7CA0007A23D /* venture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = venture.xcdatamodel; sourceTree = "<group>"; };
 		B55333471E6DE7CA0007A23D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		B553335C1E6DE7CA0007A23D /* ventureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ventureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55333601E6DE7CA0007A23D /* ventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ventureUITests.swift; sourceTree = "<group>"; };
 		B55333621E6DE7CA0007A23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A176721E7B38EF00307B5C /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD327E1C779D12B297E79073 /* Pods_ventureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ventureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +163,8 @@
 		B50512B21E70F3E8003F8ACA /* login VC */ = {
 			isa = PBXGroup;
 			children = (
-				B553333F1E6DE7CA0007A23D /* loginVC.swift */,
+				B553333F1E6DE7CA0007A23D /* LoginVC.swift */,
+				B5A176721E7B38EF00307B5C /* RegistrationVC.swift */,
 			);
 			name = "login VC";
 			sourceTree = "<group>";
@@ -506,8 +509,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
-				B55333401E6DE7CA0007A23D /* loginVC.swift in Sources */,
+				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
+				B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
