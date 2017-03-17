@@ -11,13 +11,13 @@ import Firebase
 
 class SettingsVC: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     var alertController:UIAlertController? = nil
     var newEmail: UITextField? = nil
     var newPassword: UITextField? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     @IBAction func changeEmail(_ sender: Any) {
         self.alertController = UIAlertController(title: "Change Email", message: "", preferredStyle: UIAlertControllerStyle.alert)
@@ -73,12 +73,6 @@ class SettingsVC: UIViewController {
             self.newPassword?.placeholder = "enter new password"
         }
         present(self.alertController!, animated: true, completion: nil)
-    }
-    
-    
-    
-    @IBAction func logout(_ sender: Any) {
-        
     }
     
     @IBAction func deleteAccount(_ sender: Any) {

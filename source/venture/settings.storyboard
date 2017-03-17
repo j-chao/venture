@@ -81,19 +81,6 @@
                                     <action selector="changePassword:" destination="Sef-ag-34M" eventType="touchUpInside" id="G72-HJ-8bs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-5c-jI4">
-                                <rect key="frame" x="141" y="532" width="93" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="Sef-ag-34M" eventType="touchUpInside" id="cuA-mK-4pM"/>
-                                    <segue destination="fwI-0P-e7s" kind="show" id="A1l-J3-Txy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Pc-bGa">
                                 <rect key="frame" x="111" y="599" width="153" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,6 +92,18 @@
                                 <connections>
                                     <action selector="deleteAccount:" destination="Sef-ag-34M" eventType="touchUpInside" id="5R3-Ro-LlZ"/>
                                     <segue destination="fwI-0P-e7s" kind="show" id="1xF-un-DEz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZD-vA-Uyz">
+                                <rect key="frame" x="133" y="532" width="109" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fwI-0P-e7s" kind="show" id="ub4-cn-OQl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -154,6 +153,6 @@
         <image name="blurBack.png" width="385" height="683"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A1l-J3-Txy"/>
+        <segue reference="ub4-cn-OQl"/>
     </inferredMetricsTieBreakers>
 </document>
