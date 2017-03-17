@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--itinerary-->
+        <scene sceneID="OKa-lK-wJL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="itinerary" id="Ata-sb-WaN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7vI-Bm-jUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824" y="-436"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="ObU-ad-yF2">
             <objects>
-                <viewController title="Settings" id="Sef-ag-34M" sceneMemberID="viewController">
+                <viewController title="Settings" id="Sef-ag-34M" customClass="SettingsVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zIg-E4-7Aj"/>
                         <viewControllerLayoutGuide type="bottom" id="KI5-p0-oTN"/>
@@ -25,14 +33,103 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YYQ-TC-w78">
+                                <rect key="frame" x="16" y="319" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Bacgkround 1"/>
+                                    <segment title="Background 2"/>
+                                    <segment title="Background 3"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-el-4Ia">
+                                <rect key="frame" x="16" y="390" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Day Mode"/>
+                                    <segment title="Night Mode"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-i9-DB2">
+                                <rect key="frame" x="98" y="119" width="178" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Change Email">
+                                    <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeEmail:" destination="Sef-ag-34M" eventType="touchUpInside" id="dQA-GB-UjT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venture was developed by                     Justin Chao, Julianne Crea, and Connie Liu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-CE-Bd5">
+                                <rect key="frame" x="20" y="426" width="335" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-jJ-26E">
+                                <rect key="frame" x="98" y="228" width="178" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26859004283483506" green="0.6943454363895829" blue="0.92998963594436646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Change Password">
+                                    <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changePassword:" destination="Sef-ag-34M" eventType="touchUpInside" id="G72-HJ-8bs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-5c-jI4">
+                                <rect key="frame" x="141" y="532" width="93" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="Sef-ag-34M" eventType="touchUpInside" id="cuA-mK-4pM"/>
+                                    <segue destination="fwI-0P-e7s" kind="show" id="A1l-J3-Txy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Pc-bGa">
+                                <rect key="frame" x="111" y="599" width="153" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAccount:" destination="Sef-ag-34M" eventType="touchUpInside" id="5R3-Ro-LlZ"/>
+                                    <segue destination="fwI-0P-e7s" kind="show" id="1xF-un-DEz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XIh-3X-dwm"/>
+                    <navigationItem key="navigationItem" title="Settings" id="XIh-3X-dwm">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="EOb-bO-RrU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Trips" id="q2F-P9-yop">
+                            <connections>
+                                <segue destination="Ata-sb-WaN" kind="show" id="ETT-fK-uCD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6r-Pw-vl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1221.5999999999999" y="-177.66116941529236"/>
+            <point key="canvasLocation" x="1248.8" y="-177.66116941529236"/>
+        </scene>
+        <!--login-->
+        <scene sceneID="04f-pP-dAY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="login" id="fwI-0P-e7s" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8Q-kj-wyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="67"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EIs-dy-Zz4">
@@ -56,4 +153,7 @@
     <resources>
         <image name="blurBack.png" width="385" height="683"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="A1l-J3-Txy"/>
+    </inferredMetricsTieBreakers>
 </document>
