@@ -14,6 +14,7 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var errorMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,13 @@ class LoginVC: UIViewController {
    
     @IBAction func login(_ sender: Any) {
         FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!, completion: {
-            
             user, error in
             if error != nil {
                 print ("Incorrect email/password")
+                self.errorMessage.text = "Incorrect email and/or password"
             }
             else{
                 print ("User logged in!")
-                
                 let storyboard: UIStoryboard = UIStoryboard(name: "itinerary", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
                     as! UITableViewController
