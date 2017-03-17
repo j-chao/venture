@@ -3,8 +3,10 @@
 ## Implementation Contributions  
   - Justin Chao   
     * Implemented Firebase SDK and created:
-        * Login, Registration views   
+        * Login, Registration, Settings, Itinerary views   
         * Launch screen
+    * implemented change email/password, logout, delete account functions in
+      Settings View
 
 
   - Julianne Crea   
