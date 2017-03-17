@@ -6,8 +6,8 @@ Spring, 2017
 
 
 ### Directory
-  * docs:   documentations for project idea
-  * source: Xcode source files for app
+  * docs:   documentations for project idea. Also includes GROUP1README.md.      
+  * source: Xcode source files for app.    
 
 ### Deadlines
   * 3/22 alpha
