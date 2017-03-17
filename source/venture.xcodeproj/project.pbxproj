@@ -22,6 +22,7 @@
 		B55333561E6DE7CA0007A23D /* ventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333551E6DE7CA0007A23D /* ventureTests.swift */; };
 		B55333611E6DE7CA0007A23D /* ventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333601E6DE7CA0007A23D /* ventureUITests.swift */; };
 		B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B55603B31E7B48E500FEC786 /* wallscreen.png */; };
+		B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18461E7C70C000997360 /* ResetPassVC.swift */; };
 		B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A176721E7B38EF00307B5C /* RegistrationVC.swift */; };
 		B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467261E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
@@ -75,6 +76,7 @@
 		B55333601E6DE7CA0007A23D /* ventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ventureUITests.swift; sourceTree = "<group>"; };
 		B55333621E6DE7CA0007A23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55603B31E7B48E500FEC786 /* wallscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreen.png; sourceTree = "<group>"; };
+		B58D18461E7C70C000997360 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
 		B5A176721E7B38EF00307B5C /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				B553333F1E6DE7CA0007A23D /* LoginVC.swift */,
 				B5A176721E7B38EF00307B5C /* RegistrationVC.swift */,
+				B58D18461E7C70C000997360 /* ResetPassVC.swift */,
 			);
 			name = "login VC";
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */,
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
 				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
