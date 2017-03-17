@@ -32,6 +32,11 @@ class LoginVC: UIViewController {
             }
             else{
                 print ("User logged in!")
+                
+                let storyboard: UIStoryboard = UIStoryboard(name: "itinerary", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
+                    as! UITableViewController
+                self.show(vc, sender: self)
             }
         })
     }
