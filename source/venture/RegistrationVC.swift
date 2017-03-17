@@ -14,6 +14,9 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var newEmail: UITextField!
     @IBOutlet weak var newPassword: UITextField!
     
+    @IBOutlet weak var resetEmail: UITextField!
+    @IBOutlet weak var resetMessage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +35,20 @@ class RegistrationVC: UIViewController {
         })
 
     }
+    
+    @IBAction func resetPass(_ sender: Any) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail.text!, completion:{
+            error in
+            
+            if error != nil {
+                print ("no account for email in database")
+            }
+            else {
+                print ("reset password email sent")
+                self.resetMessage.text! =
+                "An email will be sent to you to reset your password."
+            }
+        })
+}
+    
 }
