@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4C685967A16D698996B8E852 /* Pods_ventureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD327E1C779D12B297E79073 /* Pods_ventureUITests.framework */; };
-		B50512A81E70F37A003F8ACA /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = B50512A71E70F37A003F8ACA /* nyc.png */; };
 		B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AB1E70F3C3003F8ACA /* flights.storyboard */; };
 		B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AD1E70F3CA003F8ACA /* places.storyboard */; };
 		B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AF1E70F3D4003F8ACA /* food.storyboard */; };
+		B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC741E7BC10300213CF3 /* blurBack.png */; };
+		B50AEC771E7BC33D00213CF3 /* itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC761E7BC33D00213CF3 /* itinerary.storyboard */; };
 		B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333D1E6DE7CA0007A23D /* AppDelegate.swift */; };
 		B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333F1E6DE7CA0007A23D /* LoginVC.swift */; };
 		B55333431E6DE7CA0007A23D /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333411E6DE7CA0007A23D /* login.storyboard */; };
@@ -20,6 +21,7 @@
 		B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */; };
 		B55333561E6DE7CA0007A23D /* ventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333551E6DE7CA0007A23D /* ventureTests.swift */; };
 		B55333611E6DE7CA0007A23D /* ventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333601E6DE7CA0007A23D /* ventureUITests.swift */; };
+		B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B55603B31E7B48E500FEC786 /* wallscreen.png */; };
 		B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A176721E7B38EF00307B5C /* RegistrationVC.swift */; };
 		B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467261E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
@@ -53,10 +55,11 @@
 		7F346F116EAEEAA62FA14753 /* Pods-venture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-venture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-venture/Pods-venture.debug.xcconfig"; sourceTree = "<group>"; };
 		81A6FB3B3CBEBAC0A3FC58D0 /* Pods_ventureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ventureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		883DF5E192F7587E2B73CA22 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50512A71E70F37A003F8ACA /* nyc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyc.png; sourceTree = "<group>"; };
 		B50512AB1E70F3C3003F8ACA /* flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = flights.storyboard; sourceTree = "<group>"; };
 		B50512AD1E70F3CA003F8ACA /* places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = places.storyboard; sourceTree = "<group>"; };
 		B50512AF1E70F3D4003F8ACA /* food.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = food.storyboard; sourceTree = "<group>"; };
+		B50AEC741E7BC10300213CF3 /* blurBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blurBack.png; sourceTree = "<group>"; };
+		B50AEC761E7BC33D00213CF3 /* itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = itinerary.storyboard; sourceTree = "<group>"; };
 		B553333A1E6DE7CA0007A23D /* venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553333D1E6DE7CA0007A23D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B553333F1E6DE7CA0007A23D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		B553335C1E6DE7CA0007A23D /* ventureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ventureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55333601E6DE7CA0007A23D /* ventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ventureUITests.swift; sourceTree = "<group>"; };
 		B55333621E6DE7CA0007A23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55603B31E7B48E500FEC786 /* wallscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreen.png; sourceTree = "<group>"; };
 		B5A176721E7B38EF00307B5C /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +135,8 @@
 		B50512A91E70F37E003F8ACA /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B50512A71E70F37A003F8ACA /* nyc.png */,
+				B50AEC741E7BC10300213CF3 /* blurBack.png */,
+				B55603B31E7B48E500FEC786 /* wallscreen.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -151,11 +156,12 @@
 		B50512B11E70F3DB003F8ACA /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */,
 				B55333411E6DE7CA0007A23D /* login.storyboard */,
+				B50AEC761E7BC33D00213CF3 /* itinerary.storyboard */,
 				B50512AB1E70F3C3003F8ACA /* flights.storyboard */,
 				B50512AD1E70F3CA003F8ACA /* places.storyboard */,
 				B50512AF1E70F3D4003F8ACA /* food.storyboard */,
-				B55333491E6DE7CA0007A23D /* LaunchScreen.storyboard */,
 			);
 			name = storyboards;
 			sourceTree = "<group>";
@@ -337,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */,
+				B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */,
 				B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */,
-				B50512A81E70F37A003F8ACA /* nyc.png in Resources */,
+				B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */,
+				B50AEC771E7BC33D00213CF3 /* itinerary.storyboard in Resources */,
 				B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */,
 				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
