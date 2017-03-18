@@ -18,9 +18,7 @@ class TripsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Your Trips"
-        
         collectionView.dataSource = self
-
     }
 
 }
@@ -34,7 +32,6 @@ extension TripsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) 
-    cell.backgroundColor = UIColor.red
     
     return cell
     }
