@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import Foundation
 
 class TripCellVC: UICollectionViewCell {
+    
+    
+    
     
 }
