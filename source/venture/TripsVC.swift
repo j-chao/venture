@@ -16,7 +16,7 @@ class TripsVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let identifier = "trip"
+    let identifier = "tripCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,12 +56,30 @@ class TripsVC: UIViewController {
 extension TripsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return trips.count
+        return trips.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) 
+        let cell:TripCellVC = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TripCellVC
+       
+        let trip = trips[indexPath.row]
+        let tripName = trip.value(forKey: "tripName") as! String
+        let tripLocation = trip.value(forKey: "tripLocation") as! String
+        
+        let startDate = trip.value(forKey: "startDate") as! Date
+        let endDate = trip.value(forKey: "endDate") as! Date
+        
+        cell.tripName!.text = tripName
+        cell.tripLocation!.text = tripLocation
+        
+        cell.dates!.text = "\(dateToString(startDate))  -  \(dateToString(endDate))"
+        
+        return cell
+    }
     
-    return cell
+    func dateToString(_ sender: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+        return dateFormatter.string(from: sender)
     }
 }

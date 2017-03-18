@@ -28,14 +28,14 @@ class NewTripVC: UIViewController {
     @IBAction func setStart(_ sender: Any) {
         startingDate = datePick.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-YYYY"
+        dateFormatter.dateFormat = "MM/dd/YYYY"
         self.startDate.text = dateFormatter.string(from: datePick.date)
     }
     
     @IBAction func setEnd(_ sender: Any) {
         endingDate = datePick.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-YYYY"
+        dateFormatter.dateFormat = "MM/dd/YYYY"
         self.endDate.text = dateFormatter.string(from: datePick.date)
     }
     

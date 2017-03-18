@@ -7,6 +7,6 @@
         <attribute name="tripName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Trip" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Trip" positionX="-1143" positionY="-63" width="128" height="103"/>
     </elements>
 </model>
