@@ -18,6 +18,4 @@ class TripCellVC: UICollectionViewCell {
     @IBOutlet weak var tripLocation: UILabel!
     @IBOutlet weak var dates: UILabel!
     
-   
-    
 }
