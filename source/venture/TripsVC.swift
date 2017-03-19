@@ -48,7 +48,20 @@ class TripsVC: UIViewController {
             print ("error fetching results")
         }
     }
+   
     
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "specItinerary" {
+            if let collectionCell: TripCellVC = sender as? TripCellVC {
+                if let destination = segue.destination as? TripPageVC {
+                    // Pass some data to YourViewController
+                    // collectionView.tag will give your selected tableView index
+                    destination.tripsIdn = collectionCell.tripName.text
+                    print (collectionCell.tag)
+                }
+            }
+        }
+    }
 
 }
 

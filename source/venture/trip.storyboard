@@ -178,7 +178,7 @@
                                             <outlet property="dates" destination="E3g-va-DXT" id="wiC-cP-DpJ"/>
                                             <outlet property="tripLocation" destination="xbe-jb-ih9" id="QDi-QK-bnw"/>
                                             <outlet property="tripName" destination="eMD-fd-wJ2" id="4F6-bS-ZDd"/>
-                                            <segue destination="MhN-lO-l91" kind="show" id="XCO-x0-Jxt"/>
+                                            <segue destination="MhN-lO-l91" kind="show" identifier="specItinerary" id="XCO-x0-Jxt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

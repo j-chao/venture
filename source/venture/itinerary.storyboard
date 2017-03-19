@@ -17,10 +17,10 @@
             </objects>
             <point key="canvasLocation" x="3395" y="100"/>
         </scene>
-        <!--ItineraryVC-->
+        <!--trip title-->
         <scene sceneID="CFf-pv-hNq">
             <objects>
-                <viewController storyboardIdentifier="itinerary" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wyV-0C-CFG" customClass="ItineraryVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="itinerary" title="trip title" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wyV-0C-CFG" customClass="ItineraryVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5tX-Se-id5"/>
                         <viewControllerLayoutGuide type="bottom" id="yPT-Ol-yln"/>
@@ -33,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87J-xL-82m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4241" y="99"/>
+            <point key="canvasLocation" x="4146" y="99"/>
         </scene>
     </scenes>
 </document>

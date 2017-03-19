@@ -11,11 +11,13 @@ import CoreData
 
 class ItineraryVC: UIViewController {
     var trip = NSManagedObject()
+    var titleName:String?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.title = trip.value(forKey: "tripName") as? String
-        self.title = "trip title"
+        self.title = titleName
 
         // Do any additional setup after loading the view.
     }
