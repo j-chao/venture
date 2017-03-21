@@ -11,11 +11,6 @@ import Firebase
 
 class LoginVC: UIViewController {
     
-    var ref: FIRDatabaseReference!
-    let ref = FIRDatabase.database().reference()
-    var user = firebase.auth().currentUser;
-
-    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
@@ -37,7 +32,13 @@ class LoginVC: UIViewController {
             }
             else{
                 print ("User logged in!")
-                print (user)
+                let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                ref.child("users/\(userID)/email").setValue(self.email.text!)
+                ref.child("users/\(userID)/password").setValue(self.password.text!)
+                
+                
+                
                 let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
                 self.show(vc, sender: self)
