@@ -11,8 +11,7 @@
 
   - Julianne Crea   
     *   
-
-  - Connie Liu   
+- Connie Liu   
     *   
 
 
@@ -25,5 +24,5 @@
   - no differences between what is specified in Group1AppIdea.pdf and this alpha release.  
 
 ## Special Instructions   
-  - Venture requires CoacoaPods version 1.2.0  
+  - Venture requires CocoaPods version 1.2.0  
 
