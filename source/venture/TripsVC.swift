@@ -65,6 +65,7 @@ class TripsVC: UIViewController {
 
 }
 
+
 // MARK:- UICollectionViewDataSource Delegate
 extension TripsVC: UICollectionViewDataSource {
     
