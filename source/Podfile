@@ -8,6 +8,7 @@ target 'venture' do
   # Pods for venture
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'ventureTests' do
     inherit! :search_paths

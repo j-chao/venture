@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
 
 class ItineraryVC: UIViewController {
-    var trip = NSManagedObject()
+    
     var titleName:String?
     
 

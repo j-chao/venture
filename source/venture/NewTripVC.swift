@@ -7,9 +7,12 @@
 //
 
 import UIKit
-import CoreData
+import Firebase
+//import CoreData
 
 class NewTripVC: UIViewController {
+//    var ref: FIRDatabaseReference!
+//    let ref = FIRDatabase.database().reference()
 
     @IBOutlet weak var tripName: UITextField!
     @IBOutlet weak var tripLocation: UITextField!
@@ -49,27 +52,27 @@ class NewTripVC: UIViewController {
             self.present(alert, animated: true, completion:nil)
             return
         }
-        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startingDate!, endDate:endingDate!)
+//        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startingDate!, endDate:endingDate!)
         print ("Trip Saved")
     }
     
-    func addTrip (tripName:String, tripLocation:String, startDate:Date, endDate:Date) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let newPerson = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: context)
-        newPerson.setValue(tripName, forKey: "tripName")
-        newPerson.setValue(tripLocation, forKey: "tripLocation")
-        newPerson.setValue(startingDate, forKey: "startDate")
-        newPerson.setValue(endingDate, forKey: "endDate")
-        do {
-            try context.save()
-        }
-        catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
-    }
+//    func addTrip (tripName:String, tripLocation:String, startDate:Date, endDate:Date) {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let newPerson = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: context)
+//        newPerson.setValue(tripName, forKey: "tripName")
+//        newPerson.setValue(tripLocation, forKey: "tripLocation")
+//        newPerson.setValue(startingDate, forKey: "startDate")
+//        newPerson.setValue(endingDate, forKey: "endDate")
+//        do {
+//            try context.save()
+//        }
+//        catch {
+//            let nserror = error as NSError
+//            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+//            abort()
+//        }
+//    }
     
     
     

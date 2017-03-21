@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 
 class LoginVC: UIViewController {
+    
+    var ref: FIRDatabaseReference!
+    let ref = FIRDatabase.database().reference()
+    var user = firebase.auth().currentUser;
 
     
     @IBOutlet weak var email: UITextField!
@@ -33,6 +37,7 @@ class LoginVC: UIViewController {
             }
             else{
                 print ("User logged in!")
+                print (user)
                 let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
                 self.show(vc, sender: self)
