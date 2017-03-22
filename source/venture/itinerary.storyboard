@@ -28,12 +28,41 @@
                     <view key="view" contentMode="scaleToFill" id="Ga3-Lk-kEh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blurBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="bFT-jn-ZZS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flight.png" translatesAutoresizingMaskIntoConstraints="NO" id="PPZ-AQ-rDN">
+                                <rect key="frame" x="16" y="562" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="food.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-nq-iiD">
+                                <rect key="frame" x="118" y="562" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="places.png" translatesAutoresizingMaskIntoConstraints="NO" id="WjP-jA-rzm">
+                                <rect key="frame" x="212" y="562" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="event.png" translatesAutoresizingMaskIntoConstraints="NO" id="uet-ta-9Q5">
+                                <rect key="frame" x="309" y="562" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87J-xL-82m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="99"/>
+            <point key="canvasLocation" x="4144.8000000000002" y="98.50074962518741"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blurBack.png" width="385" height="683"/>
+        <image name="event.png" width="50" height="50"/>
+        <image name="flight.png" width="50" height="50"/>
+        <image name="food.png" width="50" height="50"/>
+        <image name="places.png" width="50" height="50"/>
+    </resources>
 </document>
