@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import CoreData
 
 class TripPageVC: UIPageViewController {
     var tripsIdn:String?
-    var trip = NSManagedObject()
     
     fileprivate(set) lazy var pages:[UIViewController] = {
         return [self.newVC("VC1"),
@@ -26,7 +24,7 @@ class TripPageVC: UIPageViewController {
     fileprivate func newVC(_ name: String) -> ItineraryVC
     {
         let newvc = UIStoryboard(name: "itinerary", bundle: nil).instantiateViewController(withIdentifier: "itinerary") as! ItineraryVC
-        newvc.titleName = tripsIdn
+        newvc.tripName = tripsIdn
         return newvc
     }
     

@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-//import CoreData
 
 class NewTripVC: UIViewController {
     
@@ -67,7 +66,5 @@ class NewTripVC: UIViewController {
                 tripRef.child("startDate").setValue(startDate)
                 tripRef.child("endDate").setValue(endDate)
             }
-    
-    
     
 }

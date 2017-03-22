@@ -7,30 +7,27 @@
 //
 
 import UIKit
-//import CoreData
+import Firebase
 
 class ItineraryVC: UIViewController {
+    var ref:FIRDatabaseReference?
+    var refHandle:FIRDatabaseHandle?
+    let userID = FIRAuth.auth()?.currentUser?.uid
     
-    var titleName:String?
-    
+    var tripName:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = trip.value(forKey: "tripName") as? String
-        self.title = titleName
-
-        // Do any additional setup after loading the view.
+        
+        print (self.tripName)
+        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+        print (ref)
+        
+        ref.child(self.tripName).observe(.value, with: { snapshot in
+            let tripTitle = (snapshot.value as! NSDictionary)["tripLocation"] as! String
+            print (tripTitle)
+        })
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

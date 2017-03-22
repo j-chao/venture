@@ -8,11 +8,8 @@
 
 import UIKit
 import Foundation
-import CoreData
 
 class TripCellVC: UICollectionViewCell {
-    
-    var trips = [NSManagedObject]()
     
     @IBOutlet weak var tripName: UILabel!
     @IBOutlet weak var tripLocation: UILabel!
