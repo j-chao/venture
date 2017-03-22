@@ -227,17 +227,25 @@
                                     <action selector="returnToLogin:" destination="VCT-8O-uv5" eventType="touchUpInside" id="bRM-eQ-sDc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhj-5c-j7v">
+                                <rect key="frame" x="17" y="281" width="340" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1832735912" green="0.1814661139" blue="0.2298491607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="messageLbl" destination="rhj-5c-j7v" id="6gC-pd-vIy"/>
                         <outlet property="newEmail" destination="Cph-7r-dFL" id="faW-56-mSY"/>
                         <outlet property="newPassword" destination="BBo-zJ-JRn" id="bA0-yD-fFC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kl0-g8-qEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="-271"/>
+            <point key="canvasLocation" x="2700" y="-271.21439280359823"/>
         </scene>
     </scenes>
     <resources>

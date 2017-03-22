@@ -13,6 +13,7 @@ class RegistrationVC: UIViewController {
 
     @IBOutlet weak var newEmail: UITextField!
     @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var messageLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,10 @@ class RegistrationVC: UIViewController {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{
            user, error in
             if error != nil {
-                print ("User account already exists")
+                self.messageLbl.text = "User account already exists."
             }
             else {
-                print ("User created")
-                let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "Login")
-                self.show(vc, sender: self)
+                self.messageLbl.text = "Your account has been created.                        Please return to the Login Page to login."
             }
         })
     }
