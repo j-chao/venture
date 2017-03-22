@@ -53,18 +53,43 @@ class NewTripVC: UIViewController {
             return
         }
         
-        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!)
+        let start = self.dateFromString(dateString:startDate.text!)
+        let end = self.dateFromString(dateString:endDate.text!)
+        let tripLength = self.calculateDays(start: start, end: end) + 1
+        
+        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!, tripLength:tripLength)
         
         print ("Trip Saved")
     }
     
-        func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {
-            
-                let tripRef = ref.child("users/\(userID)/trips/\(tripName)")
-                tripRef.child("tripName").setValue(tripName)
-                tripRef.child("tripLocation").setValue(tripLocation)
-                tripRef.child("startDate").setValue(startDate)
-                tripRef.child("endDate").setValue(endDate)
-            }
+    func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String, tripLength:Int) {
+        
+        let tripRef = ref.child("users/\(userID)/trips/\(tripName)")
+        tripRef.child("tripName").setValue(tripName)
+        tripRef.child("tripLocation").setValue(tripLocation)
+        tripRef.child("startDate").setValue(startDate)
+        tripRef.child("endDate").setValue(endDate)
+        tripRef.child("tripLength").setValue(tripLength)
+    }
+    
+    private func dateFromString (dateString:String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.locale = Locale(identifier: "en_US")
+        let dateObj = dateFormatter.date(from: dateString)
+        return (dateObj)!
+    }
+    
+    private func calculateDays(start: Date, end: Date) -> Int {
+        let currentCalendar = Calendar.current
+        guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
+            return 0
+        }
+        guard let end = currentCalendar.ordinality(of: .day, in: .era, for: end) else {
+            return 0
+        }
+        return (end - start)
+    }
+    
     
 }

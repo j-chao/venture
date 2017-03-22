@@ -18,14 +18,11 @@ class ItineraryVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print (self.tripName)
         let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
-        print (ref)
         
         ref.child(self.tripName).observe(.value, with: { snapshot in
-            let tripTitle = (snapshot.value as! NSDictionary)["tripLocation"] as! String
-            print (tripTitle)
+            let tripTitle = (snapshot.value as! NSDictionary)["tripName"] as! String
+            self.title = tripTitle
         })
     }
 
