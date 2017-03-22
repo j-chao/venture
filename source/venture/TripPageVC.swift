@@ -7,12 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
 class TripPageVC: UIPageViewController {
-    var ref:FIRDatabaseReference?
-    var refHandle:FIRDatabaseHandle?
-    let userID = FIRAuth.auth()?.currentUser?.uid
     
     var tripName:String!
     
@@ -25,8 +21,6 @@ class TripPageVC: UIPageViewController {
         
         return arrayPages
     }()
-    
-    
     
     fileprivate func newVC(_ name: String) -> ItineraryVC
     {
@@ -50,9 +44,6 @@ class TripPageVC: UIPageViewController {
         pageControl.pageIndicatorTintColor = UIColor.white
         pageControl.currentPageIndicatorTintColor = UIColor.green
         pageControl.backgroundColor = UIColor.lightGray
-        
-//        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
-        
     }
 
 }

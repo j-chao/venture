@@ -83,6 +83,6 @@ class SettingsVC: UIViewController {
             } else {
                 print ("account deleted")
             }
-        } 
+        }
     }
 }

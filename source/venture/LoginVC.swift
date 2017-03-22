@@ -17,9 +17,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         email.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
-        
         password.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
     }
    
@@ -30,17 +28,15 @@ class LoginVC: UIViewController {
                 print ("Incorrect email/password")
                 self.errorMessage.text = "Incorrect email and/or password"
             }
-            else{
+            else {
                 print ("User logged in!")
                 let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 ref.child("users/\(userID)/email").setValue(self.email.text!)
                 ref.child("users/\(userID)/password").setValue(self.password.text!)
                 
-                
-                
                 let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
+                let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
                 self.show(vc, sender: self)
             }
         })

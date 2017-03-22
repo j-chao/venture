@@ -208,7 +208,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VRy-AR-SPn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ajN-LC-zAh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="tripNavCtrl" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ajN-LC-zAh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ej7-Bf-19V">

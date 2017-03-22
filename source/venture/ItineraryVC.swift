@@ -18,7 +18,7 @@ class ItineraryVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+//        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
         
 //        ref.child(self.tripName).observe(.value, with: { snapshot in
 //            let tripTitle = (snapshot.value as! NSDictionary)["tripName"] as! String

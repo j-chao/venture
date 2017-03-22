@@ -16,28 +16,33 @@ class RegistrationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         newEmail.attributedPlaceholder = NSAttributedString(
             string: "Enter your email",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
-        
         newPassword.attributedPlaceholder = NSAttributedString(
             string: "Enter a password",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
     }
-    
 
     @IBAction func createAccount(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{
            user, error in
-//          where account is already created
-            if error != nil{
+            if error != nil {
                 print ("User account already exists")
             }
             else {
                 print ("User created")
+                let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+                self.show(vc, sender: self)
             }
         })
+    }
+    
+    @IBAction func returnToLogin(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        self.show(vc, sender: self)
     }
     
 }

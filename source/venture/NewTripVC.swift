@@ -58,7 +58,7 @@ class NewTripVC: UIViewController {
         print ("Trip Saved")
         
         let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
+        let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
         self.show(vc, sender: self)
     }
     

@@ -10,23 +10,12 @@ import UIKit
 import Foundation
 import Firebase
 
-struct tripStruct {
-    let tripName: String!
-    let tripLocation: String!
-    let startDate: String!
-    let endDate: String!
-}
-
-var tripLength:Int = 0
-
-class TripsVC: UIViewController {
-    
+class TripsVC: UIViewController, CalculateTime {
     var trips = [String]()
     
     var ref:FIRDatabaseReference?
     var refHandle:FIRDatabaseHandle?
     let userID = FIRAuth.auth()?.currentUser?.uid
-    
 
     @IBOutlet weak var collectionView: UICollectionView!
     let identifier = "tripCell"
@@ -49,7 +38,9 @@ class TripsVC: UIViewController {
         let tripIndex = collectionView.indexPathsForSelectedItems?.last?.last
         if segue.identifier == "specItinerary" {
             if let destinationVC = segue.destination as? TripPageVC {
+                
                 let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+                
                 ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
                     let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
                     let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
@@ -59,14 +50,12 @@ class TripsVC: UIViewController {
                     let days = self.calculateDays(start: start, end: end) + 1
                     tripLength = days
                 })
-    
                 destinationVC.tripName = trips[tripIndex!]
             }
         }
     }
     
-    
-    private func dateFromString (dateString:String) -> Date {
+    internal func dateFromString (dateString:String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         dateFormatter.locale = Locale(identifier: "en_US")
@@ -74,7 +63,7 @@ class TripsVC: UIViewController {
         return (dateObj)!
     }
     
-    private func calculateDays(start: Date, end: Date) -> Int {
+    internal func calculateDays(start: Date, end: Date) -> Int {
         let currentCalendar = Calendar.current
         guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
             return 0
@@ -92,8 +81,6 @@ class TripsVC: UIViewController {
 extension TripsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-//        return tripCount
         return trips.count
     }
     

@@ -38,4 +38,10 @@ class ResetPassVC: UIViewController {
             }
         })
     }
+    
+    @IBAction func returnToLogin(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        self.show(vc, sender: self)
+    }
 }
