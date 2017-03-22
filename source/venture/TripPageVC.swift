@@ -7,26 +7,31 @@
 //
 
 import UIKit
-import CoreData
+import Firebase
 
 class TripPageVC: UIPageViewController {
-    var tripsIdn:String?
-    var trip = NSManagedObject()
+    var ref:FIRDatabaseReference?
+    var refHandle:FIRDatabaseHandle?
+    let userID = FIRAuth.auth()?.currentUser?.uid
     
-    fileprivate(set) lazy var pages:[UIViewController] = {
-        return [self.newVC("VC1"),
-                self.newVC("VC2"),
-                self.newVC("VC3"),
-                self.newVC("VC4"),
-                self.newVC("VC5"),
-                self.newVC("VC6"),
-                self.newVC("VC7")]
+    var tripName:String!
+    
+    lazy var pages:[UIViewController] = {
+        var arrayPages = [UIViewController]()
+        
+        for i in 1...tripLength { 
+            arrayPages.append(self.newVC("VC"))
+        }
+        
+        return arrayPages
     }()
+    
+    
     
     fileprivate func newVC(_ name: String) -> ItineraryVC
     {
         let newvc = UIStoryboard(name: "itinerary", bundle: nil).instantiateViewController(withIdentifier: "itinerary") as! ItineraryVC
-        newvc.titleName = tripsIdn
+        newvc.tripName = tripName
         return newvc
     }
     
@@ -45,7 +50,11 @@ class TripPageVC: UIPageViewController {
         pageControl.pageIndicatorTintColor = UIColor.white
         pageControl.currentPageIndicatorTintColor = UIColor.green
         pageControl.backgroundColor = UIColor.lightGray
+        
+//        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+        
     }
+
 }
 
 extension TripPageVC: UIPageViewControllerDataSource {

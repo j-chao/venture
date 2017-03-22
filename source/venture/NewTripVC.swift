@@ -7,9 +7,12 @@
 //
 
 import UIKit
-import CoreData
+import Firebase
 
 class NewTripVC: UIViewController {
+    
+    var ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+    let userID = FIRAuth.auth()?.currentUser?.uid
 
     @IBOutlet weak var tripName: UITextField!
     @IBOutlet weak var tripLocation: UITextField!
@@ -49,28 +52,23 @@ class NewTripVC: UIViewController {
             self.present(alert, animated: true, completion:nil)
             return
         }
-        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startingDate!, endDate:endingDate!)
+        
+        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!)
+        
         print ("Trip Saved")
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
+        self.show(vc, sender: self)
     }
     
-    func addTrip (tripName:String, tripLocation:String, startDate:Date, endDate:Date) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let newPerson = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: context)
-        newPerson.setValue(tripName, forKey: "tripName")
-        newPerson.setValue(tripLocation, forKey: "tripLocation")
-        newPerson.setValue(startingDate, forKey: "startDate")
-        newPerson.setValue(endingDate, forKey: "endDate")
-        do {
-            try context.save()
-        }
-        catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
+    func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {
+        
+        let tripRef = ref.child("users/\(userID)/trips/\(tripName)")
+        tripRef.child("tripName").setValue(tripName)
+        tripRef.child("tripLocation").setValue(tripLocation)
+        tripRef.child("startDate").setValue(startDate)
+        tripRef.child("endDate").setValue(endDate)
     }
-    
-    
     
 }

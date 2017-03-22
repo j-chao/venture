@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--itinerary-->
+        <!--trip-->
         <scene sceneID="OKa-lK-wJL">
             <objects>
-                <viewControllerPlaceholder storyboardName="itinerary" id="Ata-sb-WaN" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="trip" id="Ata-sb-WaN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vI-Bm-jUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1824" y="-436"/>
