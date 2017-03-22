@@ -91,7 +91,7 @@
                                 </state>
                                 <connections>
                                     <action selector="deleteAccount:" destination="Sef-ag-34M" eventType="touchUpInside" id="5R3-Ro-LlZ"/>
-                                    <segue destination="fwI-0P-e7s" kind="show" id="1xF-un-DEz"/>
+                                    <segue destination="fwI-0P-e7s" kind="presentation" id="1xF-un-DEz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZD-vA-Uyz">
@@ -103,7 +103,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fwI-0P-e7s" kind="show" id="ub4-cn-OQl"/>
+                                    <segue destination="fwI-0P-e7s" kind="presentation" id="ub4-cn-OQl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -153,6 +153,6 @@
         <image name="blurBack.png" width="385" height="683"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ub4-cn-OQl"/>
+        <segue reference="1xF-un-DEz"/>
     </inferredMetricsTieBreakers>
 </document>
