@@ -76,13 +76,33 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func deleteAccount(_ sender: Any) {
-        let user = FIRAuth.auth()?.currentUser
-        user?.delete { error in
-            if error != nil {
-                print ("delete account error")
-            } else {
-                print ("account deleted")
+        
+        self.alertController = UIAlertController(title: "Delete Account", message: "Are you sure you want to delete your account?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let ok = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+            
+            let user = FIRAuth.auth()?.currentUser
+            user?.delete { error in
+                if error != nil {
+                    print ("delete account error")
+                } else {
+                    print ("account deleted")
+                    let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
+        
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
         }
+        
+        self.alertController!.addAction(ok)
+        self.alertController!.addAction(cancel)
+        
+        present(self.alertController!, animated: true, completion: nil)
+        
     }
 }
