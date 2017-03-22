@@ -48,20 +48,18 @@ class TripsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tripIndex = collectionView.indexPathsForSelectedItems?.last?.last
         if segue.identifier == "specItinerary" {
-        
-            let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
-            ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
-                let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
-                let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
-                
-                let start = self.dateFromString(dateString:startDate)
-                let end = self.dateFromString(dateString:endDate)
-                let days = self.calculateDays(start: start, end: end) + 1
-                tripLength = days
-            })
-        
-        
             if let destinationVC = segue.destination as? TripPageVC {
+                let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+                ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
+                    let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
+                    let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
+                    
+                    let start = self.dateFromString(dateString:startDate)
+                    let end = self.dateFromString(dateString:endDate)
+                    let days = self.calculateDays(start: start, end: end) + 1
+                    tripLength = days
+                })
+    
                 destinationVC.tripName = trips[tripIndex!]
             }
         }
