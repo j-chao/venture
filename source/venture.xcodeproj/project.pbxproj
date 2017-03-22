@@ -39,6 +39,10 @@
 		B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467261E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467271E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
+		B5F7C05E1E83211F009804DF /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05A1E83211F009804DF /* event.png */; };
+		B5F7C05F1E83211F009804DF /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05B1E83211F009804DF /* flight.png */; };
+		B5F7C0601E83211F009804DF /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05C1E83211F009804DF /* food.png */; };
+		B5F7C0611E83211F009804DF /* places.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05D1E83211F009804DF /* places.png */; };
 		CFF8EF9743E882A022B997B7 /* Pods_ventureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A6FB3B3CBEBAC0A3FC58D0 /* Pods_ventureTests.framework */; };
 		D2E222D48CF29900A072904A /* Pods_venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883DF5E192F7587E2B73CA22 /* Pods_venture.framework */; };
 		E27F4E94DF90E4C100E18AAD /* Pods_ventureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3777500055C573FA4B17E9AB /* Pods_ventureTests.framework */; };
@@ -110,6 +114,10 @@
 		B5E2A09C1E7DCB5F002C48DC /* NewTripVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripVC.swift; sourceTree = "<group>"; };
 		B5E2A09E1E7DCBA2002C48DC /* itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = itinerary.storyboard; sourceTree = "<group>"; };
 		B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5F7C05A1E83211F009804DF /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
+		B5F7C05B1E83211F009804DF /* flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flight.png; sourceTree = "<group>"; };
+		B5F7C05C1E83211F009804DF /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		B5F7C05D1E83211F009804DF /* places.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = places.png; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD327E1C779D12B297E79073 /* Pods_ventureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ventureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3D8138753B47F3022A1E87 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +190,10 @@
 		B50512A91E70F37E003F8ACA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B5F7C05A1E83211F009804DF /* event.png */,
+				B5F7C05B1E83211F009804DF /* flight.png */,
+				B5F7C05C1E83211F009804DF /* food.png */,
+				B5F7C05D1E83211F009804DF /* places.png */,
 				B50AEC741E7BC10300213CF3 /* blurBack.png */,
 				B55603B31E7B48E500FEC786 /* wallscreen.png */,
 				B58D184E1E7C86C100997360 /* gear.png */,
@@ -447,18 +459,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F7C0611E83211F009804DF /* places.png in Resources */,
 				B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */,
 				B5E2A09F1E7DCBA2002C48DC /* itinerary.storyboard in Resources */,
 				B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */,
+				B5F7C0601E83211F009804DF /* food.png in Resources */,
 				B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */,
 				B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */,
 				B58D184F1E7C86C100997360 /* gear.png in Resources */,
+				B5F7C05E1E83211F009804DF /* event.png in Resources */,
 				B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */,
 				B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */,
 				B58D18511E7C877800997360 /* settings.storyboard in Resources */,
 				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,
+				B5F7C05F1E83211F009804DF /* flight.png in Resources */,
 				B55333431E6DE7CA0007A23D /* login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

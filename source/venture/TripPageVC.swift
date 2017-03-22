@@ -41,9 +41,9 @@ class TripPageVC: UIPageViewController {
         }
         
         let pageControl = UIPageControl.appearance()
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.green
-        pageControl.backgroundColor = UIColor.lightGray
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.blue
+        pageControl.backgroundColor = UIColor(colorLiteralRed: 37, green: 53, blue: 79, alpha: 0.8)
     }
 
 }
