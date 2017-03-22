@@ -190,12 +190,12 @@
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="Your Trips" id="Soy-ky-utn">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="1ff-Y2-bWw">
+                        <barButtonItem key="leftBarButtonItem" image="gear.png" style="done" id="1ff-Y2-bWw">
                             <connections>
                                 <segue destination="Zoi-2O-yrf" kind="show" id="LeS-zN-q8F"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="New Trip" id="n9Q-GR-0cR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="n9Q-GR-0cR">
                             <connections>
                                 <segue destination="h2C-eC-eqI" kind="show" id="zvc-8W-xlf"/>
                             </connections>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8P7-tq-0ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2661.5999999999999" y="80.50974512743629"/>
+            <point key="canvasLocation" x="2662" y="63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VRy-AR-SPn">
@@ -231,5 +231,6 @@
     </scenes>
     <resources>
         <image name="blurBack.png" width="385" height="683"/>
+        <image name="gear.png" width="36" height="36"/>
     </resources>
 </document>
