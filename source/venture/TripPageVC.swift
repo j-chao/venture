@@ -15,16 +15,15 @@ class TripPageVC: UIPageViewController {
     let userID = FIRAuth.auth()?.currentUser?.uid
     
     var tripName:String!
-    var tripLength:Int!
     
-    fileprivate(set) lazy var pages:[UIViewController] = {
-        var arrayPages = []
+    lazy var pages:[UIViewController] = {
+        var arrayPages = [UIViewController]()
         
-        for i in 1...self.tripLength {
+        for i in 1...tripLength {
             arrayPages.append(self.newVC("VC"))
         }
         
-        return arrayPages as! [UIViewController]
+        return arrayPages
     }()
     
     
@@ -52,14 +51,7 @@ class TripPageVC: UIPageViewController {
         pageControl.currentPageIndicatorTintColor = UIColor.green
         pageControl.backgroundColor = UIColor.lightGray
         
-        
-        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
-        
-        ref.child(self.tripName).observe(.value, with: { snapshot in
-            
-            self.tripLength = (snapshot.value as! NSDictionary)["tripLength"] as! Int
-        })
-        
+//        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
         
     }
 

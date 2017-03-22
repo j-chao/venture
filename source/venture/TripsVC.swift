@@ -17,10 +17,11 @@ struct tripStruct {
     let endDate: String!
 }
 
+var tripLength:Int = 0
+
 class TripsVC: UIViewController {
     
     var trips = [String]()
-    var tripLength:Int = 1
     
     var ref:FIRDatabaseReference?
     var refHandle:FIRDatabaseHandle?
@@ -46,24 +47,22 @@ class TripsVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tripIndex = collectionView.indexPathsForSelectedItems?.last?.last
-        
-        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
-        ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
-            let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
-            let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
-            
-            let start = self.dateFromString(dateString:startDate)
-            let end = self.dateFromString(dateString:endDate)
-            let days = self.calculateDays(start: start, end: end) + 1
-            self.tripLength = days
-        })
-        
-        
         if segue.identifier == "specItinerary" {
+        
+            let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+            ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
+                let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
+                let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
+                
+                let start = self.dateFromString(dateString:startDate)
+                let end = self.dateFromString(dateString:endDate)
+                let days = self.calculateDays(start: start, end: end) + 1
+                tripLength = days
+            })
+        
+        
             if let destinationVC = segue.destination as? TripPageVC {
                 destinationVC.tripName = trips[tripIndex!]
-                destinationVC.tripLength = self.tripLength
-//                print ("TripsVS \(self.tripLength)")
             }
         }
     }

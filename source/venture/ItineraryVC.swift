@@ -20,10 +20,10 @@ class ItineraryVC: UIViewController {
         super.viewDidLoad()
         let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
         
-        ref.child(self.tripName).observe(.value, with: { snapshot in
-            let tripTitle = (snapshot.value as! NSDictionary)["tripName"] as! String
-            self.title = tripTitle
-        })
+//        ref.child(self.tripName).observe(.value, with: { snapshot in
+//            let tripTitle = (snapshot.value as! NSDictionary)["tripName"] as! String
+//            self.title = tripTitle
+//        })
     }
 
 
