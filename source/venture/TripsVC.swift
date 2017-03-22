@@ -8,60 +8,83 @@
 
 import UIKit
 import Foundation
-import CoreData
+import Firebase
+//import CoreData
+
+struct tripStruct {
+    let tripName: String!
+    let tripLocation: String!
+    let startDate: String!
+    let endDate: String!
+}
 
 class TripsVC: UIViewController {
     
-    var trips = [NSManagedObject]()
+    var trips = [tripStruct]()
+    
+    var ref:FIRDatabaseReference?
+    var refHandle:FIRDatabaseHandle?
+    let userID = FIRAuth.auth()?.currentUser?.uid
+    
+    var tripCount:Int = 0
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     let identifier = "tripCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Your Trips"
         collectionView.dataSource = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Trip")
-        request.returnsObjectsAsFaults = false
-        var fetchedResults:[NSManagedObject]? = nil
-       
-        do {
-            try fetchedResults = context.fetch(request) as? [NSManagedObject]
-        }
-        catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
         
-        if let results = fetchedResults {
-            trips = results
-        }
-        else {
-            print ("error fetching results")
-        }
+        
+        let ref = FIRDatabase.database().reference().child("users/\(userID)")
+        
+//        refHandle = refi.queryOrderedByKey().observe(.childAdded, with: { snapshot in
+//            
+//            let tripName = snapshot..value!["tripName"]
+//            self.trips.append(tripName)
+//            
+//            
+//            self.collectionView.reloadData()
+//        
+//        })
+        
+        ref.child("trips").queryOrderedByKey().observe(.childAdded, with: { snapshot in
+            
+            let tripName = (snapshot.value as! NSDictionary)["tripName"] as! String
+            let tripLocation = (snapshot.value as! NSDictionary)["tripLocation"] as! String
+            let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
+            let endDate = (snapshot.value as! NSDictionary)["startDate"] as! String
+           
+            self.trips.insert(tripStruct(tripName: tripName, tripLocation:tripLocation, startDate:startDate, endDate:endDate), at: 0)
+            self.collectionView.reloadData()
+            
+        })
+        
+//        postTrip()
+        
+        refHandle = ref.observe(.value, with: { (snapshot) in
+            let count = snapshot.childrenCount
+            self.tripCount = Int(count)
+        })
+        
     }
-   
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "specItinerary" {
-            if let collectionCell: TripCellVC = sender as? TripCellVC {
-                if let destination = segue.destination as? TripPageVC {
-                    // Pass some data to YourViewController
-                    // collectionView.tag will give your selected tableView index
-                    destination.tripsIdn = collectionCell.tripName.text
-                    print (collectionCell.tag)
-                }
-            }
-        }
-    }
+
+//    func postTrip () {
+//        let tripName = "tripName"
+//        let tripLocation = "tripLocation"
+//        let startDate = "startDate"
+//        let endDate = "endDate"
+//        
+//        let trip:[String:Any] = ["tripName" : tripName,
+//                                 "tripLocation": tripLocation,
+//                                 "startDate": startDate,
+//                                 "endDate": endDate]
+//        
+//        let ref = FIRDatabase.database().reference()
+//        ref.child("trips").childByAutoId().setValue(trip)
+//    }
 
 }
 
@@ -70,6 +93,8 @@ class TripsVC: UIViewController {
 extension TripsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+//        return tripCount
         return trips.count
     }
     
@@ -77,23 +102,17 @@ extension TripsVC: UICollectionViewDataSource {
         let cell:TripCellVC = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TripCellVC
        
         let trip = trips[indexPath.row]
-        let tripName = trip.value(forKey: "tripName") as! String
-        let tripLocation = trip.value(forKey: "tripLocation") as! String
         
-        let startDate = trip.value(forKey: "startDate") as! Date
-        let endDate = trip.value(forKey: "endDate") as! Date
-        
-        cell.tripName!.text = tripName
-        cell.tripLocation!.text = tripLocation
-        
-        cell.dates!.text = "\(dateToString(startDate))  -  \(dateToString(endDate))"
+        cell.tripName!.text = trip.tripName
+        cell.tripLocation!.text = trip.tripLocation
+        cell.dates!.text = "\(trip.startDate) - \(trip.endDate)"
         
         return cell
     }
     
-    func dateToString(_ sender: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-YYYY"
-        return dateFormatter.string(from: sender)
-    }
+}
+
+extension UInt {
+    /// SwiftExtensionKit
+    var toInt: Int { return Int(self) }
 }

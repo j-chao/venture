@@ -62,6 +62,7 @@ class NewTripVC: UIViewController {
         func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {
             
                 let tripRef = ref.child("users/\(userID)/trips/\(tripName)")
+                tripRef.child("tripName").setValue(tripName)
                 tripRef.child("tripLocation").setValue(tripLocation)
                 tripRef.child("startDate").setValue(startDate)
                 tripRef.child("endDate").setValue(endDate)
