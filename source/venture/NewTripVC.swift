@@ -56,6 +56,10 @@ class NewTripVC: UIViewController {
         self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!)
         
         print ("Trip Saved")
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Your Trips")
+        self.show(vc, sender: self)
     }
     
     func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {

@@ -19,7 +19,7 @@ class TripPageVC: UIPageViewController {
     lazy var pages:[UIViewController] = {
         var arrayPages = [UIViewController]()
         
-        for i in 1...tripLength {
+        for i in 1...tripLength { 
             arrayPages.append(self.newVC("VC"))
         }
         
