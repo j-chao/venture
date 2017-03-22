@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NewTripVC: UIViewController {
+class NewTripVC: UIViewController, UITextFieldDelegate {
     
     var ref: FIRDatabaseReference! = FIRDatabase.database().reference()
     let userID = FIRAuth.auth()?.currentUser?.uid
@@ -24,6 +24,8 @@ class NewTripVC: UIViewController {
         super.viewDidLoad()
         tripName.attributedPlaceholder = NSAttributedString(string: "trip name", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         tripLocation.attributedPlaceholder = NSAttributedString(string: "location", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
+        tripName.delegate = self
+        tripLocation.delegate = self
     }
     var startingDate:Date? = nil
     var endingDate:Date? = nil
@@ -69,6 +71,15 @@ class NewTripVC: UIViewController {
         tripRef.child("tripLocation").setValue(tripLocation)
         tripRef.child("startDate").setValue(startDate)
         tripRef.child("endDate").setValue(endDate)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

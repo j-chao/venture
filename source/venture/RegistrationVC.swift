@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegistrationVC: UIViewController {
+class RegistrationVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var newEmail: UITextField!
     @IBOutlet weak var newPassword: UITextField!
@@ -22,6 +22,8 @@ class RegistrationVC: UIViewController {
         newPassword.attributedPlaceholder = NSAttributedString(
             string: "Enter a password",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
+        newEmail.delegate = self
+        newPassword.delegate = self
     }
 
     @IBAction func createAccount(_ sender: Any) {
@@ -43,6 +45,14 @@ class RegistrationVC: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Login")
         self.show(vc, sender: self)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
