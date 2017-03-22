@@ -49,7 +49,9 @@
                                     <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Mec-N6-FVe" kind="show" id="35O-Fz-3Y7"/>
+                                    <segue destination="Mec-N6-FVe" kind="popoverPresentation" popoverAnchorView="Kpt-mR-wsv" id="35O-Fz-3Y7">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GnB-8P-Oew">
@@ -60,7 +62,9 @@
                                     <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VCT-8O-uv5" kind="show" id="0YW-Be-tC4"/>
+                                    <segue destination="VCT-8O-uv5" kind="popoverPresentation" popoverAnchorView="GnB-8P-Oew" id="0YW-Be-tC4">
+                                        <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UJ-gC-FpI">
