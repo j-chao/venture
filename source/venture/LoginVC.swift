@@ -21,6 +21,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         password.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         email.delegate = self
         password.delegate = self
+        
     }
    
     @IBAction func login(_ sender: Any) {
