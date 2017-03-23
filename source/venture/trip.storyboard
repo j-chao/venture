@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ajN-LC-zAh">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ajN-LC-zAh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,6 +219,11 @@
                                             <constraint firstItem="xbe-jb-ih9" firstAttribute="leading" secondItem="E3g-va-DXT" secondAttribute="leading" id="ohd-50-QeV"/>
                                             <constraint firstItem="eMD-fd-wJ2" firstAttribute="top" secondItem="xTt-Vl-C6V" secondAttribute="topMargin" id="pPA-Ha-d4y"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dates" destination="E3g-va-DXT" id="wiC-cP-DpJ"/>
                                             <outlet property="tripLocation" destination="xbe-jb-ih9" id="QDi-QK-bnw"/>

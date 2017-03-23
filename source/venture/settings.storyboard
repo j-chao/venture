@@ -58,6 +58,11 @@
                                 <state key="normal" title="Change Email">
                                     <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeEmail:" destination="Sef-ag-34M" eventType="touchUpInside" id="dQA-GB-UjT"/>
                                 </connections>
@@ -77,6 +82,11 @@
                                 <state key="normal" title="Change Password">
                                     <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changePassword:" destination="Sef-ag-34M" eventType="touchUpInside" id="G72-HJ-8bs"/>
                                 </connections>
@@ -89,6 +99,11 @@
                                 <state key="normal" title="Delete Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="deleteAccount:" destination="Sef-ag-34M" eventType="touchUpInside" id="5R3-Ro-LlZ"/>
                                     <segue destination="fwI-0P-e7s" kind="presentation" id="1xF-un-DEz"/>
@@ -102,6 +117,11 @@
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="fwI-0P-e7s" kind="presentation" id="ub4-cn-OQl"/>
                                 </connections>
