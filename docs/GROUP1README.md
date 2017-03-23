@@ -1,28 +1,29 @@
-# GROUP1README.md  
+# GROUP1README     
  
 ## Implementation Contributions  
-  - Justin Chao   
-    * Implemented Firebase SDK and created:
-        * Login, Registration, Settings, Trip, Itinerary views and segues   
-        * Launch screen
-    * implemented change email/password, logout, delete account functions in
-      Settings View
+  - Justin Chao     
+    * implemented Firebase SDK
+    * constructed Firebase Authentication and Database
+    * created Launch, Login, Registration, Settings, Trip, Itinerary views and segues     
+    * implemented change email/password, logout, delete account functions in Settings View    
 
 
   - Julianne Crea   
     *   
-- Connie Liu   
+
+
+  - Connie Liu   
     *   
-
-
 
 
 ## Grading Level   
   - Same grade for all members  
 
+
 ## Differences  
-  - no differences between what is specified in Group1AppIdea.pdf and this alpha release.  
+  -  
 
 ## Special Instructions   
-  - Venture requires CocoaPods version 1.2.0  
-
+  - requires CocoaPods version 1.0.0 or later
+  - requires Xcode 7.0 or later
+  - requires iOS 7 or later
