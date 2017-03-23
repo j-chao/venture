@@ -55,6 +55,16 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
             return
         }
         
+        else if endingDate! < startingDate! {
+            let alert = UIAlertController(title: "Error", message: "End date must not be earlier than start date." , preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                (action:UIAlertAction) in
+            }
+            alert.addAction(OKAction)
+            self.present(alert, animated: true, completion:nil)
+            return
+        }
+        
         self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!)
         
         print ("Trip Saved")

@@ -31,7 +31,12 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{
            user, error in
             if error != nil {
-                self.messageLbl.text = "User account already exists."
+                if self.newPassword.text!.characters.count < 6 {
+                    self.messageLbl.text = "Password must be at least 6 characters long"
+                }
+                else {
+                    self.messageLbl.text = "User account already exists."
+                }
             }
             else {
                 self.messageLbl.text = "Your account has been created.                        Please return to the Login Page to login."
