@@ -1,5 +1,5 @@
 //
-//  Protocols.swift
+//  Globals.swift
 //  venture
 //
 //  Created by Justin Chao on 3/22/17.
@@ -39,6 +39,13 @@ func stringFromDate (date:Date) -> String {
     dateFormatter.dateFormat = "MM/dd/YYYY"
     return dateFormatter.string(from: date)
 }
+
+func stringLongFromDate (date:Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE   MMM dd"
+    return dateFormatter.string(from: date)
+}
+
 
 func calculateDays(start: Date, end: Date) -> Int {
     let currentCalendar = Calendar.current

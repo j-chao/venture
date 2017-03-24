@@ -17,6 +17,7 @@
 		B5072E191E7F25B800BF4F82 /* ItineraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5072E181E7F25B800BF4F82 /* ItineraryVC.swift */; };
 		B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC741E7BC10300213CF3 /* blurBack.png */; };
 		B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC761E7BC33D00213CF3 /* trip.storyboard */; };
+		B53B29851E85CE25001974A5 /* AddEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B29841E85CE25001974A5 /* AddEvent.swift */; };
 		B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333D1E6DE7CA0007A23D /* AppDelegate.swift */; };
 		B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333F1E6DE7CA0007A23D /* LoginVC.swift */; };
 		B55333431E6DE7CA0007A23D /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55333411E6DE7CA0007A23D /* login.storyboard */; };
@@ -29,7 +30,7 @@
 		B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18461E7C70C000997360 /* ResetPassVC.swift */; };
 		B58D18511E7C877800997360 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58D18501E7C877800997360 /* settings.storyboard */; };
 		B58D18561E7C88DD00997360 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18551E7C88DD00997360 /* SettingsVC.swift */; };
-		B58DEEFB1E82D1F40044B28E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DEEFA1E82D1F40044B28E /* Protocols.swift */; };
+		B58DEEFB1E82D1F40044B28E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DEEFA1E82D1F40044B28E /* Globals.swift */; };
 		B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A176721E7B38EF00307B5C /* RegistrationVC.swift */; };
 		B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2A0981E7DBD00002C48DC /* TripsVC.swift */; };
 		B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2A09A1E7DC447002C48DC /* TripCellVC.swift */; };
@@ -89,6 +90,7 @@
 		B5072E181E7F25B800BF4F82 /* ItineraryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryVC.swift; sourceTree = "<group>"; };
 		B50AEC741E7BC10300213CF3 /* blurBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blurBack.png; sourceTree = "<group>"; };
 		B50AEC761E7BC33D00213CF3 /* trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trip.storyboard; sourceTree = "<group>"; };
+		B53B29841E85CE25001974A5 /* AddEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEvent.swift; sourceTree = "<group>"; };
 		B553333A1E6DE7CA0007A23D /* venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553333D1E6DE7CA0007A23D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B553333F1E6DE7CA0007A23D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 		B58D18461E7C70C000997360 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
 		B58D18501E7C877800997360 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		B58D18551E7C88DD00997360 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		B58DEEFA1E82D1F40044B28E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		B58DEEFA1E82D1F40044B28E /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		B5A176721E7B38EF00307B5C /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		B5E2A0981E7DBD00002C48DC /* TripsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsVC.swift; sourceTree = "<group>"; };
 		B5E2A09A1E7DC447002C48DC /* TripCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCellVC.swift; sourceTree = "<group>"; };
@@ -207,7 +209,7 @@
 		B50512AA1E70F39D003F8ACA /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				B58DEEFA1E82D1F40044B28E /* Protocols.swift */,
+				B58DEEFA1E82D1F40044B28E /* Globals.swift */,
 				B553333D1E6DE7CA0007A23D /* AppDelegate.swift */,
 				B55333471E6DE7CA0007A23D /* Assets.xcassets */,
 				B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */,
@@ -247,6 +249,7 @@
 			children = (
 				B5072E141E7F253900BF4F82 /* TripPageVC.swift */,
 				B5072E181E7F25B800BF4F82 /* ItineraryVC.swift */,
+				B53B29841E85CE25001974A5 /* AddEvent.swift */,
 			);
 			name = "itinerary VC";
 			sourceTree = "<group>";
@@ -647,11 +650,12 @@
 				B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */,
 				B5E2A09D1E7DCB5F002C48DC /* NewTripVC.swift in Sources */,
 				B5072E191E7F25B800BF4F82 /* ItineraryVC.swift in Sources */,
-				B58DEEFB1E82D1F40044B28E /* Protocols.swift in Sources */,
+				B58DEEFB1E82D1F40044B28E /* Globals.swift in Sources */,
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
 				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
 				B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
+				B53B29851E85CE25001974A5 /* AddEvent.swift in Sources */,
 				B5072E151E7F253900BF4F82 /* TripPageVC.swift in Sources */,
 				B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,

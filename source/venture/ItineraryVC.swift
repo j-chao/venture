@@ -20,16 +20,16 @@ class ItineraryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tripDateString = stringFromDate(date: tripDate)
+        let tripDateString = stringLongFromDate(date: tripDate)
         tripDateTitle.text = tripDateString
-        
-//        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
-        
-//        ref.child(passedTrip).observe(.value, with: { snapshot in
-//            let tripTitle = (snapshot.value as! NSDictionary)["tripName"] as! String
-//            self.title = tripTitle
-//        })
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddEvent" {
+            if let destinationVC = segue.destination as? AddEventVC {
+                destinationVC.date = tripDate
+            }
+        }
+    }
+    
 }
