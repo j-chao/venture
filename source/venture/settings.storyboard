@@ -123,6 +123,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="logOut:" destination="Sef-ag-34M" eventType="touchUpInside" id="ds2-78-T3R"/>
                                     <segue destination="fwI-0P-e7s" kind="presentation" id="ub4-cn-OQl"/>
                                 </connections>
                             </button>
@@ -137,6 +138,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailButton" destination="lHA-i9-DB2" id="b6h-ir-Cba"/>
+                        <outlet property="passButton" destination="mpc-jJ-26E" id="S12-50-1rC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6r-Pw-vl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,6 +178,6 @@
         <image name="blurBack.png" width="385" height="683"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1xF-un-DEz"/>
+        <segue reference="ub4-cn-OQl"/>
     </inferredMetricsTieBreakers>
 </document>

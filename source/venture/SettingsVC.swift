@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class SettingsVC: UIViewController {
     
@@ -15,18 +16,42 @@ class SettingsVC: UIViewController {
     var newEmail: UITextField? = nil
     var newPassword: UITextField? = nil
     
+    let fbManager = FBSDKLoginManager()
+    let firEmail = FIRAuth.auth()?.currentUser?.email
+    
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var passButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if firEmail == nil {
+            self.emailButton.setTitle("Add Email", for: [])
+            self.passButton.setTitle("Add Password", for: [])
+        }
     }
 
+    
     @IBAction func changeEmail(_ sender: Any) {
-        self.alertController = UIAlertController(title: "Change Email", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        
+        if firEmail != nil {
+            self.alertController = UIAlertController(title: "Change Email", message: "Change your current email.", preferredStyle: UIAlertControllerStyle.alert)
+        }
+            
+        else {
+            self.alertController = UIAlertController(title: "Add an Email", message: "Add an email address to your user account.", preferredStyle: UIAlertControllerStyle.alert)
+        }
+        
         
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             FIRAuth.auth()?.currentUser?.updateEmail((self.newEmail?.text!)!) {
                 (error) in
                 if error != nil {
-                    print ("update email error")
+                    self.alertController = UIAlertController(title:"Email is already in use!", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                    self.present(self.alertController!, animated: true, completion: nil)
+                    let cancel = UIAlertAction(title: "cancel", style: UIAlertActionStyle.cancel) {
+                        (action) -> Void in
+                    }
+                    self.alertController!.addAction(cancel)
                 }
                 else {
                     print ("email updated")
@@ -48,13 +73,20 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func changePassword(_ sender: Any) {
-        self.alertController = UIAlertController(title: "Change Password", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        
+        if firEmail != nil {
+            self.alertController = UIAlertController(title: "Change Password", message: "Password must be at least 6 characters long.", preferredStyle: UIAlertControllerStyle.alert)
+        }
+            
+        else {
+            self.alertController = UIAlertController(title: "Add Password", message: "Password must be at least 6 characters long.", preferredStyle: UIAlertControllerStyle.alert)
+        }
         
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             FIRAuth.auth()?.currentUser?.updatePassword((self.newPassword?.text!)!) { (error) in
                 if error != nil {
                     // Firebase requires a minimum length 6-characters password
-                    print ("password lenght too short/weak")
+                    print (error.debugDescription)
                 }
                 else {
                     print ("password changed")
@@ -87,6 +119,7 @@ class SettingsVC: UIViewController {
                     print ("delete account error")
                 } else {
                     print ("account deleted")
+                   self.fbManager.logOut()
                     let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Login")
                     vc.modalPresentationStyle = .fullScreen
@@ -105,4 +138,10 @@ class SettingsVC: UIViewController {
         present(self.alertController!, animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func logOut(_ sender: Any) {
+        self.fbManager.logOut()
+    }
+    
 }
