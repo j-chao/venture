@@ -2,10 +2,10 @@
  
 ## Implementation Contributions  
   - Justin Chao     
-    * implemented Firebase SDK
+    * implemented Firebase and Facebook SDK
     * constructed Firebase Authentication and Database
-    * created Launch, Login, Registration, Reset Password, Settings, Trip, Itinerary views and segues     
-    * implemented change email/password, logout, delete account functions in Settings View    
+    * implemented change/add email/password, logout, delete account functions in Settings View    
+    * created Launch, Login, Registration, Reset Password, Settings, Trip, Itinerary, Add Event views and segues     
 
 
   - Julianne Crea   
