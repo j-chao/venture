@@ -13,7 +13,9 @@
 
 
   - Connie Liu   
-    *   
+    * implemented keyboard dismissal in all views
+    * added constraints to background images throughout app
+    * some of the UI elements in the itinerary view
 
 
 ## Grading Level   
@@ -21,7 +23,7 @@
 
 
 ## Differences  
-  -  
+  - Itinerary feature is not entirely complete because it requires the pull food/places/transportation features not yet released. User is currently only able to  
 
 ## Special Instructions   
   - requires CocoaPods version 1.0.0 or later

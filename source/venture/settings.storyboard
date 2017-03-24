@@ -153,7 +153,6 @@
                             <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="Bjb-el-4Ia" secondAttribute="leading" id="fYy-vT-q83"/>
                             <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="Bjb-el-4Ia" secondAttribute="bottom" constant="97" id="gL3-dn-upz"/>
                             <constraint firstItem="hiJ-vA-nee" firstAttribute="bottom" secondItem="KI5-p0-oTN" secondAttribute="top" id="hSA-yD-hJ9"/>
-                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="Bjb-el-4Ia" secondAttribute="bottom" constant="97" id="hwh-NU-aIc"/>
                             <constraint firstItem="naN-Pc-bGa" firstAttribute="centerX" secondItem="ruX-Ri-7d7" secondAttribute="centerX" id="k8N-uL-Z8R"/>
                             <constraint firstItem="hiJ-vA-nee" firstAttribute="top" secondItem="ruX-Ri-7d7" secondAttribute="top" id="kOW-Bd-6Ye"/>
                             <constraint firstItem="lHA-i9-DB2" firstAttribute="centerX" secondItem="ruX-Ri-7d7" secondAttribute="centerX" id="kXA-xL-MmG"/>
@@ -161,7 +160,6 @@
                             <constraint firstItem="lHA-i9-DB2" firstAttribute="top" secondItem="zIg-E4-7Aj" secondAttribute="bottom" constant="55" id="oOO-Mo-G3t"/>
                             <constraint firstItem="Bjb-el-4Ia" firstAttribute="centerX" secondItem="ruX-Ri-7d7" secondAttribute="centerX" id="sXF-Df-ZsR"/>
                             <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" id="unh-qd-pwp"/>
-                            <constraint firstItem="YYQ-TC-w78" firstAttribute="top" secondItem="mpc-jJ-26E" secondAttribute="bottom" constant="60" id="z2V-HZ-0EV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="XIh-3X-dwm">
