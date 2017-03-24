@@ -36,7 +36,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YYQ-TC-w78">
                                 <rect key="frame" x="16" y="289" width="343" height="29"/>
                                 <segments>
-                                    <segment title="Bacgkround 1"/>
+                                    <segment title="Background 1"/>
                                     <segment title="Background 2"/>
                                     <segment title="Background 3"/>
                                 </segments>
