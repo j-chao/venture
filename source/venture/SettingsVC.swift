@@ -114,6 +114,10 @@ class SettingsVC: UIViewController {
         let ok = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
             let user = FIRAuth.auth()?.currentUser
+            let ref = FIRDatabase.database().reference().child("users")
+           
+            ref.child((user?.uid)!).removeValue()
+            
             user?.delete { error in
                 if error != nil {
                     print ("delete account error")
