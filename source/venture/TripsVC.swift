@@ -88,10 +88,19 @@ extension TripsVC: UICollectionViewDataSource {
         let cell:TripCellVC = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TripCellVC
        
         let trip = trips[indexPath.row]
+        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
         
-        cell.tripName!.text = trip
-//        cell.tripLocation!.text = trip.tripLocation
-//        cell.dates!.text = "\(trip.startDate) - \(trip.endDate)"
+        ref.child(trip).observe(.value, with: { snapshot in
+            let tripName = (snapshot.value as! NSDictionary) ["tripName"] as! String
+            let tripLocation = (snapshot.value as! NSDictionary) ["tripLocation"] as! String
+            let startDate = (snapshot.value as! NSDictionary) ["startDate"] as! String
+            let endDate = (snapshot.value as! NSDictionary) ["endDate"] as! String
+            
+            cell.tripName!.text = tripName
+        cell.tripLocation!.text = tripLocation
+        cell.dates!.text = "\(startDate) - \(endDate)"
+        })
+       
         
         return cell
     }

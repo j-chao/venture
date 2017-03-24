@@ -40,30 +40,31 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             print (error)
             return
         }
-        
+      
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
-        FIRAuth.auth()?.signIn(with: credential, completion: {
-            user, error in
-            if error != nil {
-                print ("Incorrect email/password")
-                self.errorMessage.text = "Incorrect email and/or password"
-            }
-            else {
-                print ("User logged in with Facebook !")
-                
-                FIRAuth.auth()?.currentUser!.link(with: credential) { (user, error) in
-                    if user != nil && error == nil {
-                        return
-                    }
+        if String(describing: credential) != "" {
+            FIRAuth.auth()?.signIn(with: credential, completion: {
+                user, error in
+                if error != nil {
+                    print ("Incorrect email/password")
+                    self.errorMessage.text = "Incorrect email and/or password"
                 }
+                else {
+                    print ("User logged in with Facebook !")
                 
-                let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
-                self.show(vc, sender: self)
-            }
-        })
-        
+                    FIRAuth.auth()?.currentUser!.link(with: credential) { (user, error) in
+                        if user != nil && error == nil {
+                            return
+                        }
+                    }
+                
+                    let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
+                    self.show(vc, sender: self)
+                }
+            })
+        }
         
     }
     
