@@ -11,16 +11,21 @@ import Firebase
 
 class ItineraryVC: UIViewController {
     var ref:FIRDatabaseReference?
-    var refHandle:FIRDatabaseHandle?
     let userID = FIRAuth.auth()?.currentUser?.uid
     
     var tripName:String!
+    var tripDate:Date!
 
+    @IBOutlet weak var tripDateTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tripDateString = stringFromDate(date: tripDate)
+        tripDateTitle.text = tripDateString
+        
 //        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
         
-//        ref.child(self.tripName).observe(.value, with: { snapshot in
+//        ref.child(passedTrip).observe(.value, with: { snapshot in
 //            let tripTitle = (snapshot.value as! NSDictionary)["tripName"] as! String
 //            self.title = tripTitle
 //        })

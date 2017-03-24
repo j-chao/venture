@@ -96,6 +96,9 @@
                             <constraint firstItem="uet-ta-9Q5" firstAttribute="trailing" secondItem="Ga3-Lk-kEh" secondAttribute="trailingMargin" id="sqG-Kd-yDd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripDateTitle" destination="YOT-Mo-ZHW" id="FzC-Jc-xYp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87J-xL-82m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

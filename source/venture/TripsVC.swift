@@ -10,11 +10,10 @@ import UIKit
 import Foundation
 import Firebase
 
-class TripsVC: UIViewController, CalculateTime {
+class TripsVC: UIViewController {
     var trips = [String]()
     
     var ref:FIRDatabaseReference?
-    var refHandle:FIRDatabaseHandle?
     let userID = FIRAuth.auth()?.currentUser?.uid
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,41 +36,22 @@ class TripsVC: UIViewController, CalculateTime {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tripIndex = collectionView.indexPathsForSelectedItems?.last?.last
         if segue.identifier == "specItinerary" {
-            if let destinationVC = segue.destination as? TripPageVC {
-                
+            if segue.destination is TripPageVC {
                 let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
                 
                 ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
                     let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
                     let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
                     
-                    let start = self.dateFromString(dateString:startDate)
-                    let end = self.dateFromString(dateString:endDate)
-                    let days = self.calculateDays(start: start, end: end) + 1
+                    let start = dateFromString(dateString:startDate)
+                    let end = dateFromString(dateString:endDate)
+                    let days = calculateDays(start: start, end: end) + 1
                     tripLength = days
+                    passedTrip = self.trips[tripIndex!]
+                    passedStart = startDate
                 })
-                destinationVC.tripName = trips[tripIndex!]
             }
         }
-    }
-    
-    internal func dateFromString (dateString:String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dateFormatter.locale = Locale(identifier: "en_US")
-        let dateObj = dateFormatter.date(from: dateString)
-        return (dateObj)!
-    }
-    
-    internal func calculateDays(start: Date, end: Date) -> Int {
-        let currentCalendar = Calendar.current
-        guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
-            return 0
-        }
-        guard let end = currentCalendar.ordinality(of: .day, in: .era, for: end) else {
-            return 0
-        }
-        return (end - start)
     }
 
 }
@@ -98,7 +78,7 @@ extension TripsVC: UICollectionViewDataSource {
             
             cell.tripName!.text = tripName
         cell.tripLocation!.text = tripLocation
-        cell.dates!.text = "\(startDate) - \(endDate)"
+        cell.dates!.text = "\(startDate)  -  \(endDate)"
         })
        
         

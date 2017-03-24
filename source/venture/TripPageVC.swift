@@ -7,25 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class TripPageVC: UIPageViewController {
+    
+    var ref:FIRDatabaseReference?
     
     var tripName:String!
     
     lazy var pages:[UIViewController] = {
         var arrayPages = [UIViewController]()
         
-        for i in 1...tripLength { 
-            arrayPages.append(self.newVC("VC"))
+        for i in 1...tripLength {
+            print (tripLength)
+            let tripDate = dateFromString(dateString: passedStart)
+            arrayPages.append(self.newVC("VC", tripDate: tripDate+TimeInterval((i-1)*86400)))
         }
         
         return arrayPages
     }()
     
-    fileprivate func newVC(_ name: String) -> ItineraryVC
+    fileprivate func newVC(_ name: String, tripDate: Date) -> ItineraryVC
     {
         let newvc = UIStoryboard(name: "itinerary", bundle: nil).instantiateViewController(withIdentifier: "itinerary") as! ItineraryVC
-        newvc.tripName = tripName
+        newvc.tripDate = tripDate
+        
         return newvc
     }
     
