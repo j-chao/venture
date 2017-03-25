@@ -15,7 +15,7 @@ class TripPageVC: UIPageViewController {
     
     var tripName:String!
     
-    lazy var pages:[UIViewController] = {
+    fileprivate(set) lazy var pages:[UIViewController] = {
         var arrayPages = [UIViewController]()
         
         for i in 1...tripLength {
