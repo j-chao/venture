@@ -16,7 +16,7 @@ Spring, 2017
 
 
 ### Deadlines
-  * 3/22 alpha
+  * 3/24 alpha
     - login/registration
     - configuration/settings
     - itinerary
