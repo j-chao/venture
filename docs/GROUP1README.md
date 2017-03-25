@@ -9,7 +9,10 @@
 
 
 - Julianne Crea   
-*   
+    * constraints to UI elements
+    * created the video demonstrating how to use the app
+    * created rounded buttons, rather than rectangular ones
+    * edited image used as main background, other aesthetic tweaks
 
 
 - Connie Liu   
