@@ -27,6 +27,7 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
         tripName.delegate = self
         tripLocation.delegate = self
     }
+    
     var startingDate:Date? = nil
     var endingDate:Date? = nil
 
@@ -67,15 +68,12 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
         
         self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!)
         
-        print ("Trip Saved")
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
         self.show(vc, sender: self)
     }
     
     func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {
-        
         let tripRef = ref.child("users/\(userID)/trips/\(tripName)")
         tripRef.child("tripName").setValue(tripName)
         tripRef.child("tripLocation").setValue(tripLocation)

@@ -25,7 +25,6 @@ struct tripStruct {
     let endDate: String!
 }
 
-
 func dateFromString (dateString:String) -> Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -45,7 +44,6 @@ func stringLongFromDate (date:Date) -> String {
     dateFormatter.dateFormat = "EEEE   MMM dd"
     return dateFormatter.string(from: date)
 }
-
 
 func calculateDays(start: Date, end: Date) -> Int {
     let currentCalendar = Calendar.current

@@ -26,7 +26,6 @@ class TripsVC: UIViewController {
         
         let ref = FIRDatabase.database().reference().child("users/\(userID)")
         ref.child("trips").queryOrderedByKey().observe(.childAdded, with: { snapshot in
-            
             let tripName = (snapshot.value as! NSDictionary)["tripName"] as! String
             self.trips.append(tripName)
             self.collectionView.reloadData()
@@ -56,7 +55,6 @@ class TripsVC: UIViewController {
 
 }
 
-
 // MARK:- UICollectionViewDataSource Delegate
 extension TripsVC: UICollectionViewDataSource {
     
@@ -77,13 +75,11 @@ extension TripsVC: UICollectionViewDataSource {
             let endDate = (snapshot.value as! NSDictionary) ["endDate"] as! String
             
             cell.tripName!.text = tripName
-        cell.tripLocation!.text = tripLocation
-        cell.dates!.text = "\(startDate)  -  \(endDate)"
+            cell.tripLocation!.text = tripLocation
+            cell.dates!.text = "\(startDate)  -  \(endDate)"
         })
        
-        
         return cell
     }
-    
 }
 

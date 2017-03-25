@@ -45,6 +45,7 @@ class ResetPassVC: UIViewController, UITextFieldDelegate {
         let vc = storyboard.instantiateViewController(withIdentifier: "Login")
         self.show(vc, sender: self)
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

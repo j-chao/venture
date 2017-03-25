@@ -29,10 +29,8 @@ class SettingsVC: UIViewController {
             self.passButton.setTitle("Add Password", for: [])
         }
     }
-
     
     @IBAction func changeEmail(_ sender: Any) {
-        
         if firEmail != nil {
             self.alertController = UIAlertController(title: "Change Email", message: "Change your current email.", preferredStyle: UIAlertControllerStyle.alert)
         }
@@ -40,7 +38,6 @@ class SettingsVC: UIViewController {
         else {
             self.alertController = UIAlertController(title: "Add an Email", message: "Add an email address to your user account.", preferredStyle: UIAlertControllerStyle.alert)
         }
-        
         
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             FIRAuth.auth()?.currentUser?.updateEmail((self.newEmail?.text!)!) {
@@ -73,7 +70,6 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func changePassword(_ sender: Any) {
-        
         if firEmail != nil {
             self.alertController = UIAlertController(title: "Change Password", message: "Password must be at least 6 characters long.", preferredStyle: UIAlertControllerStyle.alert)
         }
@@ -108,7 +104,6 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func deleteAccount(_ sender: Any) {
-        
         self.alertController = UIAlertController(title: "Delete Account", message: "Are you sure you want to delete your account?", preferredStyle: UIAlertControllerStyle.alert)
         
         let ok = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { (action) -> Void in
@@ -130,7 +125,6 @@ class SettingsVC: UIViewController {
                     self.present(vc, animated: true, completion: nil)
                 }
             }
-        
         })
         
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
@@ -140,9 +134,7 @@ class SettingsVC: UIViewController {
         self.alertController!.addAction(cancel)
         
         present(self.alertController!, animated: true, completion: nil)
-        
     }
-    
     
     @IBAction func logOut(_ sender: Any) {
         self.fbManager.logOut()

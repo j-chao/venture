@@ -27,11 +27,9 @@ class TripPageVC: UIPageViewController {
         return arrayPages
     }()
     
-    fileprivate func newVC(_ name: String, tripDate: Date) -> ItineraryVC
-    {
+    fileprivate func newVC(_ name: String, tripDate: Date) -> ItineraryVC {
         let newvc = UIStoryboard(name: "itinerary", bundle: nil).instantiateViewController(withIdentifier: "itinerary") as! ItineraryVC
         newvc.tripDate = tripDate
-        
         return newvc
     }
     

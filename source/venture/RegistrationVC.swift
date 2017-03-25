@@ -49,6 +49,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         let vc = storyboard.instantiateViewController(withIdentifier: "Login")
         self.show(vc, sender: self)
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -57,5 +58,4 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
 }

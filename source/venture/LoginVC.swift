@@ -28,7 +28,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         
         fbLoginButton.delegate = self
-
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -52,7 +51,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
                 }
                 else {
                     print ("User logged in with Facebook !")
-                
                     FIRAuth.auth()?.currentUser!.link(with: credential) { (user, error) in
                         if user != nil && error == nil {
                             return
@@ -65,12 +63,10 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
                 }
             })
         }
-        
     }
     
     @IBAction func login(_ sender: Any) {
-        
-    let credential = FIREmailPasswordAuthProvider.credential(withEmail: email.text!, password: password.text!)
+        let credential = FIREmailPasswordAuthProvider.credential(withEmail: email.text!, password: password.text!)
         
         FIRAuth.auth()?.signIn(with: credential, completion: {
             user, error in
