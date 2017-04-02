@@ -98,8 +98,104 @@
             </objects>
             <point key="canvasLocation" x="644" y="-97.601199400299862"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="q3x-r8-ddP">
+            <objects>
+                <viewController id="5tk-LY-MDI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U1e-Ne-bRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="c0j-WP-LNe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kug-xI-W99">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="XQu-rO-edN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPc-Rs-vGS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Places" id="SuV-QL-3e6"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XQu-rO-edN" firstAttribute="leading" secondItem="Kug-xI-W99" secondAttribute="leading" id="DKi-VC-gIT"/>
+                            <constraint firstAttribute="trailing" secondItem="XQu-rO-edN" secondAttribute="trailing" id="fiZ-1h-Hf8"/>
+                            <constraint firstItem="XQu-rO-edN" firstAttribute="top" secondItem="Kug-xI-W99" secondAttribute="top" id="occ-1X-oB5"/>
+                            <constraint firstItem="XQu-rO-edN" firstAttribute="bottom" secondItem="c0j-WP-LNe" secondAttribute="top" id="ycY-Pn-7gM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWW-UZ-ziC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338.4000000000001" y="-96.7016491754123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Aif-V0-UMX">
+            <objects>
+                <viewController id="AB0-xg-EyF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Vy-LG-vEk"/>
+                        <viewControllerLayoutGuide type="bottom" id="goM-Jh-Rvm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rdC-nh-Qql">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="owN-58-DTP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw5-bB-Gxn">
+                                <rect key="frame" x="114" y="471" width="146" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="add to itinerary">
+                                    <color key="titleColor" red="0.71734775640000004" green="0.0" blue="0.3805224566" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-N7-pd6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Place" id="G1V-jc-TvY"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McN-qL-5Qq">
+                                <rect key="frame" x="42" y="177" width="291" height="214"/>
+                                <color key="backgroundColor" red="0.71734775640000004" green="0.0" blue="0.3805224566" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vw5-bB-Gxn" firstAttribute="top" secondItem="McN-qL-5Qq" secondAttribute="bottom" constant="80" id="0NU-P0-unO"/>
+                            <constraint firstItem="McN-qL-5Qq" firstAttribute="top" secondItem="rdC-nh-Qql" secondAttribute="top" constant="177" id="5db-WD-kiX"/>
+                            <constraint firstItem="McN-qL-5Qq" firstAttribute="centerX" secondItem="owN-58-DTP" secondAttribute="centerX" id="KZV-XA-ebS"/>
+                            <constraint firstItem="owN-58-DTP" firstAttribute="top" secondItem="rdC-nh-Qql" secondAttribute="top" id="L6l-l2-LUg"/>
+                            <constraint firstAttribute="bottom" secondItem="McN-qL-5Qq" secondAttribute="bottom" constant="276" id="O6w-ql-7aM"/>
+                            <constraint firstItem="McN-qL-5Qq" firstAttribute="leading" secondItem="rdC-nh-Qql" secondAttribute="leadingMargin" constant="26" id="Ox9-IG-4UP"/>
+                            <constraint firstItem="McN-qL-5Qq" firstAttribute="centerX" secondItem="5Lf-N7-pd6" secondAttribute="centerX" id="ht6-sH-viP"/>
+                            <constraint firstItem="Vw5-bB-Gxn" firstAttribute="centerX" secondItem="5Lf-N7-pd6" secondAttribute="centerX" id="mBH-34-cMp"/>
+                            <constraint firstItem="owN-58-DTP" firstAttribute="leading" secondItem="rdC-nh-Qql" secondAttribute="leading" id="qCd-TM-J27"/>
+                            <constraint firstItem="Vw5-bB-Gxn" firstAttribute="leading" secondItem="rdC-nh-Qql" secondAttribute="leadingMargin" constant="98" id="rhd-tw-n1N"/>
+                            <constraint firstItem="owN-58-DTP" firstAttribute="bottom" secondItem="goM-Jh-Rvm" secondAttribute="top" id="wuR-Cc-WM4"/>
+                            <constraint firstAttribute="trailing" secondItem="owN-58-DTP" secondAttribute="trailing" id="xYy-Ja-FEr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMF-v9-dMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2029.5999999999999" y="-98.50074962518741"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="blurBack.png" width="385" height="683"/>
         <image name="wallscreenDarkened.png" width="1320" height="1760"/>
     </resources>
 </document>
