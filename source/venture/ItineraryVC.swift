@@ -27,9 +27,19 @@ class ItineraryVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddEvent" {
             if let destinationVC = segue.destination as? AddEventVC {
-                destinationVC.date = tripDate
+                destinationVC.eventDate = tripDate
             }
         }
     }
+    
+}
+
+
+class ItineraryTable: UITableView {
+    
+    override func numberOfRows(inSection section: Int) -> Int {
+        return 2
+    }
+    
     
 }

@@ -45,6 +45,13 @@ func stringLongFromDate (date:Date) -> String {
     return dateFormatter.string(from: date)
 }
 
+func stringTimefromDate (date:Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter.string(from: date)
+}
+
+
 func calculateDays(start: Date, end: Date) -> Int {
     let currentCalendar = Calendar.current
     guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
