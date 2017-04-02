@@ -238,6 +238,7 @@
 		B553333C1E6DE7CA0007A23D /* venture */ = {
 			isa = PBXGroup;
 			children = (
+				EAD462411E907EF40095A58B /* places VC */,
 				B50512B21E70F3E8003F8ACA /* login VC */,
 				B58D184A1E7C7D1600997360 /* trip VC */,
 				B58D18541E7C87AF00997360 /* settings VC */,
@@ -294,6 +295,13 @@
 				B58D18551E7C88DD00997360 /* SettingsVC.swift */,
 			);
 			name = "settings VC";
+			sourceTree = "<group>";
+		};
+		EAD462411E907EF40095A58B /* places VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "places VC";
 			sourceTree = "<group>";
 		};
 		F369D8D2813A8FA880A5F2D6 /* Pods */ = {
