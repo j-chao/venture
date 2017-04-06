@@ -15,16 +15,25 @@ class ItineraryVC: UIViewController {
     
     var tripName:String!
     var tripDate:Date!
+    var tripDateString:String!
 
     @IBOutlet weak var tripDateTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tripDateString = stringLongFromDate(date: tripDate)
-        tripDateTitle.text = tripDateString
+        self.tripDateString = stringLongFromDate(date: tripDate)
+        tripDateTitle.text = self.tripDateString
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        
+        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString)")
+        
+        ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
+            let eventDesc = (snapshot.value as! NSDictionary)["eventDesc"] as! String
+            self.events.append(eventDesc)
+            self.eventsTableView.reloadData()
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,24 +45,27 @@ class ItineraryVC: UIViewController {
     }
     
     @IBOutlet weak var eventsTableView: UITableView!
+    var events = [String]()
 }
 
 
 extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 // your number of cell here
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
+        cell.textLabel?.text = self.events[indexPath.row]
         
         return cell
     }
     
     func tableView(_ didSelectRowAttableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // cell selected code here
+//        performSegue(withIdentifier: "WebSegue", sender: indexPath)
+//        eventsTableView.deselectRow(at: indexPath, animated: true)
     }
-    
     
 }

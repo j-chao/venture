@@ -51,11 +51,11 @@ class AddEventVC: UIViewController {
     }
         
     func addEvent (eventDesc:String, eventLoc:String, eventTime:String) {
-        let tripRef = ref.child("users/\(userID)/trips/\(passedTrip)/\(self.eventDateStr)/\(eventDesc)")
+        let eventRef = self.ref.child("users/\(self.userID)/trips/\(passedTrip)/\(self.eventDateStr)/\(eventDesc)")
         
-        tripRef.child("eventDesc").setValue(eventDesc)
-        tripRef.child("eventLoc").setValue(eventLoc)
-        tripRef.child("eventTime").setValue(eventTime)
+        eventRef.child("eventDesc").setValue(eventDesc)
+        eventRef.child("eventLoc").setValue(eventLoc)
+        eventRef.child("eventTime").setValue(eventTime)
         
     }
 
