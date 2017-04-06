@@ -54,10 +54,20 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
+//    var time:String? = nil
+//    var desc:String? = nil
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
-        cell.textLabel?.text = self.events[indexPath.row]
+        
+        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString)")
+       
+        
+        ref.child("\(events[indexPath.row])").observe(.value, with: { snapshot in
+            let time = (snapshot.value as! NSDictionary) ["eventTime"] as! String!
+            let desc = (snapshot.value as! NSDictionary) ["eventDesc"] as! String!
+            cell.textLabel!.text = time! + "   - \t" + desc!
+        })
         
         return cell
     }
