@@ -22,6 +22,9 @@ class ItineraryVC: UIViewController {
         super.viewDidLoad()
         let tripDateString = stringLongFromDate(date: tripDate)
         tripDateTitle.text = tripDateString
+        
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,13 +35,24 @@ class ItineraryVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var eventsTableView: UITableView!
 }
 
 
-class ItineraryTable: UITableView {
+extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     
-    override func numberOfRows(inSection section: Int) -> Int {
-        return 2
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5 // your number of cell here
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
+        
+        return cell
+    }
+    
+    func tableView(_ didSelectRowAttableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // cell selected code here
     }
     
     
