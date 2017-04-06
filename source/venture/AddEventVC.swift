@@ -1,5 +1,5 @@
 //
-//  AddEvent.swift
+//  AddEventVC.swift
 //  venture
 //
 //  Created by Justin Chao on 3/24/17.

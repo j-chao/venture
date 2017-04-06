@@ -42,6 +42,16 @@ class ItineraryVC: UIViewController {
                 destinationVC.eventDate = tripDate
             }
         }
+        
+        else if segue.identifier == "toEventDetails" {
+            if let destinationVC = segue.destination as? EventDetailsVC {
+                let indexPath = self.eventsTableView.indexPathForSelectedRow
+                
+                destinationVC.trip = self.tripName
+                destinationVC.date = self.tripDateString
+                destinationVC.event = events[(indexPath?.row)!]
+            }
+        }
     }
     
     @IBOutlet weak var eventsTableView: UITableView!
@@ -54,8 +64,6 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
-//    var time:String? = nil
-//    var desc:String? = nil
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
@@ -72,10 +80,5 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ didSelectRowAttableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // cell selected code here
-//        performSegue(withIdentifier: "WebSegue", sender: indexPath)
-//        eventsTableView.deselectRow(at: indexPath, animated: true)
-    }
     
 }
