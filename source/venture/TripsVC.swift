@@ -14,7 +14,7 @@ class TripsVC: UIViewController {
     var trips = [String]()
     
     var ref:FIRDatabaseReference?
-    let userID = FIRAuth.auth()?.currentUser?.uid
+    let userID = FIRAuth.auth()?.currentUser!.uid
 
     @IBOutlet weak var collectionView: UICollectionView!
     let identifier = "tripCell"
@@ -24,7 +24,7 @@ class TripsVC: UIViewController {
         self.title = "Your Trips"
         collectionView.dataSource = self
         
-        let ref = FIRDatabase.database().reference().child("users/\(userID)")
+        let ref = FIRDatabase.database().reference().child("users/\(userID!)")
         ref.child("trips").queryOrderedByKey().observe(.childAdded, with: { snapshot in
             let tripName = (snapshot.value as! NSDictionary)["tripName"] as! String
             self.trips.append(tripName)
@@ -36,7 +36,7 @@ class TripsVC: UIViewController {
         let tripIndex = collectionView.indexPathsForSelectedItems?.last?.last
         if segue.identifier == "specItinerary" {
             if segue.destination is TripPageVC {
-                let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+                let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/")
                 
                 ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
                     let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
@@ -66,7 +66,7 @@ extension TripsVC: UICollectionViewDataSource {
         let cell:TripCellVC = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TripCellVC
        
         let trip = trips[indexPath.row]
-        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/")
+        let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/")
         
         ref.child(trip).observe(.value, with: { snapshot in
             let tripName = (snapshot.value as! NSDictionary) ["tripName"] as! String

@@ -12,7 +12,7 @@ import Firebase
 class NewTripVC: UIViewController, UITextFieldDelegate {
     
     var ref: FIRDatabaseReference! = FIRDatabase.database().reference()
-    let userID = FIRAuth.auth()?.currentUser?.uid
+    let userID = FIRAuth.auth()?.currentUser!.uid
 
     @IBOutlet weak var tripName: UITextField!
     @IBOutlet weak var tripLocation: UITextField!
@@ -74,7 +74,7 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
     }
     
     func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {
-        let tripRef = ref.child("users/\(userID)/trips/\(tripName)")
+        let tripRef = ref.child("users/\(userID!)/trips/\(tripName)")
         tripRef.child("tripName").setValue(tripName)
         tripRef.child("tripLocation").setValue(tripLocation)
         tripRef.child("startDate").setValue(startDate)
