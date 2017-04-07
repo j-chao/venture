@@ -27,7 +27,7 @@ class ItineraryVC: UIViewController {
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         
-        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString)")
+        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString!)")
         
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
             let eventTime = (snapshot.value as! NSDictionary)["eventTime"] as! String
@@ -69,7 +69,7 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
         
-        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString)")
+        let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString!)")
        
         
         ref.child("\(events[indexPath.row])").observe(.value, with: { snapshot in
