@@ -30,8 +30,9 @@ class ItineraryVC: UIViewController {
         let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(tripDateString)")
         
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
-            let eventDesc = (snapshot.value as! NSDictionary)["eventDesc"] as! String
-            self.events.append(eventDesc)
+            let eventTime = (snapshot.value as! NSDictionary)["eventTime"] as! String
+            self.events.append(eventTime)
+            self.events.sort()
             self.eventsTableView.reloadData()
         })
     }

@@ -49,14 +49,13 @@ class AddEventVC: UIViewController {
             self.addEvent(eventDesc:eventDesc.text!, eventLoc:eventLoc.text!, eventTime:eventTimeStr)
         }
     }
-        
+    
     func addEvent (eventDesc:String, eventLoc:String, eventTime:String) {
-        let eventRef = self.ref.child("users/\(self.userID)/trips/\(passedTrip)/\(self.eventDateStr)/\(eventDesc)")
+        let eventRef = self.ref.child("users/\(self.userID)/trips/\(passedTrip)/\(self.eventDateStr)/\(eventTime)")
         
+        eventRef.child("eventTime").setValue(eventTime)
         eventRef.child("eventDesc").setValue(eventDesc)
         eventRef.child("eventLoc").setValue(eventLoc)
-        eventRef.child("eventTime").setValue(eventTime)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
