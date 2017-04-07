@@ -28,11 +28,14 @@ class EventDetailsVC: UIViewController {
         let ref = FIRDatabase.database().reference().child("users/\(userID)/trips/\(passedTrip)/\(date)")
  
         ref.child(event).observe(.value, with: { snapshot in
-            let time = (snapshot.value as! NSDictionary)["eventTime"]
+            let timeRec = (snapshot.value as! NSDictionary)["eventTime"]
             let desc = (snapshot.value as! NSDictionary)["eventDesc"]
             
+            let timeDate = timeFromStringTime(timeStr: timeRec as! String)
+            let timeChosen = stringTimefromDate(date: timeDate)
+            
             self.eventDate.text = self.date
-            self.eventTime.text = time as! String?
+            self.eventTime.text = timeChosen as! String?
             self.eventDesc.text = desc as! String?
         })
         

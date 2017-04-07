@@ -225,7 +225,6 @@
 				B5072E141E7F253900BF4F82 /* TripPageVC.swift */,
 				B5072E181E7F25B800BF4F82 /* ItineraryVC.swift */,
 				B54593D21E91BE2100308A14 /* ItineraryCellVC.swift */,
-				B505716E1E97000C00AD7B29 /* event VC */,
 			);
 			name = "itinerary VC";
 			sourceTree = "<group>";
@@ -252,10 +251,13 @@
 		B553333C1E6DE7CA0007A23D /* venture */ = {
 			isa = PBXGroup;
 			children = (
-				EAD462411E907EF40095A58B /* places VC */,
 				B50512B21E70F3E8003F8ACA /* login VC */,
-				B58D184A1E7C7D1600997360 /* trip VC */,
 				B58D18541E7C87AF00997360 /* settings VC */,
+				B58D184A1E7C7D1600997360 /* trip VC */,
+				B5072E171E7F258B00BF4F82 /* itinerary VC */,
+				B505716E1E97000C00AD7B29 /* event VC */,
+				B59F6E991E9827DF00CEDE07 /* food VC */,
+				EAD462411E907EF40095A58B /* places VC */,
 				B50512B11E70F3DB003F8ACA /* storyboards */,
 				B50512AA1E70F39D003F8ACA /* supporting files */,
 				B50512A91E70F37E003F8ACA /* images */,
@@ -287,7 +289,6 @@
 				B5E2A0981E7DBD00002C48DC /* TripsVC.swift */,
 				B5E2A09A1E7DC447002C48DC /* TripCellVC.swift */,
 				B5E2A09C1E7DCB5F002C48DC /* NewTripVC.swift */,
-				B5072E171E7F258B00BF4F82 /* itinerary VC */,
 			);
 			name = "trip VC";
 			sourceTree = "<group>";
@@ -309,6 +310,13 @@
 				B58D18551E7C88DD00997360 /* SettingsVC.swift */,
 			);
 			name = "settings VC";
+			sourceTree = "<group>";
+		};
+		B59F6E991E9827DF00CEDE07 /* food VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "food VC";
 			sourceTree = "<group>";
 		};
 		EAD462411E907EF40095A58B /* places VC */ = {

@@ -30,6 +30,17 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         fbLoginButton.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        let userID = defaults.string(forKey: "userID")
+        if userID != nil {
+            let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
+            self.show(vc, sender: self)
+            print ("performed segue")
+        }
+    }
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print ("Did log out of facebook")
     }
@@ -46,16 +57,18 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             FIRAuth.auth()?.signIn(with: credential, completion: {
                 user, error in
                 if error != nil {
-                    print ("Incorrect email/password")
                     self.errorMessage.text = "Incorrect email and/or password"
                 }
                 else {
-                    print ("User logged in with Facebook !")
                     FIRAuth.auth()?.currentUser!.link(with: credential) { (user, error) in
                         if user != nil && error == nil {
                             return
                         }
                     }
+                    
+                    let user = FIRAuth.auth()?.currentUser?.uid
+                    let defaults = UserDefaults.standard
+                    defaults.set(user, forKey: "userID")
                 
                     let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
@@ -71,13 +84,15 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         FIRAuth.auth()?.signIn(with: credential, completion: {
             user, error in
             if error != nil {
-                print ("Incorrect email/password")
                 self.errorMessage.text = "Incorrect email and/or password"
             }
             else {
-                print ("User logged in!")
                 let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
                 let userID = FIRAuth.auth()?.currentUser?.uid
+               
+                let defaults = UserDefaults.standard
+                defaults.set(userID, forKey: "userID")
+                
                 ref.child("users/\(userID)/email").setValue(self.email.text!)
                 ref.child("users/\(userID)/password").setValue(self.password.text!)
                 
@@ -86,6 +101,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
                 self.show(vc, sender: self)
             }
         })
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

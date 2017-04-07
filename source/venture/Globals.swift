@@ -13,6 +13,8 @@ var tripLength:Int = 1
 var passedTrip:String = ""
 var passedStart:String = ""
 
+var timeFormat:String = "regular"
+
 protocol CalculateTime {
     func dateFromString (dateString:String) -> Date
     func calculateDays(start: Date, end: Date) -> Int
@@ -47,8 +49,19 @@ func stringLongFromDate (date:Date) -> String {
 
 func stringTimefromDate (date:Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "HH:mm"
+    if timeFormat == "regular" {
+        dateFormatter.dateFormat = "h:mm a"
+    }
+    else if timeFormat == "military" {
+        dateFormatter.dateFormat = "HH:mm"
+    }
     return dateFormatter.string(from: date)
+}
+
+func timeFromStringTime (timeStr:String) -> Date {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter.date(from: timeStr)!
 }
 
 

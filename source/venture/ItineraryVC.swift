@@ -72,9 +72,13 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
        
         
         ref.child("\(events[indexPath.row])").observe(.value, with: { snapshot in
-            let time = (snapshot.value as! NSDictionary) ["eventTime"] as! String!
+            let timeRec = (snapshot.value as! NSDictionary) ["eventTime"] as! String!
             let desc = (snapshot.value as! NSDictionary) ["eventDesc"] as! String!
-            cell.textLabel!.text = time! + "   - \t" + desc!
+            
+            let timeDate = timeFromStringTime(timeStr: timeRec!)
+            let timeChosen = stringTimefromDate(date: timeDate)
+            
+            cell.textLabel!.text = timeChosen + "   - \t" + desc!
         })
         
         return cell

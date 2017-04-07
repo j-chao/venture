@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,9 +44,12 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-el-4Ia">
                                 <rect key="frame" x="16" y="333" width="343" height="29"/>
                                 <segments>
-                                    <segment title="Day Mode"/>
-                                    <segment title="Night Mode"/>
+                                    <segment title="AM / PM"/>
+                                    <segment title="Military Time"/>
                                 </segments>
+                                <connections>
+                                    <action selector="timeSegAction:" destination="Sef-ag-34M" eventType="valueChanged" id="3Xu-Bv-FPi"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-i9-DB2">
                                 <rect key="frame" x="98" y="119" width="178" height="51"/>
@@ -173,6 +176,7 @@
                     <connections>
                         <outlet property="emailButton" destination="lHA-i9-DB2" id="b6h-ir-Cba"/>
                         <outlet property="passButton" destination="mpc-jJ-26E" id="S12-50-1rC"/>
+                        <outlet property="timeSeg" destination="Bjb-el-4Ia" id="8EK-OC-GYF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6r-Pw-vl9" userLabel="First Responder" sceneMemberID="firstResponder"/>

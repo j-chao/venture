@@ -28,6 +28,7 @@ class SettingsVC: UIViewController {
             self.emailButton.setTitle("Add Email", for: [])
             self.passButton.setTitle("Add Password", for: [])
         }
+        print(timeFormat)
     }
     
     @IBAction func changeEmail(_ sender: Any) {
@@ -108,6 +109,9 @@ class SettingsVC: UIViewController {
         
         let ok = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
+            let defaults = UserDefaults.standard
+            defaults.set(nil, forKey: "userID")
+            
             let user = FIRAuth.auth()?.currentUser
             let ref = FIRDatabase.database().reference().child("users")
            
@@ -118,7 +122,8 @@ class SettingsVC: UIViewController {
                     print ("delete account error")
                 } else {
                     print ("account deleted")
-                   self.fbManager.logOut()
+                    self.fbManager.logOut()
+                    
                     let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Login")
                     vc.modalPresentationStyle = .fullScreen
@@ -137,7 +142,24 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(nil, forKey: "userID")
+        
         self.fbManager.logOut()
+    }
+    
+    @IBOutlet weak var timeSeg: UISegmentedControl!
+    
+    
+    @IBAction func timeSegAction(_ sender: Any) {
+        switch self.timeSeg.selectedSegmentIndex {
+        case 0:
+            timeFormat = "regular"
+        case 1:
+            timeFormat = "military"
+        default:
+            break
+        }
     }
     
 }

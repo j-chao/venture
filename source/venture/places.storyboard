@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NNw-Sw-Suc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NNw-Sw-Suc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -161,7 +161,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-N7-pd6">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-N7-pd6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Place" id="G1V-jc-TvY"/>
@@ -180,6 +180,8 @@
                             <constraint firstItem="owN-58-DTP" firstAttribute="top" secondItem="rdC-nh-Qql" secondAttribute="top" id="L6l-l2-LUg"/>
                             <constraint firstAttribute="bottom" secondItem="McN-qL-5Qq" secondAttribute="bottom" constant="276" id="O6w-ql-7aM"/>
                             <constraint firstItem="McN-qL-5Qq" firstAttribute="leading" secondItem="rdC-nh-Qql" secondAttribute="leadingMargin" constant="26" id="Ox9-IG-4UP"/>
+                            <constraint firstItem="5Lf-N7-pd6" firstAttribute="top" secondItem="owN-58-DTP" secondAttribute="top" id="Y5S-Xu-hnq"/>
+                            <constraint firstItem="5Lf-N7-pd6" firstAttribute="leading" secondItem="owN-58-DTP" secondAttribute="leading" id="fXM-ql-uIq"/>
                             <constraint firstItem="McN-qL-5Qq" firstAttribute="centerX" secondItem="5Lf-N7-pd6" secondAttribute="centerX" id="ht6-sH-viP"/>
                             <constraint firstItem="Vw5-bB-Gxn" firstAttribute="centerX" secondItem="5Lf-N7-pd6" secondAttribute="centerX" id="mBH-34-cMp"/>
                             <constraint firstItem="owN-58-DTP" firstAttribute="leading" secondItem="rdC-nh-Qql" secondAttribute="leading" id="qCd-TM-J27"/>
