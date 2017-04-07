@@ -214,6 +214,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addEventButton:" destination="fL6-y5-j7V" eventType="touchUpInside" id="4G6-dU-QI7"/>
+                                    <segue destination="wyV-0C-CFG" kind="show" identifier="toEventList" id="qkT-MU-R1X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -248,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwc-Hb-d13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5017" y="-295"/>
+            <point key="canvasLocation" x="5017" y="-289"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="5g0-U8-ytU">

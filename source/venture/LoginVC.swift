@@ -37,7 +37,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
             self.show(vc, sender: self)
-            print ("performed segue")
         }
     }
     

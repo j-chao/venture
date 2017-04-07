@@ -58,6 +58,12 @@ func stringTimefromDate (date:Date) -> String {
     return dateFormatter.string(from: date)
 }
 
+func stringTimefromDateToFIR (date:Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter.string(from: date)
+}
+
 func timeFromStringTime (timeStr:String) -> Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "HH:mm"

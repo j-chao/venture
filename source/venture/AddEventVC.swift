@@ -45,7 +45,7 @@ class AddEventVC: UIViewController {
             return
         }
         else {
-            let eventTimeStr = stringTimefromDate(date: eventTime.date)
+            let eventTimeStr = stringTimefromDateToFIR(date: eventTime.date)
             self.addEvent(eventDesc:eventDesc.text!, eventLoc:eventLoc.text!, eventTime:eventTimeStr)
         }
     }
@@ -58,13 +58,15 @@ class AddEventVC: UIViewController {
         eventRef.child("eventTime").setValue(eventTime)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEventList" {
+            if let destinationVC = segue.destination as? ItineraryVC {
+                destinationVC.tripDate = eventDate
+            }
+        }
+    }
 
-//    var eventNum = 0
-//    func getEventNum() {
-//        ref.child("users/\(userID)/trips/\(passedTrip)/\(self.eventDateStr)").queryOrderedByKey().observe(.value, with: { snapshot in
-//            self.eventNum = (snapshot.value )["eventNum"] as! String
-//        })
-//    }
     
    
     
