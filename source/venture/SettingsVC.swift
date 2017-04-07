@@ -22,13 +22,28 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var passButton: UIButton!
     
+    @IBOutlet weak var timeSeg: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if firEmail == nil {
             self.emailButton.setTitle("Add Email", for: [])
             self.passButton.setTitle("Add Password", for: [])
         }
-        print(timeFormat)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        let timeFormatDefault = defaults.string(forKey: "timeFormat")
+        
+        if timeFormatDefault == "military" {
+            self.timeSeg.selectedSegmentIndex = 1
+        }
+            
+        else {
+            self.timeSeg.selectedSegmentIndex = 0
+        }
     }
     
     @IBAction func changeEmail(_ sender: Any) {
@@ -148,15 +163,15 @@ class SettingsVC: UIViewController {
         self.fbManager.logOut()
     }
     
-    @IBOutlet weak var timeSeg: UISegmentedControl!
-    
-    
     @IBAction func timeSegAction(_ sender: Any) {
+        let defaults = UserDefaults.standard
         switch self.timeSeg.selectedSegmentIndex {
         case 0:
             timeFormat = "regular"
+            defaults.set(timeFormat, forKey: "timeFormat")
         case 1:
             timeFormat = "military"
+            defaults.set(timeFormat, forKey: "timeFormat")
         default:
             break
         }
