@@ -45,7 +45,7 @@ class EventDetailsVC: UIViewController {
             
             self.eventDate.text = self.date
             self.eventTime.text = timeChosen as String?
-            self.eventDesc.text = descChosen as! String?
+            self.eventDesc.text = descChosen
         })
         
     }
