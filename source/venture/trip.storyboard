@@ -201,6 +201,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEB-hV-hyx">
+                                                    <rect key="frame" x="22" y="0.0" width="303" height="117"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
@@ -213,8 +219,12 @@
                                             <constraint firstItem="eMD-fd-wJ2" firstAttribute="centerX" secondItem="xTt-Vl-C6V" secondAttribute="centerX" id="IqN-qj-MyT"/>
                                             <constraint firstItem="E3g-va-DXT" firstAttribute="top" secondItem="xbe-jb-ih9" secondAttribute="bottom" constant="2" id="Npe-d9-EpT"/>
                                             <constraint firstItem="xbe-jb-ih9" firstAttribute="top" secondItem="xTt-Vl-C6V" secondAttribute="topMargin" constant="37" id="PTs-QV-UnI"/>
+                                            <constraint firstItem="dEB-hV-hyx" firstAttribute="top" secondItem="xTt-Vl-C6V" secondAttribute="top" id="Xqt-rV-9vN"/>
+                                            <constraint firstAttribute="bottom" secondItem="dEB-hV-hyx" secondAttribute="bottom" id="d1z-pR-q0v"/>
+                                            <constraint firstItem="dEB-hV-hyx" firstAttribute="centerX" secondItem="xTt-Vl-C6V" secondAttribute="centerX" id="kez-eQ-FKA"/>
                                             <constraint firstItem="xbe-jb-ih9" firstAttribute="leading" secondItem="E3g-va-DXT" secondAttribute="leading" id="ohd-50-QeV"/>
                                             <constraint firstItem="eMD-fd-wJ2" firstAttribute="top" secondItem="xTt-Vl-C6V" secondAttribute="topMargin" id="pPA-Ha-d4y"/>
+                                            <constraint firstItem="dEB-hV-hyx" firstAttribute="leading" secondItem="xTt-Vl-C6V" secondAttribute="leadingMargin" constant="14" id="yCu-nj-7DZ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -223,15 +233,17 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dates" destination="E3g-va-DXT" id="wiC-cP-DpJ"/>
+                                            <outlet property="deleteLabel" destination="dEB-hV-hyx" id="VMR-WM-ia7"/>
                                             <outlet property="tripLocation" destination="xbe-jb-ih9" id="QDi-QK-bnw"/>
                                             <outlet property="tripName" destination="eMD-fd-wJ2" id="4F6-bS-ZDd"/>
-                                            <segue destination="MhN-lO-l91" kind="show" identifier="specItinerary" id="XCO-x0-Jxt"/>
+                                            <segue destination="MhN-lO-l91" kind="show" identifier="toItinerary" id="XCO-x0-Jxt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionReuse" id="xlx-hM-NhP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <gestureRecognizers/>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
@@ -260,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8P7-tq-0ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="63"/>
+            <point key="canvasLocation" x="2661.5999999999999" y="62.518740629685162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VRy-AR-SPn">
