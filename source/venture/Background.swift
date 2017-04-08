@@ -22,12 +22,11 @@ extension UIViewController {
             imageViewBackground.image = UIImage(named: "blurBack.png")
         }
         else if backgroundDefault == 2 {
-            imageViewBackground.image = UIImage(named: "starry.jpg")
+            imageViewBackground.image = UIImage(named: "back2.jpg")
         }
         else if backgroundDefault == 3 {
-            imageViewBackground.image = UIImage(named: "wallscreenDarkened.png")
+            imageViewBackground.image = UIImage(named: "back3.png")
         }
-        
         
         imageViewBackground.contentMode = .scaleAspectFill
         self.view.addSubview(imageViewBackground)

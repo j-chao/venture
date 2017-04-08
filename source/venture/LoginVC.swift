@@ -92,8 +92,8 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
                 let defaults = UserDefaults.standard
                 defaults.set(userID, forKey: "userID")
                 
-                ref.child("users/\(userID)/email").setValue(self.email.text!)
-                ref.child("users/\(userID)/password").setValue(self.password.text!)
+                ref.child("users/\(userID!)/email").setValue(self.email.text!)
+                ref.child("users/\(userID!)/password").setValue(self.password.text!)
                 
                 let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
