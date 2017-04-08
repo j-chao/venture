@@ -19,21 +19,18 @@ extension UIViewController {
         let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width:width, height:height))
        
         if backgroundDefault == 1 {
-            imageViewBackground.image = UIImage(named: "blurBack")
+            imageViewBackground.image = UIImage(named: "blurBack.png")
         }
         else if backgroundDefault == 2 {
             imageViewBackground.image = UIImage(named: "starry.jpg")
         }
         else if backgroundDefault == 3 {
-            imageViewBackground.image = UIImage(named: "wallscreenDarkened")
+            imageViewBackground.image = UIImage(named: "wallscreenDarkened.png")
         }
         
         
         imageViewBackground.contentMode = .scaleAspectFill
         self.view.addSubview(imageViewBackground)
         self.view.sendSubview(toBack: imageViewBackground)
-        
-        
-        print (backgroundDefault)
     }
 }

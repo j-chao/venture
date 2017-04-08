@@ -95,26 +95,6 @@
                                     <action selector="changePassword:" destination="Sef-ag-34M" eventType="touchUpInside" id="G72-HJ-8bs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Pc-bGa">
-                                <rect key="frame" x="125" y="569" width="124" height="34"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="sQr-DJ-0qq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="deleteAccount:" destination="Sef-ag-34M" eventType="touchUpInside" id="5R3-Ro-LlZ"/>
-                                    <segue destination="fwI-0P-e7s" kind="presentation" id="1xF-un-DEz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZD-vA-Uyz">
                                 <rect key="frame" x="133" y="518" width="109" height="34"/>
                                 <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,6 +136,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Pc-bGa">
+                                <rect key="frame" x="111" y="570" width="152" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteAccount:" destination="Sef-ag-34M" eventType="touchUpInside" id="5R3-Ro-LlZ"/>
+                                    <segue destination="fwI-0P-e7s" kind="presentation" id="1xF-un-DEz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -165,21 +162,21 @@
                             <constraint firstItem="QFy-Vp-X7c" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leading" constant="143" id="5Of-z6-GXx"/>
                             <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="97" id="7ff-FM-lEF"/>
                             <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="14" id="90e-ms-Dm8"/>
+                            <constraint firstItem="naN-Pc-bGa" firstAttribute="centerX" secondItem="kZD-vA-Uyz" secondAttribute="centerX" id="FWS-9d-5Wj"/>
                             <constraint firstItem="KI5-p0-oTN" firstAttribute="top" secondItem="QFy-Vp-X7c" secondAttribute="bottom" constant="8" symbolic="YES" id="HZy-c1-nhw"/>
                             <constraint firstItem="kZD-vA-Uyz" firstAttribute="top" secondItem="xhx-CE-Bd5" secondAttribute="bottom" constant="8" symbolic="YES" id="NCB-a4-Nkb"/>
                             <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="Bjb-el-4Ia" secondAttribute="bottom" constant="34" id="Pbo-Us-HLm"/>
-                            <constraint firstItem="QFy-Vp-X7c" firstAttribute="top" secondItem="naN-Pc-bGa" secondAttribute="bottom" constant="35" id="W5D-Gr-CzX"/>
                             <constraint firstItem="mpc-jJ-26E" firstAttribute="centerX" secondItem="YYQ-TC-w78" secondAttribute="centerX" id="Zps-bN-pwe"/>
-                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="centerX" secondItem="naN-Pc-bGa" secondAttribute="centerX" id="aCy-2q-Uv1"/>
+                            <constraint firstItem="naN-Pc-bGa" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="95" id="b0E-F3-eqd"/>
                             <constraint firstItem="lHA-i9-DB2" firstAttribute="top" secondItem="zIg-E4-7Aj" secondAttribute="bottom" constant="43" id="cOJ-Xp-cbz"/>
                             <constraint firstItem="YYQ-TC-w78" firstAttribute="trailing" secondItem="Bjb-el-4Ia" secondAttribute="trailing" id="d37-Pn-NW2"/>
                             <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="Bjb-el-4Ia" secondAttribute="leading" id="jhs-Bi-qQP"/>
                             <constraint firstItem="YYQ-TC-w78" firstAttribute="top" secondItem="mpc-jJ-26E" secondAttribute="bottom" constant="55" id="k94-cA-CaZ"/>
                             <constraint firstItem="mpc-jJ-26E" firstAttribute="top" secondItem="lHA-i9-DB2" secondAttribute="bottom" constant="20" id="ppD-EU-gYF"/>
                             <constraint firstItem="Bjb-el-4Ia" firstAttribute="top" secondItem="YYQ-TC-w78" secondAttribute="bottom" constant="40" id="qmP-Dj-Mc1"/>
+                            <constraint firstItem="naN-Pc-bGa" firstAttribute="top" secondItem="kZD-vA-Uyz" secondAttribute="bottom" constant="18" id="uo9-bj-JCF"/>
                             <constraint firstItem="lHA-i9-DB2" firstAttribute="centerX" secondItem="mpc-jJ-26E" secondAttribute="centerX" id="voM-wn-Wvy"/>
                             <constraint firstItem="xhx-CE-Bd5" firstAttribute="centerX" secondItem="Bjb-el-4Ia" secondAttribute="centerX" id="wqi-bm-6sK"/>
-                            <constraint firstItem="naN-Pc-bGa" firstAttribute="top" secondItem="kZD-vA-Uyz" secondAttribute="bottom" constant="17" id="yiH-xJ-VLa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="XIh-3X-dwm">

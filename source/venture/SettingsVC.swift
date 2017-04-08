@@ -110,7 +110,6 @@ class SettingsVC: UIViewController {
                     print (error.debugDescription)
                 }
                 else {
-                    print ("password changed")
                 }
             }
         })
@@ -145,7 +144,6 @@ class SettingsVC: UIViewController {
                 if error != nil {
                     print ("delete account error")
                 } else {
-                    print ("account deleted")
                     self.fbManager.logOut()
                     
                     let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
@@ -201,5 +199,9 @@ class SettingsVC: UIViewController {
         default:
             break
         }
+        let parent = self.view.superview
+        self.view.removeFromSuperview()
+        self.view = nil
+        parent?.addSubview(self.view)
     }
 }
