@@ -47,6 +47,7 @@ class AddEventVC: UIViewController {
         else {
             let eventTimeStr = stringTimefromDateToFIR(date: eventTime.date)
             self.addEvent(eventDesc:eventDesc.text!, eventLoc:eventLoc.text!, eventTime:eventTimeStr)
+            _ = navigationController?.popViewController(animated: true)
         }
     }
     
@@ -57,22 +58,6 @@ class AddEventVC: UIViewController {
         eventRef.child("eventDesc").setValue(eventDesc)
         eventRef.child("eventLoc").setValue(eventLoc)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventList" {
-            if let destinationVC = segue.destination as? ItineraryVC {
-                destinationVC.tripDate = eventDate
-            }
-        }
-    }
-
-    
-   
-    
-    
-    
-    
-    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
