@@ -26,6 +26,7 @@
 		B55333561E6DE7CA0007A23D /* ventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333551E6DE7CA0007A23D /* ventureTests.swift */; };
 		B55333611E6DE7CA0007A23D /* ventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333601E6DE7CA0007A23D /* ventureUITests.swift */; };
 		B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B55603B31E7B48E500FEC786 /* wallscreen.png */; };
+		B56470101E9887B900251461 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564700F1E9887B900251461 /* Background.swift */; };
 		B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18461E7C70C000997360 /* ResetPassVC.swift */; };
 		B58D18511E7C877800997360 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58D18501E7C877800997360 /* settings.storyboard */; };
 		B58D18561E7C88DD00997360 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18551E7C88DD00997360 /* SettingsVC.swift */; };
@@ -100,6 +101,7 @@
 		B55333601E6DE7CA0007A23D /* ventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ventureUITests.swift; sourceTree = "<group>"; };
 		B55333621E6DE7CA0007A23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55603B31E7B48E500FEC786 /* wallscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreen.png; sourceTree = "<group>"; };
+		B564700F1E9887B900251461 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		B58D18461E7C70C000997360 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
 		B58D18501E7C877800997360 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		B58D18551E7C88DD00997360 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				B58DEEFA1E82D1F40044B28E /* Globals.swift */,
+				B564700F1E9887B900251461 /* Background.swift */,
 				B553333D1E6DE7CA0007A23D /* AppDelegate.swift */,
 				B55333471E6DE7CA0007A23D /* Assets.xcassets */,
 				B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */,
@@ -648,6 +651,7 @@
 				B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
 				B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */,
+				B56470101E9887B900251461 /* Background.swift in Sources */,
 				B5072E151E7F253900BF4F82 /* TripPageVC.swift in Sources */,
 				B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,

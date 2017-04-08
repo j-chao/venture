@@ -20,6 +20,7 @@ class TripsVC: UIViewController {
     let identifier = "tripCell"
     
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         self.title = "Your Trips"
         collectionView.dataSource = self
@@ -57,7 +58,6 @@ class TripsVC: UIViewController {
 
 // MARK:- UICollectionViewDataSource Delegate
 extension TripsVC: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trips.count
     }

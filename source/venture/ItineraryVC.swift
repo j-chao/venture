@@ -19,8 +19,9 @@ class ItineraryVC: UIViewController {
     var tripDateString:String!
 
     @IBOutlet weak var tripDateTitle: UILabel!
-    
+   
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         self.tripDateString = stringLongFromDate(date: tripDate)
         tripDateTitle.text = self.tripDateString

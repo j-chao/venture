@@ -25,6 +25,7 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var timeSeg: UISegmentedControl!
     
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         if firEmail == nil {
             self.emailButton.setTitle("Add Email", for: [])

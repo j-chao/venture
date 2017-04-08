@@ -21,6 +21,7 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var endDate: UILabel!
     
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         tripName.attributedPlaceholder = NSAttributedString(string: "trip name", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         tripLocation.attributedPlaceholder = NSAttributedString(string: "location", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])

@@ -22,6 +22,7 @@ class EventDetailsVC: UIViewController {
     @IBOutlet weak var eventDesc: UILabel!
     
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(date!)")

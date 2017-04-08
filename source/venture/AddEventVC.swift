@@ -23,6 +23,7 @@ class AddEventVC: UIViewController {
     var eventDateStr:String!
     
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         eventDesc.attributedPlaceholder = NSAttributedString(string: "event description", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         eventLoc.attributedPlaceholder = NSAttributedString(string: "event location", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
