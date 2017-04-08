@@ -51,6 +51,10 @@
 		B5F7C0611E83211F009804DF /* places.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05D1E83211F009804DF /* places.png */; };
 		B5F7C0671E832A76009804DF /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C0661E832A76009804DF /* gear.png */; };
 		EA12B9F51E841F5A004831B9 /* wallscreenDarkened.png in Resources */ = {isa = PBXBuildFile; fileRef = EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */; };
+		EA29CDF51E98B315008362E2 /* searchForPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF41E98B315008362E2 /* searchForPlacesVC.swift */; };
+		EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF61E98B33A008362E2 /* placesTableVC.swift */; };
+		EA29CDF91E98B35B008362E2 /* placeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF81E98B35B008362E2 /* placeVC.swift */; };
+		EA29CDFB1E98B424008362E2 /* placeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDFA1E98B424008362E2 /* placeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,10 @@
 		B5F7C0661E832A76009804DF /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreenDarkened.png; sourceTree = "<group>"; };
+		EA29CDF41E98B315008362E2 /* searchForPlacesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchForPlacesVC.swift; sourceTree = "<group>"; };
+		EA29CDF61E98B33A008362E2 /* placesTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placesTableVC.swift; sourceTree = "<group>"; };
+		EA29CDF81E98B35B008362E2 /* placeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeVC.swift; sourceTree = "<group>"; };
+		EA29CDFA1E98B424008362E2 /* placeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeCell.swift; sourceTree = "<group>"; };
 		F469BE1278DCFDE718244A68 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -354,6 +362,10 @@
 		EAD462411E907EF40095A58B /* places VC */ = {
 			isa = PBXGroup;
 			children = (
+				EA29CDF41E98B315008362E2 /* searchForPlacesVC.swift */,
+				EA29CDF61E98B33A008362E2 /* placesTableVC.swift */,
+				EA29CDF81E98B35B008362E2 /* placeVC.swift */,
+				EA29CDFA1E98B424008362E2 /* placeCell.swift */,
 			);
 			name = "places VC";
 			sourceTree = "<group>";
@@ -675,6 +687,8 @@
 			files = (
 				B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */,
 				B505716D1E96FFED00AD7B29 /* EventDetailsVC.swift in Sources */,
+				EA29CDF51E98B315008362E2 /* searchForPlacesVC.swift in Sources */,
+				EA29CDF91E98B35B008362E2 /* placeVC.swift in Sources */,
 				B54593D31E91BE2100308A14 /* ItineraryCellVC.swift in Sources */,
 				B5E2A09D1E7DCB5F002C48DC /* NewTripVC.swift in Sources */,
 				B5072E191E7F25B800BF4F82 /* ItineraryVC.swift in Sources */,
@@ -687,8 +701,10 @@
 				B56470101E9887B900251461 /* Background.swift in Sources */,
 				B5072E151E7F253900BF4F82 /* TripPageVC.swift in Sources */,
 				B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */,
+				EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,
 				B58D18561E7C88DD00997360 /* SettingsVC.swift in Sources */,
+				EA29CDFB1E98B424008362E2 /* placeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
