@@ -11,24 +11,29 @@ import UIKit
 
 extension UIViewController {
     func setBackground(){
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"wallscreen.png")!)
+        let defaults = UserDefaults.standard
+        let backgroundDefault = defaults.integer(forKey: "background")
         
-        //or
-        
-//        let bgImage = UIImageView(image: UIImage(named: "wallscreen.png"))
-//        bgImage.contentMode = .scaleAspectFill
-//        self.view.addSubview(bgImage)
-//        self.view.sendSubview(toBack: bgImage)
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
-        
         let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width:width, height:height))
-        imageViewBackground.image = UIImage(named: "blurBack")
+       
+        if backgroundDefault == 1 {
+            imageViewBackground.image = UIImage(named: "blurBack")
+        }
+        else if backgroundDefault == 2 {
+            imageViewBackground.image = UIImage(named: "starry.jpg")
+        }
+        else if backgroundDefault == 3 {
+            imageViewBackground.image = UIImage(named: "wallscreenDarkened")
+        }
         
-        // you can change the content mode:
+        
         imageViewBackground.contentMode = .scaleAspectFill
-        
         self.view.addSubview(imageViewBackground)
         self.view.sendSubview(toBack: imageViewBackground)
+        
+        
+        print (backgroundDefault)
     }
 }

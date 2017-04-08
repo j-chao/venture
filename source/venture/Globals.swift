@@ -12,8 +12,9 @@ import Firebase
 var tripLength:Int = 1
 var passedTrip:String = ""
 var passedStart:String = ""
-
 var timeFormat:String = "regular"
+var background:Int = 1
+
 
 protocol CalculateTime {
     func dateFromString (dateString:String) -> Date

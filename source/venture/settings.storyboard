@@ -40,6 +40,9 @@
                                     <segment title="Background 2"/>
                                     <segment title="Background 3"/>
                                 </segments>
+                                <connections>
+                                    <action selector="backgroundSegAction:" destination="Sef-ag-34M" eventType="valueChanged" id="4Ba-AE-Z70"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-el-4Ia">
                                 <rect key="frame" x="30" y="352" width="314" height="29"/>
@@ -143,8 +146,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Venture was developed by                     Justin Chao, Julianne Crea, and Connie Liu" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-CE-Bd5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venture was developed by                     Justin Chao, Julianne Crea, and Connie Liu" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-CE-Bd5">
                                 <rect key="frame" x="20" y="414" width="335" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="lTc-e2-MGT"/>
+                                    <constraint firstAttribute="height" constant="96" id="rPP-7b-s4j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -184,6 +191,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundSeg" destination="YYQ-TC-w78" id="Ug4-92-OZ2"/>
                         <outlet property="emailButton" destination="lHA-i9-DB2" id="b6h-ir-Cba"/>
                         <outlet property="passButton" destination="mpc-jJ-26E" id="S12-50-1rC"/>
                         <outlet property="timeSeg" destination="Bjb-el-4Ia" id="8EK-OC-GYF"/>

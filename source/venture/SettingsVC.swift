@@ -23,6 +23,7 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var passButton: UIButton!
     
     @IBOutlet weak var timeSeg: UISegmentedControl!
+    @IBOutlet weak var backgroundSeg: UISegmentedControl!
     
     override func viewDidLoad() {
         self.setBackground()
@@ -31,19 +32,26 @@ class SettingsVC: UIViewController {
             self.emailButton.setTitle("Add Email", for: [])
             self.passButton.setTitle("Add Password", for: [])
         }
-    }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         let timeFormatDefault = defaults.string(forKey: "timeFormat")
         
         if timeFormatDefault == "military" {
             self.timeSeg.selectedSegmentIndex = 1
         }
-            
         else {
             self.timeSeg.selectedSegmentIndex = 0
+        }
+        
+        let backgroundDefault = defaults.integer(forKey: "background")
+        if backgroundDefault == 1 {
+            self.backgroundSeg.selectedSegmentIndex = 0
+        }
+        else if backgroundDefault == 2 {
+            self.backgroundSeg.selectedSegmentIndex = 1
+        }
+        else if backgroundDefault == 3 {
+            self.backgroundSeg.selectedSegmentIndex = 2
         }
     }
     
@@ -178,4 +186,20 @@ class SettingsVC: UIViewController {
         }
     }
     
+    @IBAction func backgroundSegAction(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        switch self.backgroundSeg.selectedSegmentIndex {
+        case 0:
+            background = 1
+            defaults.set(background, forKey: "background")
+        case 1:
+            background = 2
+            defaults.set(background, forKey: "background")
+        case 2:
+            background = 3
+            defaults.set(background, forKey: "background")
+        default:
+            break
+        }
+    }
 }
