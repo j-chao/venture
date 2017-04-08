@@ -27,6 +27,12 @@ extension UIViewController {
         else if backgroundDefault == 3 {
             imageViewBackground.image = UIImage(named: "back3.png")
         }
+        else if backgroundDefault == 4 {
+            imageViewBackground.image = UIImage(named: "cityHorizon.jpg")
+        }
+        else if backgroundDefault == 5 {
+            imageViewBackground.image = UIImage(named: "starry.jpg")
+        }
         
         imageViewBackground.contentMode = .scaleAspectFill
         self.view.addSubview(imageViewBackground)

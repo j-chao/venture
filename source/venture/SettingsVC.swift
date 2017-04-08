@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class SettingsVC: UIViewController {
     
+    @IBOutlet weak var developedByLbl: UILabel!
     var alertController:UIAlertController? = nil
     var newEmail: UITextField? = nil
     var newPassword: UITextField? = nil
@@ -27,6 +28,9 @@ class SettingsVC: UIViewController {
     
     override func viewDidLoad() {
         self.setBackground()
+        
+        self.developedByLbl.text = "Venture was developed by \nJustin Chao, Julianne Crea, and Connie Liu"
+        
         super.viewDidLoad()
         if firEmail == nil {
             self.emailButton.setTitle("Add Email", for: [])
@@ -52,6 +56,12 @@ class SettingsVC: UIViewController {
         }
         else if backgroundDefault == 3 {
             self.backgroundSeg.selectedSegmentIndex = 2
+        }
+        else if backgroundDefault == 4 {
+            self.backgroundSeg.selectedSegmentIndex = 3
+        }
+        else if backgroundDefault == 5 {
+            self.backgroundSeg.selectedSegmentIndex = 4
         }
     }
     
@@ -195,6 +205,12 @@ class SettingsVC: UIViewController {
             defaults.set(background, forKey: "background")
         case 2:
             background = 3
+            defaults.set(background, forKey: "background")
+        case 3:
+            background = 4
+            defaults.set(background, forKey: "background")
+        case 4:
+            background = 5
             defaults.set(background, forKey: "background")
         default:
             break

@@ -45,18 +45,21 @@ class TripsVC: UIViewController {
                 let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/")
                 
                 ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
-                    let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
-                    let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
                     
-                    let start = dateFromString(dateString:startDate)
-                    let end = dateFromString(dateString:endDate)
-                    let days = calculateDays(start: start, end: end) + 1
-                    tripLength = days
-                    passedTrip = self.trips[tripIndex!]
-                    
-                    print (passedTrip)
-                    
-                    passedStart = startDate
+                    if snapshot.exists() {
+                        let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
+                        let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
+                        
+                        let start = dateFromString(dateString:startDate)
+                        let end = dateFromString(dateString:endDate)
+                        let days = calculateDays(start: start, end: end) + 1
+                        tripLength = days
+                        passedTrip = self.trips[tripIndex!]
+                        
+                        print (passedTrip)
+                        
+                        passedStart = startDate
+                    }
                 })
             }
         }

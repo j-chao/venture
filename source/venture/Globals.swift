@@ -15,19 +15,6 @@ var passedStart:String = ""
 var timeFormat:String = "regular"
 var background:Int = 1
 
-
-protocol CalculateTime {
-    func dateFromString (dateString:String) -> Date
-    func calculateDays(start: Date, end: Date) -> Int
-}
-
-struct tripStruct {
-    let tripName: String!
-    let tripLocation: String!
-    let startDate: String!
-    let endDate: String!
-}
-
 func dateFromString (dateString:String) -> Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MM/dd/yyyy"
