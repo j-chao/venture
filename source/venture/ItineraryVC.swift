@@ -55,6 +55,8 @@ class ItineraryVC: UIViewController {
                 
                 destinationVC.date = self.tripDateString
                 destinationVC.event = events[(indexPath?.row)!]
+                
+                eventsTableView.deselectRow(at: indexPath!, animated: true)
             }
         }
     }
@@ -78,42 +80,32 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
         
         ref.child("\(self.events[indexPath.row])").observe(.value, with: { snapshot in
             
-            var timeChosen:String
-            var descChosen:String
-            
             let timeRec = (snapshot.value as? NSDictionary)? ["eventTime"] as! String!
             let desc = (snapshot.value as? NSDictionary)? ["eventDesc"] as! String!
            
-            if timeRec == nil || desc == nil{
-                timeChosen = ""
-                descChosen = ""
-            }
-            else {
-                let timeDate = timeFromStringTime(timeStr: timeRec!)
-                timeChosen = stringTimefromDate(date: timeDate)
-                descChosen = desc!
-            }
+            let timeDate = timeFromStringTime(timeStr: timeRec!)
+            let timeDisplay = stringTimefromDate(date: timeDate)
             
-            cell.textLabel!.text = timeChosen + "   - \t" + descChosen
+            cell.textLabel!.text = timeDisplay + "   - \t" + desc!
         })
        
         cell.backgroundColor = UIColor.clear
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
-            
-            ref.child("\(events[indexPath.row])").removeValue()
-            
-            events.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        }
-        
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            
+//            let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
+//            
+//            ref.child("\(events[indexPath.row])").removeValue()
+//            
+//            events.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            
+//        }
+//        
+//    }
     
     
 }
