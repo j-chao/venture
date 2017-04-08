@@ -13,6 +13,7 @@ class ItineraryVC: UIViewController {
     var ref:FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser!.uid
     
+    @IBOutlet weak var navBar: UINavigationBar!
     var tripName:String!
     var tripDate:Date!
     var tripDateString:String!
@@ -23,6 +24,8 @@ class ItineraryVC: UIViewController {
         super.viewDidLoad()
         self.tripDateString = stringLongFromDate(date: tripDate)
         tripDateTitle.text = self.tripDateString
+       
+        self.title = tripDateString
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
@@ -70,19 +73,44 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
         
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
-       
+      
         
-        ref.child("\(events[indexPath.row])").observe(.value, with: { snapshot in
-            let timeRec = (snapshot.value as! NSDictionary) ["eventTime"] as! String!
-            let desc = (snapshot.value as! NSDictionary) ["eventDesc"] as! String!
+        ref.child("\(self.events[indexPath.row])").observe(.value, with: { snapshot in
             
-            let timeDate = timeFromStringTime(timeStr: timeRec!)
-            let timeChosen = stringTimefromDate(date: timeDate)
+            var timeChosen:String
+            var descChosen:String
             
-            cell.textLabel!.text = timeChosen + "   - \t" + desc!
+            let timeRec = (snapshot.value as? NSDictionary)? ["eventTime"] as! String!
+            let desc = (snapshot.value as? NSDictionary)? ["eventDesc"] as! String!
+           
+            if timeRec == nil || desc == nil{
+                timeChosen = ""
+                descChosen = ""
+            }
+            else {
+                let timeDate = timeFromStringTime(timeStr: timeRec!)
+                timeChosen = stringTimefromDate(date: timeDate)
+                descChosen = desc!
+            }
+            
+            cell.textLabel!.text = timeChosen + "   - \t" + descChosen
         })
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
+            
+            ref.child("\(events[indexPath.row])").removeValue()
+            
+            events.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+        
     }
     
     

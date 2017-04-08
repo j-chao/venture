@@ -214,7 +214,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addEventButton:" destination="fL6-y5-j7V" eventType="touchUpInside" id="4G6-dU-QI7"/>
-                                    <segue destination="wyV-0C-CFG" kind="show" identifier="toEventList" id="Mai-8h-Brk"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -47,6 +47,14 @@ func stringLongFromDate (date:Date) -> String {
     return dateFormatter.string(from: date)
 }
 
+func dateFromStringLong (dateString:String) -> Date {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE   MMM dd"
+    dateFormatter.locale = Locale(identifier: "en_US")
+    let dateObj = dateFormatter.date(from: dateString)
+    return (dateObj)!
+}
+
 func stringTimefromDate (date:Date) -> String {
     let dateFormatter = DateFormatter()
     if timeFormat == "regular" {
