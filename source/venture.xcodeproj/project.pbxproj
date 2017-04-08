@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065407295805CA8058A25EBF /* Pods_ventureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */; };
+		07010DEAFC6FE4178310676C /* Pods_venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F469BE1278DCFDE718244A68 /* Pods_venture.framework */; };
+		A824F923A8AD1303D5A97F6E /* Pods_ventureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */; };
 		B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AB1E70F3C3003F8ACA /* flights.storyboard */; };
 		B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AD1E70F3CA003F8ACA /* places.storyboard */; };
 		B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AF1E70F3D4003F8ACA /* food.storyboard */; };
@@ -73,7 +76,9 @@
 		1B74A2BB07E35845655465E8 /* Pods-ventureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ventureUITests/Pods-ventureUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		235F0C80EF579EC67AD24DD1 /* Pods-venture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-venture.release.xcconfig"; path = "Pods/Target Support Files/Pods-venture/Pods-venture.release.xcconfig"; sourceTree = "<group>"; };
 		2BB99AA1A4F9465BAAE5CBA4 /* Pods-ventureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ventureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A96E15B9C2F16CB3A283AC /* Pods-ventureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ventureUITests/Pods-ventureUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ventureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EA86B952BC9B32724F35D5 /* Pods-ventureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59EF7EE208BAA51A3DC319BE /* Pods-venture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-venture.release.xcconfig"; path = "Pods/Target Support Files/Pods-venture/Pods-venture.release.xcconfig"; sourceTree = "<group>"; };
 		71C599A542A8038DF59A4AF3 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		B5F7C0661E832A76009804DF /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreenDarkened.png; sourceTree = "<group>"; };
+		F469BE1278DCFDE718244A68 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07010DEAFC6FE4178310676C /* Pods_venture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A824F923A8AD1303D5A97F6E /* Pods_ventureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065407295805CA8058A25EBF /* Pods_ventureUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +172,16 @@
 				190C920807B588D96C90DFCF /* Pods-ventureUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		80224C7BB8671EB0AC71BFEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F469BE1278DCFDE718244A68 /* Pods_venture.framework */,
+				425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */,
+				2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B50512A91E70F37E003F8ACA /* images */ = {
@@ -247,6 +266,7 @@
 				B553333C1E6DE7CA0007A23D /* venture */,
 				B58D184B1E7C7D3600997360 /* ventureTests */,
 				F369D8D2813A8FA880A5F2D6 /* Pods */,
+				80224C7BB8671EB0AC71BFEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -428,6 +448,7 @@
 				TargetAttributes = {
 					B55333391E6DE7C90007A23D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ELV7UPT49C;
 						ProvisioningStyle = Automatic;
 					};
 					B55333501E6DE7CA0007A23D = {
@@ -818,6 +839,7 @@
 			baseConfigurationReference = 7F346F116EAEEAA62FA14753 /* Pods-venture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ELV7UPT49C;
 				INFOPLIST_FILE = venture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Group1.venture;
@@ -831,6 +853,7 @@
 			baseConfigurationReference = 235F0C80EF579EC67AD24DD1 /* Pods-venture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ELV7UPT49C;
 				INFOPLIST_FILE = venture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Group1.venture;
