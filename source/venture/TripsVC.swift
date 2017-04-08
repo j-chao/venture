@@ -132,7 +132,12 @@ extension TripsVC: UICollectionViewDelegate {
         let duration = animationDuration()
         
         if (activeCell == nil) {
+            
             activeCell = getCellAtPoint(point)
+            
+            if activeCell == nil {
+                return
+            }
             
             UIView.animate (withDuration: duration, animations: {
                 self.activeCell.tripName.transform = CGAffineTransform(translationX: -self.activeCell.frame.width, y: 0)

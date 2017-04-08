@@ -19,10 +19,10 @@ extension UIViewController {
         let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width:width, height:height))
        
         if backgroundDefault == 1 {
-            imageViewBackground.image = UIImage(named: "blurBack.png")
+            imageViewBackground.image = UIImage(named: "blueMountain.jpg")
         }
         else if backgroundDefault == 2 {
-            imageViewBackground.image = UIImage(named: "back2.jpg")
+            imageViewBackground.image = UIImage(named: "whiteMountain.jpg")
         }
         else if backgroundDefault == 3 {
             imageViewBackground.image = UIImage(named: "back3.png")

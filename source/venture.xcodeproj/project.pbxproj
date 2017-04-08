@@ -19,7 +19,7 @@
 		B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC741E7BC10300213CF3 /* blurBack.png */; };
 		B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC761E7BC33D00213CF3 /* trip.storyboard */; };
 		B51CD6401E98A73F009F2615 /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = B51CD63F1E98A73F009F2615 /* back3.png */; };
-		B51CD6421E98A7BE009F2615 /* back2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51CD6411E98A7BE009F2615 /* back2.jpg */; };
+		B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */; };
 		B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B29841E85CE25001974A5 /* AddEventVC.swift */; };
 		B54593D31E91BE2100308A14 /* ItineraryCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54593D21E91BE2100308A14 /* ItineraryCellVC.swift */; };
 		B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333D1E6DE7CA0007A23D /* AppDelegate.swift */; };
@@ -33,6 +33,8 @@
 		B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B55603B31E7B48E500FEC786 /* wallscreen.png */; };
 		B56470101E9887B900251461 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564700F1E9887B900251461 /* Background.swift */; };
 		B56470121E989B6500251461 /* starry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B56470111E989B6500251461 /* starry.jpg */; };
+		B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266731E99970C007BA1E3 /* cityHorizon.jpg */; };
+		B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266751E99971E007BA1E3 /* blueMountain.jpg */; };
 		B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18461E7C70C000997360 /* ResetPassVC.swift */; };
 		B58D18511E7C877800997360 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58D18501E7C877800997360 /* settings.storyboard */; };
 		B58D18561E7C88DD00997360 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18551E7C88DD00997360 /* SettingsVC.swift */; };
@@ -97,7 +99,7 @@
 		B50AEC741E7BC10300213CF3 /* blurBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blurBack.png; sourceTree = "<group>"; };
 		B50AEC761E7BC33D00213CF3 /* trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trip.storyboard; sourceTree = "<group>"; };
 		B51CD63F1E98A73F009F2615 /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
-		B51CD6411E98A7BE009F2615 /* back2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back2.jpg; sourceTree = "<group>"; };
+		B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteMountain.jpg; sourceTree = "<group>"; };
 		B53B29841E85CE25001974A5 /* AddEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventVC.swift; sourceTree = "<group>"; };
 		B54593D21E91BE2100308A14 /* ItineraryCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryCellVC.swift; sourceTree = "<group>"; };
 		B553333A1E6DE7CA0007A23D /* venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,8 @@
 		B55603B31E7B48E500FEC786 /* wallscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreen.png; sourceTree = "<group>"; };
 		B564700F1E9887B900251461 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		B56470111E989B6500251461 /* starry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starry.jpg; sourceTree = "<group>"; };
+		B58266731E99970C007BA1E3 /* cityHorizon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cityHorizon.jpg; sourceTree = "<group>"; };
+		B58266751E99971E007BA1E3 /* blueMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueMountain.jpg; sourceTree = "<group>"; };
 		B58D18461E7C70C000997360 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
 		B58D18501E7C877800997360 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		B58D18551E7C88DD00997360 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -199,8 +203,10 @@
 				B5F7C05B1E83211F009804DF /* flight.png */,
 				B5F7C05C1E83211F009804DF /* food.png */,
 				B5F7C05D1E83211F009804DF /* places.png */,
-				B51CD6411E98A7BE009F2615 /* back2.jpg */,
+				B58266751E99971E007BA1E3 /* blueMountain.jpg */,
+				B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */,
 				B56470111E989B6500251461 /* starry.jpg */,
+				B58266731E99970C007BA1E3 /* cityHorizon.jpg */,
 				B50AEC741E7BC10300213CF3 /* blurBack.png */,
 				B51CD63F1E98A73F009F2615 /* back3.png */,
 				B55603B31E7B48E500FEC786 /* wallscreen.png */,
@@ -507,6 +513,8 @@
 				EA12B9F51E841F5A004831B9 /* wallscreenDarkened.png in Resources */,
 				B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */,
 				B5F7C0601E83211F009804DF /* food.png in Resources */,
+				B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */,
+				B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */,
 				B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */,
 				B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */,
 				B5F7C0671E832A76009804DF /* gear.png in Resources */,
@@ -515,7 +523,7 @@
 				B51CD6401E98A73F009F2615 /* back3.png in Resources */,
 				B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */,
 				B58D18511E7C877800997360 /* settings.storyboard in Resources */,
-				B51CD6421E98A7BE009F2615 /* back2.jpg in Resources */,
+				B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */,
 				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,
