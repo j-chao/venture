@@ -13,7 +13,6 @@ class ItineraryVC: UIViewController {
     var ref:FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser!.uid
     
-    @IBOutlet weak var navBar: UINavigationBar!
     var tripName:String!
     var tripDate:Date!
     var tripDateString:String!

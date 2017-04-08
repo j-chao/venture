@@ -35,9 +35,7 @@ class TripsVC: UIViewController {
             self.trips.append(tripName)
             self.collectionView.reloadData()
         })
-        
         setupSwipes()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,14 +80,17 @@ extension TripsVC: UICollectionViewDataSource {
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/")
         
         ref.child(trip).observe(.value, with: { snapshot in
-            let tripName = (snapshot.value as! NSDictionary) ["tripName"] as! String
-            let tripLocation = (snapshot.value as! NSDictionary) ["tripLocation"] as! String
-            let startDate = (snapshot.value as! NSDictionary) ["startDate"] as! String
-            let endDate = (snapshot.value as! NSDictionary) ["endDate"] as! String
-            
-            cell.tripName!.text = tripName
-            cell.tripLocation!.text = tripLocation
-            cell.dates!.text = "\(startDate)  -  \(endDate)"
+            if snapshot.exists() {
+                
+                let tripName = (snapshot.value as! NSDictionary) ["tripName"] as! String
+                let tripLocation = (snapshot.value as! NSDictionary) ["tripLocation"] as! String
+                let startDate = (snapshot.value as! NSDictionary) ["startDate"] as! String
+                let endDate = (snapshot.value as! NSDictionary) ["endDate"] as! String
+                
+                cell.tripName!.text = tripName
+                cell.tripLocation!.text = tripLocation
+                cell.dates!.text = "\(startDate)  -  \(endDate)"
+            }
         })
         
         cell.backgroundColor = UIColor(white: 1, alpha: 0.8)
@@ -155,9 +156,11 @@ extension TripsVC: UICollectionViewDelegate {
                     // If swipe point is in the cell delete it
                     
                     let indexPath = self.collectionView.indexPath(for: activeCell)
+                    
+                    _ = deleteTripFromFirebase(trip: trips[indexPath!.row])
+                    
                     trips.remove(at: indexPath!.row)
                     self.collectionView.deleteItems(at: [indexPath!])
-                    
                 }
                 // If another cell is swiped
             } else if activeCell != cell {
@@ -206,6 +209,13 @@ extension TripsVC: UICollectionViewDelegate {
     
     func animationDuration() -> Double {
         return 0.5
+    }
+    
+    func deleteTripFromFirebase(trip:String) -> Int {
+        let userID = FIRAuth.auth()?.currentUser!.uid
+        let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips")
+        ref.child(trip).removeValue()
+        return 0
     }
 }
 
