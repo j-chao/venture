@@ -17,9 +17,12 @@ class TripsVC: UIViewController {
     let userID = FIRAuth.auth()?.currentUser!.uid
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     let identifier = "tripCell"
     
     override func viewDidLoad() {
+        self.collectionView.backgroundColor = UIColor.clear
         self.setBackground()
         super.viewDidLoad()
         self.title = "Your Trips"

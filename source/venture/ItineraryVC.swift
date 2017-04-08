@@ -21,6 +21,7 @@ class ItineraryVC: UIViewController {
     @IBOutlet weak var tripDateTitle: UILabel!
    
     override func viewDidLoad() {
+        self.eventsTableView.backgroundColor = UIColor.clear
         self.setBackground()
         super.viewDidLoad()
         self.tripDateString = stringLongFromDate(date: tripDate)
@@ -96,7 +97,8 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
             
             cell.textLabel!.text = timeChosen + "   - \t" + descChosen
         })
-        
+       
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
