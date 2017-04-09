@@ -16,7 +16,7 @@ class ItineraryVC: UIViewController {
     var tripName:String!
     var tripDate:Date!
     var tripDateString:String!
-
+    
     @IBOutlet weak var tripDateTitle: UILabel!
    
     override func viewDidLoad() {
@@ -25,8 +25,6 @@ class ItineraryVC: UIViewController {
         super.viewDidLoad()
         self.tripDateString = stringLongFromDate(date: tripDate)
         tripDateTitle.text = self.tripDateString
-       
-        self.title = tripDateString
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
@@ -63,8 +61,20 @@ class ItineraryVC: UIViewController {
     
     @IBOutlet weak var eventsTableView: UITableView!
     var events = [String]()
+    
+    @IBOutlet weak var editButton: UIButton!
+    @IBAction func editAction(_ sender: Any) {
+        if (self.eventsTableView.isEditing) {
+            self.editButton.titleLabel?.text = "Edit"
+            self.eventsTableView.setEditing(false, animated: true)
+        }
+        else {
+            self.editButton.titleLabel?.text = "Done"
+            self.eventsTableView.setEditing(true, animated: true)
+        }
+    }
+    
 }
-
 
 extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -79,33 +89,48 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
       
         
         ref.child("\(self.events[indexPath.row])").observe(.value, with: { snapshot in
-            
-            let timeRec = (snapshot.value as? NSDictionary)? ["eventTime"] as! String!
-            let desc = (snapshot.value as? NSDictionary)? ["eventDesc"] as! String!
-           
-            let timeDate = timeFromStringTime(timeStr: timeRec!)
-            let timeDisplay = stringTimefromDate(date: timeDate)
-            
-            cell.textLabel!.text = timeDisplay + "   - \t" + desc!
+            if snapshot.exists() {
+                let timeRec = (snapshot.value as? NSDictionary)? ["eventTime"] as! String!
+                let desc = (snapshot.value as? NSDictionary)? ["eventDesc"] as! String!
+               
+                let timeDate = timeFromStringTime(timeStr: timeRec!)
+                let timeDisplay = stringTimefromDate(date: timeDate)
+                
+                cell.textLabel!.text = timeDisplay + "   - \t" + desc!
+            }
         })
-       
+            
         cell.backgroundColor = UIColor.clear
         return cell
     }
+  
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            
-//            let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
-//            
-//            ref.child("\(events[indexPath.row])").removeValue()
-//            
-//            events.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            
-//        }
-//        
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if tableView.isEditing {
+            return .delete
+        }
+        
+        return .none
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            print (events[indexPath.row])
+            
+            _ = deleteEventFromFirebase(event: events[indexPath.row])
+            events.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func deleteEventFromFirebase(event:String) -> Int {
+        let userID = FIRAuth.auth()?.currentUser!.uid
+        let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
+        
+        print (ref)
+        ref.child(event).removeValue()
+        return 0
+    }
     
 }

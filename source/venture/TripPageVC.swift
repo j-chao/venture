@@ -39,6 +39,7 @@ class TripPageVC: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = passedTrip
         self.dataSource = self
         if let firstVC = pages.first as? ItineraryVC {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
