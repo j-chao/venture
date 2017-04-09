@@ -56,8 +56,6 @@ class TripsVC: UIViewController {
                         tripLength = days
                         passedTrip = self.trips[tripIndex!]
                         
-                        print (passedTrip)
-                        
                         passedStart = startDate
                     }
                 })
@@ -189,11 +187,8 @@ extension TripsVC: UICollectionViewDelegate {
                     (Void) in
                     self.activeCell = cell
                 })
-                
             }
         }
-        
-        
     }
     
     func userDidSwipeRight(){
