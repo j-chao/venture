@@ -47,6 +47,7 @@
 		B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467261E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467271E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
+		B5F7383C1E99DAFE00642B03 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7383B1E99DAFE00642B03 /* DesignableView.swift */; };
 		B5F7C05E1E83211F009804DF /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05A1E83211F009804DF /* event.png */; };
 		B5F7C05F1E83211F009804DF /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05B1E83211F009804DF /* flight.png */; };
 		B5F7C0601E83211F009804DF /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05C1E83211F009804DF /* food.png */; };
@@ -131,6 +132,7 @@
 		B5E2A09C1E7DCB5F002C48DC /* NewTripVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripVC.swift; sourceTree = "<group>"; };
 		B5E2A09E1E7DCBA2002C48DC /* itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = itinerary.storyboard; sourceTree = "<group>"; };
 		B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5F7383B1E99DAFE00642B03 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		B5F7C05A1E83211F009804DF /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
 		B5F7C05B1E83211F009804DF /* flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flight.png; sourceTree = "<group>"; };
 		B5F7C05C1E83211F009804DF /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		B50512AA1E70F39D003F8ACA /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				B5F7383D1E99DB0300642B03 /* IBDesignables */,
 				B58DEEFA1E82D1F40044B28E /* Globals.swift */,
 				B564700F1E9887B900251461 /* Background.swift */,
 				B553333D1E6DE7CA0007A23D /* AppDelegate.swift */,
@@ -363,6 +366,14 @@
 			children = (
 			);
 			name = "food VC";
+			sourceTree = "<group>";
+		};
+		B5F7383D1E99DB0300642B03 /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				B5F7383B1E99DAFE00642B03 /* DesignableView.swift */,
+			);
+			name = IBDesignables;
 			sourceTree = "<group>";
 		};
 		EAD462411E907EF40095A58B /* places VC */ = {
@@ -704,6 +715,7 @@
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
 				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
 				B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */,
+				B5F7383C1E99DAFE00642B03 /* DesignableView.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
 				B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */,
 				B56470101E9887B900251461 /* Background.swift in Sources */,

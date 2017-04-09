@@ -21,8 +21,12 @@ class ResetPassVC: UIViewController, UITextFieldDelegate {
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         resetEmail.delegate = self
     }
+    
+    @IBAction func dismissPopup(_ sender: UIButton) {
+        dismiss(animated:true, completion: nil)
+    }
    
-    @IBAction func resetPass(_ sender: Any) {
+    @IBAction func resetPass(_ sender: UIButton) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail.text!, completion: {
             error in
             if error == nil {
@@ -31,19 +35,13 @@ class ResetPassVC: UIViewController, UITextFieldDelegate {
             }
             if error != nil {
                 self.resetMessage.text! =
-                "No account has been created with that email."
+                "No account has been created \nwith that email."
             }
             else {
                 self.resetMessage.text! =
-                "An email will be sent to you to reset your password."
+                "An email will be sent to you \nto reset your password."
             }
         })
-    }
-    
-    @IBAction func returnToLogin(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
-        self.show(vc, sender: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

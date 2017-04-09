@@ -10,10 +10,6 @@ import UIKit
 import Firebase
 
 class RegistrationVC: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var newEmail: UITextField!
-    @IBOutlet weak var newPassword: UITextField!
-    @IBOutlet weak var messageLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,28 +22,30 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         newEmail.delegate = self
         newPassword.delegate = self
     }
+    
+    @IBAction func dismissPopup(_ sender: UIButton) {
+        dismiss(animated:true, completion: nil)
+    }
 
-    @IBAction func createAccount(_ sender: Any) {
+    @IBOutlet weak var newEmail: UITextField!
+    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var messageLbl: UILabel!
+    
+    @IBAction func registerAction(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{
            user, error in
             if error != nil {
                 if self.newPassword.text!.characters.count < 6 {
-                    self.messageLbl.text = "Password must be at least 6 characters long"
+                    self.messageLbl.text = "Password must be at least \n6 characters long"
                 }
                 else {
                     self.messageLbl.text = "User account already exists."
                 }
             }
             else {
-                self.messageLbl.text = "Your account has been created.                        Please return to the Login Page to login."
+                self.messageLbl.text = "Your account has been created. \nPlease return to the Login Page to login."
             }
         })
-    }
-    
-    @IBAction func returnToLogin(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
-        self.show(vc, sender: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
