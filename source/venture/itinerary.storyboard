@@ -284,8 +284,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xr7-KT-aQh">
+                                <rect key="frame" x="16" y="245" width="343" height="414"/>
+                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eventDesc" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZt-uc-BOP">
-                                <rect key="frame" x="16" y="131" width="343" height="106"/>
+                                <rect key="frame" x="16" y="102" width="343" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="yI8-Cd-yYx"/>
                                 </constraints>
@@ -293,17 +296,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xr7-KT-aQh">
-                                <rect key="frame" x="16" y="245" width="343" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Xr7-KT-aQh" firstAttribute="leading" secondItem="JZt-uc-BOP" secondAttribute="leading" id="4ZK-1S-1au"/>
                             <constraint firstItem="URT-Gg-qnE" firstAttribute="top" secondItem="eyl-DX-G3A" secondAttribute="bottom" constant="50" id="BQo-kx-OP2"/>
+                            <constraint firstItem="Xr7-KT-aQh" firstAttribute="centerX" secondItem="dAy-JT-CNY" secondAttribute="centerX" id="M3I-nt-rH5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7We-h2-ewh" secondAttribute="trailing" id="ONp-Z0-Ke9"/>
-                            <constraint firstItem="JZt-uc-BOP" firstAttribute="top" secondItem="7We-h2-ewh" secondAttribute="bottom" constant="37" id="ZpR-xf-WSG"/>
+                            <constraint firstItem="Xr7-KT-aQh" firstAttribute="top" secondItem="JZt-uc-BOP" secondAttribute="bottom" constant="37" id="YUr-Nn-qaC"/>
+                            <constraint firstItem="JZt-uc-BOP" firstAttribute="top" secondItem="7We-h2-ewh" secondAttribute="bottom" constant="8" id="ZpR-xf-WSG"/>
                             <constraint firstItem="7We-h2-ewh" firstAttribute="leading" secondItem="URT-Gg-qnE" secondAttribute="trailing" constant="8" id="b88-r8-w9c"/>
+                            <constraint firstItem="tPV-rq-lBM" firstAttribute="top" secondItem="Xr7-KT-aQh" secondAttribute="bottom" constant="8" symbolic="YES" id="dko-dw-Ka0"/>
                             <constraint firstItem="JZt-uc-BOP" firstAttribute="leading" secondItem="URT-Gg-qnE" secondAttribute="leading" id="fTa-eh-prF"/>
                             <constraint firstItem="URT-Gg-qnE" firstAttribute="leading" secondItem="dAy-JT-CNY" secondAttribute="leadingMargin" id="wf0-Pe-AtF"/>
                             <constraint firstItem="URT-Gg-qnE" firstAttribute="baseline" secondItem="7We-h2-ewh" secondAttribute="baseline" id="xE1-lD-ChI"/>
@@ -314,6 +317,7 @@
                         <outlet property="eventDate" destination="URT-Gg-qnE" id="FqX-Fl-Clx"/>
                         <outlet property="eventDesc" destination="JZt-uc-BOP" id="YkS-AF-OVC"/>
                         <outlet property="eventTime" destination="7We-h2-ewh" id="uF9-2i-U8C"/>
+                        <outlet property="map" destination="Xr7-KT-aQh" id="TGS-ag-IbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyH-Eo-H4r" userLabel="First Responder" sceneMemberID="firstResponder"/>

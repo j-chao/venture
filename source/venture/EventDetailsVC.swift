@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class EventDetailsVC: UIViewController {
     
@@ -20,6 +21,7 @@ class EventDetailsVC: UIViewController {
     @IBOutlet weak var eventTime: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventDesc: UILabel!
+    @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         self.setBackground()
@@ -28,27 +30,24 @@ class EventDetailsVC: UIViewController {
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(date!)")
         
         ref.child(event).observe(.value, with: { snapshot in
-            
-            var descChosen:String?
-            var timeChosen:String?
-            
             let desc = (snapshot.value as? NSDictionary)?["eventDesc"]
             let timeRec = (snapshot.value as? NSDictionary)?["eventTime"]
             
-            if desc == nil || timeRec == nil {
-                descChosen = "nope"
-                timeChosen = "nope"
-            }
-            else {
-                descChosen = desc as! String?
-                timeChosen = timeRec as! String?
-            }
-            
             self.eventDate.text = self.date
-            self.eventTime.text = timeChosen as String?
-            self.eventDesc.text = descChosen
+            self.eventTime.text = timeRec as! String?
+            self.eventDesc.text = desc as! String?
         })
-        
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(30.286114, -97.739347)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        map.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "HOOK 'EM"
+        map.addAnnotation(annotation)
+    }
 }
