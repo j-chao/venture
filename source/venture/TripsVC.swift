@@ -39,28 +39,21 @@ class TripsVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tripIndex = collectionView.indexPathsForSelectedItems?.last?.last
         if segue.identifier == "toItinerary" {
-            if segue.destination is TripPageVC {
-                let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/")
+            if let destinationVC = segue.destination as? TripPageVC {
+                let cell = sender as! TripCellVC
+                let indexPath = self.collectionView.indexPath(for: cell)
                 
-                ref.child(trips[tripIndex!]).observe(.value, with: { snapshot in
-                    
-                    if snapshot.exists() {
-                        let startDate = (snapshot.value as! NSDictionary)["startDate"] as! String
-                        let endDate = (snapshot.value as! NSDictionary)["endDate"] as! String
-                        
-                        let start = dateFromString(dateString:startDate)
-                        let end = dateFromString(dateString:endDate)
-                        let days = calculateDays(start: start, end: end) + 1
-                        tripLength = days
-                        passedTrip = self.trips[tripIndex!]
-                        
-                        passedStart = startDate
-                    }
-                })
+                let startDate = cell.startDate
+                let endDate = cell.endDate
+                let start = dateFromString(dateString:startDate!)
+                let end = dateFromString(dateString:endDate!)
+                tripLength = calculateDays(start: start, end: end) + 1
+                passedTrip = trips[(indexPath?.row)!]
+                destinationVC.passedStart = startDate!
             }
         }
+        
     }
     
     
@@ -90,6 +83,8 @@ extension TripsVC: UICollectionViewDataSource {
                 
                 cell.tripName!.text = tripName
                 cell.tripLocation!.text = tripLocation
+                cell.startDate = startDate
+                cell.endDate = endDate
                 cell.dates!.text = "\(startDate)  -  \(endDate)"
             }
         })

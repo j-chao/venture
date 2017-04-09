@@ -32,9 +32,12 @@ class EventDetailsVC: UIViewController {
         ref.child(event).observe(.value, with: { snapshot in
             let desc = (snapshot.value as? NSDictionary)?["eventDesc"]
             let timeRec = (snapshot.value as? NSDictionary)?["eventTime"]
+          
+            let timeDate = timeFromStringTime(timeStr: timeRec as! String)
+            let timeDisplay = stringTimefromDate(date: timeDate)
             
             self.eventDate.text = self.date
-            self.eventTime.text = timeRec as! String?
+            self.eventTime.text = timeDisplay as String?
             self.eventDesc.text = desc as! String?
         })
     }

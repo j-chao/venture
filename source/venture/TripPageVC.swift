@@ -13,13 +13,13 @@ class TripPageVC: UIPageViewController {
     
     var ref:FIRDatabaseReference?
     
-    var tripName:String!
+    var passedStart:String?
     
     fileprivate(set) lazy var pages:[UIViewController] = {
         var arrayPages = [UIViewController]()
         
         for i in 1...tripLength {
-            let tripDate = dateFromString(dateString: passedStart)
+            let tripDate = dateFromString(dateString: self.passedStart!)
             arrayPages.append(self.newVC("VC", tripDate: tripDate+TimeInterval((i-1)*86400)))
         }
         
