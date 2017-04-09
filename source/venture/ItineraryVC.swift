@@ -116,8 +116,6 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            print (events[indexPath.row])
-            
             _ = deleteEventFromFirebase(event: events[indexPath.row])
             events.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -127,8 +125,6 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     func deleteEventFromFirebase(event:String) -> Int {
         let userID = FIRAuth.auth()?.currentUser!.uid
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
-        
-        print (ref)
         ref.child(event).removeValue()
         return 0
     }

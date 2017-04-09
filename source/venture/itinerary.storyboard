@@ -180,38 +180,34 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eventDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-5b-WSE">
                                 <rect key="frame" x="93" y="45" width="188" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zS6-xn-lop"/>
+                                    <constraint firstAttribute="height" constant="21" id="TkM-49-2pP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="XDs-9x-XFX" userLabel="Event Time">
+                                <rect key="frame" x="0.0" y="195" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="512085281.30320698">
+                                    <!--2017-03-24 21:54:41 +0000-->
+                                </date>
+                            </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Event Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WvM-yL-iJE">
-                                <rect key="frame" x="53" y="107" width="268" height="113"/>
+                                <rect key="frame" x="53" y="74" width="268" height="113"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="113" id="G4A-H7-N7K"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Event Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-Jl-wbz">
-                                <rect key="frame" x="53" y="450" width="268" height="80"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="HbP-Gl-cHh"/>
+                                    <constraint firstAttribute="height" constant="113" id="gum-kU-gl0"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-lg-PM1">
-                                <rect key="frame" x="122" y="573" width="130" height="47"/>
+                                <rect key="frame" x="122" y="527" width="130" height="47"/>
                                 <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="D5V-Rl-sX3"/>
-                                    <constraint firstAttribute="height" constant="47" id="axJ-XN-57R"/>
+                                    <constraint firstAttribute="height" constant="47" id="rU0-D7-L6G"/>
+                                    <constraint firstAttribute="width" constant="130" id="xJ0-jF-9mA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Add Event">
@@ -221,29 +217,33 @@
                                     <action selector="addEventButton:" destination="fL6-y5-j7V" eventType="touchUpInside" id="4G6-dU-QI7"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="XDs-9x-XFX" userLabel="Event Time">
-                                <rect key="frame" x="0.0" y="228" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="512085281.30320698">
-                                    <!--2017-03-24 21:54:41 +0000-->
-                                </date>
-                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Event Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-Jl-wbz">
+                                <rect key="frame" x="53" y="419" width="268" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="jAo-F3-fAF"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WvM-yL-iJE" firstAttribute="leading" secondItem="kaf-Jl-wbz" secondAttribute="leading" id="56b-Mp-3Rd"/>
-                            <constraint firstItem="XDs-9x-XFX" firstAttribute="centerX" secondItem="kaf-Jl-wbz" secondAttribute="centerX" id="FbS-k1-PGC"/>
-                            <constraint firstItem="kaf-Jl-wbz" firstAttribute="top" secondItem="XDs-9x-XFX" secondAttribute="bottom" constant="6" id="Mw5-tL-CHU"/>
-                            <constraint firstItem="WvM-yL-iJE" firstAttribute="trailing" secondItem="kaf-Jl-wbz" secondAttribute="trailing" id="YOL-fd-aTY"/>
-                            <constraint firstItem="4Nm-5b-WSE" firstAttribute="top" secondItem="d7k-G0-rxj" secondAttribute="bottom" constant="25" id="ZrA-GT-Qko"/>
-                            <constraint firstItem="XDs-9x-XFX" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leading" id="ai8-iM-ib3"/>
-                            <constraint firstItem="WvM-yL-iJE" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leadingMargin" constant="37" id="fJ5-IN-jFt"/>
-                            <constraint firstAttribute="trailing" secondItem="XDs-9x-XFX" secondAttribute="trailing" id="gfM-uE-MMR"/>
-                            <constraint firstItem="x8k-lg-PM1" firstAttribute="top" secondItem="kaf-Jl-wbz" secondAttribute="bottom" constant="43" id="mqN-HI-uKc"/>
-                            <constraint firstItem="WvM-yL-iJE" firstAttribute="top" secondItem="4Nm-5b-WSE" secondAttribute="bottom" constant="41" id="pOu-Du-ZOi"/>
-                            <constraint firstItem="4Nm-5b-WSE" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leadingMargin" constant="77" id="pdn-lG-cWE"/>
-                            <constraint firstItem="kaf-Jl-wbz" firstAttribute="centerX" secondItem="x8k-lg-PM1" secondAttribute="centerX" id="tyS-x1-B8y"/>
-                            <constraint firstItem="XDs-9x-XFX" firstAttribute="top" secondItem="WvM-yL-iJE" secondAttribute="bottom" constant="8" symbolic="YES" id="wfS-CI-KO3"/>
-                            <constraint firstItem="4Nm-5b-WSE" firstAttribute="centerX" secondItem="WvM-yL-iJE" secondAttribute="centerX" id="zRB-8A-QIH"/>
+                            <constraint firstItem="XDs-9x-XFX" firstAttribute="centerX" secondItem="kaf-Jl-wbz" secondAttribute="centerX" id="093-F1-izf"/>
+                            <constraint firstItem="4Nm-5b-WSE" firstAttribute="centerX" secondItem="WvM-yL-iJE" secondAttribute="centerX" id="5Wa-VV-kqV"/>
+                            <constraint firstItem="4Nm-5b-WSE" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leadingMargin" constant="77" id="7zu-sE-1rc"/>
+                            <constraint firstItem="XDs-9x-XFX" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leading" id="APQ-jT-G3N"/>
+                            <constraint firstItem="x8k-lg-PM1" firstAttribute="top" secondItem="kaf-Jl-wbz" secondAttribute="bottom" constant="28" id="GlY-kC-2aM"/>
+                            <constraint firstItem="WvM-yL-iJE" firstAttribute="leading" secondItem="kaf-Jl-wbz" secondAttribute="leading" id="Jbv-NZ-Xt5"/>
+                            <constraint firstItem="4Nm-5b-WSE" firstAttribute="top" secondItem="d7k-G0-rxj" secondAttribute="bottom" constant="25" id="QCB-xa-kag"/>
+                            <constraint firstItem="WvM-yL-iJE" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leadingMargin" constant="37" id="TCB-IW-iUX"/>
+                            <constraint firstItem="XDs-9x-XFX" firstAttribute="top" secondItem="WvM-yL-iJE" secondAttribute="bottom" constant="8" symbolic="YES" id="UR0-ed-lvW"/>
+                            <constraint firstItem="WvM-yL-iJE" firstAttribute="trailing" secondItem="kaf-Jl-wbz" secondAttribute="trailing" id="XmM-1g-t7W"/>
+                            <constraint firstItem="WvM-yL-iJE" firstAttribute="top" secondItem="4Nm-5b-WSE" secondAttribute="bottom" constant="8" symbolic="YES" id="Y2W-wf-NRU"/>
+                            <constraint firstAttribute="trailing" secondItem="XDs-9x-XFX" secondAttribute="trailing" id="Z5r-4m-bMj"/>
+                            <constraint firstItem="kaf-Jl-wbz" firstAttribute="centerX" secondItem="x8k-lg-PM1" secondAttribute="centerX" id="Zt5-db-Y6n"/>
+                            <constraint firstItem="kaf-Jl-wbz" firstAttribute="top" secondItem="XDs-9x-XFX" secondAttribute="bottom" constant="8" symbolic="YES" id="hK6-5R-VXN"/>
                         </constraints>
                     </view>
                     <connections>

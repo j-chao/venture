@@ -19,7 +19,6 @@ class TripPageVC: UIPageViewController {
         var arrayPages = [UIViewController]()
         
         for i in 1...tripLength {
-//            print (tripLength)
             let tripDate = dateFromString(dateString: passedStart)
             arrayPages.append(self.newVC("VC", tripDate: tripDate+TimeInterval((i-1)*86400)))
         }
