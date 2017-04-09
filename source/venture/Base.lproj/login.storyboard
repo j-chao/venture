@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="height" constant="74" id="Vyd-0r-Fd7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSG-k2-L3I">
@@ -134,7 +134,6 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2Q-Nc-Buk">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="dismissPopup:" destination="LJZ-Ck-dws" eventType="touchUpInside" id="bFc-iT-mMb"/>
                                     </connections>
@@ -234,7 +233,6 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeV-Ec-paY">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="dismissPopup:" destination="z2P-7d-1ZN" eventType="touchUpInside" id="hBj-b9-F27"/>
                                     </connections>
@@ -298,8 +296,10 @@
                                 </view>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="nxC-Oo-Pz9" firstAttribute="centerX" secondItem="RYb-8q-Zjs" secondAttribute="centerX" id="2ju-4D-35i"/>
                                 <constraint firstItem="nxC-Oo-Pz9" firstAttribute="leading" secondItem="RYb-8q-Zjs" secondAttribute="leading" constant="40" id="3CB-xp-3GX"/>
                                 <constraint firstItem="eeV-Ec-paY" firstAttribute="centerX" secondItem="nxC-Oo-Pz9" secondAttribute="centerX" id="5LV-zF-D1q"/>
+                                <constraint firstItem="nxC-Oo-Pz9" firstAttribute="centerY" secondItem="RYb-8q-Zjs" secondAttribute="centerY" id="9mk-E3-9Y8"/>
                                 <constraint firstAttribute="bottom" secondItem="eeV-Ec-paY" secondAttribute="bottom" id="Uyp-c2-3hZ"/>
                                 <constraint firstItem="eeV-Ec-paY" firstAttribute="top" secondItem="RYb-8q-Zjs" secondAttribute="top" id="WrG-cT-h4P"/>
                                 <constraint firstAttribute="trailing" secondItem="eeV-Ec-paY" secondAttribute="trailing" id="Yto-S8-KFf"/>

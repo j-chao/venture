@@ -36,14 +36,39 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
            user, error in
             if error != nil {
                 if self.newPassword.text!.characters.count < 6 {
-                    self.messageLbl.text = "Password must be at least \n6 characters long"
+                    self.messageLbl.text = "Password must be at least \n6 characters long."
                 }
                 else {
                     self.messageLbl.text = "User account already exists."
                 }
             }
             else {
-                self.messageLbl.text = "Your account has been created. \nPlease return to the Login Page to login."
+                self.signIn()
+            }
+        })
+    }
+    
+    func signIn() {
+        let credential = FIREmailPasswordAuthProvider.credential(withEmail: self.newEmail.text!, password: self.newPassword.text!)
+        
+        FIRAuth.auth()?.signIn(with: credential, completion: {
+            user, error in
+            if error != nil {
+                print (error as Any)
+            }
+            else {
+                let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                
+                let defaults = UserDefaults.standard
+                defaults.set(userID, forKey: "userID")
+                
+                ref.child("users/\(userID!)/email").setValue(self.newEmail.text!)
+                ref.child("users/\(userID!)/password").setValue(self.newPassword.text!)
+                
+                let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
+                self.show(vc, sender: self)
             }
         })
     }
