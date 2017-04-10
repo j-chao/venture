@@ -10,12 +10,11 @@ import UIKit
 import Foundation
 
 class TripCellVC: UICollectionViewCell {
+    var startDate:String?
+    var endDate:String?
     
     @IBOutlet weak var tripName: UILabel!
     @IBOutlet weak var tripLocation: UILabel!
     @IBOutlet weak var dates: UILabel!
     @IBOutlet weak var deleteLabel: UILabel!
-
-    var startDate:String?
-    var endDate:String?
 }

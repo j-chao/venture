@@ -12,23 +12,21 @@ import FBSDKLoginKit
 
 class SettingsVC: UIViewController {
     
-    @IBOutlet weak var developedByLbl: UILabel!
+    let defaults = UserDefaults.standard
     var alertController:UIAlertController? = nil
     var newEmail: UITextField? = nil
     var newPassword: UITextField? = nil
-    
     let fbManager = FBSDKLoginManager()
     let firEmail = FIRAuth.auth()?.currentUser?.email
     
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var passButton: UIButton!
-    
     @IBOutlet weak var timeSeg: UISegmentedControl!
     @IBOutlet weak var backgroundSeg: UISegmentedControl!
+    @IBOutlet weak var developedByLbl: UILabel!
     
     override func viewDidLoad() {
         self.setBackground()
-        
         self.developedByLbl.text = "Venture was developed by \nJustin Chao, Julianne Crea, and Connie Liu"
         
         super.viewDidLoad()
@@ -37,9 +35,7 @@ class SettingsVC: UIViewController {
             self.passButton.setTitle("Add Password", for: [])
         }
     
-        let defaults = UserDefaults.standard
         let timeFormatDefault = defaults.string(forKey: "timeFormat")
-        
         if timeFormatDefault == "military" {
             self.timeSeg.selectedSegmentIndex = 1
         }
@@ -68,9 +64,7 @@ class SettingsVC: UIViewController {
     @IBAction func changeEmail(_ sender: Any) {
         if firEmail != nil {
             self.alertController = UIAlertController(title: "Change Email", message: "Change your current email.", preferredStyle: UIAlertControllerStyle.alert)
-        }
-            
-        else {
+        } else {
             self.alertController = UIAlertController(title: "Add an Email", message: "Add an email address to your user account.", preferredStyle: UIAlertControllerStyle.alert)
         }
         
@@ -84,8 +78,7 @@ class SettingsVC: UIViewController {
                         (action) -> Void in
                     }
                     self.alertController!.addAction(cancel)
-                }
-                else {
+                } else {
                     print ("email updated")
                 }
             }
@@ -96,7 +89,6 @@ class SettingsVC: UIViewController {
         
         self.alertController!.addAction(ok)
         self.alertController!.addAction(cancel)
-        
         self.alertController!.addTextField { (textField) -> Void in
             self.newEmail = textField
             self.newEmail?.placeholder = "enter new email"
@@ -107,9 +99,7 @@ class SettingsVC: UIViewController {
     @IBAction func changePassword(_ sender: Any) {
         if firEmail != nil {
             self.alertController = UIAlertController(title: "Change Password", message: "Password must be at least 6 characters long.", preferredStyle: UIAlertControllerStyle.alert)
-        }
-            
-        else {
+        } else {
             self.alertController = UIAlertController(title: "Add Password", message: "Password must be at least 6 characters long.", preferredStyle: UIAlertControllerStyle.alert)
         }
         
@@ -119,8 +109,6 @@ class SettingsVC: UIViewController {
                     // Firebase requires a minimum length 6-characters password
                     print (error.debugDescription)
                 }
-                else {
-                }
             }
         })
         
@@ -129,7 +117,6 @@ class SettingsVC: UIViewController {
         
         self.alertController!.addAction(ok)
         self.alertController!.addAction(cancel)
-        
         self.alertController!.addTextField { (textField) -> Void in
             self.newPassword = textField
             self.newPassword?.placeholder = "enter new password"
@@ -141,21 +128,16 @@ class SettingsVC: UIViewController {
         self.alertController = UIAlertController(title: "Delete Account", message: "Are you sure you want to delete your account?", preferredStyle: UIAlertControllerStyle.alert)
         
         let ok = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { (action) -> Void in
-            
-            let defaults = UserDefaults.standard
-            defaults.set(nil, forKey: "userID")
-            
+            self.defaults.set(nil, forKey: "userID")
             let user = FIRAuth.auth()?.currentUser
             let ref = FIRDatabase.database().reference().child("users")
            
             ref.child((user?.uid)!).removeValue()
-            
             user?.delete { error in
                 if error != nil {
                     print ("delete account error")
                 } else {
                     self.fbManager.logOut()
-                    
                     let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Login")
                     vc.modalPresentationStyle = .fullScreen
@@ -166,22 +148,17 @@ class SettingsVC: UIViewController {
         
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
         }
-        
         self.alertController!.addAction(ok)
         self.alertController!.addAction(cancel)
-        
         present(self.alertController!, animated: true, completion: nil)
     }
     
     @IBAction func logOut(_ sender: Any) {
-        let defaults = UserDefaults.standard
         defaults.set(nil, forKey: "userID")
-        
         self.fbManager.logOut()
     }
     
     @IBAction func timeSegAction(_ sender: Any) {
-        let defaults = UserDefaults.standard
         switch self.timeSeg.selectedSegmentIndex {
         case 0:
             timeFormat = "regular"
@@ -195,7 +172,6 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func backgroundSegAction(_ sender: Any) {
-        let defaults = UserDefaults.standard
         switch self.backgroundSeg.selectedSegmentIndex {
         case 0:
             background = 1

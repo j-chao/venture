@@ -32,12 +32,10 @@ class ResetPassVC: UIViewController, UITextFieldDelegate {
             if error == nil {
                 self.resetMessage.text! =
                 "Please enter your email."
-            }
-            if error != nil {
+            } else if error != nil {
                 self.resetMessage.text! =
                 "No account has been created \nwith that email."
-            }
-            else {
+            } else {
                 self.resetMessage.text! =
                 "An email will be sent to you \nto reset your password."
             }

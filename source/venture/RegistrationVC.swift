@@ -11,6 +11,11 @@ import Firebase
 
 class RegistrationVC: UIViewController, UITextFieldDelegate {
     
+    let defaults = UserDefaults.standard
+    @IBOutlet weak var newEmail: UITextField!
+    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var messageLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         newEmail.attributedPlaceholder = NSAttributedString(
@@ -27,22 +32,16 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         dismiss(animated:true, completion: nil)
     }
 
-    @IBOutlet weak var newEmail: UITextField!
-    @IBOutlet weak var newPassword: UITextField!
-    @IBOutlet weak var messageLbl: UILabel!
-    
     @IBAction func registerAction(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{
            user, error in
             if error != nil {
                 if self.newPassword.text!.characters.count < 6 {
                     self.messageLbl.text = "Password must be at least \n6 characters long."
-                }
-                else {
+                } else {
                     self.messageLbl.text = "User account already exists."
                 }
-            }
-            else {
+            } else {
                 self.signIn()
             }
         })
@@ -50,7 +49,6 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     
     func signIn() {
         let credential = FIREmailPasswordAuthProvider.credential(withEmail: self.newEmail.text!, password: self.newPassword.text!)
-        
         FIRAuth.auth()?.signIn(with: credential, completion: {
             user, error in
             if error != nil {
@@ -59,18 +57,18 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
             else {
                 let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
                 let userID = FIRAuth.auth()?.currentUser?.uid
-                
-                let defaults = UserDefaults.standard
-                defaults.set(userID, forKey: "userID")
-                
+                self.defaults.set(userID, forKey: "userID")
                 ref.child("users/\(userID!)/email").setValue(self.newEmail.text!)
                 ref.child("users/\(userID!)/password").setValue(self.newPassword.text!)
-                
-                let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
-                self.show(vc, sender: self)
+                self.segueToTrips()
             }
         })
+    }
+    
+    func segueToTrips() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
+        self.show(vc, sender: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

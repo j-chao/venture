@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
     
+    let defaults = UserDefaults.standard
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
@@ -26,81 +27,65 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         let fbLoginButton = FBSDKLoginButton()
         view.addSubview(fbLoginButton)
         fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-        
         fbLoginButton.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        let userID = defaults.string(forKey: "userID")
+        let userID = self.defaults.string(forKey: "userID")
         if userID != nil {
-            let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
-            self.show(vc, sender: self)
+            self.segueToTrips()
         }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print ("Did log out of facebook")
     }
    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil {
-            print (error)
-            return
+            print (error); return
         }
-      
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        
         if String(describing: credential) != "" {
             FIRAuth.auth()?.signIn(with: credential, completion: {
                 user, error in
                 if error != nil {
                     self.errorMessage.text = "Incorrect email and/or password"
-                }
-                else {
+                } else {
                     FIRAuth.auth()?.currentUser!.link(with: credential) { (user, error) in
                         if user != nil && error == nil {
                             return
                         }
                     }
-                    
                     let user = FIRAuth.auth()?.currentUser?.uid
-                    let defaults = UserDefaults.standard
-                    defaults.set(user, forKey: "userID")
-                
-                    let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
-                    self.show(vc, sender: self)
+                    self.defaults.set(user, forKey: "userID")
+                    self.segueToTrips()
                 }
             })
         }
     }
     
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print ("User logged out of Facebook.")
+    }
+    
     @IBAction func login(_ sender: Any) {
         let credential = FIREmailPasswordAuthProvider.credential(withEmail: email.text!, password: password.text!)
-        
         FIRAuth.auth()?.signIn(with: credential, completion: {
             user, error in
             if error != nil {
                 self.errorMessage.text = "Incorrect email and/or password"
-            }
-            else {
+            } else {
                 let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
                 let userID = FIRAuth.auth()?.currentUser?.uid
-               
-                let defaults = UserDefaults.standard
-                defaults.set(userID, forKey: "userID")
-                
+                self.defaults.set(userID, forKey: "userID")
                 ref.child("users/\(userID!)/email").setValue(self.email.text!)
                 ref.child("users/\(userID!)/password").setValue(self.password.text!)
-                
-                let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
-                self.show(vc, sender: self)
+                self.segueToTrips()
             }
         })
-        
+    }
+    
+    func segueToTrips() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
+        self.show(vc, sender: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

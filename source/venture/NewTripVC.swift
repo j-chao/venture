@@ -55,9 +55,7 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
             alert.addAction(OKAction)
             self.present(alert, animated: true, completion:nil)
             return
-        }
-        
-        else if endingDate! < startingDate! {
+        } else if endingDate! < startingDate! {
             let alert = UIAlertController(title: "Error", message: "End date must not be earlier than start date." , preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 (action:UIAlertAction) in

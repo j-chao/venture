@@ -11,16 +11,15 @@ import Foundation
 import Firebase
 
 class TripsVC: UIViewController {
-    var trips = [String]()
     
+    var trips = [String]()
     var ref:FIRDatabaseReference?
+    fileprivate var activeCell : TripCellVC!
     let userID = FIRAuth.auth()?.currentUser!.uid
+    let identifier = "tripCell"
 
     @IBOutlet weak var collectionView: UICollectionView!
-    fileprivate var activeCell : TripCellVC!
-    
-    
-    let identifier = "tripCell"
+    @IBOutlet var swipeDelete: UISwipeGestureRecognizer!
     
     override func viewDidLoad() {
         self.collectionView.backgroundColor = UIColor.clear
@@ -53,12 +52,7 @@ class TripsVC: UIViewController {
                 destinationVC.passedStart = startDate!
             }
         }
-        
     }
-    
-    
-    
-    @IBOutlet var swipeDelete: UISwipeGestureRecognizer!
 }
 
 // MARK:- UICollectionViewDataSource Delegate
@@ -142,8 +136,6 @@ extension TripsVC: UICollectionViewDelegate {
              });
             self.activeCell.backgroundColor = UIColor.red
             self.activeCell.deleteLabel.text = "Delete Trip? \n<< Yes \t\t\t No >>"
-
-            
         } else {
             // Getting the cell at the point
             let cell = getCellAtPoint(point)
