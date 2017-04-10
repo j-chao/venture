@@ -30,8 +30,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nQA-2O-0um">
-                                <rect key="frame" x="16" y="88" width="343" height="438"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nQA-2O-0um">
+                                <rect key="frame" x="16" y="113" width="343" height="413"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="413" id="ERB-Bf-yTw"/>
@@ -61,8 +61,8 @@
                                     <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="Olb-lY-YWA"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGq-g3-XTc">
-                                <rect key="frame" x="0.0" y="568" width="375" height="99"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGq-g3-XTc">
+                                <rect key="frame" x="0.0" y="623" width="375" height="99"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-0x-BN9" customClass="DesignableView" customModule="venture" customModuleProvider="target">
                                         <rect key="frame" x="168" y="0.0" width="40" height="40"/>
@@ -155,8 +155,8 @@
                                     <constraint firstAttribute="bottom" secondItem="Yh6-KY-ZgY" secondAttribute="bottom" constant="5" id="rd6-d4-a6h"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOT-Mo-ZHW">
-                                <rect key="frame" x="87" y="27" width="201" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOT-Mo-ZHW">
+                                <rect key="frame" x="87" y="27" width="201" height="77"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -186,8 +186,12 @@
                     <connections>
                         <outlet property="darkFillView" destination="wjw-0x-BN9" id="mZP-zD-wdj"/>
                         <outlet property="editButton" destination="u5m-O2-y9R" id="Cun-Vj-fix"/>
+                        <outlet property="eventAddBtn" destination="Esf-bb-1tf" id="ige-fz-oih"/>
                         <outlet property="eventsTableView" destination="nQA-2O-0um" id="zfu-6Q-3c3"/>
+                        <outlet property="flightsBtn" destination="8Ox-rf-PTf" id="eWp-OG-6wQ"/>
+                        <outlet property="foodBtn" destination="nMz-kf-Mxy" id="MlM-uh-JUi"/>
                         <outlet property="menuView" destination="vGq-g3-XTc" id="Ttl-Ml-NtU"/>
+                        <outlet property="placesBtn" destination="5zR-uF-QVR" id="qZi-h3-Mfb"/>
                         <outlet property="toggleMenuBtn" destination="HH6-pH-SPB" id="R5y-vq-G8s"/>
                         <outlet property="tripDateTitle" destination="YOT-Mo-ZHW" id="FzC-Jc-xYp"/>
                     </connections>
