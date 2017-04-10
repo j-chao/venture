@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		065407295805CA8058A25EBF /* Pods_ventureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */; };
 		07010DEAFC6FE4178310676C /* Pods_venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F469BE1278DCFDE718244A68 /* Pods_venture.framework */; };
+		90F1A2D81E9C304E001852E0 /* searchFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1A2D71E9C304E001852E0 /* searchFoodVC.swift */; };
+		90F1A2DA1E9C3476001852E0 /* foodTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1A2D91E9C3476001852E0 /* foodTableVC.swift */; };
+		90F1A2DC1E9C3542001852E0 /* foodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1A2DB1E9C3542001852E0 /* foodCell.swift */; };
+		90F1A2DE1E9C3560001852E0 /* foodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1A2DD1E9C3560001852E0 /* foodVC.swift */; };
 		A824F923A8AD1303D5A97F6E /* Pods_ventureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */; };
 		B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AB1E70F3C3003F8ACA /* flights.storyboard */; };
 		B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AD1E70F3CA003F8ACA /* places.storyboard */; };
@@ -91,6 +95,10 @@
 		71C599A542A8038DF59A4AF3 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		76BB950D1959F090CC76C33F /* Pods-ventureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureUITests/Pods-ventureUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F346F116EAEEAA62FA14753 /* Pods-venture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-venture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-venture/Pods-venture.debug.xcconfig"; sourceTree = "<group>"; };
+		90F1A2D71E9C304E001852E0 /* searchFoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchFoodVC.swift; sourceTree = "<group>"; };
+		90F1A2D91E9C3476001852E0 /* foodTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodTableVC.swift; sourceTree = "<group>"; };
+		90F1A2DB1E9C3542001852E0 /* foodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodCell.swift; sourceTree = "<group>"; };
+		90F1A2DD1E9C3560001852E0 /* foodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodVC.swift; sourceTree = "<group>"; };
 		B50512AB1E70F3C3003F8ACA /* flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = flights.storyboard; sourceTree = "<group>"; };
 		B50512AD1E70F3CA003F8ACA /* places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = places.storyboard; sourceTree = "<group>"; };
 		B50512AF1E70F3D4003F8ACA /* food.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = food.storyboard; sourceTree = "<group>"; };
@@ -380,6 +388,10 @@
 		B59F6E991E9827DF00CEDE07 /* food VC */ = {
 			isa = PBXGroup;
 			children = (
+				90F1A2D71E9C304E001852E0 /* searchFoodVC.swift */,
+				90F1A2D91E9C3476001852E0 /* foodTableVC.swift */,
+				90F1A2DB1E9C3542001852E0 /* foodCell.swift */,
+				90F1A2DD1E9C3560001852E0 /* foodVC.swift */,
 			);
 			name = "food VC";
 			sourceTree = "<group>";
@@ -729,7 +741,9 @@
 				B5072E191E7F25B800BF4F82 /* ItineraryVC.swift in Sources */,
 				B58DEEFB1E82D1F40044B28E /* Globals.swift in Sources */,
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
+				90F1A2DC1E9C3542001852E0 /* foodCell.swift in Sources */,
 				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
+				90F1A2D81E9C304E001852E0 /* searchFoodVC.swift in Sources */,
 				B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */,
 				B5F7383C1E99DAFE00642B03 /* DesignableView.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
@@ -737,6 +751,8 @@
 				B56470101E9887B900251461 /* Background.swift in Sources */,
 				B5072E151E7F253900BF4F82 /* TripPageVC.swift in Sources */,
 				B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */,
+				90F1A2DA1E9C3476001852E0 /* foodTableVC.swift in Sources */,
+				90F1A2DE1E9C3560001852E0 /* foodVC.swift in Sources */,
 				EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,
 				B58D18561E7C88DD00997360 /* SettingsVC.swift in Sources */,
