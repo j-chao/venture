@@ -43,8 +43,9 @@ class ItineraryVC: UIViewController {
     @IBOutlet weak var eventsTableView: UITableView!
     var events = [String]()
     
+    
     @IBOutlet weak var editButton: UIButton!
-    @IBAction func editAction(_ sender: Any) {
+    @IBAction func editAction(_ sender: UIButton) {
         if (self.eventsTableView.isEditing) {
             self.editButton.titleLabel?.text = "Edit"
             self.eventsTableView.setEditing(false, animated: true)
@@ -59,9 +60,7 @@ class ItineraryVC: UIViewController {
     @IBOutlet weak var darkFillView: DesignableView!
     @IBOutlet weak var toggleMenuBtn: UIButton!
     
-    @IBAction func toggleMenu(_ sender: UIButton) {
-        
-        print ("toggle")
+    @IBAction func toggleMenu(_ sender: Any) {
         if darkFillView.transform == CGAffineTransform.identity {
             UIView.animate(withDuration: 1, animations: {
                 self.darkFillView.transform = CGAffineTransform(scaleX: 12, y: 12)
@@ -95,20 +94,20 @@ class ItineraryVC: UIViewController {
 //        placesBtn.alpha = alpha
 //    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toAddEvent" {
-            if let destinationVC = segue.destination as? AddEventVC {
-                destinationVC.eventDate = tripDate
-            }
-        } else if segue.identifier == "toEventDetails" {
-            if let destinationVC = segue.destination as? EventDetailsVC {
-                let indexPath = self.eventsTableView.indexPathForSelectedRow
-                destinationVC.date = self.tripDateString
-                destinationVC.event = events[(indexPath?.row)!]
-                eventsTableView.deselectRow(at: indexPath!, animated: true)
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toAddEvent" {
+//            if let destinationVC = segue.destination as? AddEventVC {
+//                destinationVC.eventDate = tripDate
+//            }
+//        } else if segue.identifier == "toEventDetails" {
+//            if let destinationVC = segue.destination as? EventDetailsVC {
+//                let indexPath = self.eventsTableView.indexPathForSelectedRow
+//                destinationVC.date = self.tripDateString
+//                destinationVC.event = events[(indexPath?.row)!]
+//                eventsTableView.deselectRow(at: indexPath!, animated: true)
+//            }
+//        }
+//    }
 
     
     
