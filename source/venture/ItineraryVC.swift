@@ -74,6 +74,37 @@ class ItineraryVC: UIViewController {
         }
     }
     
+    
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var darkFillView: DesignableView!
+    @IBOutlet weak var toggleMenuBtn: UIButton!
+    
+    @IBAction func toggleMenu(_ sender: Any) {
+        
+        if darkFillView.transform == CGAffineTransform.identity {
+            UIView.animate(withDuration: 1, animations: {
+                self.darkFillView.transform = CGAffineTransform(scaleX: 12, y: 12)
+                self.menuView.transform = CGAffineTransform(translationX: 0, y: -55)
+                self.toggleMenuBtn.transform = CGAffineTransform(rotationAngle: self.radians(180))
+                
+            }, completion: nil)
+        }
+        else {
+            UIView.animate(withDuration: 1, animations: {
+                self.darkFillView.transform = .identity
+                self.menuView.transform = .identity
+                self.toggleMenuBtn.transform = .identity
+            }, completion: nil)
+        }
+        
+    }
+   
+    func radians (_ degrees: Double) -> CGFloat {
+        return CGFloat(degrees * .pi / degrees)
+    }
+    
+    
+    
 }
 
 extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {

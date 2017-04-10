@@ -201,18 +201,8 @@
 		B50512A91E70F37E003F8ACA /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B5F7C05A1E83211F009804DF /* event.png */,
-				B5F7C05B1E83211F009804DF /* flight.png */,
-				B5F7C05C1E83211F009804DF /* food.png */,
-				B5F7C05D1E83211F009804DF /* places.png */,
-				B58266751E99971E007BA1E3 /* blueMountain.jpg */,
-				B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */,
-				B56470111E989B6500251461 /* starry.jpg */,
-				B58266731E99970C007BA1E3 /* cityHorizon.jpg */,
-				B50AEC741E7BC10300213CF3 /* blurBack.png */,
-				B51CD63F1E98A73F009F2615 /* back3.png */,
-				B55603B31E7B48E500FEC786 /* wallscreen.png */,
-				EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */,
+				B54D0CDD1E9B888C000595F9 /* eventIcons */,
+				B54D0CDC1E9B886F000595F9 /* backgrounds */,
 				B5F7C0661E832A76009804DF /* gear.png */,
 			);
 			name = images;
@@ -275,6 +265,32 @@
 				B54593D21E91BE2100308A14 /* ItineraryCellVC.swift */,
 			);
 			name = "itinerary VC";
+			sourceTree = "<group>";
+		};
+		B54D0CDC1E9B886F000595F9 /* backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				B58266751E99971E007BA1E3 /* blueMountain.jpg */,
+				B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */,
+				B56470111E989B6500251461 /* starry.jpg */,
+				B58266731E99970C007BA1E3 /* cityHorizon.jpg */,
+				B50AEC741E7BC10300213CF3 /* blurBack.png */,
+				B51CD63F1E98A73F009F2615 /* back3.png */,
+				B55603B31E7B48E500FEC786 /* wallscreen.png */,
+				EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */,
+			);
+			name = backgrounds;
+			sourceTree = "<group>";
+		};
+		B54D0CDD1E9B888C000595F9 /* eventIcons */ = {
+			isa = PBXGroup;
+			children = (
+				B5F7C05A1E83211F009804DF /* event.png */,
+				B5F7C05B1E83211F009804DF /* flight.png */,
+				B5F7C05C1E83211F009804DF /* food.png */,
+				B5F7C05D1E83211F009804DF /* places.png */,
+			);
+			name = eventIcons;
 			sourceTree = "<group>";
 		};
 		B55333311E6DE7C90007A23D = {
