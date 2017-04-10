@@ -137,15 +137,10 @@ class SettingsVC: UIViewController {
                 if error != nil {
                     print ("delete account error")
                 } else {
-                    self.fbManager.logOut()
-                    let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "Login")
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true, completion: nil)
+                    self.segueToLogin()
                 }
             }
         })
-        
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
         }
         self.alertController!.addAction(ok)
@@ -195,5 +190,12 @@ class SettingsVC: UIViewController {
         self.view.removeFromSuperview()
         self.view = nil
         parent?.addSubview(self.view)
+    }
+    
+    func segueToLogin() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }

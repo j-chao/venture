@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 class TripCellVC: UICollectionViewCell {
+    
     var startDate:String?
     var endDate:String?
     

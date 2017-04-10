@@ -11,18 +11,14 @@ import Firebase
 
 class TripPageVC: UIPageViewController {
     
-    var ref:FIRDatabaseReference?
-    
     var passedStart:String?
     
     fileprivate(set) lazy var pages:[UIViewController] = {
         var arrayPages = [UIViewController]()
-        
         for i in 1...tripLength {
             let tripDate = dateFromString(dateString: self.passedStart!)
             arrayPages.append(self.newVC("VC", tripDate: tripDate+TimeInterval((i-1)*86400)))
         }
-        
         return arrayPages
     }()
     
@@ -49,13 +45,12 @@ class TripPageVC: UIPageViewController {
         pageControl.currentPageIndicatorTintColor = UIColor.blue
         pageControl.backgroundColor = UIColor(colorLiteralRed: 37, green: 53, blue: 79, alpha: 0.8)
     }
-
 }
 
 extension TripPageVC: UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
         guard let viewControllerIdx = pages.index(of: viewController) else {
             return nil
         }
@@ -68,11 +63,9 @@ extension TripPageVC: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
         if pages.count == 1 {
             return pages[0]
         }
-        
         guard let viewControllerIdx = pages.index(of:viewController) else {
             return nil
         }

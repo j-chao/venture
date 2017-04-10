@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class ItineraryVC: UIViewController {
+    
     var ref:FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser!.uid
     
@@ -37,8 +38,8 @@ class ItineraryVC: UIViewController {
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
-        
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
+        
         
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
             let eventTime = (snapshot.value as! NSDictionary)["eventTime"] as! String
@@ -48,25 +49,15 @@ class ItineraryVC: UIViewController {
         })
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toAddEvent" {
-            if let destinationVC = segue.destination as? AddEventVC {
-                destinationVC.eventDate = tripDate
-            }
-        }
-        
-        else if segue.identifier == "toEventDetails" {
-            if let destinationVC = segue.destination as? EventDetailsVC {
-                let indexPath = self.eventsTableView.indexPathForSelectedRow
-                
-                destinationVC.date = self.tripDateString
-                destinationVC.event = events[(indexPath?.row)!]
-                
-                eventsTableView.deselectRow(at: indexPath!, animated: true)
-            }
+    override func viewDidDisappear(_ animated: Bool) {
+        if darkFillView.transform != CGAffineTransform.identity {
+            self.darkFillView.transform = .identity
+            self.menuView.transform = .identity
+            self.toggleMenuBtn.transform = .identity
+            self.toggleMenuButtons()
         }
     }
-    
+   
     @IBOutlet weak var eventsTableView: UITableView!
     var events = [String]()
     
@@ -107,15 +98,6 @@ class ItineraryVC: UIViewController {
             })
         }
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        if darkFillView.transform != CGAffineTransform.identity {
-            self.darkFillView.transform = .identity
-            self.menuView.transform = .identity
-            self.toggleMenuBtn.transform = .identity
-            self.toggleMenuButtons()
-        }
-    }
    
     func radians (_ degrees: Double) -> CGFloat {
         return CGFloat(degrees * .pi / degrees)
@@ -129,6 +111,20 @@ class ItineraryVC: UIViewController {
         placesBtn.alpha = alpha
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddEvent" {
+            if let destinationVC = segue.destination as? AddEventVC {
+                destinationVC.eventDate = tripDate
+            }
+        } else if segue.identifier == "toEventDetails" {
+            if let destinationVC = segue.destination as? EventDetailsVC {
+                let indexPath = self.eventsTableView.indexPathForSelectedRow
+                destinationVC.date = self.tripDateString
+                destinationVC.event = events[(indexPath?.row)!]
+                eventsTableView.deselectRow(at: indexPath!, animated: true)
+            }
+        }
+    }
 }
 
 extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
@@ -139,11 +135,7 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! ItineraryCellVC
-        
-        let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
-      
-        
-        ref.child("\(self.events[indexPath.row])").observe(.value, with: { snapshot in
+        ref?.child("\(self.events[indexPath.row])").observe(.value, with: { snapshot in
             if snapshot.exists() {
                 let timeRec = (snapshot.value as? NSDictionary)? ["eventTime"] as! String!
                 let desc = (snapshot.value as? NSDictionary)? ["eventDesc"] as! String!
@@ -154,23 +146,19 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
                 cell.textLabel!.text = timeDisplay + "   - \t" + desc!
             }
         })
-            
         cell.backgroundColor = UIColor.clear
         return cell
     }
   
-    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if tableView.isEditing {
             return .delete
         }
-        
         return .none
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
             _ = deleteEventFromFirebase(event: events[indexPath.row])
             events.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -178,9 +166,7 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func deleteEventFromFirebase(event:String) -> Int {
-        let userID = FIRAuth.auth()?.currentUser!.uid
-        let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(tripDateString!)")
-        ref.child(event).removeValue()
+        ref?.child(event).removeValue()
         return 0
     }
     
