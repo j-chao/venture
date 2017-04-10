@@ -45,6 +45,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="riT-JF-O4g" kind="show" identifier="toEventDetails" id="EQ0-I1-UKE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -54,6 +57,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thM-Lu-x73">
+                                <rect key="frame" x="309" y="28" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ILd-Kg-fu6"/>
+                                    <constraint firstAttribute="height" constant="30" id="c3p-uV-d8c"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="C2v-er-yTM"/>
+                                </connections>
+                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-TV-yWS">
                                 <rect key="frame" x="0.0" y="622" width="375" height="130"/>
                                 <subviews>
@@ -94,6 +111,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="flight"/>
+                                                <connections>
+                                                    <segue destination="5nF-d7-KLR" kind="show" id="MZf-Q8-3Rr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-Ra-aWM">
                                                 <rect key="frame" x="84" y="0.0" width="44" height="44"/>
@@ -103,6 +123,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="food"/>
+                                                <connections>
+                                                    <segue destination="GzA-ZB-V9E" kind="show" id="MGa-ew-6BG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm0-TQ-72j">
                                                 <rect key="frame" x="168" y="0.0" width="44" height="44"/>
@@ -112,6 +135,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="places"/>
+                                                <connections>
+                                                    <segue destination="BIc-VA-aoS" kind="show" action="showDetailViewController:sender:" id="J7b-HC-90U"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tge-9p-7HX">
                                                 <rect key="frame" x="252" y="0.0" width="44" height="44"/>
@@ -121,6 +147,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="event"/>
+                                                <connections>
+                                                    <segue destination="fL6-y5-j7V" kind="show" identifier="toAddEvent" id="rHZ-Hb-DBu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -137,20 +166,6 @@
                                     <constraint firstItem="jK5-vO-R9L" firstAttribute="top" secondItem="hCg-f0-8c5" secondAttribute="bottom" constant="8" id="yEw-E7-dJK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thM-Lu-x73">
-                                <rect key="frame" x="309" y="28" width="50" height="30"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="ILd-Kg-fu6"/>
-                                    <constraint firstAttribute="height" constant="30" id="c3p-uV-d8c"/>
-                                </constraints>
-                                <state key="normal" title="Edit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="C2v-er-yTM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,24 +195,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87J-xL-82m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4143.1999999999998" y="97.601199400299862"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="z6n-Cy-1FC">
-            <objects>
-                <viewController id="m4K-wG-aSU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ERa-nS-C9D"/>
-                        <viewControllerLayoutGuide type="bottom" id="o7E-kK-48v"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mig-rv-R8p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mrF-bz-F4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3502" y="828"/>
         </scene>
         <!--food-->
         <scene sceneID="y04-BN-Bsj">
@@ -261,7 +258,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-lg-PM1">
-                                <rect key="frame" x="122.5" y="527" width="130" height="47"/>
+                                <rect key="frame" x="123" y="527" width="130" height="47"/>
                                 <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="rU0-D7-L6G"/>

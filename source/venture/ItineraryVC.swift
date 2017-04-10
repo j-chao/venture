@@ -94,20 +94,20 @@ class ItineraryVC: UIViewController {
 //        placesBtn.alpha = alpha
 //    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toAddEvent" {
-//            if let destinationVC = segue.destination as? AddEventVC {
-//                destinationVC.eventDate = tripDate
-//            }
-//        } else if segue.identifier == "toEventDetails" {
-//            if let destinationVC = segue.destination as? EventDetailsVC {
-//                let indexPath = self.eventsTableView.indexPathForSelectedRow
-//                destinationVC.date = self.tripDateString
-//                destinationVC.event = events[(indexPath?.row)!]
-//                eventsTableView.deselectRow(at: indexPath!, animated: true)
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddEvent" {
+            if let destinationVC = segue.destination as? AddEventVC {
+                destinationVC.eventDate = tripDate
+            }
+        } else if segue.identifier == "toEventDetails" {
+            if let destinationVC = segue.destination as? EventDetailsVC {
+                let indexPath = self.eventsTableView.indexPathForSelectedRow
+                destinationVC.date = self.tripDateString
+                destinationVC.event = events[(indexPath?.row)!]
+                eventsTableView.deselectRow(at: indexPath!, animated: true)
+            }
+        }
+    }
 
     
     
