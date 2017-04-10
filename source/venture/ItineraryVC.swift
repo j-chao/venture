@@ -49,6 +49,7 @@ class ItineraryVC: UIViewController {
         })
     }
     
+<<<<<<< HEAD
     override func viewDidDisappear(_ animated: Bool) {
         if darkFillView.transform != CGAffineTransform.identity {
             self.darkFillView.transform = .identity
@@ -60,9 +61,13 @@ class ItineraryVC: UIViewController {
    
     @IBOutlet weak var eventsTableView: UITableView!
     var events = [String]()
+=======
+    @IBOutlet weak var eventsTableView: UITableView!
+    var events = [String]()
+    
     
     @IBOutlet weak var editButton: UIButton!
-    @IBAction func editAction(_ sender: Any) {
+    @IBAction func editAction(_ sender: UIButton) {
         if (self.eventsTableView.isEditing) {
             self.editButton.titleLabel?.text = "Edit"
             self.eventsTableView.setEditing(false, animated: true)
@@ -72,6 +77,69 @@ class ItineraryVC: UIViewController {
             self.eventsTableView.setEditing(true, animated: true)
         }
     }
+
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var darkFillView: DesignableView!
+    @IBOutlet weak var toggleMenuBtn: UIButton!
+    
+    @IBAction func toggleMenu(_ sender: Any) {
+        if darkFillView.transform == CGAffineTransform.identity {
+            UIView.animate(withDuration: 1, animations: {
+                self.darkFillView.transform = CGAffineTransform(scaleX: 12, y: 12)
+                self.menuView.transform = CGAffineTransform(translationX: 0, y: -55)
+                self.toggleMenuBtn.transform = CGAffineTransform(rotationAngle: self.radians(180))
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 0.5, animations: {
+//                self.toggleMenuButtons()
+            })
+        }
+        else {
+            UIView.animate(withDuration: 1, animations: {
+                self.darkFillView.transform = .identity
+                self.menuView.transform = .identity
+                self.toggleMenuBtn.transform = .identity
+//                self.toggleMenuButtons()
+            })
+        }
+    }
+    
+    func radians (_ degrees: Double) -> CGFloat {
+        return CGFloat(degrees * .pi / degrees)
+    }
+    
+//    func toggleMenuButtons() {
+//        let alpha = CGFloat(eventAddBtn.alpha == 0 ? 1 : 0)
+//        eventAddBtn.alpha = alpha
+//        flightsBtn.alpha = alpha
+//        foodBtn.alpha = alpha
+//        placesBtn.alpha = alpha
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddEvent" {
+            if let destinationVC = segue.destination as? AddEventVC {
+                destinationVC.eventDate = tripDate
+            }
+        } else if segue.identifier == "toEventDetails" {
+            if let destinationVC = segue.destination as? EventDetailsVC {
+                let indexPath = self.eventsTableView.indexPathForSelectedRow
+                destinationVC.date = self.tripDateString
+                destinationVC.event = events[(indexPath?.row)!]
+                eventsTableView.deselectRow(at: indexPath!, animated: true)
+            }
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+>>>>>>> fixingEmptyEventCells
+    
     
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var darkFillView: DesignableView!

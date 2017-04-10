@@ -52,11 +52,6 @@
 		B5F467261E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F467271E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */; };
 		B5F7383C1E99DAFE00642B03 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7383B1E99DAFE00642B03 /* DesignableView.swift */; };
-		B5F7C05E1E83211F009804DF /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05A1E83211F009804DF /* event.png */; };
-		B5F7C05F1E83211F009804DF /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05B1E83211F009804DF /* flight.png */; };
-		B5F7C0601E83211F009804DF /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05C1E83211F009804DF /* food.png */; };
-		B5F7C0611E83211F009804DF /* places.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C05D1E83211F009804DF /* places.png */; };
-		B5F7C0671E832A76009804DF /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7C0661E832A76009804DF /* gear.png */; };
 		EA12B9F51E841F5A004831B9 /* wallscreenDarkened.png in Resources */ = {isa = PBXBuildFile; fileRef = EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */; };
 		EA29CDF51E98B315008362E2 /* searchForPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF41E98B315008362E2 /* searchForPlacesVC.swift */; };
 		EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF61E98B33A008362E2 /* placesTableVC.swift */; };
@@ -141,11 +136,6 @@
 		B5E2A09E1E7DCBA2002C48DC /* itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = itinerary.storyboard; sourceTree = "<group>"; };
 		B5F467241E7B2F7E00A86D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5F7383B1E99DAFE00642B03 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		B5F7C05A1E83211F009804DF /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
-		B5F7C05B1E83211F009804DF /* flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flight.png; sourceTree = "<group>"; };
-		B5F7C05C1E83211F009804DF /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
-		B5F7C05D1E83211F009804DF /* places.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = places.png; sourceTree = "<group>"; };
-		B5F7C0661E832A76009804DF /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		CE4FBA887571E63DE18EC782 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreenDarkened.png; sourceTree = "<group>"; };
 		EA29CDF41E98B315008362E2 /* searchForPlacesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchForPlacesVC.swift; sourceTree = "<group>"; };
@@ -209,9 +199,13 @@
 		B50512A91E70F37E003F8ACA /* images */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B54D0CDD1E9B888C000595F9 /* eventIcons */,
 				B54D0CDC1E9B886F000595F9 /* backgrounds */,
 				B5F7C0661E832A76009804DF /* gear.png */,
+=======
+				B52F12BD1E9C2B2A00D87467 /* backgrounds */,
+>>>>>>> fixingEmptyEventCells
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -275,7 +269,11 @@
 			name = "itinerary VC";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		B54D0CDC1E9B886F000595F9 /* backgrounds */ = {
+=======
+		B52F12BD1E9C2B2A00D87467 /* backgrounds */ = {
+>>>>>>> fixingEmptyEventCells
 			isa = PBXGroup;
 			children = (
 				B58266751E99971E007BA1E3 /* blueMountain.jpg */,
@@ -290,6 +288,7 @@
 			name = backgrounds;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		B54D0CDD1E9B888C000595F9 /* eventIcons */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +300,8 @@
 			name = eventIcons;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> fixingEmptyEventCells
 		B55333311E6DE7C90007A23D = {
 			isa = PBXGroup;
 			children = (
@@ -545,19 +546,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F7C0611E83211F009804DF /* places.png in Resources */,
 				B56470121E989B6500251461 /* starry.jpg in Resources */,
 				B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */,
 				B5E2A09F1E7DCBA2002C48DC /* itinerary.storyboard in Resources */,
 				EA12B9F51E841F5A004831B9 /* wallscreenDarkened.png in Resources */,
 				B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */,
-				B5F7C0601E83211F009804DF /* food.png in Resources */,
 				B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */,
 				B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */,
 				B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */,
 				B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */,
-				B5F7C0671E832A76009804DF /* gear.png in Resources */,
-				B5F7C05E1E83211F009804DF /* event.png in Resources */,
 				B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */,
 				B51CD6401E98A73F009F2615 /* back3.png in Resources */,
 				B50512B01E70F3D4003F8ACA /* food.storyboard in Resources */,
@@ -566,7 +563,6 @@
 				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,
-				B5F7C05F1E83211F009804DF /* flight.png in Resources */,
 				B55333431E6DE7CA0007A23D /* login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
