@@ -49,6 +49,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>YelpAPI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -77,6 +82,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8BC9F41A1316460E3C460D0D0BB16FBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BC5000D645EEAF961C85907CDC796FE1</key>
 		<dict>
 			<key>primary</key>
@@ -93,6 +103,11 @@
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF97153BFB7F1EB4A4CB115F75BF01E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

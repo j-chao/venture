@@ -60,7 +60,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEK-cL-D5u">
                                 <rect key="frame" x="114" y="472" width="146" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="search for places">
+                                <state key="normal" title="find places">
                                     <color key="titleColor" red="0.71734775641025639" green="0.0" blue="0.38052245656739619" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -69,6 +69,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="getPlaces:" destination="NNw-Sw-Suc" eventType="touchUpInside" id="3pN-dc-RNe"/>
                                     <segue destination="hyh-IE-Ukm" kind="show" id="uA0-mT-8rb"/>
                                 </connections>
                             </button>
@@ -115,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeEntry" rowHeight="76" id="0cJ-ds-aEC" customClass="placeCell" customModule="venture" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="76" id="0cJ-ds-aEC" customClass="placeCell" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0cJ-ds-aEC" id="gpp-KF-WnW">
