@@ -42,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c73-zT-Inc" id="wCf-E7-rgk">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -186,8 +186,12 @@
                     <connections>
                         <outlet property="darkFillView" destination="uqc-c5-QMX" id="Gtd-Ee-fjX"/>
                         <outlet property="editButton" destination="thM-Lu-x73" id="DFY-qa-rB2"/>
+                        <outlet property="eventAddBtn" destination="tge-9p-7HX" id="dAT-SG-sW9"/>
                         <outlet property="eventsTableView" destination="jLm-9A-HfG" id="IVr-Ld-PUm"/>
+                        <outlet property="flightBtn" destination="abc-w1-V14" id="8pm-ib-L6D"/>
+                        <outlet property="foodBtn" destination="0Qq-Ra-aWM" id="ORM-vy-Va6"/>
                         <outlet property="menuView" destination="YUA-TV-yWS" id="wnd-hy-we9"/>
+                        <outlet property="placesBtn" destination="Sm0-TQ-72j" id="VFl-pz-2J9"/>
                         <outlet property="toggleMenuBtn" destination="hCg-f0-8c5" id="3iq-2e-6bg"/>
                         <outlet property="tripDateTitle" destination="jYs-Lp-ODh" id="LE3-Da-jsG"/>
                     </connections>
