@@ -159,10 +159,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryLabel" destination="6Jw-5V-HVZ" id="U54-mf-Gth"/>
-                                    <outlet property="placeLabel" destination="u2E-Ga-wfd" id="eMg-eN-Kye"/>
-                                    <outlet property="placenameLabel" destination="u2E-Ga-wfd" id="sFJ-cp-NqN"/>
-                                    <outlet property="ratingLabel" destination="Sx3-OI-lgY" id="heh-JN-jU8"/>
+                                    <outlet property="categoryLable" destination="6Jw-5V-HVZ" id="Byu-02-KLA"/>
+                                    <outlet property="placenameLabel" destination="u2E-Ga-wfd" id="QqL-eg-HOc"/>
+                                    <outlet property="ratingLabel" destination="Sx3-OI-lgY" id="Xf1-Pm-Xdy"/>
                                     <segue destination="AB0-xg-EyF" kind="show" id="iIW-lG-shO"/>
                                 </connections>
                             </tableViewCell>

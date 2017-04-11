@@ -11,7 +11,7 @@ import UIKit
 class placeCell: UITableViewCell {
     
     @IBOutlet weak var placenameLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryLable: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
     override func awakeFromNib() {
