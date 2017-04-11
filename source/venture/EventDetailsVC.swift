@@ -52,5 +52,24 @@ class EventDetailsVC: UIViewController {
         annotation.coordinate = location
         annotation.title = "HOOK 'EM"
         map.addAnnotation(annotation)
+        
+        
+        let address = "6541 Roundrock Trail, Texas, 75023"
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { [weak self] placemarks, error in
+            if let placemark = placemarks?.first, let location = placemark.location {
+                let mark = MKPlacemark(placemark: placemark)
+                
+                if var region = self?.map.region {
+                    region.center = location.coordinate
+                    region.span.longitudeDelta /= 8.0
+                    region.span.latitudeDelta /= 8.0
+                    self?.map.setRegion(region, animated: true)
+                    self?.map.addAnnotation(mark)
+                }
+            }
+        }
     }
+    
+    
 }

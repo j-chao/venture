@@ -12,6 +12,7 @@ target 'venture' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  pod 'YelpAPI'
 
   target 'ventureTests' do
     inherit! :search_paths

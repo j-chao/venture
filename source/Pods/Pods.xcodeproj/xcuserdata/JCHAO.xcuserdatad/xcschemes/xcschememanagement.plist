@@ -49,15 +49,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YelpAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>15F88CCC7F54274CD12CA786FE217FE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -68,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>84CB7CB472F1C6F058B78488BFB838AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BC9F41A1316460E3C460D0D0BB16FBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -88,6 +93,11 @@
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF97153BFB7F1EB4A4CB115F75BF01E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

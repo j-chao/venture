@@ -46,12 +46,20 @@ class ItineraryVC: UIViewController {
             self.eventsTableView.reloadData()
         })
         
-        self.eventAddBtn.alpha = 1
-        self.flightBtn.alpha = 1
-        self.foodBtn.alpha = 1
-        self.placesBtn.alpha = 1
+        self.eventAddBtn.alpha = 0
+        self.flightBtn.alpha = 0
+        self.foodBtn.alpha = 0
+        self.placesBtn.alpha = 0
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        if menuView.transform != .identity {
+            self.darkFillView.transform = .identity
+            self.menuView.transform = .identity
+            self.toggleMenuBtn.transform = .identity
+            self.toggleMenuButtons()
+        }
+    }
     
     @IBAction func editAction(_ sender: UIButton) {
         if (self.eventsTableView.isEditing) {
@@ -71,14 +79,14 @@ class ItineraryVC: UIViewController {
                 self.toggleMenuBtn.transform = CGAffineTransform(rotationAngle: self.radians(180))
             }, completion: nil)
             UIView.animate(withDuration: 0.5, animations: {
-//                self.toggleMenuButtons()
+                self.toggleMenuButtons()
             })
         } else {
             UIView.animate(withDuration: 1, animations: {
                 self.darkFillView.transform = .identity
                 self.menuView.transform = .identity
                 self.toggleMenuBtn.transform = .identity
-//                self.toggleMenuButtons()
+                self.toggleMenuButtons()
             })
         }
     }
