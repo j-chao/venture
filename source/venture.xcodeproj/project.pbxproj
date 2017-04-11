@@ -58,6 +58,7 @@
 		EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF61E98B33A008362E2 /* placesTableVC.swift */; };
 		EA29CDF91E98B35B008362E2 /* placeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF81E98B35B008362E2 /* placeVC.swift */; };
 		EA29CDFB1E98B424008362E2 /* placeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDFA1E98B424008362E2 /* placeCell.swift */; };
+		EA6320461E9C70A200D48CA0 /* yelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6320451E9C70A200D48CA0 /* yelpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		EA29CDF61E98B33A008362E2 /* placesTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placesTableVC.swift; sourceTree = "<group>"; };
 		EA29CDF81E98B35B008362E2 /* placeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeVC.swift; sourceTree = "<group>"; };
 		EA29CDFA1E98B424008362E2 /* placeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeCell.swift; sourceTree = "<group>"; };
+		EA6320451E9C70A200D48CA0 /* yelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yelpClient.swift; sourceTree = "<group>"; };
 		F469BE1278DCFDE718244A68 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -395,6 +397,7 @@
 		EAD462411E907EF40095A58B /* places VC */ = {
 			isa = PBXGroup;
 			children = (
+				EA6320451E9C70A200D48CA0 /* yelpClient.swift */,
 				EA29CDF41E98B315008362E2 /* searchForPlacesVC.swift */,
 				EA29CDF61E98B33A008362E2 /* placesTableVC.swift */,
 				EA29CDF81E98B35B008362E2 /* placeVC.swift */,
@@ -717,6 +720,7 @@
 			files = (
 				B5A66C4E1E9C54C900D40D87 /* foodVC.swift in Sources */,
 				B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */,
+				EA6320461E9C70A200D48CA0 /* yelpClient.swift in Sources */,
 				B505716D1E96FFED00AD7B29 /* EventDetailsVC.swift in Sources */,
 				EA29CDF51E98B315008362E2 /* searchForPlacesVC.swift in Sources */,
 				B5A66C4C1E9C54C900D40D87 /* foodCell.swift in Sources */,
