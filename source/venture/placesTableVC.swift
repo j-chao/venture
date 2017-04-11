@@ -15,6 +15,7 @@ class placesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Places"
+        print("locales:" + locales[0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +31,7 @@ class placesTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! placeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! placeCell
         cell.placenameLabel?.text = locales[indexPath.row]
         return cell
     }

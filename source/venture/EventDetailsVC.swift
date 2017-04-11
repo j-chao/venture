@@ -54,7 +54,7 @@ class EventDetailsVC: UIViewController {
         map.addAnnotation(annotation)
         
         
-        let address = "6541 Roundrock Trail, Texas, 75023"
+        let address = "714 W 22nd St, Austin, 78705"
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { [weak self] placemarks, error in
             if let placemark = placemarks?.first, let location = placemark.location {
