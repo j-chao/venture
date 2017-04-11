@@ -12,7 +12,7 @@ import BrightFutures
 
 class searchForPlacesVC: UIViewController {
     
-    var places:NSArray? = nil
+    var places:[String] = []
 
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var priceField: UITextField!
@@ -35,7 +35,7 @@ class searchForPlacesVC: UIViewController {
         let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
         // Search for 3 dinner restaurants
-        let query = YLPQuery(location: "San Francisco, CA")
+        let query = YLPQuery(location: locationField.text!)
         query.term = "dinner"
         query.limit = 3
         
@@ -43,9 +43,11 @@ class searchForPlacesVC: UIViewController {
             client.search(withQuery: query)
             }.onSuccess { search in
                 if let topBusiness = search.businesses.first {
-                    print("Top business: \(topBusiness.name), id: \(topBusiness.identifier)")
+                    self.places.append("\(topBusiness.name)")
+                    print("Top business: \(topBusiness.name)")
                 } else {
-                    print("No businesses found")
+                 //   self.places.append("No businesses found")
+                    print("None found")
                 }
                 exit(EXIT_SUCCESS)
             }.onFailure { error in
@@ -53,12 +55,14 @@ class searchForPlacesVC: UIViewController {
                 exit(EXIT_FAILURE)
         }
     }
-
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toPlaces" {
+            if let destinationVC = segue.destination as? placesTableVC {
+                // pass array to table VC
+                destinationVC.locales = places
+            }
+        }
     }
-    */
 
 }

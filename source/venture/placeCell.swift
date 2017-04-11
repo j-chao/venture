@@ -9,7 +9,7 @@
 import UIKit
 
 class placeCell: UITableViewCell {
-
+    
     @IBOutlet weak var placenameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
@@ -22,18 +22,4 @@ class placeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! placeCell
-        
-        // Configure  cell
-        //let index:Int = indexPath.row
-        
-        //cell.placenameLabel!.text = placeName
-        //cell.categoryLabel!.text = category
-        //cell.ratingLabel!.text = rating
-        
-        return cell
-    }
-
 }
