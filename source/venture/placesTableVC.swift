@@ -9,6 +9,8 @@
 import UIKit
 
 class placesTableVC: UITableViewController {
+    
+    var locales:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,9 +18,6 @@ class placesTableVC: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following to display an Edit button in the navigation bar for this VC.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,22 +25,18 @@ class placesTableVC: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! placeCell
+        cell.placenameLabel?.text = locales[0]
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

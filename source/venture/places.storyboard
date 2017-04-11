@@ -70,7 +70,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="getPlaces:" destination="NNw-Sw-Suc" eventType="touchUpInside" id="3pN-dc-RNe"/>
-                                    <segue destination="hyh-IE-Ukm" kind="show" id="uA0-mT-8rb"/>
+                                    <segue destination="hyh-IE-Ukm" kind="show" identifier="toPlaces" id="uA0-mT-8rb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nl2-vw-F2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="-99"/>
+            <point key="canvasLocation" x="597.60000000000002" y="-99.400299850074973"/>
         </scene>
         <!--Places TableVC-->
         <scene sceneID="me8-ue-Yzf">
@@ -120,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0cJ-ds-aEC" id="gpp-KF-WnW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2E-Ga-wfd">
