@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//import YelpAPI
-//import BrightFutures
+import YelpAPI
+import BrightFutures
 
 class searchForPlacesVC: UIViewController {
     
@@ -31,31 +31,29 @@ class searchForPlacesVC: UIViewController {
     }
     
     @IBAction func getPlaces(_ sender: Any) {
-    //    let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
-     //   let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
+        let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
+        let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
         // Search for 3 dinner restaurants
-   //     let query = YLPQuery(location: "San Francisco, CA")
-    //    query.term = "dinner"
-     //   query.limit = 3
+        let query = YLPQuery(location: "San Francisco, CA")
+        query.term = "dinner"
+        query.limit = 3
         
-    //    YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap { client in
-     //       client.search(withQuery: query)
-      //      }.onSuccess { search in
-    //            if let topBusiness = search.businesses.first {
-    //                print("Top business: \(topBusiness.name), id: \(topBusiness.identifier)")
-    //            } else {
-    //                print("No businesses found")
-    //            }
-     //           exit(EXIT_SUCCESS)
-     //       }.onFailure { error in
-     //           print("Search errored: \(error)")
-     //           exit(EXIT_FAILURE)
-      //  }
+        YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap { client in
+            client.search(withQuery: query)
+            }.onSuccess { search in
+                if let topBusiness = search.businesses.first {
+                    print("Top business: \(topBusiness.name), id: \(topBusiness.identifier)")
+                } else {
+                    print("No businesses found")
+                }
+                exit(EXIT_SUCCESS)
+            }.onFailure { error in
+                print("Search errored: \(error)")
+                exit(EXIT_FAILURE)
+        }
     }
 
-
-    
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.

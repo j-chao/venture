@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>BrightFutures.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -49,6 +54,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Result.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>YelpAPI.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -72,7 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4551A02DCD158A5143D803E0FE76C4F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75AB1D11065205EC124EB219CB070D03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7892256FAE6538B3A4065D39EA884C45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84ACFD2F0FFCE8CB6FC3B306FD8601F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -83,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>8BC9F41A1316460E3C460D0D0BB16FBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98CC12EEDCA0ADE298C62268125E8304</key>
 		<dict>
 			<key>primary</key>
 			<true/>
