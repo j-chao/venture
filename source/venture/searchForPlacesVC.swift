@@ -10,7 +10,7 @@ import UIKit
 import YelpAPI
 import BrightFutures
 
-class searchForPlacesVC: UIViewController {
+class searchForPlacesVC: UIViewController, UITableViewDelegate {
     
     var places:[String] = []
 
@@ -21,9 +21,6 @@ class searchForPlacesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Search for Places"
-        
-        // Set delegates for table view protocols
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +31,7 @@ class searchForPlacesVC: UIViewController {
         let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
         let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
-        // Search for 3 dinner restaurants
+        // Search for 3 dinner restaurants in user-defined location
         let query = YLPQuery(location: locationField.text!)
         query.term = "dinner"
         query.limit = 3
@@ -46,13 +43,13 @@ class searchForPlacesVC: UIViewController {
                     self.places.append("\(topBusiness.name)")
                     print("Top business: \(topBusiness.name)")
                 } else {
-                 //   self.places.append("No businesses found")
+                    self.places.append("None found")
                     print("None found")
                 }
-                exit(EXIT_SUCCESS)
+                //exit(EXIT_SUCCESS)
             }.onFailure { error in
                 print("Search errored: \(error)")
-                exit(EXIT_FAILURE)
+                //exit(EXIT_FAILURE)
         }
     }
     

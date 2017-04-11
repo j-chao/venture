@@ -15,9 +15,6 @@ class placesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Places"
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +26,12 @@ class placesTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return locales.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! placeCell
-        cell.placenameLabel?.text = locales[0]
+        cell.placenameLabel?.text = locales[indexPath.row]
         return cell
     }
 
