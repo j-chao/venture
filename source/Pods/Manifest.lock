@@ -5,6 +5,8 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - BrightFutures (5.1.0):
+    - Result (~> 3.0)
   - FBSDKCoreKit (4.20.2):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.20.2):
@@ -44,9 +46,11 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
+  - Result (3.2.1)
   - YelpAPI (2.0.0)
 
 DEPENDENCIES:
+  - BrightFutures
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -57,6 +61,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  BrightFutures: 62aafb1a63520eda91c9286bf4be33e58e043938
   FBSDKCoreKit: 82eac696eb6157da5f4266c3a241f00e9bd72471
   FBSDKLoginKit: 2211bede07c83391349eacc1fd86cf6d9289ce38
   FBSDKShareKit: ca9b22264ea49a896dafb2467c1a4f72aa41996f
@@ -68,8 +73,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: d986801fdf61c1eca419fe121ff55a9e069aa93a
+PODFILE CHECKSUM: 14fbe826c7426171eda81359f27562573506e154
 
 COCOAPODS: 1.2.0

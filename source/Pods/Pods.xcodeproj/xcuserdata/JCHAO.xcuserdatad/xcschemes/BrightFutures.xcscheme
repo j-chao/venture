@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BE70188BC9D1EEB73F1412F978A6CEF6'
-               BlueprintName = 'Pods-ventureTests'
+               BlueprintIdentifier = '4551A02DCD158A5143D803E0FE76C4F6'
+               BlueprintName = 'BrightFutures'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-ventureTests.framework'>
+               BuildableName = 'BrightFutures.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
