@@ -19,7 +19,6 @@ class TripsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate var activeCell : TripCellVC!
     
-    
     let identifier = "tripCell"
     
     override func viewDidLoad() {

@@ -4,6 +4,8 @@ Venture iOS app
 developed for CS 329E, Elements of Mobile Computing  
 Spring, 2017  
 
+https://github.com/j-chao/venture
+
 
 ### Directory of Files
   * docs:   

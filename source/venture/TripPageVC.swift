@@ -40,6 +40,7 @@ class TripPageVC: UIPageViewController {
         super.viewDidLoad()
         self.title = passedTrip
         self.dataSource = self
+        
         if let firstVC = pages.first as? ItineraryVC {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
@@ -48,6 +49,10 @@ class TripPageVC: UIPageViewController {
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.blue
         pageControl.backgroundColor = UIColor(colorLiteralRed: 37, green: 53, blue: 79, alpha: 0.8)
+        
+        if tripLength == 1 {
+            self.removeSwipeGesture()
+        }
     }
 
 }
@@ -93,5 +98,13 @@ extension TripPageVC: UIPageViewControllerDataSource {
                 return 0
         }
         return firstVCIdx
+    }
+
+    func removeSwipeGesture() {
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
     }
 }
