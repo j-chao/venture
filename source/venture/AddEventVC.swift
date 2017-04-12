@@ -26,7 +26,7 @@ class AddEventVC: UIViewController {
         self.setBackground()
         super.viewDidLoad()
         eventDesc.attributedPlaceholder = NSAttributedString(string: "event description", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
-        eventLoc.attributedPlaceholder = NSAttributedString(string: "event location", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
+        eventLoc.attributedPlaceholder = NSAttributedString(string: "event address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
        
         let dateTitle = stringLongFromDate(date: eventDate)
         self.eventDateStr = dateTitle
