@@ -255,7 +255,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Trips" id="Soy-ky-utn">
-                        <barButtonItem key="leftBarButtonItem" image="gear.png" style="done" id="1ff-Y2-bWw">
+                        <barButtonItem key="leftBarButtonItem" image="gear" style="done" id="1ff-Y2-bWw">
                             <connections>
                                 <segue destination="Zoi-2O-yrf" kind="show" id="LeS-zN-q8F"/>
                             </connections>
@@ -291,10 +291,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNT-bk-IHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="82"/>
+            <point key="canvasLocation" x="1894" y="63"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gear.png" width="36" height="36"/>
+        <image name="gear" width="36" height="36"/>
     </resources>
 </document>

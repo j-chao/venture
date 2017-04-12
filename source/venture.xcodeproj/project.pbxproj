@@ -32,6 +32,16 @@
 		B55333561E6DE7CA0007A23D /* ventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333551E6DE7CA0007A23D /* ventureTests.swift */; };
 		B55333611E6DE7CA0007A23D /* ventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55333601E6DE7CA0007A23D /* ventureUITests.swift */; };
 		B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B55603B31E7B48E500FEC786 /* wallscreen.png */; };
+		B558AAEF1E9EC11300DCED1B /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAE51E9EC11300DCED1B /* UIButtonX.swift */; };
+		B558AAF01E9EC11300DCED1B /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAE61E9EC11300DCED1B /* UIImageViewX.swift */; };
+		B558AAF11E9EC11300DCED1B /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAE71E9EC11300DCED1B /* UILabelX.swift */; };
+		B558AAF21E9EC11300DCED1B /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAE81E9EC11300DCED1B /* UISliderX.swift */; };
+		B558AAF31E9EC11300DCED1B /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAE91E9EC11300DCED1B /* UITextFieldX.swift */; };
+		B558AAF41E9EC11300DCED1B /* UIViewAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAEA1E9EC11300DCED1B /* UIViewAnchorPoint.swift */; };
+		B558AAF51E9EC11300DCED1B /* UIViewControllerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAEB1E9EC11300DCED1B /* UIViewControllerX.swift */; };
+		B558AAF61E9EC11300DCED1B /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAEC1E9EC11300DCED1B /* UIViewX.swift */; };
+		B558AAF71E9EC11300DCED1B /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAED1E9EC11300DCED1B /* UIViewXRadialGradient.swift */; };
+		B558AAF81E9EC11300DCED1B /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */; };
 		B56470101E9887B900251461 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564700F1E9887B900251461 /* Background.swift */; };
 		B56470121E989B6500251461 /* starry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B56470111E989B6500251461 /* starry.jpg */; };
 		B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266731E99970C007BA1E3 /* cityHorizon.jpg */; };
@@ -122,6 +132,16 @@
 		B55333601E6DE7CA0007A23D /* ventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ventureUITests.swift; sourceTree = "<group>"; };
 		B55333621E6DE7CA0007A23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55603B31E7B48E500FEC786 /* wallscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallscreen.png; sourceTree = "<group>"; };
+		B558AAE51E9EC11300DCED1B /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
+		B558AAE61E9EC11300DCED1B /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
+		B558AAE71E9EC11300DCED1B /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
+		B558AAE81E9EC11300DCED1B /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderX.swift; sourceTree = "<group>"; };
+		B558AAE91E9EC11300DCED1B /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
+		B558AAEA1E9EC11300DCED1B /* UIViewAnchorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnchorPoint.swift; sourceTree = "<group>"; };
+		B558AAEB1E9EC11300DCED1B /* UIViewControllerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerX.swift; sourceTree = "<group>"; };
+		B558AAEC1E9EC11300DCED1B /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
+		B558AAED1E9EC11300DCED1B /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
+		B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
 		B564700F1E9887B900251461 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		B56470111E989B6500251461 /* starry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starry.jpg; sourceTree = "<group>"; };
 		B58266731E99970C007BA1E3 /* cityHorizon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cityHorizon.jpg; sourceTree = "<group>"; };
@@ -395,6 +415,16 @@
 		B5F7383D1E99DB0300642B03 /* IBDesignables */ = {
 			isa = PBXGroup;
 			children = (
+				B558AAE51E9EC11300DCED1B /* UIButtonX.swift */,
+				B558AAE61E9EC11300DCED1B /* UIImageViewX.swift */,
+				B558AAE71E9EC11300DCED1B /* UILabelX.swift */,
+				B558AAE81E9EC11300DCED1B /* UISliderX.swift */,
+				B558AAE91E9EC11300DCED1B /* UITextFieldX.swift */,
+				B558AAEA1E9EC11300DCED1B /* UIViewAnchorPoint.swift */,
+				B558AAEB1E9EC11300DCED1B /* UIViewControllerX.swift */,
+				B558AAEC1E9EC11300DCED1B /* UIViewX.swift */,
+				B558AAED1E9EC11300DCED1B /* UIViewXRadialGradient.swift */,
+				B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */,
 				B5F7383B1E99DAFE00642B03 /* DesignableView.swift */,
 			);
 			name = IBDesignables;
@@ -734,25 +764,35 @@
 				EA29CDF91E98B35B008362E2 /* placeVC.swift in Sources */,
 				B54593D31E91BE2100308A14 /* ItineraryCellVC.swift in Sources */,
 				B58653E21E9E27810040757B /* Appearance.swift in Sources */,
+				B558AAF01E9EC11300DCED1B /* UIImageViewX.swift in Sources */,
 				B5E2A09D1E7DCB5F002C48DC /* NewTripVC.swift in Sources */,
 				B5072E191E7F25B800BF4F82 /* ItineraryVC.swift in Sources */,
 				B58DEEFB1E82D1F40044B28E /* Globals.swift in Sources */,
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
+				B558AAF41E9EC11300DCED1B /* UIViewAnchorPoint.swift in Sources */,
 				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
 				B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */,
 				B5F7383C1E99DAFE00642B03 /* DesignableView.swift in Sources */,
+				B558AAF21E9EC11300DCED1B /* UISliderX.swift in Sources */,
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
 				B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */,
 				B52D37E51E9C5DA7000AEB83 /* FlightsVC.swift in Sources */,
+				B558AAF31E9EC11300DCED1B /* UITextFieldX.swift in Sources */,
 				B56470101E9887B900251461 /* Background.swift in Sources */,
 				B5072E151E7F253900BF4F82 /* TripPageVC.swift in Sources */,
+				B558AAF81E9EC11300DCED1B /* UIVisualEffectViewX.swift in Sources */,
+				B558AAF71E9EC11300DCED1B /* UIViewXRadialGradient.swift in Sources */,
 				B5A176731E7B38EF00307B5C /* RegistrationVC.swift in Sources */,
+				B558AAF51E9EC11300DCED1B /* UIViewControllerX.swift in Sources */,
 				B5A66C4D1E9C54C900D40D87 /* foodTableVC.swift in Sources */,
 				B5A66C4F1E9C54C900D40D87 /* searchFoodVC.swift in Sources */,
 				EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */,
+				B558AAEF1E9EC11300DCED1B /* UIButtonX.swift in Sources */,
+				B558AAF61E9EC11300DCED1B /* UIViewX.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,
 				B58D18561E7C88DD00997360 /* SettingsVC.swift in Sources */,
 				EA29CDFB1E98B424008362E2 /* placeCell.swift in Sources */,
+				B558AAF11E9EC11300DCED1B /* UILabelX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

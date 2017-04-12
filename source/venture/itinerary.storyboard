@@ -57,25 +57,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thM-Lu-x73">
-                                <rect key="frame" x="309" y="28" width="50" height="30"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="ILd-Kg-fu6"/>
-                                    <constraint firstAttribute="height" constant="30" id="c3p-uV-d8c"/>
-                                </constraints>
-                                <state key="normal" title="Edit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="C2v-er-yTM"/>
-                                </connections>
-                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-TV-yWS">
                                 <rect key="frame" x="0.0" y="622" width="375" height="130"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqc-c5-QMX" customClass="DesignableView" customModule="venture" customModuleProvider="target">
-                                        <rect key="frame" x="167" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="167" y="2" width="40" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="Fdu-cE-jyW"/>
@@ -88,10 +74,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-f0-8c5">
-                                        <rect key="frame" x="165" y="-2" width="44" height="44"/>
+                                        <rect key="frame" x="165" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="NWB-Uk-Yns"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ni7-k5-Awd"/>
                                             <constraint firstAttribute="height" constant="44" id="z5u-fz-AwV"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="jK5-vO-R9L">
-                                        <rect key="frame" x="39" y="50" width="296" height="44"/>
+                                        <rect key="frame" x="39" y="52" width="296" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abc-w1-V14">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -146,7 +131,7 @@
                                                     <constraint firstAttribute="height" constant="44" id="qA5-Uy-iV3"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="event"/>
+                                                <state key="normal" image="addEvent"/>
                                                 <connections>
                                                     <segue destination="fL6-y5-j7V" kind="show" identifier="toAddEvent" id="rHZ-Hb-DBu"/>
                                                 </connections>
@@ -156,16 +141,37 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="hCg-f0-8c5" firstAttribute="top" secondItem="YUA-TV-yWS" secondAttribute="top" constant="-2" id="2v2-se-RJD"/>
                                     <constraint firstItem="jK5-vO-R9L" firstAttribute="centerX" secondItem="YUA-TV-yWS" secondAttribute="centerX" id="2zh-Qc-kGu"/>
                                     <constraint firstAttribute="height" constant="130" id="DCo-sm-rpS"/>
                                     <constraint firstItem="uqc-c5-QMX" firstAttribute="leading" secondItem="YUA-TV-yWS" secondAttribute="leading" constant="167" id="RHS-Od-2eA"/>
                                     <constraint firstItem="hCg-f0-8c5" firstAttribute="centerY" secondItem="uqc-c5-QMX" secondAttribute="centerY" id="TSk-S9-arz"/>
                                     <constraint firstItem="hCg-f0-8c5" firstAttribute="centerX" secondItem="uqc-c5-QMX" secondAttribute="centerX" id="Xji-ym-1ts"/>
+                                    <constraint firstItem="hCg-f0-8c5" firstAttribute="top" secondItem="YUA-TV-yWS" secondAttribute="top" id="oIw-Wd-9Pf"/>
                                     <constraint firstItem="hCg-f0-8c5" firstAttribute="centerX" secondItem="YUA-TV-yWS" secondAttribute="centerX" id="xC6-ww-y4O"/>
                                     <constraint firstItem="jK5-vO-R9L" firstAttribute="top" secondItem="hCg-f0-8c5" secondAttribute="bottom" constant="8" id="yEw-E7-dJK"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thM-Lu-x73" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
+                                <rect key="frame" x="324" y="28" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="ILd-Kg-fu6"/>
+                                    <constraint firstAttribute="height" constant="35" id="c3p-uV-d8c"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" title="Edit" image="delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="C2v-er-yTM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -399,8 +405,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addEvent" width="100" height="100"/>
         <image name="chevron" width="100" height="100"/>
-        <image name="event" width="50" height="50"/>
+        <image name="delete" width="100" height="100"/>
         <image name="flight" width="50" height="50"/>
         <image name="food" width="50" height="50"/>
         <image name="places" width="50" height="50"/>

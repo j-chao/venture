@@ -50,6 +50,8 @@ class ItineraryVC: UIViewController {
         self.flightBtn.alpha = 0
         self.foodBtn.alpha = 0
         self.placesBtn.alpha = 0
+        
+        self.editButton.setImage(#imageLiteral(resourceName: "delete"), for: .normal)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -63,17 +65,17 @@ class ItineraryVC: UIViewController {
     
     @IBAction func editAction(_ sender: UIButton) {
         if (self.eventsTableView.isEditing) {
-            self.editButton.titleLabel?.text = "Edit"
+            self.editButton.setImage(#imageLiteral(resourceName: "delete"), for: .normal)
             self.eventsTableView.setEditing(false, animated: true)
         } else {
-            self.editButton.titleLabel?.text = "Done"
+            self.editButton.setImage(#imageLiteral(resourceName: "check"), for: .normal)
             self.eventsTableView.setEditing(true, animated: true)
         }
     }
 
     @IBAction func toggleMenu(_ sender: Any) {
         if darkFillView.transform == CGAffineTransform.identity {
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.darkFillView.transform = CGAffineTransform(scaleX: 12, y: 12)
                 self.menuView.transform = CGAffineTransform(translationX: 0, y: -55)
                 self.toggleMenuBtn.transform = CGAffineTransform(rotationAngle: self.radians(180))
@@ -82,7 +84,7 @@ class ItineraryVC: UIViewController {
                 self.toggleMenuButtons()
             })
         } else {
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.darkFillView.transform = .identity
                 self.menuView.transform = .identity
                 self.toggleMenuBtn.transform = .identity
@@ -143,7 +145,6 @@ extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
         return cell
     }
-  
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if tableView.isEditing {
