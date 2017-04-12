@@ -29,7 +29,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var newEmail: UITextField!
     @IBOutlet weak var newPassword: UITextField!
-    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var messageLbl: MyCustomLabel!
     
     @IBAction func registerAction(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{

@@ -8,8 +8,7 @@ Spring, 2017
 ### Directory of Files
   * docs:   
     - documentations for project idea: Group1AppIdea.pdf, Group1Mockups.pdf  
-    - Group1README.md for alpha release
-    - Group1Video.mov for alpha release
+    - Group1README.md for beta release
 
   * source: 
     - Xcode source files for app     
