@@ -11,6 +11,10 @@ import Firebase
 
 class RegistrationVC: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var newEmail: UITextFieldX!
+    @IBOutlet weak var newPassword: UITextFieldX!
+    @IBOutlet weak var messageLbl: MyCustomLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         newEmail.attributedPlaceholder = NSAttributedString(
@@ -26,10 +30,6 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBAction func dismissPopup(_ sender: UIButton) {
         dismiss(animated:true, completion: nil)
     }
-
-    @IBOutlet weak var newEmail: UITextField!
-    @IBOutlet weak var newPassword: UITextField!
-    @IBOutlet weak var messageLbl: MyCustomLabel!
     
     @IBAction func registerAction(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: newEmail.text!, password: newPassword.text!, completion:{

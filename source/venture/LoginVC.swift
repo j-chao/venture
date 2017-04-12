@@ -12,14 +12,12 @@ import FBSDKLoginKit
 
 class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: UITextFieldX!
+    @IBOutlet weak var password: UITextFieldX!
     @IBOutlet weak var errorMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        email.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
-        password.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         email.delegate = self
         password.delegate = self
         
