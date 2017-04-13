@@ -24,41 +24,49 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wGv-xQ-pMG">
                                 <rect key="frame" x="37" y="83" width="300" height="500"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwh-tW-yYA">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="origin" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwh-tW-yYA" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
                                         <rect key="frame" x="50" y="0.0" width="200" height="35"/>
+                                        <color key="backgroundColor" red="0.37997699870000001" green="0.37997699870000001" blue="0.37997699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="X8a-5T-lyi"/>
                                             <constraint firstAttribute="height" constant="35" id="zYO-9H-ngg"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3x-bk-lr7">
-                                        <rect key="frame" x="50" y="116" width="200" height="35"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="destination" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3x-bk-lr7" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="71" width="200" height="35"/>
+                                        <color key="backgroundColor" red="0.37997699870000001" green="0.37997699870000001" blue="0.37997699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="l3b-u1-3bX"/>
                                             <constraint firstAttribute="height" constant="35" id="vaL-UV-mZr"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-p8-h1r">
-                                        <rect key="frame" x="50" y="232" width="200" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="G4z-Ja-Yev"/>
-                                            <constraint firstAttribute="width" constant="200" id="bLg-VE-MTU"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-Cb-yPy">
+                                        <rect key="frame" x="0.0" y="141.5" width="300" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="513732827.64569402">
+                                            <!--2017-04-12 23:33:47 +0000-->
+                                        </date>
+                                    </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vEA-zk-m0D">
-                                        <rect key="frame" x="75.5" y="348" width="149" height="31"/>
+                                        <rect key="frame" x="75.5" y="393.5" width="149" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nonstop:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWl-hB-5se">
-                                                <rect key="frame" x="0.0" y="5.5" width="70" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="5" width="70" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -68,7 +76,7 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-6Z-8ep">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-6Z-8ep" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                         <rect key="frame" x="100" y="460" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -79,7 +87,13 @@
                                         <state key="normal" title="Find Flights">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="findFlights:" destination="E80-dB-34h" eventType="touchUpInside" id="aZu-P5-MdO"/>
                                             <segue destination="vFe-fB-s0Z" kind="show" id="AL1-yN-4kx"/>
                                         </connections>
                                     </button>
@@ -96,6 +110,12 @@
                             <constraint firstItem="wGv-xQ-pMG" firstAttribute="centerY" secondItem="cS8-6K-Amy" secondAttribute="centerY" id="ebW-de-PUh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="date" destination="YLi-Cb-yPy" id="6Pt-9C-FH3"/>
+                        <outlet property="destination" destination="p3x-bk-lr7" id="SJz-eM-Oso"/>
+                        <outlet property="nonstop" destination="A3G-K5-gh7" id="bpQ-vX-GLd"/>
+                        <outlet property="origin" destination="kwh-tW-yYA" id="86J-PW-d3o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tps-wm-esA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qoS-Kp-b60" id="xMw-r6-bSx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
