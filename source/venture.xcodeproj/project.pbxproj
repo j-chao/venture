@@ -403,11 +403,11 @@
 		B59F6E991E9827DF00CEDE07 /* food VC */ = {
 			isa = PBXGroup;
 			children = (
-				B5A66C481E9C54C900D40D87 /* foodCell.swift */,
+				900005A91E9D807200ED8FC8 /* restaurant.swift */,
+				B5A66C4B1E9C54C900D40D87 /* searchFoodVC.swift */,
 				B5A66C491E9C54C900D40D87 /* foodTableVC.swift */,
 				B5A66C4A1E9C54C900D40D87 /* foodVC.swift */,
-				B5A66C4B1E9C54C900D40D87 /* searchFoodVC.swift */,
-				900005A91E9D807200ED8FC8 /* restaurant.swift */,
+				B5A66C481E9C54C900D40D87 /* foodCell.swift */,
 			);
 			name = "food VC";
 			sourceTree = "<group>";
