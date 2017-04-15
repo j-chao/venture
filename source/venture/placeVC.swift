@@ -8,7 +8,9 @@
 
 import UIKit
 
-class placeVC: UIViewController {
+class placeVC: UIViewController, UITableViewDelegate {
+    
+    var places:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

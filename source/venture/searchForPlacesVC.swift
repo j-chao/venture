@@ -48,6 +48,8 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
             .onSuccess {
                 search in
                 for business in search.businesses {
+                    print(business.identifier)
+               
                     // filter by rating
                     if Int(business.rating) < Int(self.ratingField.text!)! {
                         continue
@@ -95,7 +97,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         self.show(vc, sender: self)
        // self.navigationController?.pushViewController(vc, animated:true)
     }
-
+    
 }
 
 // capitalize first letter of a string, used for categories

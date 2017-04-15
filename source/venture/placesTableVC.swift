@@ -17,6 +17,9 @@ class placesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Places"
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +40,15 @@ class placesTableVC: UITableViewController {
         cell.ratingLabel?.text = placeRatings[indexPath.row]
         cell.categoryLable?.text = busCat[indexPath.row]
         return cell
+    }
+    
+    func segueToDetails() {
+        let vc = UIStoryboard(name:"places", bundle:nil).instantiateViewController(withIdentifier: "placeVC") as! placeVC
+        vc.places = self.locales
+      //  vc.placeRatings = self.ratings
+      //  vc.busCat = self.categories
+        self.show(vc, sender: self)
+        // self.navigationController?.pushViewController(vc, animated:true)
     }
 
     /*
