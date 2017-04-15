@@ -11,11 +11,12 @@ import UIKit
 class placesTableVC: UITableViewController {
     
     var locales:[String] = []
+    var placeRatings:[String] = []
+  //  var busCat:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Places"
-        print("locales:" + locales[0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +34,8 @@ class placesTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! placeCell
         cell.placenameLabel?.text = locales[indexPath.row]
+        cell.ratingLabel?.text = placeRatings[indexPath.row]
+    //    cell.categoryLable?.text = busCat[indexPath.row]
         return cell
     }
 
