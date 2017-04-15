@@ -10,6 +10,7 @@
 		065407295805CA8058A25EBF /* Pods_ventureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */; };
 		07010DEAFC6FE4178310676C /* Pods_venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F469BE1278DCFDE718244A68 /* Pods_venture.framework */; };
 		900005AA1E9D807200ED8FC8 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900005A91E9D807200ED8FC8 /* restaurant.swift */; };
+		9042B1E91EA1D69300E0540D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9042B1E81EA1D69300E0540D /* CoreLocation.framework */; };
 		A824F923A8AD1303D5A97F6E /* Pods_ventureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */; };
 		B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AB1E70F3C3003F8ACA /* flights.storyboard */; };
 		B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AD1E70F3CA003F8ACA /* places.storyboard */; };
@@ -105,6 +106,7 @@
 		76BB950D1959F090CC76C33F /* Pods-ventureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureUITests/Pods-ventureUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F346F116EAEEAA62FA14753 /* Pods-venture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-venture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-venture/Pods-venture.debug.xcconfig"; sourceTree = "<group>"; };
 		900005A91E9D807200ED8FC8 /* restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
+		9042B1E81EA1D69300E0540D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B50512AB1E70F3C3003F8ACA /* flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = flights.storyboard; sourceTree = "<group>"; };
 		B50512AD1E70F3CA003F8ACA /* places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = places.storyboard; sourceTree = "<group>"; };
 		B505716C1E96FFED00AD7B29 /* EventDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9042B1E91EA1D69300E0540D /* CoreLocation.framework in Frameworks */,
 				07010DEAFC6FE4178310676C /* Pods_venture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +220,7 @@
 		80224C7BB8671EB0AC71BFEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9042B1E81EA1D69300E0540D /* CoreLocation.framework */,
 				F469BE1278DCFDE718244A68 /* Pods_venture.framework */,
 				425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */,
 				2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */,

@@ -54,19 +54,17 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             } else {
                 self.displayAlert("Error", message: "Location Services not available!")
             }
-
         }
         
         myRequest.enter()
         let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
         let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
-        // Search for 3 dinner restaurants in user-defined location
         //implement parameters for open_now and price
         let query = YLPQuery(location: addressTxt.text!)
-        query.term = "food"
-        query.limit = 10
-
+        query.term = "food, restaurants"
+        query.sort = YLPSortType.distance
+        
         YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap {
             client in
             client.search(withQuery: query)
@@ -75,8 +73,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 for business in search.businesses{
                // if let topBusiness = search.businesses. {
                     print("Top business: \(business.name)")
-                    print(business.location.address)
-                    print (business.phone)
                     print (business.categories.first?.name)
                     print (business.identifier)
                     var currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, price: "temp", rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
