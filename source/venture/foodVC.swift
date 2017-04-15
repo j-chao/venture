@@ -12,10 +12,17 @@ class foodVC: UIViewController {
 
     var restaurant:Restauraunt!
     
+    @IBOutlet weak var foodAddress1Lbl: UILabel!
+    @IBOutlet weak var foodAddress2Lbl: UILabel!
+    @IBOutlet weak var foodPhoneLbl: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = restaurant.name
-
+        foodAddress1Lbl.text = restaurant.address
+        foodAddress2Lbl.text = "\(restaurant.city!), \(restaurant.state!) \(restaurant.zip!)"
+        foodPhoneLbl.text = restaurant.phone
 
         // Do any additional setup after loading the view.
     }

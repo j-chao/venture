@@ -37,7 +37,8 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
 
     @IBAction func searchFood(_ sender: Any) {
-        if locationSwitch.isOn {
+        if self.locationSwitch.isOn {
+            print ("location check")
             // Make sure the location service is available before trying to use it.
             if CLLocationManager.locationServicesEnabled() {
                 // Configure the location manager for what we want to track.
@@ -66,8 +67,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         query.term = "food"
         query.limit = 10
 
-        var businessName:String?
-
         YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap {
             client in
             client.search(withQuery: query)
@@ -75,13 +74,12 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
  
                 for business in search.businesses{
                // if let topBusiness = search.businesses. {
-                    businessName = business.name
                     print("Top business: \(business.name)")
-
+                    print(business.location.address)
                     print (business.phone)
                     print (business.categories.first?.name)
                     print (business.identifier)
-                    var currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, price: "temp", rating: business.rating, phone: business.phone)
+                    var currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, price: "temp", rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
                     self.restaurants.append(currentBusiness)
                     
                 }
