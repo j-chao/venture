@@ -12,7 +12,7 @@ class placesTableVC: UITableViewController {
     
     var locales:[String] = []
     var placeRatings:[String] = []
-  //  var busCat:[String] = []
+    var busCat:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class placesTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! placeCell
         cell.placenameLabel?.text = locales[indexPath.row]
         cell.ratingLabel?.text = placeRatings[indexPath.row]
-    //    cell.categoryLable?.text = busCat[indexPath.row]
+        cell.categoryLable?.text = busCat[indexPath.row]
         return cell
     }
 

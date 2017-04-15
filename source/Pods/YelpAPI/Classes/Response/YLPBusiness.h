@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy) NSURL *URL;
 
 @property (nonatomic, readonly) double rating;
-@property (nonatomic, readonly) NSUInteger reviewCount;
+@property (nonatomic, readonly) NSUInteger reviewCount;    
 
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, nullable, copy) NSString *phone;
