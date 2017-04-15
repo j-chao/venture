@@ -13,21 +13,23 @@ class Restauraunt {
     var name:String?
     var category:String?
     var price:String?
-    var rating:Decimal?
+    var rating:Double?
+    //var distance:
     //var address:String?
-    //var phone:String?
+    var phone:String?
     //fix this later...Yelp returns hours as objects of strings and ints
     //just saying it's a string as a placeholder for now
     //var hours:String?
     
-    init(id:String?, name:String?, category:String?, price:String?, rating:Decimal?){
+    init(id:String?, name:String?, category:String?, price:String?, rating:Double?, phone:String?){
         self.id = id
         self.name = name
         self.category = category
         self.price = price
         self.rating = rating
+        //self.distance = distance
         //self.address = address
-        //self.phone = phone
+        self.phone = phone
        // self.hours = hours
     }
 }

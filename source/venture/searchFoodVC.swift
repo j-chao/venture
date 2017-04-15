@@ -67,24 +67,27 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         query.limit = 10
 
         var businessName:String?
-        
-        
-        YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap { client in
+
+        YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap {
+            client in
             client.search(withQuery: query)
             }.onSuccess { search in
-                print (search.businesses.first?.name)
-               /* for business in search.businesses as! [YLPBusiness]{
-                    search.busine
+ 
+                for business in search.businesses{
                // if let topBusiness = search.businesses. {
                     businessName = business.name
-                    var business = Restauraunt(id: business.id, name: business.name, category: business.categories.title, price: business.price, rating: business.rating)
-                    print("Top business: \(topBusiness.name)")
-                    self.myRequest.leave()
-                } else {
-                    businessName = "none found"
-                    print("None found")
+                    print("Top business: \(business.name)")
+
+                    print (business.phone)
+                    print (business.categories.first?.name)
+                    print (business.identifier)
+                    var currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, price: "temp", rating: business.rating, phone: business.phone)
+                    self.restaurants.append(currentBusiness)
+                    
                 }
-                //exit(EXIT_SUCCESS)*/
+                self.myRequest.leave()
+                
+                //exit(EXIT_SUCCESS)
             }.onFailure { error in
                 print("Search errored: \(error)")
                 //exit(EXIT_FAILURE)
@@ -92,7 +95,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         
         myRequest.notify(queue: DispatchQueue.main, execute: {
             print("Finished all requests.")
-            //self.restaurants.append(businessName!)
+        //    self.restaurants.append(currentBusiness)
             self.segueToTable()
         })
     }
@@ -135,7 +138,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     */
     func segueToTable() {
         let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
-        //vc.locales = self.places
+        vc.restaurants = self.restaurants
         self.show(vc, sender: self)
         //        self.navigationController?.pushViewController(vc, animated:true)
 }

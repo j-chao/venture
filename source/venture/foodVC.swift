@@ -10,11 +10,12 @@ import UIKit
 
 class foodVC: UIViewController {
 
-    var foodName:String?
+    var restaurant:Restauraunt!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = foodName
+        self.title = restaurant.name
+
 
         // Do any additional setup after loading the view.
     }
