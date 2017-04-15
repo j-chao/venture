@@ -15,6 +15,7 @@ target 'venture' do
   pod 'YelpAPI'
   pod 'BrightFutures'
   pod 'Alamofire'
+  pod 'GooglePlaces'
 
   target 'ventureTests' do
     inherit! :search_paths
