@@ -24,7 +24,7 @@
         
         _rating = [businessDict[@"rating"] doubleValue];
         _reviewCount = [businessDict[@"review_count"] integerValue];
-        
+
         _name = businessDict[@"name"];
         _identifier = businessDict[@"id"];
         NSString *phone = [businessDict ylp_objectMaybeNullForKey:@"phone"];

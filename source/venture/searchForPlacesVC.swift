@@ -14,7 +14,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     
     var places = [String]()
     var ratings = [String]()
- //   var categories = [String]()
+    var categories = [String]()
 
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var priceField: UITextField!
@@ -35,13 +35,12 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
         let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
-        // Search for 3 dinner restaurants in user-defined location
+        // Search for tourist attractions in user-defined location
         let query = YLPQuery(location: locationField.text!)
         query.term = "tourist attractions"
-        query.limit = 10
+        query.limit = 50
         var businessName:String?
         var businessRating:String?
-   //     var businessCat:String?
        
         YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap { client in
             client.search(withQuery: query)
@@ -49,12 +48,32 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
             .onSuccess {
                 search in
                 for business in search.businesses {
-                    businessName = business.name
-                    businessRating = String(business.rating)
-      //              businessCat = String(describing: business.categories)
-                    self.places.append(businessName!)
-                    self.ratings.append(businessRating!)
-       //             self.categories.append(businessCat!)
+                    // filter by rating
+                    if Int(business.rating) < Int(self.ratingField.text!)! {
+                        continue
+                    }
+                    else {
+                        businessName = business.name
+                        businessRating = String(business.rating)
+                        
+                        // capitalize category name
+                        let businessCatlower = business.categories[0].alias
+                        var businessCat = businessCatlower.capitalizeFirst()
+                        
+                        self.places.append(businessName!)
+                        self.ratings.append(businessRating!)
+                        
+                        // fix categories that are two words
+                        if businessCat == "Localflavor" {
+                            businessCat = "Local Flavor"
+                        }
+                        if businessCat == "Bustours" {
+                            businessCat = "Bus Tours"
+                        }
+                        
+                        self.categories.append(businessCat)
+                    }
+
                 }
                 self.myRequest.leave()
             }
@@ -63,6 +82,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
             print("Finished all requests.")
             print(self.places)
             print(self.ratings)
+            print(self.categories)
             self.segueToTable()
         })
     }
@@ -71,9 +91,18 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         let vc = UIStoryboard(name:"places", bundle:nil).instantiateViewController(withIdentifier: "placesTable") as! placesTableVC
         vc.locales = self.places
         vc.placeRatings = self.ratings
-  //      vc.busCat = self.categories
+        vc.busCat = self.categories
         self.show(vc, sender: self)
        // self.navigationController?.pushViewController(vc, animated:true)
     }
 
 }
+
+// capitalize first letter of a string, used for categories
+extension String {
+    func capitalizeFirst() -> String {
+        let firstIndex = self.index(startIndex, offsetBy: 1)
+        return self.substring(to: firstIndex).capitalized + self.substring(from: firstIndex).lowercased()
+    }
+}
+
