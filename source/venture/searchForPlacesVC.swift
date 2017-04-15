@@ -13,6 +13,8 @@ import BrightFutures
 class searchForPlacesVC: UIViewController, UITableViewDelegate {
     
     var places = [String]()
+    var ratings = [String]()
+ //   var categories = [String]()
 
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var priceField: UITextField!
@@ -35,49 +37,43 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         
         // Search for 3 dinner restaurants in user-defined location
         let query = YLPQuery(location: locationField.text!)
-        query.term = "dinner"
-        query.limit = 3
+        query.term = "tourist attractions"
+        query.limit = 10
         var businessName:String?
+        var businessRating:String?
+   //     var businessCat:String?
        
         YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap { client in
             client.search(withQuery: query)
-            }.onSuccess { search in
-                if let topBusiness = search.businesses.first {
-                    businessName = topBusiness.name
-                    print("Top business: \(topBusiness.name)")
-                    self.myRequest.leave()
-                } else {
-                    businessName = "none found"
-                    print("None found")
+            }
+            .onSuccess {
+                search in
+                for business in search.businesses {
+                    businessName = business.name
+                    businessRating = String(business.rating)
+      //              businessCat = String(describing: business.categories)
+                    self.places.append(businessName!)
+                    self.ratings.append(businessRating!)
+       //             self.categories.append(businessCat!)
                 }
-                //exit(EXIT_SUCCESS)
-            }.onFailure { error in
-                print("Search errored: \(error)")
-                //exit(EXIT_FAILURE)
-        }
+                self.myRequest.leave()
+            }
         
         myRequest.notify(queue: DispatchQueue.main, execute: {
             print("Finished all requests.")
             print(self.places)
-            self.places.append(businessName!)
+            print(self.ratings)
             self.segueToTable()
         })
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toPlaces" {
-//            if let destinationVC = segue.destination as? placesTableVC {
-//                // pass array to table VC
-//                destinationVC.locales = places
-//            }
-//        }
-//    }
-    
+
     func segueToTable() {
         let vc = UIStoryboard(name:"places", bundle:nil).instantiateViewController(withIdentifier: "placesTable") as! placesTableVC
         vc.locales = self.places
+        vc.placeRatings = self.ratings
+  //      vc.busCat = self.categories
         self.show(vc, sender: self)
-//        self.navigationController?.pushViewController(vc, animated:true)
+       // self.navigationController?.pushViewController(vc, animated:true)
     }
 
 }
