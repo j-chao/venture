@@ -8,9 +8,40 @@
 
 import UIKit
 
-class placeVC: UIViewController, UITableViewDelegate {
+class placeVC: UIViewController {
     
-    var places:[String] = []
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var catLbl: UILabel!
+    @IBOutlet weak var ratingLbl: UILabel!
+    @IBOutlet weak var reviewCountLbl: UILabel!
+    @IBOutlet weak var placeImg: UIImageView!
+    
+    var nameStr:String?
+    var catStr:String?
+    var ratingStr:String?
+    var reviewStr:String?
+    var imgStr:URL?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let nameStr = nameStr {
+            nameLbl.text = nameStr
+        }
+        if let catStr = catStr {
+            catLbl.text = catStr
+        }
+        if let ratingStr = ratingStr {
+            ratingLbl.text = ratingStr
+        }
+        if let reviewStr = reviewStr {
+            reviewCountLbl.text = reviewStr
+        }
+        if let imgStr = imgStr {
+            let imgString = "\(imgStr)"
+            get_image(imgString, placeImg)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +52,21 @@ class placeVC: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func get_image(_ url_str:String, _ imageView:UIImageView) {
+        let url:URL = URL(string: url_str)!
+        let session = URLSession.shared
+        let task = session.dataTask(with: url, completionHandler: {
+            (data, response, error) in
+            if data != nil {
+                let image = UIImage(data: data!)
+                if (image != nil) {
+                    DispatchQueue.main.async(execute: {
+                        imageView.image = image
+                    })
+                }
+            }
+        })
+        task.resume()
     }
-    */
 
 }
