@@ -15,7 +15,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     var places = [String]()
     var ratings = [String]()
     var categories = [String]()
-    var imgUrls = [String]()
+    var imgUrls = [URL]()
     var reviewCounts = [String]()
 
     @IBOutlet weak var locationField: UITextField!
@@ -57,7 +57,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                     else {
                         businessName = business.name
                         businessRating = String(business.rating)
-                        let busImgUrl = "\(business.imageURL!)"
+                        let busImgUrl = business.imageURL
                         let busReviews = String(business.reviewCount)
                         
                         // capitalize category name
@@ -66,7 +66,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                         
                         self.places.append(businessName!)
                         self.ratings.append(businessRating!)
-                        self.imgUrls.append(busImgUrl)
+                        self.imgUrls.append(busImgUrl!)
                         self.reviewCounts.append(busReviews)
                         
                         // fix categories that are two words
