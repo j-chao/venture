@@ -10,15 +10,17 @@ import UIKit
 
 class foodTableVC: UITableViewController {
 
+    var restaurants = [Restauraunt]()
+// currently if the user searches for food and goes back with different search location, it just adds the new results to the already existing array of food places. so figure out how to have array data erased when user clicks back button
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Food"
+        print (restaurants[0].name)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,32 +31,23 @@ class foodTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return restaurants.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! foodCell
 
         // Configure the cell...
-
+        cell.foodNameLbl.text = restaurants[indexPath.row].name
+        cell.foodCategoryLbl.text = restaurants[indexPath.row].category
+        cell.foodRatingLbl.text = "\(restaurants[indexPath.row].rating!)"
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
     /*
     // Override to support editing the table view.
@@ -68,29 +61,19 @@ class foodTableVC: UITableViewController {
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == "toFoodVC" {
+     if let destinationVC = segue.destination as? foodVC ,
+     let indexPath = self.tableView.indexPathForSelectedRow {
+     let selectedFood = restaurants[indexPath.row]
+     destinationVC.restaurant = selectedFood
+        }}
     }
-    */
-
 }

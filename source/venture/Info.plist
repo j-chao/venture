@@ -83,5 +83,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>&quot;Allow Access to Location&quot;</string>
 </dict>
 </plist>
