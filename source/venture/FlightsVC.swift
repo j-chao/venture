@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class FlightsVC: UIViewController {
 
@@ -62,6 +63,14 @@ class FlightsVC: UIViewController {
                     return
                 }
                 print (json)
+               
+                let parseJson = JSON(json)
+                let price = parseJson["trips"]["tripOption"][0]["saleTotal"].string
+                let duration = parseJson["trips"]["tripOption"][0]["slice"][0]["duration"].int
+                print("price = \(price!)")
+                print(duration!)
+                
+                // use GLOSS to parse?
         }
     }
 
