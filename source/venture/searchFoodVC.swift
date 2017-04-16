@@ -37,7 +37,8 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         self.getToken()
         tokenRequest.notify(queue: DispatchQueue.main, execute: {
             print("finished tokenRequest")
-            self.makeGetCall()
+//            self.makeGetCall()
+            self.doSearch()
         })
         
     }
@@ -137,10 +138,44 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             
             print (json)
         }
-    
+   
     }
     
 
+    func doSearch() {
+        let url:String = "https://api.yelp.com/v3/businesses/search"
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
+        
+        let params: [String: Any] =
+            ["location": "Austin, TX",
+            "term": "restaurants, food",
+             "sort_by": "best_match",
+             "price": "1,2"]
+        
+        Alamofire.request(url, parameters: params, headers: headers).responseJSON {response in
+            
+            // check for errors
+            guard response.result.error == nil else {
+                // got an error in getting the data, need to handle it
+                print("error calling GET on Yelp")
+                print(response.result.error!)
+                return
+            }
+            
+            // make sure we got some JSON since that's what we expect
+            guard let json = response.result.value as? [String: Any] else {
+                print("didn't get businessID object as JSON from API")
+                print("Error: \(response.result.error)")
+                return
+            }
+            
+            print (json)
+        }
+        
+    }
+    
+    
+    
     @IBAction func searchFood(_ sender: Any) {
         self.makeGetCall()
         if self.locationSwitch.isOn {
@@ -199,7 +234,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
 
     /*
-    // MARK: - Navigation
+    // MARK: - Navigatio
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
