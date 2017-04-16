@@ -16,7 +16,7 @@ class foodTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Food"
-        print (restaurants[0].name)
+        print (restaurants[0].name!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

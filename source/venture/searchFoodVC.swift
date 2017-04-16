@@ -30,15 +30,17 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         self.title = "Search for Food"
         //addressTxt.attributedPlaceholder = NSAttributedString(string: "address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
-
-        // Do any additional setup after loading the view.
-  
+ 
+        
+        // requesting the access_token from Yelp takes time and therefore, it is necessary to wait until the request is complete before we can proceed with using the obtained token to request results from Yelp.
         tokenRequest.enter()
         self.getToken()
+       
+        // execute after getToken() is finished
         tokenRequest.notify(queue: DispatchQueue.main, execute: {
-            print("finished tokenRequest")
-//            self.makeGetCall()
-            self.doSearch()
+            print("finished getToken()")
+//            self.yelpBusinessDetails()
+            self.yelpSearch()
         })
         
     }
@@ -66,13 +68,9 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                     let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, price: "temp", rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
                     self.restaurants.append(currentBusiness)
                     
-                    print (business.identifier.propertyList())
-                    
-                    
                 }
                
             self.myRequest.leave()
-            
                 
                 //exit(EXIT_SUCCESS)
             }.onFailure { error in
@@ -81,7 +79,8 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             }
         
     }
-    
+   
+    // getToken() gets the access_token from Yelp, and is necessary for all HTTP requests
     func getToken() {
         let url: String = "https://api.yelp.com/oauth2/token"
         let params: [String: Any] =
@@ -93,19 +92,19 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             .responseJSON { response in
                 guard response.result.error == nil else {
                     // got an error in getting the data, need to handle it
-                    print("error calling POST")
+                    print("error getting YELP access_token")
                     print(response.result.error!)
                     return
                 }
                 // make sure we got some JSON since that's what we expect
                 guard let json = response.result.value as? [String: Any] else {
-                    print("didn't get token object as JSON from API")
+                    print("error getting JSON from YELP")
                     print("Error: \(response.result.error)")
                     return
                 }
                 
                 guard let access_token = json["access_token"] as? String else {
-                    print("Could not get todo title from JSON")
+                    print("error getting access_token from JSON")
                     return
                 }
                 self.token = access_token
@@ -113,36 +112,40 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         }
 
     }
-    
-    func makeGetCall() {
+   
+    // yelpBusinessDetails() requests business specific details from Yelp and returns a JSON formatted data object
+    // documentation: https://www.yelp.com/developers/documentation/v3/business
+    // modify the url:String with the business ID to return business specific details.
+    // ie: current url:String is hard-coded for Keybey Lane Cafe
+
+    func yelpBusinessDetails() {
         let url:String = "https://api.yelp.com/v3/businesses/kerbey-lane-cafe-austin-4"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(self.token!)"
         ]
-        
         Alamofire.request(url, headers: headers).responseJSON { response in
-            // check for errors
             guard response.result.error == nil else {
-                // got an error in getting the data, need to handle it
-                print("error calling GET on Yelp")
+                print("error getting business details from Yelp")
                 print(response.result.error!)
                 return
             }
-            
-            // make sure we got some JSON since that's what we expect
             guard let json = response.result.value as? [String: Any] else {
                 print("didn't get businessID object as JSON from API")
                 print("Error: \(response.result.error)")
                 return
             }
-            
             print (json)
         }
    
     }
     
 
-    func doSearch() {
+    // yelpSearch() returns up to 1000 businesses based on the provided search criteria as a JSON formatted data object. It has some basic information about the business.
+    // user can add/remove/change search criteria by modifying the parameters argument. Location is a required parameter.
+    // currently, the location parameter has been hard-coded in as Austin, TX
+    // To get detailed information and reviews, please use the business id returned here and refer to yelpBusinessDetails() endpoints.
+    // documentation: https://www.yelp.com/developers/documentation/v3/business_search
+    func yelpSearch() {
         let url:String = "https://api.yelp.com/v3/businesses/search"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
         
@@ -153,31 +156,23 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
              "price": "1,2"]
         
         Alamofire.request(url, parameters: params, headers: headers).responseJSON {response in
-            
-            // check for errors
             guard response.result.error == nil else {
-                // got an error in getting the data, need to handle it
                 print("error calling GET on Yelp")
                 print(response.result.error!)
                 return
             }
-            
-            // make sure we got some JSON since that's what we expect
             guard let json = response.result.value as? [String: Any] else {
                 print("didn't get businessID object as JSON from API")
                 print("Error: \(response.result.error)")
                 return
             }
-            
             print (json)
         }
-        
     }
     
     
     
     @IBAction func searchFood(_ sender: Any) {
-        self.makeGetCall()
         if self.locationSwitch.isOn {
             print ("location check")
             // Make sure the location service is available before trying to use it.
@@ -196,7 +191,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 self.displayAlert("Error", message: "Location Services not available!")
             }
         }
-        
         
         self.yelpFood()
         
@@ -232,21 +226,10 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         self.alertController!.addAction(okAction)
         self.present(self.alertController!, animated: true, completion:nil)
     }
-
-    /*
-    // MARK: - Navigatio
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func segueToTable() {
         let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
         vc.restaurants = self.restaurants
         self.show(vc, sender: self)
-        //        self.navigationController?.pushViewController(vc, animated:true)
     }
 }
