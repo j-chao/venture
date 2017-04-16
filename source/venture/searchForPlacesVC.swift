@@ -22,6 +22,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     
     let myRequest = DispatchGroup()
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         self.title = "Search for Places"
     }

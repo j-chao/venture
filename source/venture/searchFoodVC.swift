@@ -27,6 +27,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
 
     @IBOutlet weak var locationSwitch: UISwitch!
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         self.title = "Search for Food"
         //addressTxt.attributedPlaceholder = NSAttributedString(string: "address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])

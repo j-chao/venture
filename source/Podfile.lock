@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - AppAuth (0.8.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -56,6 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AppAuth
   - BrightFutures
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -69,6 +71,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AppAuth: 34db36bac669e7a16758c6765625bb5d2663e3ad
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   BrightFutures: 62aafb1a63520eda91c9286bf4be33e58e043938
   FBSDKCoreKit: 82eac696eb6157da5f4266c3a241f00e9bd72471
@@ -88,6 +91,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: d4006bef727bc972ac38633ab3f4ea7bfdc0055f
+PODFILE CHECKSUM: 2815b99072a602d14121cb1676a5e227213100ce
 
 COCOAPODS: 1.2.0
