@@ -15,9 +15,10 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     var places = [String]()
     var ratings = [String]()
     var categories = [String]()
+    var imgUrls = [String]()
+    var reviewCounts = [String]()
 
     @IBOutlet weak var locationField: UITextField!
-    @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var ratingField: UITextField!
     
     let myRequest = DispatchGroup()
@@ -49,7 +50,6 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
             .onSuccess {
                 search in
                 for business in search.businesses {
-                    print(business.identifier)
                
                     // filter by rating
                     if Int(business.rating) < Int(self.ratingField.text!)! {
@@ -58,6 +58,8 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                     else {
                         businessName = business.name
                         businessRating = String(business.rating)
+                        let busImgUrl = "\(business.imageURL!)"
+                        let busReviews = String(business.reviewCount)
                         
                         // capitalize category name
                         let businessCatlower = business.categories[0].alias
@@ -65,6 +67,8 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                         
                         self.places.append(businessName!)
                         self.ratings.append(businessRating!)
+                        self.imgUrls.append(busImgUrl)
+                        self.reviewCounts.append(busReviews)
                         
                         // fix categories that are two words
                         if businessCat == "Localflavor" {
@@ -83,9 +87,6 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         
         myRequest.notify(queue: DispatchQueue.main, execute: {
             print("Finished all requests.")
-            print(self.places)
-            print(self.ratings)
-            print(self.categories)
             self.segueToTable()
         })
     }
@@ -95,8 +96,9 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         vc.locales = self.places
         vc.placeRatings = self.ratings
         vc.busCat = self.categories
+        vc.imgUrls = self.imgUrls
+        vc.reviewCounts = self.reviewCounts
         self.show(vc, sender: self)
-       // self.navigationController?.pushViewController(vc, animated:true)
     }
     
 }
