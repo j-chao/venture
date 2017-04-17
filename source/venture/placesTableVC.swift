@@ -15,6 +15,9 @@ class placesTableVC: UITableViewController {
     var busCat:[String] = []
     var imgUrls = [URL]()
     var reviewCounts = [String]()
+    var addresses = [String]()
+    var zipCodes = [String]()
+    var streets = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,9 @@ class placesTableVC: UITableViewController {
                 destVC.ratingStr = self.placeRatings[indexPath.row]
                 destVC.reviewStr = self.reviewCounts[indexPath.row]
                 destVC.imgStr = self.imgUrls[indexPath.row]
+                destVC.addressStr = self.addresses[indexPath.row]
+                destVC.zipStr = self.zipCodes[indexPath.row]
+                destVC.streetStr = self.streets[indexPath.row]
             }
         }
     }
