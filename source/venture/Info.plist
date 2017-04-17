@@ -84,6 +84,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;Allow Access to Location&quot;</string>
+	<string>&quot;Allow access to location to find nearby food.&quot;</string>
 </dict>
 </plist>

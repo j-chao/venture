@@ -20,7 +20,9 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     let tokenRequest = DispatchGroup()
     
     let locationManager = CLLocationManager()
+    var currentLocation:CLLocation!
     var alertController:UIAlertController? = nil
+    
     var token:String? = nil
     
     @IBOutlet weak var addressTxt: UITextField!
@@ -31,10 +33,8 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
+        locationManager.delegate = self
         self.title = "Search for Food"
-        self.addressTxt.text = "hi"
-        //addressTxt.attributedPlaceholder = NSAttributedString(string: "address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
- 
         
         // requesting the access_token from Yelp takes time and therefore, it is necessary to wait until the request is complete before we can proceed with using the obtained token to request results from Yelp.
         tokenRequest.enter()
@@ -44,18 +44,66 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         tokenRequest.notify(queue: DispatchQueue.main, execute: {
             print("finished getToken()")
 //            self.yelpBusinessDetails()
-            self.yelpSearch()
+            //self.yelpSearch()
         })
+    }
+    
+    @IBAction func locationSwitchOn(_ sender: UISwitch) {
+        if self.locationSwitch.isOn{
+            print ("location check")
+            // Make sure the location service is available before trying to use it.
+            if CLLocationManager.locationServicesEnabled() {
+                // Configure the location manager for what we want to track.
+                locationManager.startUpdatingLocation()
+                locationManager.desiredAccuracy = 100 // meters
+                // If we haven't done so yet, we need to ask for access to the location data.
+                if CLLocationManager.authorizationStatus() == .notDetermined {
+                    locationManager.requestWhenInUseAuthorization()
+                }
+            } else {
+                self.displayAlert("Error", message: "Location Services not available!")
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = locations[0]
+        print ("location found")
+        print (currentLocation)
         
     }
     
-    func yelpFood() {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print (error)
+    }
+    
+/*
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            if status == .authorizedAlways {
+                print("Authorized for Always")
+            } else {
+                print("Authorized for When In use")
+            }
+            // Start monitoring for various kinds of events here.
+            // Callbacks will start occurring.
+            manager.startUpdatingLocation()
+            manager.startUpdatingHeading()
+            manager.startMonitoringVisits()
+        } else {
+            print("Not Authorized")
+        }
+    }
+ */
+
+    
+    func yelpFood(query:YLPQuery) {
         myRequest.enter()
         let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
         let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
-        //implement parameters for open_now and price
-        let query = YLPQuery(location: addressTxt.text!)
+        //implement parameters for open_now and price later
         query.term = "food, restaurants"
         query.sort = YLPSortType.distance
         
@@ -65,11 +113,13 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             }.onSuccess { search in
                 
                 for business in search.businesses{
-                    // if let topBusiness = search.businesses. {
-//                    print("Top business: \(business.name)")
-//                    print (business.categories.first?.name as Any)
-//                    print (business.identifier)
-                    let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
+                    print("Top business: \(business.name)")
+                    print(business.identifier)
+                    print(business.name)
+                    print (business.categories[0].name)
+                    print (business.rating)
+                    print (business.location.address.last)
+                    let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories[0].name, rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
                     self.restaurants.append(currentBusiness)
                     
                 }
@@ -83,7 +133,41 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             }
         
     }
-   
+    
+    @IBAction func searchFood(_ sender: Any) {
+        if self.locationSwitch.isOn {
+            // YLPCoordinate(latitude: <#T##Double#>, longitude: <#T##Double#>)
+            //currentLocation.coordinate.latit
+            var coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
+            self.yelpFood(query:YLPQuery(coordinate: coordinate))
+        }
+
+        else{
+         self.yelpFood(query:YLPQuery(location: addressTxt.text!))
+        }
+        locationManager.stopUpdatingLocation()
+        myRequest.notify(queue: DispatchQueue.main, execute: {
+            print("Finished all requests.")
+            self.segueToTable()
+        })
+    }
+    
+    
+    func displayAlert(_ title:String, message:String) {
+        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+        }
+        self.alertController!.addAction(okAction)
+        self.present(self.alertController!, animated: true, completion:nil)
+    }
+    
+    func segueToTable() {
+        let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
+        vc.restaurants = self.restaurants
+        vc.eventDate = self.eventDate
+        self.show(vc, sender: self)
+    }
+
     // getToken() gets the access_token from Yelp, and is necessary for all HTTP requests
     func getToken() {
         let url: String = "https://api.yelp.com/oauth2/token"
@@ -114,14 +198,14 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 self.token = access_token
                 self.tokenRequest.leave()
         }
-
+        
     }
-   
+    
     // yelpBusinessDetails() requests business specific details from Yelp and returns a JSON formatted data object
     // documentation: https://www.yelp.com/developers/documentation/v3/business
     // modify the url:String with the business ID to return business specific details.
     // ie: current url:String is hard-coded for Keybey Lane Cafe
-
+    
     func yelpBusinessDetails() {
         let url:String = "https://api.yelp.com/v3/businesses/kerbey-lane-cafe-austin-4"
         let headers: HTTPHeaders = [
@@ -140,10 +224,10 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             }
             print (json)
         }
-   
+        
     }
     
-
+    
     // yelpSearch() returns up to 1000 businesses based on the provided search criteria as a JSON formatted data object. It has some basic information about the business.
     // user can add/remove/change search criteria by modifying the parameters argument. Location is a required parameter.
     // currently, the location parameter has been hard-coded in as Austin, TX
@@ -155,7 +239,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         
         let params: [String: Any] =
             ["location": "Austin, TX",
-            "term": "restaurants, food",
+             "term": "restaurants, food",
              "sort_by": "best_match",
              "price": "1,2"]
         
@@ -173,65 +257,5 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             print (json)
         }
     }
-    
-    @IBAction func searchFood(_ sender: Any) {
-        if self.locationSwitch.isOn {
-            print ("location check")
-            // Make sure the location service is available before trying to use it.
-            if CLLocationManager.locationServicesEnabled() {
-                // Configure the location manager for what we want to track.
-                locationManager.desiredAccuracy = 100 // meters
-                locationManager.delegate = self
-                
-                // If we haven't done so yet, we need to ask for access to the location data.
-                if CLLocationManager.authorizationStatus() == .notDetermined {
-                    // Must choose between requesting to get access to location data
-                    // either always or only when the app is running.
-                    locationManager.requestWhenInUseAuthorization()
-                }
-            } else {
-                self.displayAlert("Error", message: "Location Services not available!")
-            }
-        }
-        
-        self.yelpFood()
-        
-        myRequest.notify(queue: DispatchQueue.main, execute: {
-            print("Finished all requests.")
-            self.segueToTable()
-        })
-    }
-    
-    func locationManager(_ manager: CLLocationManager,
-                         didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
-            if status == .authorizedAlways {
-                print("Authorized for Always")
-            } else {
-                print("Authorized for When In use")
-            }
-            // Start monitoring for various kinds of events here.
-            // Callbacks will start occurring.
-            manager.startUpdatingLocation()
-            manager.startUpdatingHeading()
-            manager.startMonitoringVisits()
-        } else {
-            print("Not Authorized")
-        }
-    }
-    
-    func displayAlert(_ title:String, message:String) {
-        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-        }
-        self.alertController!.addAction(okAction)
-        self.present(self.alertController!, animated: true, completion:nil)
-    }
-    
-    func segueToTable() {
-        let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
-        vc.restaurants = self.restaurants
-        vc.eventDate = self.eventDate
-        self.show(vc, sender: self)
-    }
+
 }
