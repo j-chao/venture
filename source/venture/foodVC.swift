@@ -11,10 +11,12 @@ import UIKit
 class foodVC: UIViewController {
 
     var restaurant:Restauraunt!
+    var eventDate:Date!
     
     @IBOutlet weak var foodAddress1Lbl: UILabel!
     @IBOutlet weak var foodAddress2Lbl: UILabel!
     @IBOutlet weak var foodPhoneLbl: UILabel!
+    @IBOutlet weak var foodRatingLbl: UILabel!
     
     
     override func viewDidLoad() {
@@ -23,7 +25,8 @@ class foodVC: UIViewController {
         foodAddress1Lbl.text = restaurant.address
         foodAddress2Lbl.text = "\(restaurant.city!), \(restaurant.state!) \(restaurant.zip!)"
         foodPhoneLbl.text = restaurant.phone
-
+        foodRatingLbl.text = "\(restaurant.rating!)"
+        
         // Do any additional setup after loading the view.
     }
 
@@ -32,15 +35,17 @@ class foodVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "toEventFromFood"{
+            if let destinationVC = segue.destination as? AddEventVC {
+                destinationVC.fromFoodorPlace = true
+                destinationVC.eventDate = self.eventDate
+                destinationVC.eventDescStr = restaurant.name
+                destinationVC.eventLocStr = "\(restaurant.address!) \(restaurant.city!), \(restaurant.state!) \(restaurant.zip!)"
 
-}
+            }}
+    }
+ }

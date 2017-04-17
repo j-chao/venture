@@ -15,6 +15,7 @@ import CoreLocation
 class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     
     var restaurants = [Restauraunt]()
+    var eventDate:Date!
     let myRequest = DispatchGroup()
     let tokenRequest = DispatchGroup()
     
@@ -26,10 +27,12 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var openSwitch: UISwitch!
 
     @IBOutlet weak var locationSwitch: UISwitch!
+    
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
         self.title = "Search for Food"
+        self.addressTxt.text = "hi"
         //addressTxt.attributedPlaceholder = NSAttributedString(string: "address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
  
         
@@ -66,7 +69,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
 //                    print("Top business: \(business.name)")
 //                    print (business.categories.first?.name as Any)
 //                    print (business.identifier)
-                    let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, price: "temp", rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
+                    let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories.first?.name, rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
                     self.restaurants.append(currentBusiness)
                     
                 }
@@ -171,8 +174,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
-    
-    
     @IBAction func searchFood(_ sender: Any) {
         if self.locationSwitch.isOn {
             print ("location check")
@@ -197,7 +198,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         
         myRequest.notify(queue: DispatchQueue.main, execute: {
             print("Finished all requests.")
-//            self.restaurants.append(currentBusiness)
             self.segueToTable()
         })
     }
@@ -231,6 +231,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     func segueToTable() {
         let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
         vc.restaurants = self.restaurants
+        vc.eventDate = self.eventDate
         self.show(vc, sender: self)
     }
 }

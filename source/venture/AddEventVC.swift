@@ -21,6 +21,9 @@ class AddEventVC: UIViewController {
     
     var eventDate:Date!
     var eventDateStr:String!
+    var eventDescStr:String!
+    var eventLocStr:String!
+    var fromFoodorPlace:Bool!
     
     override func viewDidLoad() {
         self.setBackground()
@@ -31,6 +34,11 @@ class AddEventVC: UIViewController {
         let dateTitle = stringLongFromDate(date: eventDate)
         self.eventDateStr = dateTitle
         self.eventDateLbl.text = dateTitle
+        
+        if fromFoodorPlace == true{
+            eventDesc.text = eventDescStr
+            eventLoc.text = eventLocStr
+        }
         
     }
    

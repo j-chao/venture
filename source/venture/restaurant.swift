@@ -12,7 +12,7 @@ class Restauraunt {
     var id:String?
     var name:String?
     var category:String?
-    var price:String?
+    //var price:String?
     var rating:Double?
     //var distance:
     var address:String?
@@ -24,11 +24,11 @@ class Restauraunt {
     //just saying it's a string as a placeholder for now
     //var hours:String?
     
-    init(id:String?, name:String?, category:String?, price:String?, rating:Double?, address: String?, city:String?, state:String?, zip:String?, phone:String?){
+    init(id:String?, name:String?, category:String?, rating:Double?, address: String?, city:String?, state:String?, zip:String?, phone:String?){
         self.id = id
         self.name = name
         self.category = category
-        self.price = price
+        //self.price = price
         self.rating = rating
         //self.distance = distance
         self.address = address

@@ -11,6 +11,7 @@ import UIKit
 class foodTableVC: UITableViewController {
 
     var restaurants = [Restauraunt]()
+    var eventDate:Date!
 // currently if the user searches for food and goes back with different search location, it just adds the new results to the already existing array of food places. so figure out how to have array data erased when user clicks back button
 
     override func viewDidLoad() {
@@ -62,9 +63,6 @@ class foodTableVC: UITableViewController {
     */
 
 
-
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -73,7 +71,10 @@ class foodTableVC: UITableViewController {
      if let destinationVC = segue.destination as? foodVC ,
      let indexPath = self.tableView.indexPathForSelectedRow {
      let selectedFood = restaurants[indexPath.row]
-     destinationVC.restaurant = selectedFood
-        }}
+        destinationVC.restaurant = selectedFood
+        destinationVC.eventDate = self.eventDate
+        }
+    
+        }
     }
 }
