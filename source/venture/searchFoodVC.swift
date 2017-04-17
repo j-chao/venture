@@ -76,26 +76,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print (error)
     }
-    
-/*
-    func locationManager(_ manager: CLLocationManager,
-                         didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
-            if status == .authorizedAlways {
-                print("Authorized for Always")
-            } else {
-                print("Authorized for When In use")
-            }
-            // Start monitoring for various kinds of events here.
-            // Callbacks will start occurring.
-            manager.startUpdatingLocation()
-            manager.startUpdatingHeading()
-            manager.startMonitoringVisits()
-        } else {
-            print("Not Authorized")
-        }
-    }
- */
 
     
     func yelpFood(query:YLPQuery) {
@@ -113,13 +93,24 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             }.onSuccess { search in
                 
                 for business in search.businesses{
-                    print("Top business: \(business.name)")
-                    print(business.identifier)
-                    print(business.name)
-                    print (business.categories[0].name)
-                    print (business.rating)
-                    print (business.location.address.last!)
-                    let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories[0].name, rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
+                    let foodId = business.identifier
+                    let foodName = business.name
+                    let foodCat = business.categories[0].name
+                    let foodRating = (business.rating)
+                    
+                    var foodSt:String?
+                    if business.location.address.count != 0{
+                        foodSt = (business.location.address[0])
+                    } else{
+                        foodSt = " "
+                    }
+                    
+                    let foodCity = business.location.city
+                    let foodState = business.location.stateCode
+                    let foodZip = business.location.postalCode
+                    let foodPhone = business.phone
+                    
+                    let currentBusiness = Restauraunt(id: foodId, name: foodName, category: foodCat, rating: foodRating, address: foodSt, city: foodCity, state:foodState, zip:foodZip, phone: foodPhone)
                     self.restaurants.append(currentBusiness)
                     
                 }
@@ -135,9 +126,11 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func searchFood(_ sender: Any) {
+        if addressTxt.text!.isEmpty && self.locationSwitch.isOn == false{
+            self.displayAlert("Error", message: "Please provide a location.")
+        }
+        
         if self.locationSwitch.isOn {
-            // YLPCoordinate(latitude: <#T##Double#>, longitude: <#T##Double#>)
-            //currentLocation.coordinate.latit
             let coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
             self.yelpFood(query:YLPQuery(coordinate: coordinate))
         }
