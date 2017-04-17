@@ -20,6 +20,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     var addresses = [String]()
     var zipCodes = [String]()
     var streets = [String]()
+    var eventDate:Date!
 
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var ratingField: UITextField!
@@ -130,6 +131,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         vc.addresses = self.addresses
         vc.zipCodes = self.zipCodes
         vc.streets = self.streets
+        vc.eventDate = self.eventDate
         self.show(vc, sender: self)
     }
     
