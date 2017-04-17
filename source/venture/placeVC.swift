@@ -87,10 +87,10 @@ class placeVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventFromFood"{
+        if segue.identifier == "toEventfromPlaces"{
             if let destinationVC = segue.destination as? AddEventVC {
                 destinationVC.fromFoodorPlace = true
-                destinationVC.eventDate = self.eventDate
+                destinationVC.eventDate = self.eventDate as Date!
                 destinationVC.eventDescStr = nameStr
                 destinationVC.eventLocStr = addressStr
                 
