@@ -28,6 +28,12 @@ func stringFromDate (date:Date) -> String {
     return dateFormatter.string(from: date)
 }
 
+func flightDatefromDate (date:Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "YYYY-MM-dd"
+    return dateFormatter.string(from: date)
+}
+
 func stringLongFromDate (date:Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEEE   MMM dd"

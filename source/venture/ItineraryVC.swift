@@ -106,15 +106,20 @@ class ItineraryVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toAddEvent"{
+        if segue.identifier == "toAddEvent" {
             if let destinationVC = segue.destination as? AddEventVC {
                 destinationVC.eventDate = tripDate
                 destinationVC.fromFoodorPlace = false
             }
+        } else if segue.identifier == "toFlights" {
+            if let destinationVC = segue.destination as? FlightsVC {
+                let flightDate = flightDatefromDate(date: tripDate)
+                destinationVC.tripDate = flightDate
+            }
         } else if segue.identifier == "toFood"{
-                if let destinationVC = segue.destination as? searchFoodVC {
-                    destinationVC.eventDate = tripDate
-                }
+            if let destinationVC = segue.destination as? searchFoodVC {
+                destinationVC.eventDate = tripDate
+            }
         } else if segue.identifier == "toEventDetails" {
             if let destinationVC = segue.destination as? EventDetailsVC {
                 let indexPath = self.eventsTableView.indexPathForSelectedRow

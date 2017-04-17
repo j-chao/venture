@@ -6,10 +6,10 @@
     * Implemented changing time format functionality in Settings view.
     * Resolved bugs and fixes in Trip and Itinerary views.
     * Improved on UI experience for Login, Registration, Password Reset, and Itinerary views.
-    * Learned and implemented Alamofire for use in Yelp and Google APIs.
+    * Learned and implemented Alamofire for use in Yelp and Google APIs and HTTP requests.
     * Added MapKit to Event Details view and implemented location finding service based on provided
       event location.
-
+    * Added Flights views and began implementing Google QPX Express API for obtaining flights data.
 
 
 - Julianne Crea: 33% 

@@ -45,15 +45,8 @@ class AddEventVC: UIViewController {
     
     @IBAction func addEventButton(_ sender: Any) {
         if eventDesc.text!.isEmpty || eventLoc.text!.isEmpty {
-            let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                (action:UIAlertAction) in
-            }
-            alert.addAction(OKAction)
-            self.present(alert, animated: true, completion:nil)
-            return
-        }
-        else {
+            self.presentAllFieldsAlert()
+        } else {
             let eventTimeStr = stringTimefromDateToFIR(date: eventTime.date)
             self.addEvent(eventDesc:eventDesc.text!, eventLoc:eventLoc.text!, eventTime:eventTimeStr)
             _ = navigationController?.popViewController(animated: true)
@@ -75,6 +68,17 @@ class AddEventVC: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+   
+    
+    func presentAllFieldsAlert() {
+        let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (action:UIAlertAction) in
+        }
+        alert.addAction(OKAction)
+        self.present(alert, animated: true, completion:nil)
+        return
     }
 
 }

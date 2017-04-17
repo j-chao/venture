@@ -56,12 +56,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-Cb-yPy">
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zm-01-6Tt">
                                         <rect key="frame" x="0.0" y="141.5" width="300" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="513732827.64569402">
-                                            <!--2017-04-12 23:33:47 +0000-->
-                                        </date>
-                                    </datePicker>
+                                    </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vEA-zk-m0D">
                                         <rect key="frame" x="75.5" y="393.5" width="149" height="31"/>
                                         <subviews>
@@ -111,7 +108,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="date" destination="YLi-Cb-yPy" id="6Pt-9C-FH3"/>
+                        <outlet property="adultCountPicker" destination="5Zm-01-6Tt" id="8Ov-Fc-HPY"/>
                         <outlet property="destination" destination="p3x-bk-lr7" id="SJz-eM-Oso"/>
                         <outlet property="nonstop" destination="A3G-K5-gh7" id="bpQ-vX-GLd"/>
                         <outlet property="origin" destination="kwh-tW-yYA" id="86J-PW-d3o"/>

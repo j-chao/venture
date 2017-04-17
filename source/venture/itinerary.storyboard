@@ -97,7 +97,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="flight"/>
                                                 <connections>
-                                                    <segue destination="5nF-d7-KLR" kind="show" id="MZf-Q8-3Rr"/>
+                                                    <segue destination="5nF-d7-KLR" kind="show" identifier="toFlights" id="MZf-Q8-3Rr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-Ra-aWM">
