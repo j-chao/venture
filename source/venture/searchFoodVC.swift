@@ -48,9 +48,17 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         })
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        restaurants.removeAll()
+        locationSwitch.setOn(false, animated: false)
+        addressTxt.text = ""
+    }
+    
     @IBAction func locationSwitchOn(_ sender: UISwitch) {
         if self.locationSwitch.isOn{
             print ("location check")
+            addressTxt.text = ""
             // Make sure the location service is available before trying to use it.
             if CLLocationManager.locationServicesEnabled() {
                 // Configure the location manager for what we want to track.
@@ -128,21 +136,19 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     @IBAction func searchFood(_ sender: Any) {
         if addressTxt.text!.isEmpty && self.locationSwitch.isOn == false{
             self.displayAlert("Error", message: "Please provide a location.")
-        }
-        
-        if self.locationSwitch.isOn {
-            let coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
-            self.yelpFood(query:YLPQuery(coordinate: coordinate))
-        }
-
-        else{
-         self.yelpFood(query:YLPQuery(location: addressTxt.text!))
+        } else{
+            if self.locationSwitch.isOn {
+                let coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
+                self.yelpFood(query:YLPQuery(coordinate: coordinate))
+            } else{
+                self.yelpFood(query:YLPQuery(location: addressTxt.text!))
         }
         locationManager.stopUpdatingLocation()
         myRequest.notify(queue: DispatchQueue.main, execute: {
             print("Finished all requests.")
             self.segueToTable()
         })
+        }
     }
     
     

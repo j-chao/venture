@@ -12,17 +12,19 @@ class foodTableVC: UITableViewController {
 
     var restaurants = [Restauraunt]()
     var eventDate:Date!
-// currently if the user searches for food and goes back with different search location, it just adds the new results to the already existing array of food places. so figure out how to have array data erased when user clicks back button
 
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
         self.title = "Food"
-        print (restaurants[0].name!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+    }
+    override func willMove(toParentViewController parent: UIViewController?) {
+        if parent == nil{
+            restaurants.removeAll(keepingCapacity: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
