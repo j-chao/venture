@@ -17,6 +17,9 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     var categories = [String]()
     var imgUrls = [URL]()
     var reviewCounts = [String]()
+    var addresses = [String]()
+    var zipCodes = [String]()
+    var streets = [String]()
 
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var ratingField: UITextField!
@@ -52,14 +55,21 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                 for business in search.businesses {
                
                     // filter by rating
-                    if Int(business.rating) < Int(self.ratingField.text!)! {
+                    if Double(business.rating) < Double(self.ratingField.text!)! {
                         continue
                     }
                     else {
+                        if business.location.address.count != 0 {
+                            let busStreet = business.location.address[0]
+                            self.streets.append(busStreet)
+                        }
+                        let busStreet = ""
                         businessName = business.name
-                        businessRating = String(business.rating)
+                        businessRating = "\(business.rating)" + " / 5"
                         let busImgUrl = business.imageURL
                         let busReviews = String(business.reviewCount)
+                        let busAddress = "\(business.location.city)" + ", " + "\(business.location.stateCode)" + ", " + "\(business.location.countryCode)"
+                        let zipCode = business.location.postalCode
                         
                         // capitalize category name
                         let businessCatlower = business.categories[0].alias
@@ -69,6 +79,9 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                         self.ratings.append(businessRating!)
                         self.imgUrls.append(busImgUrl!)
                         self.reviewCounts.append(busReviews)
+                        self.addresses.append(busAddress)
+                        self.zipCodes.append(zipCode)
+                        self.streets.append(busStreet)
                         
                         // fix categories that are two words
                         if businessCat == "Localflavor" {
@@ -77,8 +90,24 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                         if businessCat == "Bustours" {
                             businessCat = "Bus Tours"
                         }
+                        if businessCat == "Walkingtours" {
+                            businessCat = "Walking Tours"
+                        }
+                        if businessCat == "Amusementparks" {
+                            businessCat = "Amusement Parks"
+                        }
+                        if businessCat == "Fleamarkets" {
+                            businessCat = "Flea Markets"
+                        }
+                        if businessCat == "Publicservicesgovt" {
+                            businessCat = "Public Services / Govt"
+                        }
+                        if businessCat == "Bikerentals" {
+                            businessCat = "Bike Rentals"
+                        }
                         
                         self.categories.append(businessCat)
+                        
                     }
 
                 }
@@ -98,6 +127,9 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         vc.busCat = self.categories
         vc.imgUrls = self.imgUrls
         vc.reviewCounts = self.reviewCounts
+        vc.addresses = self.addresses
+        vc.zipCodes = self.zipCodes
+        vc.streets = self.streets
         self.show(vc, sender: self)
     }
     
