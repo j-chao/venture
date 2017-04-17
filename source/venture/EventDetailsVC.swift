@@ -24,7 +24,6 @@ class EventDetailsVC: UIViewController {
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventDesc: UILabel!
     @IBOutlet weak var eventLoc: UILabel!
-    
     @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
@@ -49,8 +48,8 @@ class EventDetailsVC: UIViewController {
                 self.eventDesc.text = desc as! String?
                 self.eventLoc.text = loc
             }
+            self.myRequest.leave()
         })
-        myRequest.leave()
         
         myRequest.notify(queue: DispatchQueue.main, execute: {
             self.setMapMark()
@@ -75,17 +74,16 @@ class EventDetailsVC: UIViewController {
         }
     }
     
-    func setMapCoor() {
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(30.286114, -97.739347)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        map.setRegion(region, animated: true)
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "HOOK 'EM"
-        map.addAnnotation(annotation)
-    }
-    
+//    func setMapCoor() {
+//        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+//        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(30.286114, -97.739347)
+//        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+//        map.setRegion(region, animated: true)
+//        
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = location
+//        annotation.title = "HOOK 'EM"
+//        map.addAnnotation(annotation)
+//    }
     
 }

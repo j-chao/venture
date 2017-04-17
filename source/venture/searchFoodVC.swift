@@ -118,7 +118,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                     print(business.name)
                     print (business.categories[0].name)
                     print (business.rating)
-                    print (business.location.address.last)
+                    print (business.location.address.last!)
                     let currentBusiness = Restauraunt(id: business.identifier, name: business.name, category: business.categories[0].name, rating: business.rating, address: business.location.address[0], city: business.location.city, state:business.location.stateCode, zip:business.location.postalCode,phone: business.phone)
                     self.restaurants.append(currentBusiness)
                     
@@ -138,7 +138,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         if self.locationSwitch.isOn {
             // YLPCoordinate(latitude: <#T##Double#>, longitude: <#T##Double#>)
             //currentLocation.coordinate.latit
-            var coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
+            let coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
             self.yelpFood(query:YLPQuery(coordinate: coordinate))
         }
 

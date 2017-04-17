@@ -35,7 +35,7 @@ class AddEventVC: UIViewController {
         self.eventDateStr = dateTitle
         self.eventDateLbl.text = dateTitle
         
-        if fromFoodorPlace == true{
+        if fromFoodorPlace == true {
             eventDesc.text = eventDescStr
             eventLoc.text = eventLocStr
         }
