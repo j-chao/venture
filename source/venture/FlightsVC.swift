@@ -18,6 +18,9 @@ class FlightsVC: UIViewController {
     @IBOutlet weak var nonstop: UISwitch!
     var tripDate:String!
     var pickerValues = [[String]]()
+    var adultCount:Int!
+    var childCount:Int!
+    var maxStops:Int!
     
     override func viewDidLoad() {
         self.setBackground()
@@ -33,8 +36,8 @@ class FlightsVC: UIViewController {
         adultCountPicker.delegate = self
         adultCountPicker.dataSource = self
         pickerValues = [["Adult Count", "1", "2", "3", "4", "5"],
-                      ["Child Count", "1", "2", "3", "4", "5"],
-                      ["Max Stops", "1", "2", "3", "4", "5"]]
+                      ["Child Count", "0", "1", "2"],
+                      ["Max Stops", "0", "1", "2", "3"]]
         
     }
     
@@ -92,6 +95,25 @@ class FlightsVC: UIViewController {
                 // use GLOSS to parse?
         }
     }
+    
+    func presentAllFieldsAlert() {
+        let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (action:UIAlertAction) in
+        }
+        alert.addAction(OKAction)
+        self.present(alert, animated: true, completion:nil)
+        return
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
 
@@ -110,15 +132,12 @@ extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ adultCountPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.pickerValues[component][row]
     }
-   
-    func presentAllFieldsAlert() {
-        let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (action:UIAlertAction) in
-        }
-        alert.addAction(OKAction)
-        self.present(alert, animated: true, completion:nil)
-        return
+    
+    // Catpure the picker view selection
+    func pickerView(adultCountPicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
     }
+
 }
 
