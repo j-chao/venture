@@ -15,12 +15,18 @@ class placeVC: UIViewController {
     @IBOutlet weak var ratingLbl: UILabel!
     @IBOutlet weak var reviewCountLbl: UILabel!
     @IBOutlet weak var placeImg: UIImageView!
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var zipLbl: UILabel!
+    @IBOutlet weak var streetLbl: UILabel!
     
     var nameStr:String?
     var catStr:String?
     var ratingStr:String?
     var reviewStr:String?
     var imgStr:URL?
+    var addressStr:String?
+    var zipStr:String?
+    var streetStr:String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,6 +46,15 @@ class placeVC: UIViewController {
         if let imgStr = imgStr {
             let imgString = "\(imgStr)"
             get_image(imgString, placeImg)
+        }
+        if let addressStr = addressStr {
+            addressLbl.text = addressStr
+        }
+        if let zipStr = zipStr {
+            zipLbl.text = zipStr
+        }
+        if let streetStr = streetStr {
+            streetLbl.text = streetStr
         }
     }
 
