@@ -10,6 +10,8 @@ import UIKit
 
 class placeVC: UIViewController {
     
+    var eventDate:Date!
+
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var catLbl: UILabel!
     @IBOutlet weak var ratingLbl: UILabel!
@@ -82,6 +84,17 @@ class placeVC: UIViewController {
             }
         })
         task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEventFromFood"{
+            if let destinationVC = segue.destination as? AddEventVC {
+                destinationVC.fromFoodorPlace = true
+                destinationVC.eventDate = self.eventDate
+                destinationVC.eventDescStr = nameStr
+                destinationVC.eventLocStr = addressStr
+                
+            }}
     }
 
 }

@@ -116,8 +116,12 @@ class ItineraryVC: UIViewController {
                 let flightDate = flightDatefromDate(date: tripDate)
                 destinationVC.tripDate = flightDate
             }
-        } else if segue.identifier == "toFood"{
+        } else if segue.identifier == "toFood" {
             if let destinationVC = segue.destination as? searchFoodVC {
+                destinationVC.eventDate = tripDate
+            }
+        } else if segue.identifier == "toPlaces"{
+            if let destinationVC = segue.destination as? searchForPlacesVC {
                 destinationVC.eventDate = tripDate
             }
         } else if segue.identifier == "toEventDetails" {
@@ -129,7 +133,6 @@ class ItineraryVC: UIViewController {
             }
         }
     }
-
 }
 
 extension ItineraryVC: UITableViewDelegate, UITableViewDataSource {

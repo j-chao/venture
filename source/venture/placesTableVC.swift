@@ -18,6 +18,7 @@ class placesTableVC: UITableViewController {
     var addresses = [String]()
     var zipCodes = [String]()
     var streets = [String]()
+    var eventDate:Date!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,7 @@ class placesTableVC: UITableViewController {
                 destVC.addressStr = self.addresses[indexPath.row]
                 destVC.zipStr = self.zipCodes[indexPath.row]
                 destVC.streetStr = self.streets[indexPath.row]
+                destVC.eventDate = self.eventDate
             }
         }
     }
