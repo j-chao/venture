@@ -49,7 +49,13 @@ class AddEventVC: UIViewController {
         } else {
             let eventTimeStr = stringTimefromDateToFIR(date: eventTime.date)
             self.addEvent(eventDesc:eventDesc.text!, eventLoc:eventLoc.text!, eventTime:eventTimeStr)
-            _ = navigationController?.popViewController(animated: true)
+            
+            for vc in self.navigationController!.viewControllers as Array {
+                if vc .isKind(of: TripPageVC.self) {
+                    self.navigationController!.popToViewController(vc, animated: true)
+                    break
+                }
+            }
         }
     }
     

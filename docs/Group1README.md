@@ -9,6 +9,7 @@
     * Learned and implemented Alamofire for use in Yelp and Google APIs and HTTP requests.
     * Added MapKit to Event Details view and implemented location finding service based on provided
       event location.
+    * Added event reminder notification functionality through Event Details view.
     * Added Flights views and began implementing Google QPX Express API for obtaining flights data.
 
 

@@ -15,6 +15,7 @@ class EventDetailsVC: UIViewController {
     
     var ref:FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser?.uid
+    let center = UNUserNotificationCenter.current()
     
     let myRequest = DispatchGroup()
   
@@ -37,7 +38,6 @@ class EventDetailsVC: UIViewController {
         
         self.setBackground()
         super.viewDidLoad()
-        self.reminderSwitch.setOn(false, animated: true)
         
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(date!)")
         
@@ -55,12 +55,14 @@ class EventDetailsVC: UIViewController {
                 self.eventTime.text = timeDisplay as String?
                 self.eventDesc.text = desc as! String?
                 self.eventLoc.text = loc
+                
+                self.myRequest.leave()
             }
-            self.myRequest.leave()
         })
         
         myRequest.notify(queue: DispatchQueue.main, execute: {
             self.setMapMark()
+            self.setInitialReminderSwitchState()
         })
     }
     
@@ -84,19 +86,33 @@ class EventDetailsVC: UIViewController {
     
     
     @IBAction func reminderAction(_ sender: UISwitch) {
-        self.reminderSwitch.setOn(true, animated: true)
         
-        let notifyDate = self.dateTime(forDate: self.dateNS, timedate: self.timeNS)
-        
-        print (notifyDate)
-        self.scheduleNotification(at: notifyDate)
+        if self.reminderSwitch.isOn == false {
+            self.reminderSwitch.setOn(true, animated: true)
+            let notifyDate = self.dateTime(forDate: self.dateNS, timedate: self.timeNS)
+            self.scheduleNotification(at: notifyDate)
+        } else if self.reminderSwitch.isOn == true {
+            self.reminderSwitch.setOn(false, animated: true)
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.eventDesc.text!])
+        }
     }
     
 }
 
 extension EventDetailsVC {
     
-    func dateTime (forDate:Date ,timedate:Date) ->Date {
+    func setInitialReminderSwitchState() {
+        self.reminderSwitch.setOn(false, animated: true)
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                if request.identifier == self.eventDesc.text! {
+                    self.reminderSwitch.setOn(true, animated: true)
+                }
+            }
+        })
+    }
+    
+    func dateTime (forDate:Date, timedate:Date) ->Date {
         let df = DateFormatter()
         df.dateFormat = "dd MMM yyyy"
         var resultdate = Date()
@@ -123,17 +139,17 @@ extension EventDetailsVC {
         let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
         
         let content = UNMutableNotificationContent()
-        content.title = "Tutorial Reminder"
-        content.body = "Just a reminder to read your tutorial over at appcoda.com!"
+        content.title = "Event Reminder"
+        content.body = self.eventDesc.text!
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = "myCategory"
         
-        let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: self.eventDesc.text!, content: content, trigger: trigger)
         
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().add(request) {(error) in
+        center.removeAllPendingNotificationRequests()
+        center.add(request) {(error) in
             if let error = error {
-                print("Uh oh! We had an error: \(error)")
+                print("error scheduling notification: \(error)")
             }
         }
     }
