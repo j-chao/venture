@@ -20,7 +20,8 @@
 
 
 - Connie Liu: 33% 
-    * Implemented pull food capability to search for food near a specific address or near user's current location.
+    * Implemented pull food capability to search for food/restaurants near a user-provided address or near user's current location.
+    * Created all view controllers in food storyboard, including UI elements and constraints
     
 
 ## Grading Level   
@@ -28,8 +29,8 @@
 
 
 ## Differences  
-    * Food and Place features do not yet show information for price or open hours of a business because the YelpAPI Cocoapod used does not have this capability. A newer and more complete method will be implemented in the final release via Alamofire and Yelp Fusion to grab this data.
-    * Food and Place features cannot filter searches by price or open now for same reasons listed above.
+   * Food and Place features do not yet show information for price or open hours of a business because the YelpAPI Cocoapod used does not have this capability. A newer and more complete method will be implemented in the final release via Alamofire and Yelp Fusion to grab this data.
+   * Food and Place features cannot filter searches by price or open now for same reasons listed above.
 
 
 ## Special Instructions   
