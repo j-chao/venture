@@ -35,7 +35,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         locationManager.delegate = self
         self.title = "Search for Food"
-        addressTxt.delegate = self
         
         // requesting the access_token from Yelp takes time and therefore, it is necessary to wait until the request is complete before we can proceed with using the obtained token to request results from Yelp.
         tokenRequest.enter()

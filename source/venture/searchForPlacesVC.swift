@@ -145,6 +145,10 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         self.show(vc, sender: self)
     }
     
+}
+
+extension searchForPlacesVC {
+    
     func presentAllFieldsAlert() {
         let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
@@ -155,7 +159,14 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         return
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 // capitalize first letter of a string, used for categories
