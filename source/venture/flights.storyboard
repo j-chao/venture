@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -83,7 +84,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="findFlights:" destination="E80-dB-34h" eventType="touchUpInside" id="aZu-P5-MdO"/>
-                                            <segue destination="vFe-fB-s0Z" kind="show" id="AL1-yN-4kx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -109,24 +109,62 @@
             </objects>
             <point key="canvasLocation" x="213.59999999999999" y="133.5832083958021"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Flights TableVC-->
         <scene sceneID="tXB-Ki-JaE">
             <objects>
-                <tableViewController id="vFe-fB-s0Z" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="flightsTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFe-fB-s0Z" customClass="flightsTableVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NF8-c2-EDz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="flightCell" id="qoS-Kp-b60">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="flightCell" id="qoS-Kp-b60" customClass="FlightCellVC" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qoS-Kp-b60" id="xMw-r6-bSx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekb-q7-cJ3">
+                                            <rect key="frame" x="8" y="0.0" width="284" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="departure - arrival" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzs-hm-6iF">
+                                            <rect key="frame" x="8" y="22" width="284" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.97647058819999999" green="0.67450980390000004" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="saleTotal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ed-cw-mCP">
+                                            <rect key="frame" x="300" y="11" width="67" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="dog-Tm-vmt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ekb-q7-cJ3" firstAttribute="leading" secondItem="xMw-r6-bSx" secondAttribute="leadingMargin" id="DM5-vD-2Ig"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fzs-hm-6iF" secondAttribute="bottom" id="IyM-b3-jv9"/>
+                                        <constraint firstItem="6Ed-cw-mCP" firstAttribute="leading" secondItem="Fzs-hm-6iF" secondAttribute="trailing" constant="8" symbolic="YES" id="VWr-tG-PJn"/>
+                                        <constraint firstItem="ekb-q7-cJ3" firstAttribute="leading" secondItem="Fzs-hm-6iF" secondAttribute="leading" id="enz-pU-cVZ"/>
+                                        <constraint firstItem="ekb-q7-cJ3" firstAttribute="top" secondItem="xMw-r6-bSx" secondAttribute="top" id="h6c-cj-GRJ"/>
+                                        <constraint firstItem="6Ed-cw-mCP" firstAttribute="leading" secondItem="ekb-q7-cJ3" secondAttribute="trailing" constant="8" symbolic="YES" id="jhb-tO-89r"/>
+                                        <constraint firstItem="6Ed-cw-mCP" firstAttribute="trailing" secondItem="xMw-r6-bSx" secondAttribute="trailingMargin" id="nbx-96-090"/>
+                                        <constraint firstItem="6Ed-cw-mCP" firstAttribute="centerY" secondItem="xMw-r6-bSx" secondAttribute="centerY" id="spR-hf-Hft"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="tNk-aY-r9W" kind="presentation" modalTransitionStyle="crossDissolve" id="WNT-rJ-2fc"/>
+                                    <outlet property="airlineLabel" destination="xMw-r6-bSx" id="viX-Re-CSs"/>
+                                    <outlet property="flightLabel" destination="ekb-q7-cJ3" id="Sk1-pn-Cdv"/>
+                                    <outlet property="saleLabel" destination="6Ed-cw-mCP" id="0xW-WZ-ezY"/>
+                                    <outlet property="timeFrameLabel" destination="Fzs-hm-6iF" id="zVK-HW-afr"/>
+                                    <outlet property="timeLabel" destination="Fzs-hm-6iF" id="DLs-oj-Rsc"/>
+                                    <segue destination="tNk-aY-r9W" kind="presentation" identifier="toFlightDetail" modalTransitionStyle="crossDissolve" id="WNT-rJ-2fc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -138,7 +176,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b94-uI-GXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="134"/>
+            <point key="canvasLocation" x="957.60000000000002" y="133.5832083958021"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AZz-LL-Joj">
@@ -165,9 +203,18 @@
                                             <state key="normal" title="Button"/>
                                         </button>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvu-PM-Qh5">
-                                            <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                            <rect key="frame" x="38" y="177" width="299" height="312"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.1256170214" green="0.59749177409999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRM-cM-QGy">
+                                                    <rect key="frame" x="33" y="49" width="48" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                     </subviews>
                                 </view>

@@ -109,6 +109,7 @@ class FlightsVC: UIViewController {
                     self.getDuration()
                     self.getSaleTotal()
                     self.getFlightNumber()
+                    self.segueToTable()
                 })
         }
     }
@@ -200,6 +201,16 @@ extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension FlightsVC {
+    func segueToTable() {
+        let vc = UIStoryboard(name:"flights", bundle:nil).instantiateViewController(withIdentifier: "flightsTable") as! FlightsTableVC
+        vc.departureTimeArray = self.departureTimeArray
+        vc.arrivalTimeArray = self.arrivalTimeArray
+        vc.durationArray = self.durationArray
+        vc.saleTotalArray = self.saleTotalArray
+        vc.flightNumberArray = self.flightNumberArray
+        self.show(vc, sender: self)
+    }
+    
     func presentAllFieldsAlert() {
         let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
