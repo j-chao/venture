@@ -61,6 +61,7 @@ class placeVC: UIViewController {
     }
 
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         self.title = "Place"
     }
@@ -94,7 +95,8 @@ class placeVC: UIViewController {
                 destinationVC.eventDescStr = nameStr
                 destinationVC.eventLocStr = addressStr
                 
-            }}
+            }
+        }
     }
 
 }

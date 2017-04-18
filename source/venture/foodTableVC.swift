@@ -17,22 +17,13 @@ class foodTableVC: UITableViewController {
         self.setBackground()
         super.viewDidLoad()
         self.title = "Food"
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
+    
     override func willMove(toParentViewController parent: UIViewController?) {
         if parent == nil{
             restaurants.removeAll(keepingCapacity: false)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -45,25 +36,20 @@ class foodTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! foodCell
 
-        // Configure the cell...
         cell.foodNameLbl.text = restaurants[indexPath.row].name
         cell.foodCategoryLbl.text = restaurants[indexPath.row].category
         cell.foodRatingLbl.text = "\(restaurants[indexPath.row].rating!)"
         return cell
     }
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      if segue.identifier == "toFoodVC" {
-     if let destinationVC = segue.destination as? foodVC ,
-     let indexPath = self.tableView.indexPathForSelectedRow {
-     let selectedFood = restaurants[indexPath.row]
-        destinationVC.restaurant = selectedFood
-        destinationVC.eventDate = self.eventDate
-        }
-    
+         if let destinationVC = segue.destination as? foodVC ,
+         let indexPath = self.tableView.indexPathForSelectedRow {
+             let selectedFood = restaurants[indexPath.row]
+                destinationVC.restaurant = selectedFood
+                destinationVC.eventDate = self.eventDate
+            }
         }
     }
 }

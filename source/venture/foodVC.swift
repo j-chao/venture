@@ -19,7 +19,6 @@ class foodVC: UIViewController {
     @IBOutlet weak var foodRatingLbl: UILabel!
     @IBOutlet weak var foodCategoryLbl: UILabel!
     
-    
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
@@ -29,17 +28,8 @@ class foodVC: UIViewController {
         foodPhoneLbl.text = restaurant.phone
         foodRatingLbl.text = "\(restaurant.rating!)"
         foodCategoryLbl.text = restaurant.category
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEventFromFood"{
             if let destinationVC = segue.destination as? AddEventVC {
@@ -47,7 +37,7 @@ class foodVC: UIViewController {
                 destinationVC.eventDate = self.eventDate
                 destinationVC.eventDescStr = restaurant.name
                 destinationVC.eventLocStr = "\(restaurant.address!) \(restaurant.city!), \(restaurant.state!) \(restaurant.zip!)"
-
-            }}
+            }
+        }
     }
  }

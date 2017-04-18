@@ -10,7 +10,6 @@ import UIKit
 
 class foodCell: UITableViewCell {
 
-
     @IBOutlet weak var foodNameLbl: UILabel!
     @IBOutlet weak var foodCategoryLbl: UILabel!
     @IBOutlet weak var foodRatingLbl: UILabel!

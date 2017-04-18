@@ -84,7 +84,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print (error)
     }
-
     
     func yelpFood(query:YLPQuery) {
         myRequest.enter()
@@ -150,7 +149,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         })
         }
     }
-    
     
     func displayAlert(_ title:String, message:String) {
         self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)

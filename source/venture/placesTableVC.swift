@@ -21,6 +21,7 @@ class placesTableVC: UITableViewController {
     var eventDate:Date!
 
     override func viewDidLoad() {
+        self.setBackground()
         super.viewDidLoad()
         self.title = "Places"
         self.tableView.dataSource = self

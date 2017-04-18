@@ -29,15 +29,17 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
-        self.title = "Search for Places"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+//        self.title = "Search for Places"
     }
    
     @IBAction func getPlaces(_ sender: Any) {
         myRequest.enter()
+        
+        if locationField.text!.isEmpty || ratingField.text!.isEmpty {
+            self.presentAllFieldsAlert()
+        } else {
+            
+        
         let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
         let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
         
@@ -78,7 +80,14 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
                         
                         self.places.append(businessName!)
                         self.ratings.append(businessRating!)
-                        self.imgUrls.append(busImgUrl!)
+                        
+                        if busImgUrl != nil {
+                            self.imgUrls.append(busImgUrl!)
+                        } else {
+                            let url = URL(string: "http://vignette2.wikia.nocookie.net/main-cast/images/5/5b/Sorry-image-not-available.png/revision/latest?cb=20160625173435")
+                            self.imgUrls.append(url!)
+                        }
+                        
                         self.reviewCounts.append(busReviews)
                         self.addresses.append(busAddress)
                         self.zipCodes.append(zipCode)
@@ -119,6 +128,7 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
             print("Finished all requests.")
             self.segueToTable()
         })
+        }
     }
 
     func segueToTable() {
@@ -134,6 +144,17 @@ class searchForPlacesVC: UIViewController, UITableViewDelegate {
         vc.eventDate = self.eventDate
         self.show(vc, sender: self)
     }
+    
+    func presentAllFieldsAlert() {
+        let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (action:UIAlertAction) in
+        }
+        alert.addAction(OKAction)
+        self.present(alert, animated: true, completion:nil)
+        return
+    }
+    
     
 }
 

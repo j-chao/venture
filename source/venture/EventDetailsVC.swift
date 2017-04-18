@@ -38,7 +38,7 @@ class EventDetailsVC: UIViewController {
         
         self.setBackground()
         super.viewDidLoad()
-        
+       
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/\(passedTrip)/\(date!)")
         
         ref.child(event).observe(.value, with: { snapshot in
