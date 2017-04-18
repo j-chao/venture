@@ -67,19 +67,27 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
             return
         }
         
-        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!)
+        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!, totalBudget:"0", foodBudget:"0", placesBudget:"0", otherBudget:"0")
         
         let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
         self.show(vc, sender: self)
     }
     
-    func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String) {
+    func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String, totalBudget:String, foodBudget:String, placesBudget:String, otherBudget:String) {
         let tripRef = ref.child("users/\(userID!)/trips/\(tripName)")
+        
         tripRef.child("tripName").setValue(tripName)
         tripRef.child("tripLocation").setValue(tripLocation)
         tripRef.child("startDate").setValue(startDate)
         tripRef.child("endDate").setValue(endDate)
+        
+        // adding default budget values
+        let tripBudgetRef = ref.child("users/\(userID!)/budgets/\(tripName)")
+        tripBudgetRef.child("totalBudget").setValue(totalBudget)
+        tripBudgetRef.child("foodBudget").setValue(foodBudget)
+        tripBudgetRef.child("placesBudget").setValue(placesBudget)
+        tripBudgetRef.child("otherBudget").setValue(otherBudget)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

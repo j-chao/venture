@@ -21,9 +21,11 @@
 		B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC761E7BC33D00213CF3 /* trip.storyboard */; };
 		B50E91771EA6756C000044D9 /* FlightCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E91761EA6756C000044D9 /* FlightCellVC.swift */; };
 		B50E91791EA67945000044D9 /* FlightDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E91781EA67945000044D9 /* FlightDetailsVC.swift */; };
+		B50E917B1EA69D07000044D9 /* Flights.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E917A1EA69D07000044D9 /* Flights.swift */; };
+		B50E917D1EA6A3A0000044D9 /* BudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */; };
 		B51CD6401E98A73F009F2615 /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = B51CD63F1E98A73F009F2615 /* back3.png */; };
 		B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */; };
-		B52D37E51E9C5DA7000AEB83 /* FlightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D37E41E9C5DA7000AEB83 /* FlightsVC.swift */; };
+		B52D37E51E9C5DA7000AEB83 /* FlightsSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D37E41E9C5DA7000AEB83 /* FlightsSearchVC.swift */; };
 		B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B29841E85CE25001974A5 /* AddEventVC.swift */; };
 		B54593D31E91BE2100308A14 /* ItineraryCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54593D21E91BE2100308A14 /* ItineraryCellVC.swift */; };
 		B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553333D1E6DE7CA0007A23D /* AppDelegate.swift */; };
@@ -121,9 +123,11 @@
 		B50AEC761E7BC33D00213CF3 /* trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trip.storyboard; sourceTree = "<group>"; };
 		B50E91761EA6756C000044D9 /* FlightCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCellVC.swift; sourceTree = "<group>"; };
 		B50E91781EA67945000044D9 /* FlightDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailsVC.swift; sourceTree = "<group>"; };
+		B50E917A1EA69D07000044D9 /* Flights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flights.swift; sourceTree = "<group>"; };
+		B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetVC.swift; sourceTree = "<group>"; };
 		B51CD63F1E98A73F009F2615 /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
 		B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteMountain.jpg; sourceTree = "<group>"; };
-		B52D37E41E9C5DA7000AEB83 /* FlightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsVC.swift; sourceTree = "<group>"; };
+		B52D37E41E9C5DA7000AEB83 /* FlightsSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsSearchVC.swift; sourceTree = "<group>"; };
 		B53B29841E85CE25001974A5 /* AddEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventVC.swift; sourceTree = "<group>"; };
 		B54593D21E91BE2100308A14 /* ItineraryCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryCellVC.swift; sourceTree = "<group>"; };
 		B553333A1E6DE7CA0007A23D /* venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,10 +312,19 @@
 			name = "itinerary VC";
 			sourceTree = "<group>";
 		};
+		B50E917E1EA6A3A5000044D9 /* budget VC */ = {
+			isa = PBXGroup;
+			children = (
+				B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */,
+			);
+			name = "budget VC";
+			sourceTree = "<group>";
+		};
 		B52D37E61E9C5DB3000AEB83 /* flights VC */ = {
 			isa = PBXGroup;
 			children = (
-				B52D37E41E9C5DA7000AEB83 /* FlightsVC.swift */,
+				B52D37E41E9C5DA7000AEB83 /* FlightsSearchVC.swift */,
+				B50E917A1EA69D07000044D9 /* Flights.swift */,
 				B58692A01EA6725A0069A048 /* FlightsTableVC.swift */,
 				B50E91761EA6756C000044D9 /* FlightCellVC.swift */,
 				B50E91781EA67945000044D9 /* FlightDetailsVC.swift */,
@@ -365,6 +378,7 @@
 				B505716E1E97000C00AD7B29 /* event VC */,
 				B59F6E991E9827DF00CEDE07 /* food VC */,
 				EAD462411E907EF40095A58B /* places VC */,
+				B50E917E1EA6A3A5000044D9 /* budget VC */,
 				B50512B11E70F3DB003F8ACA /* storyboards */,
 				B50512AA1E70F39D003F8ACA /* supporting files */,
 				B50512A91E70F37E003F8ACA /* images */,
@@ -791,6 +805,7 @@
 				B58DEEFB1E82D1F40044B28E /* Globals.swift in Sources */,
 				B55333461E6DE7CA0007A23D /* venture.xcdatamodeld in Sources */,
 				B50E91791EA67945000044D9 /* FlightDetailsVC.swift in Sources */,
+				B50E917D1EA6A3A0000044D9 /* BudgetVC.swift in Sources */,
 				B558AAF41E9EC11300DCED1B /* UIViewAnchorPoint.swift in Sources */,
 				B55333401E6DE7CA0007A23D /* LoginVC.swift in Sources */,
 				B5E2A09B1E7DC447002C48DC /* TripCellVC.swift in Sources */,
@@ -799,7 +814,7 @@
 				B553333E1E6DE7CA0007A23D /* AppDelegate.swift in Sources */,
 				B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */,
 				B586929F1EA65E360069A048 /* String.swift in Sources */,
-				B52D37E51E9C5DA7000AEB83 /* FlightsVC.swift in Sources */,
+				B52D37E51E9C5DA7000AEB83 /* FlightsSearchVC.swift in Sources */,
 				B558AAF31E9EC11300DCED1B /* UITextFieldX.swift in Sources */,
 				B56470101E9887B900251461 /* Background.swift in Sources */,
 				B5072E151E7F253900BF4F82 /* TripPageVC.swift in Sources */,
@@ -811,6 +826,7 @@
 				B5A66C4F1E9C54C900D40D87 /* searchFoodVC.swift in Sources */,
 				EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */,
 				B558AAEF1E9EC11300DCED1B /* UIButtonX.swift in Sources */,
+				B50E917B1EA69D07000044D9 /* Flights.swift in Sources */,
 				B50E91771EA6756C000044D9 /* FlightCellVC.swift in Sources */,
 				B558AAF61E9EC11300DCED1B /* UIViewX.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,

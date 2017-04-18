@@ -55,8 +55,6 @@ class TripsVC: UIViewController {
         
     }
     
-    
-    
     @IBOutlet var swipeDelete: UISwipeGestureRecognizer!
 }
 

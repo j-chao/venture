@@ -1,5 +1,5 @@
 //
-//  FlightsVC.swift
+//  FlightsSearchVC.swift
 //  venture
 //
 //  Created by Justin Chao on 4/10/17.
@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class FlightsVC: UIViewController {
+class FlightsSearchVC: UIViewController {
 
     @IBOutlet weak var origin: UITextFieldX!
     @IBOutlet weak var destination: UITextFieldX!
@@ -28,6 +28,8 @@ class FlightsVC: UIViewController {
     var durationArray = [String]()
     var saleTotalArray = [String]()
     var flightNumberArray = [String]()
+    
+    var flightsArray = [Flight]()
     
     override func viewDidLoad() {
         self.setBackground()
@@ -109,7 +111,10 @@ class FlightsVC: UIViewController {
                     self.getDuration()
                     self.getSaleTotal()
                     self.getFlightNumber()
+                    
+                    self.passToFlightClass()
                     self.segueToTable()
+                    
                 })
         }
     }
@@ -158,10 +163,21 @@ class FlightsVC: UIViewController {
         }
         print(self.flightNumberArray)
     }
+    
+    func passToFlightClass() {
+        for i in (0..<self.resultCount) {
+            let flight = Flight(departureTimeDate: self.departureTimeArray[i],
+                                arrivalTimeDate: self.arrivalTimeArray[i],
+                                duration: self.durationArray[i],
+                                saleTotal: self.saleTotalArray[i],
+                                flightNumber: self.flightNumberArray[i])
+            self.flightsArray.append(flight)
+        }
+    }
 
 }
 
-extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
+extension FlightsSearchVC: UIPickerViewDelegate, UIPickerViewDataSource {
     // returns the number of 'columns' to display.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -200,7 +216,7 @@ extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension FlightsVC {
+extension FlightsSearchVC {
     func segueToTable() {
         let vc = UIStoryboard(name:"flights", bundle:nil).instantiateViewController(withIdentifier: "flightsTable") as! FlightsTableVC
         vc.departureTimeArray = self.departureTimeArray
@@ -208,6 +224,7 @@ extension FlightsVC {
         vc.durationArray = self.durationArray
         vc.saleTotalArray = self.saleTotalArray
         vc.flightNumberArray = self.flightNumberArray
+        
         self.show(vc, sender: self)
     }
     
