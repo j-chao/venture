@@ -92,3 +92,9 @@ func calculateDays(start: Date, end: Date) -> Int {
     }
     return (end - start)
 }
+
+func minutesToHoursMinutes (minutes: Int) -> String {
+    let hours = minutes / 60
+    let min = (minutes % 60)
+    return ("\(hours)h:\(min)m")
+}

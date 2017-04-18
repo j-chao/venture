@@ -15,13 +15,19 @@ class FlightsVC: UIViewController {
     @IBOutlet weak var origin: UITextFieldX!
     @IBOutlet weak var destination: UITextFieldX!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var nonstop: UISwitch!
+    var myRequest = DispatchGroup()
     var tripDate:String!
     var pickerValues = [[String]]()
     var adultCount:Int!
     var childCount:Int!
     var maxStops:Int!
-    var resultCount = 0
+    var resultCount = -1
+    var parseJson:JSON!
+    var departureTimeArray = [Date]()
+    var arrivalTimeArray = [Date]()
+    var durationArray = [String]()
+    var saleTotalArray = [String]()
+    var flightNumberArray = [String]()
     
     override func viewDidLoad() {
         self.setBackground()
@@ -33,12 +39,10 @@ class FlightsVC: UIViewController {
             string: "destination",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
        
-       
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerValues = [["Adult Count", "1", "2", "3"],
-                      ["Child Count", "0", "1", "2"],
-                      ["Max Stops", "0", "1", "2", "3"]]
+                      ["Child Count", "0", "1", "2"]]
         
     }
     
@@ -51,6 +55,7 @@ class FlightsVC: UIViewController {
     }
 
     func googleFlights() {
+        myRequest.enter()
         let key = "AIzaSyAJf-FwVx2T_kBXfdlBxM6UTY-SPczX5ds"
         let url:String
             = "https://www.googleapis.com/qpxExpress/v1/trips/search/?key=\(key)"
@@ -59,7 +64,7 @@ class FlightsVC: UIViewController {
             "request" : [
                 "passengers" : ["adultCount" : self.adultCount,
                                 "childCount" : self.childCount,
-                                "maxStops" : self.maxStops],
+                                "maxStops" : 0],
                 "slice" : [["origin" : self.origin.text!,
                             "destination" : self.destination.text!,
                             "date" : self.tripDate,
@@ -75,51 +80,90 @@ class FlightsVC: UIViewController {
                     print(response.result.error!)
                     return
                 }
-                guard let json = response.result.value as? [String: Any] else {
+                guard let rawJson = response.result.value as? [String: Any] else {
                     print("error getting JSON from google flights")
                     print("Error: \(response.result.error)")
                     return
                 }
                 
-                let parseJson = JSON(json)
-             
-                guard let price = parseJson["trips"]["tripOption"][0]["saleTotal"].string else {
+                self.parseJson = JSON(rawJson)
+                var i = 0
+                var sale = self.parseJson["trips"]["tripOption"][0]["saleTotal"]
+               
+                if sale == JSON.null {
                     print ("no flights found")
                     return
-                }
-               
-                var i = 0
-                var sale = parseJson["trips"]["tripOption"][0]["saleTotal"]
-                
-                while sale != JSON.null {
-                    self.resultCount = self.resultCount + 1
-                    sale = parseJson["trips"]["tripOption"][i]["saleTotal"]
-                    i = i + 1
+                } else {
+                    while sale != JSON.null {
+                        sale = self.parseJson["trips"]["tripOption"][i]["saleTotal"]
+                        self.resultCount = self.resultCount + 1
+                        i = i + 1
+                    }
                 }
                 
-                
-                let duration = parseJson["trips"]["tripOption"][0]["slice"][0]["duration"].int
-                print("price = \(price)")
-                print(duration!)
-            
-                let ports = parseJson["trips"]["data"]["airport"]
-                print (ports)
-                // use GLOSS to parse?
+                self.myRequest.leave()
+                self.myRequest.notify(queue: DispatchQueue.main, execute: {
+                    print ("resultCount: \(self.resultCount)")
+                    self.getDeparture()
+                    self.getArrival()
+                    self.getDuration()
+                    self.getSaleTotal()
+                    self.getFlightNumber()
+                })
         }
-        print ("count: \(self.resultCount)")
+    }
+  
+    func getDeparture() {
+        for i in (0..<self.resultCount) {
+            let departTime = self.parseJson["trips"]["tripOption"][i]["slice"][0]["segment"][0]["leg"][0]["departureTime"].string
+            let dTime = timeFromStringTime(timeStr: departTime!.substring(with: 11..<16))
+            self.departureTimeArray.append(dTime)
+        }
+        print(self.departureTimeArray)
     }
     
-    func getAirportCodes() {
-        
+    func getArrival() {
+        for i in (0..<self.resultCount) {
+            let arrivalTime = self.parseJson["trips"]["tripOption"][i]["slice"][0]["segment"][0]["leg"][0]["arrivalTime"].string
+            let dTime = timeFromStringTime(timeStr:arrivalTime!.substring(with: 11..<16))
+            self.arrivalTimeArray.append(dTime)
+        }
+        print(self.arrivalTimeArray)
+    }
+   
+    func getDuration() {
+        for i in (0..<self.resultCount) {
+            let duration = self.parseJson["trips"]["tripOption"][i]["slice"][0]["duration"].int
+            let durationStr = minutesToHoursMinutes(minutes: duration!)
+            self.durationArray.append(durationStr)
+        }
+        print(self.durationArray)
     }
     
+    func getSaleTotal() {
+        for i in (0..<self.resultCount) {
+            let sale = self.parseJson["trips"]["tripOption"][i]["saleTotal"].string
+            let saleStr = sale?.substring(from: 2)
+            self.saleTotalArray.append("$ \(saleStr)")
+        }
+        print(self.saleTotalArray)
+    }
+    
+    func getFlightNumber() {
+        for i in (0..<self.resultCount) {
+            let carrier = self.parseJson["trips"]["tripOption"][i]["slice"][0]["segment"][0]["flight"]["carrier"].string
+            let num = self.parseJson["trips"]["tripOption"][i]["slice"][0]["segment"][0]["flight"]["number"].string
+            self.flightNumberArray.append("\(carrier)\(num)")
+        }
+        print(self.flightNumberArray)
+    }
 
 }
 
 extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
     // returns the number of 'columns' to display.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        return 2
     }
     
     // returns the # of rows in each component..
@@ -152,17 +196,6 @@ extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
                 childCount = 2
             }
         }
-        if component == 2 {
-            if row == 1 {
-                maxStops = 0
-            } else if row == 2 {
-                maxStops = 1
-            } else if row == 3 {
-                maxStops = 2
-            } else if row == 4 {
-                maxStops = 3
-            }
-        }
     }
 }
 
@@ -186,4 +219,3 @@ extension FlightsVC {
         self.view.endEditing(true)
     }
 }
-
