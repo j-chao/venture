@@ -45,6 +45,7 @@
 		B558AAF81E9EC11300DCED1B /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */; };
 		B56470101E9887B900251461 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564700F1E9887B900251461 /* Background.swift */; };
 		B56470121E989B6500251461 /* starry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B56470111E989B6500251461 /* starry.jpg */; };
+		B5817E141EA621F8002D87C6 /* budget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5817E131EA621F8002D87C6 /* budget.storyboard */; };
 		B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266731E99970C007BA1E3 /* cityHorizon.jpg */; };
 		B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266751E99971E007BA1E3 /* blueMountain.jpg */; };
 		B58653E21E9E27810040757B /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58653E11E9E27810040757B /* Appearance.swift */; };
@@ -146,6 +147,7 @@
 		B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
 		B564700F1E9887B900251461 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		B56470111E989B6500251461 /* starry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starry.jpg; sourceTree = "<group>"; };
+		B5817E131EA621F8002D87C6 /* budget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = budget.storyboard; sourceTree = "<group>"; };
 		B58266731E99970C007BA1E3 /* cityHorizon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cityHorizon.jpg; sourceTree = "<group>"; };
 		B58266751E99971E007BA1E3 /* blueMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueMountain.jpg; sourceTree = "<group>"; };
 		B58653E11E9E27810040757B /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				B55333411E6DE7CA0007A23D /* login.storyboard */,
 				B50AEC761E7BC33D00213CF3 /* trip.storyboard */,
 				B5E2A09E1E7DCBA2002C48DC /* itinerary.storyboard */,
+				B5817E131EA621F8002D87C6 /* budget.storyboard */,
 				B50512AB1E70F3C3003F8ACA /* flights.storyboard */,
 				B5A66C501E9C54FA00D40D87 /* food.storyboard */,
 				B50512AD1E70F3CA003F8ACA /* places.storyboard */,
@@ -590,6 +593,7 @@
 				B51CD6401E98A73F009F2615 /* back3.png in Resources */,
 				B58D18511E7C877800997360 /* settings.storyboard in Resources */,
 				B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */,
+				B5817E141EA621F8002D87C6 /* budget.storyboard in Resources */,
 				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,

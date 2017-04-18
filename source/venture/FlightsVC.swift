@@ -14,7 +14,7 @@ class FlightsVC: UIViewController {
 
     @IBOutlet weak var origin: UITextFieldX!
     @IBOutlet weak var destination: UITextFieldX!
-    @IBOutlet weak var adultCountPicker: UIPickerView!
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var nonstop: UISwitch!
     var tripDate:String!
     var pickerValues = [[String]]()
@@ -33,9 +33,9 @@ class FlightsVC: UIViewController {
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
        
        
-        adultCountPicker.delegate = self
-        adultCountPicker.dataSource = self
-        pickerValues = [["Adult Count", "1", "2", "3", "4", "5"],
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerValues = [["Adult Count", "1", "2", "3"],
                       ["Child Count", "0", "1", "2"],
                       ["Max Stops", "0", "1", "2", "3"]]
         
@@ -56,8 +56,9 @@ class FlightsVC: UIViewController {
         
         let params:[String:Any] = [
             "request" : [
-                "passengers" : ["adultCount" : 1,
-                                "childCount" : 0],
+                "passengers" : ["adultCount" : self.adultCount,
+                                "childCount" : self.childCount,
+                                "maxStops" : self.maxStops],
                 "slice" : [["origin" : self.origin.text!,
                             "destination" : self.destination.text!,
                             "date" : self.tripDate,
@@ -79,7 +80,6 @@ class FlightsVC: UIViewController {
                     return
                 }
                 print (json)
-               
               
                 let parseJson = JSON(json)
                 
@@ -91,11 +91,71 @@ class FlightsVC: UIViewController {
                 let duration = parseJson["trips"]["tripOption"][0]["slice"][0]["duration"].int
                 print("price = \(price)")
                 print(duration!)
-                
+            
+                let ports = parseJson["trips"]["data"]["airport"]
+                print (ports)
                 // use GLOSS to parse?
         }
     }
     
+    func getAirportCodes() {
+        
+    }
+    
+
+}
+
+extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    // returns the number of 'columns' to display.
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerValues[component].count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerValues[component][row]
+    }
+    
+    // Catpure the picker view selection
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            if row == 1 {
+                adultCount = 1
+            } else if row == 2 {
+                adultCount = 2
+            } else if row == 3 {
+                adultCount = 3
+            }
+        }
+        if component == 1 {
+            if row == 1 {
+                childCount = 0
+            } else if row == 2 {
+                childCount = 1
+            } else if row == 3 {
+                childCount = 2
+            }
+        }
+        if component == 2 {
+            if row == 1 {
+                maxStops = 0
+            } else if row == 2 {
+                maxStops = 1
+            } else if row == 3 {
+                maxStops = 2
+            } else if row == 4 {
+                maxStops = 3
+            }
+        }
+    }
+}
+
+extension FlightsVC {
     func presentAllFieldsAlert() {
         let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
@@ -114,30 +174,5 @@ class FlightsVC: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-}
-
-extension FlightsVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    // returns the number of 'columns' to display.
-    public func numberOfComponents(in adultCountPicker: UIPickerView) -> Int {
-        return 3
-    }
-    
-    // returns the # of rows in each component..
-    func pickerView(_ adultCountPicker: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.pickerValues[component].count
-    }
-    
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ adultCountPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pickerValues[component][row]
-    }
-    
-    // Catpure the picker view selection
-    func pickerView(adultCountPicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-    }
-
 }
 

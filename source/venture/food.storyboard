@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search FoodVC-->
+        <!--Search Food-->
         <scene sceneID="Oiv-rP-ltJ">
             <objects>
-                <viewController id="VF4-uk-C5T" customClass="searchFoodVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Food" id="VF4-uk-C5T" customClass="searchFoodVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EqP-se-T6o"/>
                         <viewControllerLayoutGuide type="bottom" id="axO-PH-Myb"/>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tha-Hc-GXq">
-                                <rect key="frame" x="66" y="174" width="243" height="30"/>
+                                <rect key="frame" x="66" y="241" width="243" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.65291067096917066" blue="0.71517413589141676" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="0.3637729032" blue="0.35907125820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -36,20 +36,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUk-TP-JT6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
-                                <items>
-                                    <navigationItem title="Search for Food" prompt="" id="omj-mM-bR4"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCz-oe-49V">
-                                <rect key="frame" x="56" y="239" width="163" height="21"/>
+                                <rect key="frame" x="56" y="323" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z2R-5g-UHe">
-                                <rect key="frame" x="256" y="234" width="51" height="31"/>
+                                <rect key="frame" x="256" y="318" width="51" height="31"/>
                                 <color key="tintColor" red="1" green="0.3637729032" blue="0.35907125820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="onTintColor" red="1" green="0.58689197051251618" blue="0.68375956143096928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -84,26 +78,35 @@
                                 <color key="tintColor" red="1" green="0.3637729032" blue="0.35907125820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="onTintColor" red="1" green="0.58689197049999997" blue="0.68375956140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Man-dJ-A7c">
+                                <rect key="frame" x="93" y="101" width="190" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8UY-Lb-EHn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jUk-TP-JT6" firstAttribute="top" secondItem="wzR-hk-GR1" secondAttribute="top" id="1CD-8v-Vpf"/>
                             <constraint firstItem="RCz-oe-49V" firstAttribute="leading" secondItem="wzR-hk-GR1" secondAttribute="leadingMargin" constant="40" id="2gw-X0-jHw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tha-Hc-GXq" secondAttribute="trailing" constant="50" id="50D-Ud-edM"/>
                             <constraint firstItem="Ben-2d-jEf" firstAttribute="bottom" secondItem="CZv-SJ-OPR" secondAttribute="bottom" id="5Yn-gW-aPP"/>
                             <constraint firstItem="CZv-SJ-OPR" firstAttribute="leading" secondItem="RCz-oe-49V" secondAttribute="leading" id="AQh-cD-8cy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ben-2d-jEf" secondAttribute="trailing" constant="54" id="CD0-Q4-vlX"/>
-                            <constraint firstItem="jUk-TP-JT6" firstAttribute="leading" secondItem="wzR-hk-GR1" secondAttribute="leading" id="FVt-yz-nUO"/>
-                            <constraint firstItem="jUk-TP-JT6" firstAttribute="centerX" secondItem="Mwr-TM-zsW" secondAttribute="centerX" id="Icp-jg-T5U"/>
                             <constraint firstItem="tha-Hc-GXq" firstAttribute="centerX" secondItem="wzR-hk-GR1" secondAttribute="centerX" id="X4f-cA-ZsY"/>
                             <constraint firstItem="axO-PH-Myb" firstAttribute="top" secondItem="Ben-2d-jEf" secondAttribute="bottom" constant="172" id="XAN-7Q-ZpI"/>
+                            <constraint firstItem="Mwr-TM-zsW" firstAttribute="centerX" secondItem="tha-Hc-GXq" secondAttribute="centerX" id="XeT-Ls-Dsi"/>
+                            <constraint firstItem="Man-dJ-A7c" firstAttribute="top" secondItem="EqP-se-T6o" secondAttribute="bottom" constant="81" id="Yxw-v0-3SU"/>
                             <constraint firstItem="axO-PH-Myb" firstAttribute="top" secondItem="Mwr-TM-zsW" secondAttribute="bottom" constant="80" id="aan-Au-q2Q"/>
-                            <constraint firstItem="Z2R-5g-UHe" firstAttribute="top" secondItem="tha-Hc-GXq" secondAttribute="bottom" constant="30" id="gh7-bm-sIZ"/>
-                            <constraint firstItem="jUk-TP-JT6" firstAttribute="centerX" secondItem="tha-Hc-GXq" secondAttribute="centerX" id="hEO-cu-chO"/>
+                            <constraint firstItem="Mwr-TM-zsW" firstAttribute="centerX" secondItem="Man-dJ-A7c" secondAttribute="centerX" id="fto-Oq-J8a"/>
+                            <constraint firstItem="Z2R-5g-UHe" firstAttribute="top" secondItem="tha-Hc-GXq" secondAttribute="bottom" constant="47" id="gh7-bm-sIZ"/>
                             <constraint firstItem="tha-Hc-GXq" firstAttribute="leading" secondItem="wzR-hk-GR1" secondAttribute="leadingMargin" constant="50" id="nqd-yB-0NB"/>
-                            <constraint firstItem="tha-Hc-GXq" firstAttribute="top" secondItem="jUk-TP-JT6" secondAttribute="bottom" constant="100" id="pF6-Sm-cwv"/>
+                            <constraint firstItem="RCz-oe-49V" firstAttribute="centerY" secondItem="wzR-hk-GR1" secondAttribute="centerY" id="oCU-gA-MjT"/>
                             <constraint firstItem="Ben-2d-jEf" firstAttribute="centerX" secondItem="Z2R-5g-UHe" secondAttribute="centerX" id="saD-ap-2kb"/>
                             <constraint firstItem="Z2R-5g-UHe" firstAttribute="centerY" secondItem="RCz-oe-49V" secondAttribute="centerY" id="ufq-yt-rBA"/>
+                            <constraint firstItem="Man-dJ-A7c" firstAttribute="leading" secondItem="wzR-hk-GR1" secondAttribute="leadingMargin" constant="77" id="weP-XC-aJO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -129,7 +132,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zv0-gd-glc" id="6sm-CB-CT9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLR-La-ydd">

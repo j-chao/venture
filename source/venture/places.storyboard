@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Search Places-->
         <scene sceneID="bnr-dD-GEJ">
             <objects>
-                <viewController storyboardIdentifier="searchPlaces" title="Search" id="NNw-Sw-Suc" customClass="searchForPlacesVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchPlaces" title="Search Places" id="NNw-Sw-Suc" customClass="searchForPlacesVC" customModule="venture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sc2-VE-jRp"/>
                         <viewControllerLayoutGuide type="bottom" id="prH-fv-hCY"/>

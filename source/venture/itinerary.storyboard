@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tek-rV-cmz">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tek-rV-cmz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -51,12 +51,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYs-Lp-ODh">
-                                <rect key="frame" x="147" y="28" width="81.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-TV-yWS">
                                 <rect key="frame" x="0.0" y="622" width="375" height="130"/>
                                 <subviews>
@@ -152,7 +146,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thM-Lu-x73" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="324" y="28" width="35" height="35"/>
+                                <rect key="frame" x="16" y="28" width="35" height="35"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="ILd-Kg-fu6"/>
@@ -172,21 +166,48 @@
                                     <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="C2v-er-yTM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gps-kv-WWu" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
+                                <rect key="frame" x="294" y="28" width="65" height="30"/>
+                                <color key="backgroundColor" red="0.017811195989561834" green="0.80048852549390859" blue="0.030021559850676966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="zua-dG-PJB"/>
+                                </constraints>
+                                <state key="normal" title="Budget">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="E0S-j2-gNk" kind="show" id="3Ix-uc-hzd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYs-Lp-ODh">
+                                <rect key="frame" x="78" y="31" width="218" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jLm-9A-HfG" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leadingMargin" id="0wW-Vj-cIL"/>
-                            <constraint firstItem="jYs-Lp-ODh" firstAttribute="top" secondItem="5tX-Se-id5" secondAttribute="bottom" constant="8" id="59m-jT-O4E"/>
+                            <constraint firstItem="jYs-Lp-ODh" firstAttribute="top" secondItem="5tX-Se-id5" secondAttribute="bottom" constant="11" id="59m-jT-O4E"/>
                             <constraint firstItem="YUA-TV-yWS" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leading" id="9NI-SD-d8o"/>
                             <constraint firstAttribute="bottom" secondItem="YUA-TV-yWS" secondAttribute="bottom" constant="-85" id="DWy-aq-S6C"/>
                             <constraint firstItem="YUA-TV-yWS" firstAttribute="top" secondItem="jLm-9A-HfG" secondAttribute="bottom" constant="24" id="EmP-VO-N7m"/>
                             <constraint firstItem="YUA-TV-yWS" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leading" id="G4V-Ee-E35"/>
                             <constraint firstItem="jYs-Lp-ODh" firstAttribute="centerX" secondItem="Ga3-Lk-kEh" secondAttribute="centerX" id="OZi-di-Be6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="thM-Lu-x73" secondAttribute="trailing" id="fVq-7H-BEa"/>
+                            <constraint firstItem="gps-kv-WWu" firstAttribute="trailing" secondItem="jLm-9A-HfG" secondAttribute="trailing" id="Wb8-m0-cNB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="thM-Lu-x73" secondAttribute="trailing" constant="308" id="fVq-7H-BEa"/>
                             <constraint firstAttribute="trailing" secondItem="YUA-TV-yWS" secondAttribute="trailing" id="m9L-JM-cv8"/>
                             <constraint firstItem="jLm-9A-HfG" firstAttribute="trailing" secondItem="Ga3-Lk-kEh" secondAttribute="trailingMargin" id="msF-Nr-lYo"/>
+                            <constraint firstItem="gps-kv-WWu" firstAttribute="leading" secondItem="jYs-Lp-ODh" secondAttribute="trailing" constant="-2" id="nJc-Tm-Hog"/>
                             <constraint firstItem="thM-Lu-x73" firstAttribute="top" secondItem="5tX-Se-id5" secondAttribute="bottom" constant="8" id="sb1-cz-AYg"/>
                             <constraint firstAttribute="trailing" secondItem="YUA-TV-yWS" secondAttribute="trailing" id="vU5-4O-wEX"/>
+                            <constraint firstItem="gps-kv-WWu" firstAttribute="top" secondItem="jYs-Lp-ODh" secondAttribute="top" constant="-3" id="yo0-xa-iqK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -204,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87J-xL-82m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4143.1999999999998" y="97.601199400299862"/>
+            <point key="canvasLocation" x="4141.6000000000004" y="111.99400299850076"/>
         </scene>
         <!--food-->
         <scene sceneID="y04-BN-Bsj">
@@ -229,6 +250,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCX-XV-cgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4387" y="574"/>
+        </scene>
+        <!--budget-->
+        <scene sceneID="16a-1C-9nV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="budget" id="E0S-j2-gNk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5z-c6-ZqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4993" y="112"/>
         </scene>
         <!--Add EventVC-->
         <scene sceneID="XhX-5I-m2G">
@@ -328,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwc-Hb-d13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5016.8000000000002" y="-289.20539730134936"/>
+            <point key="canvasLocation" x="5017" y="-242"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="5g0-U8-ytU">
@@ -423,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyH-Eo-H4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5016.8000000000002" y="464.6176911544228"/>
+            <point key="canvasLocation" x="5017" y="493"/>
         </scene>
     </scenes>
     <resources>

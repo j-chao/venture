@@ -28,8 +28,13 @@ class ItineraryVC: UIViewController {
     @IBOutlet weak var darkFillView: DesignableView!
     @IBOutlet weak var toggleMenuBtn: UIButton!
     @IBOutlet weak var eventsTableView: UITableView!
+    
+    func addTapped() {
+        print ("tapped")
+    }
    
     override func viewDidLoad() {
+
         self.eventsTableView.backgroundColor = UIColor.clear
         self.setBackground()
         super.viewDidLoad()
