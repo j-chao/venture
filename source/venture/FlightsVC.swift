@@ -21,6 +21,7 @@ class FlightsVC: UIViewController {
     var adultCount:Int!
     var childCount:Int!
     var maxStops:Int!
+    var resultCount = 0
     
     override func viewDidLoad() {
         self.setBackground()
@@ -79,14 +80,23 @@ class FlightsVC: UIViewController {
                     print("Error: \(response.result.error)")
                     return
                 }
-                print (json)
-              
-                let parseJson = JSON(json)
                 
+                let parseJson = JSON(json)
+             
                 guard let price = parseJson["trips"]["tripOption"][0]["saleTotal"].string else {
                     print ("no flights found")
                     return
                 }
+               
+                var i = 0
+                var sale = parseJson["trips"]["tripOption"][0]["saleTotal"]
+                
+                while sale != JSON.null {
+                    self.resultCount = self.resultCount + 1
+                    sale = parseJson["trips"]["tripOption"][i]["saleTotal"]
+                    i = i + 1
+                }
+                
                 
                 let duration = parseJson["trips"]["tripOption"][0]["slice"][0]["duration"].int
                 print("price = \(price)")
@@ -96,6 +106,7 @@ class FlightsVC: UIViewController {
                 print (ports)
                 // use GLOSS to parse?
         }
+        print ("count: \(self.resultCount)")
     }
     
     func getAirportCodes() {

@@ -15,7 +15,6 @@ target 'venture' do
   pod 'YelpAPI'
   pod 'BrightFutures'
   pod 'Alamofire'
-  pod 'GooglePlaces'
   pod 'SwiftyJSON'
 
   target 'ventureTests' do
