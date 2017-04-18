@@ -35,6 +35,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         locationManager.delegate = self
         self.title = "Search for Food"
+        addressTxt.delegate = self
         
         // requesting the access_token from Yelp takes time and therefore, it is necessary to wait until the request is complete before we can proceed with using the obtained token to request results from Yelp.
         tokenRequest.enter()
@@ -163,6 +164,15 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         vc.restaurants = self.restaurants
         vc.eventDate = self.eventDate
         self.show(vc, sender: self)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     // getToken() gets the access_token from Yelp, and is necessary for all HTTP requests
