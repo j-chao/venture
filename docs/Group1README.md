@@ -14,8 +14,9 @@
 
 
 - Julianne Crea: 33% 
-
-
+    * Created the 3 view controllers in the places storyboard, did UI Elements and constraints for all 3. 
+    * Implemented pull places capability to search for attractions near a user-provided location, with a minimum rating (also user-provided). These came from the Yelp Fusion API
+    * Function to populate images from a URL returned from Yelp Fusion API
 
 
 - Connie Liu: 33% 
