@@ -18,7 +18,7 @@
 
 
 ## Differences  
-- None
+- For simplicity of the app, searching for flights will only return non-stop options.
 
 
 

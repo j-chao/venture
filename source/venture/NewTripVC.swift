@@ -67,14 +67,14 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
             return
         }
         
-        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!, totalBudget:"0", foodBudget:"0", placesBudget:"0", otherBudget:"0")
+        self.addTrip(tripName:tripName.text!, tripLocation:tripLocation.text!, startDate:startDate.text!, endDate:endDate.text!, food:"0", transportation:"0", lodging:"0", attractions:"0", misc:"0", total:"0")
         
         let storyboard: UIStoryboard = UIStoryboard(name: "trip", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tripNavCtrl")
         self.show(vc, sender: self)
     }
     
-    func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String, totalBudget:String, foodBudget:String, placesBudget:String, otherBudget:String) {
+    func addTrip (tripName:String, tripLocation:String, startDate:String, endDate:String, food:String, transportation:String, lodging:String, attractions:String, misc:String, total:String) {
         let tripRef = ref.child("users/\(userID!)/trips/\(tripName)")
         
         tripRef.child("tripName").setValue(tripName)
@@ -84,10 +84,12 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
         
         // adding default budget values
         let tripBudgetRef = ref.child("users/\(userID!)/budgets/\(tripName)")
-        tripBudgetRef.child("totalBudget").setValue(totalBudget)
-        tripBudgetRef.child("foodBudget").setValue(foodBudget)
-        tripBudgetRef.child("placesBudget").setValue(placesBudget)
-        tripBudgetRef.child("otherBudget").setValue(otherBudget)
+        tripBudgetRef.child("food").setValue(food)
+        tripBudgetRef.child("transportation").setValue(transportation)
+        tripBudgetRef.child("lodging").setValue(lodging)
+        tripBudgetRef.child("attractions").setValue(attractions)
+        tripBudgetRef.child("misc").setValue(misc)
+        tripBudgetRef.child("total").setValue(total)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

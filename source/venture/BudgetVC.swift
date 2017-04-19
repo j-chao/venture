@@ -13,15 +13,19 @@ class BudgetVC: UIViewController {
     let userID = FIRAuth.auth()?.currentUser!.uid
     let myRequest = DispatchGroup()
     
-    var totalBudget:String?
-    var foodBudget:String?
-    var placesBudget:String?
-    var otherBudget:String?
-
-    @IBOutlet weak var totalBudgetField: UITextField!
-    @IBOutlet weak var foodBudgetField: UITextField!
-    @IBOutlet weak var placesBudgetField: UITextField!
-    @IBOutlet weak var otherBudgetField: UITextField!
+    var food:String?
+    var transportation:String?
+    var lodging:String?
+    var attractions:String?
+    var misc:String?
+    var total:String?
+    
+    @IBOutlet weak var foodField: UITextField!
+    @IBOutlet weak var transportationField: UITextField!
+    @IBOutlet weak var lodgingField: UITextField!
+    @IBOutlet weak var attractionsField: UITextField!
+    @IBOutlet weak var miscField: UITextField!
+    @IBOutlet weak var totalField: UITextField!
     
     override func viewDidLoad() {
         myRequest.enter()
@@ -31,10 +35,12 @@ class BudgetVC: UIViewController {
         self.observeDataFromFirebase()
     
         myRequest.notify(queue: DispatchQueue.main, execute: {
-            self.totalBudgetField.text = self.totalBudget!
-            self.foodBudgetField.text = self.foodBudget!
-            self.placesBudgetField.text = self.placesBudget!
-            self.otherBudgetField.text = self.otherBudget!
+            self.foodField.text = self.food!
+            self.transportationField.text = self.transportation!
+            self.lodgingField.text = self.lodging!
+            self.attractionsField.text = self.attractions!
+            self.miscField.text = self.misc!
+            self.totalField.text = self.total!
         })
     }
     
@@ -43,15 +49,16 @@ class BudgetVC: UIViewController {
     }
 
     func saveDataToFirebase() {
-        if (totalBudgetField.text?.isEmpty)! || (foodBudgetField.text?.isEmpty)! || (placesBudgetField.text?.isEmpty)! || (otherBudgetField.text?.isEmpty)! {
-            
+        if (foodField.text?.isEmpty)! || (transportationField.text?.isEmpty)! || (lodgingField.text?.isEmpty)! || (attractionsField.text?.isEmpty)! || (miscField.text?.isEmpty)! || (totalField.text?.isEmpty)! {
             self.presentAllFieldsAlert()
         } else {
             let ref = FIRDatabase.database().reference().child("users/\(userID!)/budgets/\(passedTrip)")
-            ref.child("totalBudget").setValue(totalBudgetField.text)
-            ref.child("foodBudget").setValue(foodBudgetField.text)
-            ref.child("placesBudget").setValue(placesBudgetField.text)
-            ref.child("otherBudget").setValue(otherBudgetField.text)
+            ref.child("food").setValue(foodField.text)
+            ref.child("transportation").setValue(transportationField.text)
+            ref.child("lodging").setValue(lodgingField.text)
+            ref.child("attractions").setValue(attractionsField.text)
+            ref.child("misc").setValue(miscField.text)
+            ref.child("total").setValue(totalField.text)
         }
     }
 
@@ -60,10 +67,12 @@ class BudgetVC: UIViewController {
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/budgets/\(passedTrip)")
         ref.observeSingleEvent(of:.value, with: { snapshot in
             if snapshot.exists() {
-                self.totalBudget = (snapshot.value as! NSDictionary) ["totalBudget"] as? String
-                self.foodBudget = (snapshot.value as! NSDictionary) ["foodBudget"] as? String
-                self.placesBudget = (snapshot.value as! NSDictionary) ["placesBudget"] as? String
-                self.otherBudget = (snapshot.value as! NSDictionary) ["otherBudget"] as? String
+                self.food = (snapshot.value as! NSDictionary) ["food"] as? String
+                self.transportation = (snapshot.value as! NSDictionary) ["transportation"] as? String
+                self.lodging = (snapshot.value as! NSDictionary) ["lodging"] as? String
+                self.attractions = (snapshot.value as! NSDictionary) ["attractions"] as? String
+                self.misc = (snapshot.value as! NSDictionary) ["misc"] as? String
+                self.total = (snapshot.value as! NSDictionary) ["total"] as? String
                 self.myRequest.leave()
             }
         })
@@ -77,5 +86,14 @@ class BudgetVC: UIViewController {
         alert.addAction(OKAction)
         self.present(alert, animated: true, completion:nil)
         return
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
