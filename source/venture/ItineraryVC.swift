@@ -115,11 +115,13 @@ class ItineraryVC: UIViewController {
             if let destinationVC = segue.destination as? AddEventVC {
                 destinationVC.eventDate = tripDate
                 destinationVC.fromFoodorPlace = false
+                destinationVC.fromFlight = false
             }
         } else if segue.identifier == "toFlights" {
             if let destinationVC = segue.destination as? FlightsSearchVC {
                 let flightDate = flightDatefromDate(date: tripDate)
                 destinationVC.tripDate = flightDate
+                destinationVC.eventDate = self.tripDate
             }
         } else if segue.identifier == "toFood" {
             if let destinationVC = segue.destination as? searchFoodVC {

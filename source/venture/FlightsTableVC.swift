@@ -14,10 +14,23 @@ class FlightsTableVC: UITableViewController {
     var durationArray = [String]()
     var saleTotalArray = [String]()
     var flightNumberArray = [String]()
+    var destArrival:String!
+    var tripDate:String!
+    var eventDate:Date!
 
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
+    }
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        if parent == nil{
+            departureTimeArray.removeAll()
+            arrivalTimeArray.removeAll()
+            durationArray.removeAll()
+            saleTotalArray.removeAll()
+            flightNumberArray.removeAll()
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,6 +62,9 @@ class FlightsTableVC: UITableViewController {
         if segue.identifier == "toFlightDetail" {
             if let destinationVC = segue.destination as? FlightDetailsVC ,
             let indexPath = self.tableView.indexPathForSelectedRow {
+                destinationVC.destArrival = self.destArrival
+                destinationVC.tripDate = self.tripDate
+                destinationVC.eventDate = self.eventDate
                 destinationVC.departureTimeDate = departureTimeArray[indexPath.row]
                 destinationVC.arrivalTimeDate = arrivalTimeArray[indexPath.row]
                 destinationVC.duration = durationArray[indexPath.row]

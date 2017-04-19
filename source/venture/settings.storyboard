@@ -109,7 +109,7 @@
                                     <segue destination="fwI-0P-e7s" kind="presentation" id="ub4-cn-OQl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.2.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFy-Vp-X7c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFy-Vp-X7c">
                                 <rect key="frame" x="148" y="638" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="aiV-oT-956"/>

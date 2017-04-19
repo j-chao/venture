@@ -21,7 +21,6 @@
 		B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50AEC761E7BC33D00213CF3 /* trip.storyboard */; };
 		B50E91771EA6756C000044D9 /* FlightCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E91761EA6756C000044D9 /* FlightCellVC.swift */; };
 		B50E91791EA67945000044D9 /* FlightDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E91781EA67945000044D9 /* FlightDetailsVC.swift */; };
-		B50E917B1EA69D07000044D9 /* Flights.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E917A1EA69D07000044D9 /* Flights.swift */; };
 		B50E917D1EA6A3A0000044D9 /* BudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */; };
 		B51CD6401E98A73F009F2615 /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = B51CD63F1E98A73F009F2615 /* back3.png */; };
 		B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */; };
@@ -123,7 +122,6 @@
 		B50AEC761E7BC33D00213CF3 /* trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trip.storyboard; sourceTree = "<group>"; };
 		B50E91761EA6756C000044D9 /* FlightCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCellVC.swift; sourceTree = "<group>"; };
 		B50E91781EA67945000044D9 /* FlightDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailsVC.swift; sourceTree = "<group>"; };
-		B50E917A1EA69D07000044D9 /* Flights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flights.swift; sourceTree = "<group>"; };
 		B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetVC.swift; sourceTree = "<group>"; };
 		B51CD63F1E98A73F009F2615 /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
 		B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteMountain.jpg; sourceTree = "<group>"; };
@@ -324,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				B52D37E41E9C5DA7000AEB83 /* FlightsSearchVC.swift */,
-				B50E917A1EA69D07000044D9 /* Flights.swift */,
 				B58692A01EA6725A0069A048 /* FlightsTableVC.swift */,
 				B50E91761EA6756C000044D9 /* FlightCellVC.swift */,
 				B50E91781EA67945000044D9 /* FlightDetailsVC.swift */,
@@ -826,7 +823,6 @@
 				B5A66C4F1E9C54C900D40D87 /* searchFoodVC.swift in Sources */,
 				EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */,
 				B558AAEF1E9EC11300DCED1B /* UIButtonX.swift in Sources */,
-				B50E917B1EA69D07000044D9 /* Flights.swift in Sources */,
 				B50E91771EA6756C000044D9 /* FlightCellVC.swift in Sources */,
 				B558AAF61E9EC11300DCED1B /* UIViewX.swift in Sources */,
 				B5E2A0991E7DBD00002C48DC /* TripsVC.swift in Sources */,

@@ -24,6 +24,8 @@ class AddEventVC: UIViewController {
     var eventDescStr:String!
     var eventLocStr:String!
     var fromFoodorPlace:Bool!
+    var fromFlight:Bool!
+    var flightTime:Date?
     
     override func viewDidLoad() {
         self.setBackground()
@@ -38,6 +40,12 @@ class AddEventVC: UIViewController {
         if fromFoodorPlace == true {
             eventDesc.text = eventDescStr
             eventLoc.text = eventLocStr
+        }
+        
+        if fromFlight == true {
+            eventDesc.text = eventDescStr
+            eventLoc.text = eventLocStr
+            eventTime.date = flightTime!
         }
         
     }

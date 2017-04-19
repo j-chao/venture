@@ -70,7 +70,7 @@ extension TripsVC: UICollectionViewDataSource {
         let trip = trips[indexPath.row]
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips/")
         
-        ref.child(trip).observe(.value, with: { snapshot in
+        ref.child(trip).observeSingleEvent(of: .value, with: { snapshot in
             if snapshot.exists() {
                 
                 let tripName = (snapshot.value as! NSDictionary) ["tripName"] as! String
