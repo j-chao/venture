@@ -23,18 +23,13 @@ class ItineraryVC: UIViewController {
     @IBOutlet weak var foodBtn: UIButton!
     @IBOutlet weak var placesBtn: UIButton!
     @IBOutlet weak var eventAddBtn: UIButton!
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var editButton: UIButtonX!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var darkFillView: DesignableView!
     @IBOutlet weak var toggleMenuBtn: UIButton!
     @IBOutlet weak var eventsTableView: UITableView!
     
-    func addTapped() {
-        print ("tapped")
-    }
-   
     override func viewDidLoad() {
-
         self.eventsTableView.backgroundColor = UIColor.clear
         self.setBackground()
         super.viewDidLoad()
@@ -68,7 +63,7 @@ class ItineraryVC: UIViewController {
         }
     }
     
-    @IBAction func editAction(_ sender: UIButton) {
+    @IBAction func editAction(_ sender: UIButtonX) {
         if (self.eventsTableView.isEditing) {
             self.editButton.setImage(#imageLiteral(resourceName: "delete"), for: .normal)
             self.eventsTableView.setEditing(false, animated: true)

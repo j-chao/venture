@@ -22,7 +22,7 @@
 		B50E91771EA6756C000044D9 /* FlightCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E91761EA6756C000044D9 /* FlightCellVC.swift */; };
 		B50E91791EA67945000044D9 /* FlightDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E91781EA67945000044D9 /* FlightDetailsVC.swift */; };
 		B50E917D1EA6A3A0000044D9 /* BudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */; };
-		B51CD6401E98A73F009F2615 /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = B51CD63F1E98A73F009F2615 /* back3.png */; };
+		B51CD6401E98A73F009F2615 /* twoToneBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B51CD63F1E98A73F009F2615 /* twoToneBackground.png */; };
 		B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */; };
 		B52D37E51E9C5DA7000AEB83 /* FlightsSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D37E41E9C5DA7000AEB83 /* FlightsSearchVC.swift */; };
 		B53B29851E85CE25001974A5 /* AddEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B29841E85CE25001974A5 /* AddEventVC.swift */; };
@@ -48,6 +48,9 @@
 		B558AAF81E9EC11300DCED1B /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */; };
 		B56470101E9887B900251461 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564700F1E9887B900251461 /* Background.swift */; };
 		B56470121E989B6500251461 /* starry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B56470111E989B6500251461 /* starry.jpg */; };
+		B5717BBA1EA80700004CA099 /* partyBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5717BB91EA80700004CA099 /* partyBackground.jpg */; };
+		B5717BBC1EA807B8004CA099 /* pinkBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5717BBB1EA807B8004CA099 /* pinkBackground.jpg */; };
+		B5717BBE1EA80886004CA099 /* triBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5717BBD1EA80886004CA099 /* triBackground.jpg */; };
 		B5817E141EA621F8002D87C6 /* budget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5817E131EA621F8002D87C6 /* budget.storyboard */; };
 		B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266731E99970C007BA1E3 /* cityHorizon.jpg */; };
 		B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266751E99971E007BA1E3 /* blueMountain.jpg */; };
@@ -123,7 +126,7 @@
 		B50E91761EA6756C000044D9 /* FlightCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCellVC.swift; sourceTree = "<group>"; };
 		B50E91781EA67945000044D9 /* FlightDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailsVC.swift; sourceTree = "<group>"; };
 		B50E917C1EA6A3A0000044D9 /* BudgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetVC.swift; sourceTree = "<group>"; };
-		B51CD63F1E98A73F009F2615 /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
+		B51CD63F1E98A73F009F2615 /* twoToneBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twoToneBackground.png; sourceTree = "<group>"; };
 		B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteMountain.jpg; sourceTree = "<group>"; };
 		B52D37E41E9C5DA7000AEB83 /* FlightsSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsSearchVC.swift; sourceTree = "<group>"; };
 		B53B29841E85CE25001974A5 /* AddEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventVC.swift; sourceTree = "<group>"; };
@@ -155,6 +158,9 @@
 		B558AAEE1E9EC11300DCED1B /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
 		B564700F1E9887B900251461 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		B56470111E989B6500251461 /* starry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starry.jpg; sourceTree = "<group>"; };
+		B5717BB91EA80700004CA099 /* partyBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = partyBackground.jpg; sourceTree = "<group>"; };
+		B5717BBB1EA807B8004CA099 /* pinkBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pinkBackground.jpg; sourceTree = "<group>"; };
+		B5717BBD1EA80886004CA099 /* triBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = triBackground.jpg; sourceTree = "<group>"; };
 		B5817E131EA621F8002D87C6 /* budget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = budget.storyboard; sourceTree = "<group>"; };
 		B58266731E99970C007BA1E3 /* cityHorizon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cityHorizon.jpg; sourceTree = "<group>"; };
 		B58266751E99971E007BA1E3 /* blueMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueMountain.jpg; sourceTree = "<group>"; };
@@ -337,9 +343,12 @@
 				B56470111E989B6500251461 /* starry.jpg */,
 				B58266731E99970C007BA1E3 /* cityHorizon.jpg */,
 				B50AEC741E7BC10300213CF3 /* blurBack.png */,
-				B51CD63F1E98A73F009F2615 /* back3.png */,
+				B51CD63F1E98A73F009F2615 /* twoToneBackground.png */,
 				B55603B31E7B48E500FEC786 /* wallscreen.png */,
 				EA12B9F41E841F5A004831B9 /* wallscreenDarkened.png */,
+				B5717BBB1EA807B8004CA099 /* pinkBackground.jpg */,
+				B5717BB91EA80700004CA099 /* partyBackground.jpg */,
+				B5717BBD1EA80886004CA099 /* triBackground.jpg */,
 			);
 			name = backgrounds;
 			sourceTree = "<group>";
@@ -610,10 +619,12 @@
 				B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */,
 				B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */,
 				B5F467251E7B2F7E00A86D67 /* GoogleService-Info.plist in Resources */,
+				B5717BBC1EA807B8004CA099 /* pinkBackground.jpg in Resources */,
+				B5717BBE1EA80886004CA099 /* triBackground.jpg in Resources */,
 				B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */,
 				B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */,
 				B5A66C511E9C54FA00D40D87 /* food.storyboard in Resources */,
-				B51CD6401E98A73F009F2615 /* back3.png in Resources */,
+				B51CD6401E98A73F009F2615 /* twoToneBackground.png in Resources */,
 				B58D18511E7C877800997360 /* settings.storyboard in Resources */,
 				B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */,
 				B5817E141EA621F8002D87C6 /* budget.storyboard in Resources */,
@@ -621,6 +632,7 @@
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,
 				B55333431E6DE7CA0007A23D /* login.storyboard in Resources */,
+				B5717BBA1EA80700004CA099 /* partyBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
