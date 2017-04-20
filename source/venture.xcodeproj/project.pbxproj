@@ -84,6 +84,8 @@
 		EA4FDCE01EA8716400DBD023 /* rio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCDF1EA8716400DBD023 /* rio.jpg */; };
 		EA4FDCE81EA885C100DBD023 /* paris3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCE31EA885C100DBD023 /* paris3.jpg */; };
 		EA4FDCE91EA885C100DBD023 /* paris4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCE41EA885C100DBD023 /* paris4.jpg */; };
+		EA4FDCEF1EA88F6600DBD023 /* utah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCEC1EA88F6600DBD023 /* utah.jpg */; };
+		EA4FDCF01EA88F6600DBD023 /* yosemite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCED1EA88F6600DBD023 /* yosemite.jpg */; };
 		EA6320461E9C70A200D48CA0 /* yelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6320451E9C70A200D48CA0 /* yelpClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		EA4FDCDF1EA8716400DBD023 /* rio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rio.jpg; sourceTree = "<group>"; };
 		EA4FDCE31EA885C100DBD023 /* paris3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paris3.jpg; sourceTree = "<group>"; };
 		EA4FDCE41EA885C100DBD023 /* paris4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paris4.jpg; sourceTree = "<group>"; };
+		EA4FDCEC1EA88F6600DBD023 /* utah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = utah.jpg; sourceTree = "<group>"; };
+		EA4FDCED1EA88F6600DBD023 /* yosemite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yosemite.jpg; sourceTree = "<group>"; };
 		EA6320451E9C70A200D48CA0 /* yelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yelpClient.swift; sourceTree = "<group>"; };
 		F469BE1278DCFDE718244A68 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -349,6 +353,8 @@
 				EA4FDCDF1EA8716400DBD023 /* rio.jpg */,
 				EA4FDCDD1EA86C3A00DBD023 /* taiwan.jpg */,
 				B58266751E99971E007BA1E3 /* blueMountain.jpg */,
+				EA4FDCEC1EA88F6600DBD023 /* utah.jpg */,
+				EA4FDCED1EA88F6600DBD023 /* yosemite.jpg */,
 				EA4FDCE31EA885C100DBD023 /* paris3.jpg */,
 				EA4FDCE41EA885C100DBD023 /* paris4.jpg */,
 				B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */,
@@ -625,9 +631,11 @@
 			files = (
 				EA4FDCE01EA8716400DBD023 /* rio.jpg in Resources */,
 				B56470121E989B6500251461 /* starry.jpg in Resources */,
+				EA4FDCF01EA88F6600DBD023 /* yosemite.jpg in Resources */,
 				B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */,
 				B5E2A09F1E7DCBA2002C48DC /* itinerary.storyboard in Resources */,
 				EA12B9F51E841F5A004831B9 /* wallscreenDarkened.png in Resources */,
+				EA4FDCEF1EA88F6600DBD023 /* utah.jpg in Resources */,
 				B50AEC751E7BC10300213CF3 /* blurBack.png in Resources */,
 				B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */,
 				B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */,
