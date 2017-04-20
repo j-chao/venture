@@ -80,6 +80,10 @@
 		EA29CDF71E98B33A008362E2 /* placesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF61E98B33A008362E2 /* placesTableVC.swift */; };
 		EA29CDF91E98B35B008362E2 /* placeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDF81E98B35B008362E2 /* placeVC.swift */; };
 		EA29CDFB1E98B424008362E2 /* placeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29CDFA1E98B424008362E2 /* placeCell.swift */; };
+		EA4FDCDE1EA86C3B00DBD023 /* taiwan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCDD1EA86C3A00DBD023 /* taiwan.jpg */; };
+		EA4FDCE01EA8716400DBD023 /* rio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCDF1EA8716400DBD023 /* rio.jpg */; };
+		EA4FDCE81EA885C100DBD023 /* paris3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCE31EA885C100DBD023 /* paris3.jpg */; };
+		EA4FDCE91EA885C100DBD023 /* paris4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4FDCE41EA885C100DBD023 /* paris4.jpg */; };
 		EA6320461E9C70A200D48CA0 /* yelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6320451E9C70A200D48CA0 /* yelpClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +193,10 @@
 		EA29CDF61E98B33A008362E2 /* placesTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placesTableVC.swift; sourceTree = "<group>"; };
 		EA29CDF81E98B35B008362E2 /* placeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeVC.swift; sourceTree = "<group>"; };
 		EA29CDFA1E98B424008362E2 /* placeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeCell.swift; sourceTree = "<group>"; };
+		EA4FDCDD1EA86C3A00DBD023 /* taiwan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = taiwan.jpg; sourceTree = "<group>"; };
+		EA4FDCDF1EA8716400DBD023 /* rio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rio.jpg; sourceTree = "<group>"; };
+		EA4FDCE31EA885C100DBD023 /* paris3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paris3.jpg; sourceTree = "<group>"; };
+		EA4FDCE41EA885C100DBD023 /* paris4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paris4.jpg; sourceTree = "<group>"; };
 		EA6320451E9C70A200D48CA0 /* yelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yelpClient.swift; sourceTree = "<group>"; };
 		F469BE1278DCFDE718244A68 /* Pods_venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -338,7 +346,11 @@
 		B52F12BD1E9C2B2A00D87467 /* backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				EA4FDCDF1EA8716400DBD023 /* rio.jpg */,
+				EA4FDCDD1EA86C3A00DBD023 /* taiwan.jpg */,
 				B58266751E99971E007BA1E3 /* blueMountain.jpg */,
+				EA4FDCE31EA885C100DBD023 /* paris3.jpg */,
+				EA4FDCE41EA885C100DBD023 /* paris4.jpg */,
 				B51CD6411E98A7BE009F2615 /* whiteMountain.jpg */,
 				B56470111E989B6500251461 /* starry.jpg */,
 				B58266731E99970C007BA1E3 /* cityHorizon.jpg */,
@@ -611,6 +623,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4FDCE01EA8716400DBD023 /* rio.jpg in Resources */,
 				B56470121E989B6500251461 /* starry.jpg in Resources */,
 				B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */,
 				B5E2A09F1E7DCBA2002C48DC /* itinerary.storyboard in Resources */,
@@ -624,15 +637,18 @@
 				B55603B41E7B48E500FEC786 /* wallscreen.png in Resources */,
 				B50AEC771E7BC33D00213CF3 /* trip.storyboard in Resources */,
 				B5A66C511E9C54FA00D40D87 /* food.storyboard in Resources */,
+				EA4FDCE91EA885C100DBD023 /* paris4.jpg in Resources */,
 				B51CD6401E98A73F009F2615 /* twoToneBackground.png in Resources */,
 				B58D18511E7C877800997360 /* settings.storyboard in Resources */,
 				B51CD6421E98A7BE009F2615 /* whiteMountain.jpg in Resources */,
 				B5817E141EA621F8002D87C6 /* budget.storyboard in Resources */,
+				EA4FDCDE1EA86C3B00DBD023 /* taiwan.jpg in Resources */,
 				B50512AE1E70F3CA003F8ACA /* places.storyboard in Resources */,
 				B553334B1E6DE7CA0007A23D /* LaunchScreen.storyboard in Resources */,
 				B55333481E6DE7CA0007A23D /* Assets.xcassets in Resources */,
 				B55333431E6DE7CA0007A23D /* login.storyboard in Resources */,
 				B5717BBA1EA80700004CA099 /* partyBackground.jpg in Resources */,
+				EA4FDCE81EA885C100DBD023 /* paris3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

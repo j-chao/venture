@@ -19,13 +19,13 @@ extension UIViewController {
         let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width:width, height:height))
        
         if backgroundDefault == 1 {
-            imageViewBackground.image = UIImage(named: "triBackground.jpg")
+            imageViewBackground.image = UIImage(named: "taiwan.jpg")
         }
         else if backgroundDefault == 2 {
-            imageViewBackground.image = UIImage(named: "whiteMountain.jpg")
+            imageViewBackground.image = UIImage(named: "rio.jpg")
         }
         else if backgroundDefault == 3 {
-            imageViewBackground.image = UIImage(named: "twoToneBackground.png")
+            imageViewBackground.image = UIImage(named: "paris4.jpg")
         }
         else if backgroundDefault == 4 {
             imageViewBackground.image = UIImage(named: "partyBackground.jpg")
