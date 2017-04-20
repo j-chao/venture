@@ -63,7 +63,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {7}{7}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {7}{Screen Shots}{8}{Screen Shots}{0}}
+\headcommand {\sectionentry {7}{Login/Registration}{8}{Login/Registration}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {7}{7}}
 \defcounter {refsection}{0}\relax 
@@ -73,7 +73,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {8}{8}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {8}{Screen Shots}{9}{Screen Shots}{0}}
+\headcommand {\sectionentry {8}{Settings}{9}{Settings}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {8}{8}}
 \defcounter {refsection}{0}\relax 
@@ -83,7 +83,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {9}{9}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {9}{Demo}{10}{Demo}{0}}
+\headcommand {\sectionentry {9}{Trips}{10}{Trips}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {9}{9}}
 \defcounter {refsection}{0}\relax 
@@ -93,7 +93,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {10}{10}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {10}{Questions \& Answers}{11}{Questions \& Answers}{0}}
+\headcommand {\sectionentry {10}{Itinerary}{11}{Itinerary}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {10}{10}}
 \defcounter {refsection}{0}\relax 
@@ -102,8 +102,68 @@
 \headcommand {\slideentry {10}{0}{1}{11/11}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@partpages {1}{11}}
-\headcommand {\beamer@subsectionpages {11}{11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {11}{Event/Budget}{12}{Event/Budget}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {11}{11}}
-\headcommand {\beamer@documentpages {11}}
-\headcommand {\def \inserttotalframenumber {11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {11}{11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {11}{0}{1}{12/12}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {12}{12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {12}{Food}{13}{Food}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {12}{12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {12}{12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {12}{0}{1}{13/13}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {13}{Places}{14}{Places}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {13}{0}{1}{14/14}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {14}{Flights}{15}{Flights}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {14}{0}{1}{15/15}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {15}{15}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {15}{Demo}{16}{Demo}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {15}{15}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {15}{15}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {15}{0}{1}{16/16}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {16}{16}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {16}{Questions \& Answers}{17}{Questions \& Answers}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {16}{16}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {16}{16}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {16}{0}{1}{17/17}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@partpages {1}{17}}
+\headcommand {\beamer@subsectionpages {17}{17}}
+\headcommand {\beamer@sectionpages {17}{17}}
+\headcommand {\beamer@documentpages {17}}
+\headcommand {\def \inserttotalframenumber {17}}
