@@ -28,10 +28,10 @@ extension UIViewController {
             imageViewBackground.image = UIImage(named: "paris4.jpg")
         }
         else if backgroundDefault == 4 {
-            imageViewBackground.image = UIImage(named: "partyBackground.jpg")
+            imageViewBackground.image = UIImage(named: "yosemite.jpg")
         }
         else if backgroundDefault == 5 {
-            imageViewBackground.image = UIImage(named: "pinkBackground.jpg")
+            imageViewBackground.image = UIImage(named: "utah.jpg")
         }
         
         imageViewBackground.contentMode = .scaleAspectFill
