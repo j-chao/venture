@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,74 +30,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="YYQ-TC-w78">
-                                <rect key="frame" x="16" y="326" width="343" height="29"/>
-                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
-                                <segments>
-                                    <segment title="1"/>
-                                    <segment title="2"/>
-                                    <segment title="3"/>
-                                    <segment title="4"/>
-                                    <segment title="5"/>
-                                </segments>
-                                <connections>
-                                    <action selector="backgroundSegAction:" destination="Sef-ag-34M" eventType="valueChanged" id="4Ba-AE-Z70"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-el-4Ia">
-                                <rect key="frame" x="15" y="414" width="343" height="29"/>
-                                <segments>
-                                    <segment title="Regular Time"/>
-                                    <segment title="Military Time"/>
-                                </segments>
-                                <connections>
-                                    <action selector="timeSegAction:" destination="Sef-ag-34M" eventType="valueChanged" id="3Xu-Bv-FPi"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-i9-DB2">
-                                <rect key="frame" x="110" y="107" width="155" height="51"/>
-                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TE0-3n-zw0">
+                                <rect key="frame" x="67" y="161" width="240" height="220"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-el-4Ia">
+                                        <rect key="frame" x="23" y="172" width="194" height="29"/>
+                                        <segments>
+                                            <segment title="Regular Time"/>
+                                            <segment title="Military Time"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="timeSegAction:" destination="Sef-ag-34M" eventType="valueChanged" id="3Xu-Bv-FPi"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ej4-z6-2Pv">
+                                        <rect key="frame" x="42" y="100" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-jJ-26E">
+                                        <rect key="frame" x="23" y="53" width="194" height="28"/>
+                                        <color key="backgroundColor" red="0.9882352941176471" green="0.82352941176470584" blue="0.41568627450980394" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Change Password">
+                                            <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changePassword:" destination="Sef-ag-34M" eventType="touchUpInside" id="G72-HJ-8bs"/>
+                                        </connections>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-i9-DB2">
+                                        <rect key="frame" x="23" y="17" width="194" height="28"/>
+                                        <color key="backgroundColor" red="0.9882352941176471" green="0.82352941176470584" blue="0.41568627450980394" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="L0i-5T-CRy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Change Email">
+                                            <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeEmail:" destination="Sef-ag-34M" eventType="touchUpInside" id="dQA-GB-UjT"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="YYQ-TC-w78">
+                                        <rect key="frame" x="23" y="129" width="194" height="29"/>
+                                        <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                        <segments>
+                                            <segment title="1"/>
+                                            <segment title="2"/>
+                                            <segment title="3"/>
+                                            <segment title="4"/>
+                                            <segment title="5"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="backgroundSegAction:" destination="Sef-ag-34M" eventType="valueChanged" id="4Ba-AE-Z70"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94629171968717951" green="0.92002352817012178" blue="0.89172950578884547" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="V8h-Nk-9z0"/>
+                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="trailing" secondItem="YYQ-TC-w78" secondAttribute="trailing" id="1l6-RY-6WE"/>
+                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="top" secondItem="Ej4-z6-2Pv" secondAttribute="bottom" constant="8" symbolic="YES" id="2GY-C4-llj"/>
+                                    <constraint firstItem="Bjb-el-4Ia" firstAttribute="top" secondItem="YYQ-TC-w78" secondAttribute="bottom" constant="15" id="3DH-h7-4Ma"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="trailing" secondItem="mpc-jJ-26E" secondAttribute="trailing" id="4uD-jW-Xbc"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="top" secondItem="TE0-3n-zw0" secondAttribute="top" constant="17" id="Bit-cD-wpq"/>
+                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="top" secondItem="lHA-i9-DB2" secondAttribute="bottom" constant="8" symbolic="YES" id="CYk-Iy-4HL"/>
+                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="top" secondItem="mpc-jJ-26E" secondAttribute="bottom" constant="19" id="LMi-Hj-cud"/>
+                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="leading" secondItem="YYQ-TC-w78" secondAttribute="leading" id="Y8I-Bd-fyG"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="mpc-jJ-26E" secondAttribute="leading" id="cY2-ew-CTN"/>
+                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerX" secondItem="YYQ-TC-w78" secondAttribute="centerX" id="iFa-8v-xOv"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="centerX" secondItem="TE0-3n-zw0" secondAttribute="centerX" id="kSu-cc-Erj"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="TE0-3n-zw0" secondAttribute="leading" constant="23" id="m7x-dO-vO2"/>
+                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="Bjb-el-4Ia" secondAttribute="leading" id="pk8-Vn-7zm"/>
+                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="trailing" secondItem="Bjb-el-4Ia" secondAttribute="trailing" id="re9-fv-DmQ"/>
+                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerY" secondItem="TE0-3n-zw0" secondAttribute="centerY" id="ysj-RB-JGN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Change Email">
-                                    <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="changeEmail:" destination="Sef-ag-34M" eventType="touchUpInside" id="dQA-GB-UjT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-jJ-26E">
-                                <rect key="frame" x="97" y="178" width="180" height="51.5"/>
-                                <color key="backgroundColor" red="0.26859004283483506" green="0.6943454363895829" blue="0.92998963594436646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Change Password">
-                                    <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="changePassword:" destination="Sef-ag-34M" eventType="touchUpInside" id="G72-HJ-8bs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZD-vA-Uyz">
-                                <rect key="frame" x="133" y="554" width="109" height="34"/>
-                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZD-vA-Uyz">
+                                <rect key="frame" x="127" y="469" width="120" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="oBJ-LQ-gYq"/>
+                                    <constraint firstAttribute="height" constant="27" id="IQr-i5-Esp"/>
+                                    <constraint firstAttribute="width" constant="120" id="ptj-0n-Nag"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" red="0.99607843137254903" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -109,22 +143,15 @@
                                     <segue destination="fwI-0P-e7s" kind="presentation" id="ub4-cn-OQl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFy-Vp-X7c">
-                                <rect key="frame" x="148" y="638" width="80" height="21"/>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Pc-bGa">
+                                <rect key="frame" x="127" y="504" width="120" height="27"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="aiV-oT-956"/>
-                                    <constraint firstAttribute="height" constant="21" id="izi-2w-Daj"/>
+                                    <constraint firstAttribute="height" constant="27" id="TpU-FZ-WCT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Pc-bGa">
-                                <rect key="frame" x="111" y="596" width="154" height="34"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -137,50 +164,41 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="developed by..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-CE-Bd5">
-                                <rect key="frame" x="16" y="450" width="342" height="96"/>
+                                <rect key="frame" x="95" y="634" width="189" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="342" id="WMU-Dp-SOH"/>
-                                    <constraint firstAttribute="height" constant="96" id="tQX-1e-oW9"/>
+                                    <constraint firstAttribute="height" constant="25" id="JzG-2k-dzQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ej4-z6-2Pv">
-                                <rect key="frame" x="109" y="297" width="156" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFy-Vp-X7c">
+                                <rect key="frame" x="150" y="621" width="80" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="LY9-Cl-hnS"/>
+                                    <constraint firstAttribute="width" constant="80" id="XhI-GJ-39M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lHA-i9-DB2" firstAttribute="centerX" secondItem="mpc-jJ-26E" secondAttribute="centerX" id="0Ye-EB-aom"/>
-                            <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerX" secondItem="Bjb-el-4Ia" secondAttribute="centerX" id="6y9-Ii-5Y4"/>
-                            <constraint firstItem="naN-Pc-bGa" firstAttribute="centerX" secondItem="QFy-Vp-X7c" secondAttribute="centerX" id="8Ar-5J-N3p"/>
-                            <constraint firstItem="Bjb-el-4Ia" firstAttribute="centerX" secondItem="ruX-Ri-7d7" secondAttribute="centerX" constant="-1" id="8SW-8c-sgm"/>
-                            <constraint firstItem="lHA-i9-DB2" firstAttribute="trailing" secondItem="naN-Pc-bGa" secondAttribute="trailing" id="959-Os-A1b"/>
-                            <constraint firstItem="mpc-jJ-26E" firstAttribute="top" secondItem="lHA-i9-DB2" secondAttribute="bottom" constant="20" id="GwR-lt-bTW"/>
-                            <constraint firstItem="YYQ-TC-w78" firstAttribute="trailing" secondItem="ruX-Ri-7d7" secondAttribute="trailingMargin" id="MXt-7U-JuJ"/>
-                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="top" secondItem="xhx-CE-Bd5" secondAttribute="bottom" constant="8" symbolic="YES" id="NWh-aA-5sf"/>
-                            <constraint firstItem="YYQ-TC-w78" firstAttribute="centerY" secondItem="ruX-Ri-7d7" secondAttribute="centerY" constant="6.5" id="Nas-gh-pjj"/>
-                            <constraint firstItem="mpc-jJ-26E" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="81" id="Snf-nc-vZe"/>
-                            <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" id="Tjd-U3-Vin"/>
-                            <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerX" secondItem="YYQ-TC-w78" secondAttribute="centerX" id="Tsu-C3-Uiz"/>
-                            <constraint firstItem="YYQ-TC-w78" firstAttribute="top" secondItem="Ej4-z6-2Pv" secondAttribute="bottom" constant="8" id="Vlk-xk-uaD"/>
-                            <constraint firstAttribute="bottom" secondItem="QFy-Vp-X7c" secondAttribute="bottom" constant="8" id="WzJ-gF-oKc"/>
-                            <constraint firstItem="naN-Pc-bGa" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="95" id="Y5x-fM-y5q"/>
-                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="top" secondItem="Bjb-el-4Ia" secondAttribute="bottom" constant="112" id="Ypu-2f-NXT"/>
-                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="centerX" secondItem="QFy-Vp-X7c" secondAttribute="centerX" id="b4S-Ct-6Jj"/>
-                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="centerX" secondItem="kZD-vA-Uyz" secondAttribute="centerX" constant="-0.5" id="c6d-Yb-QIt"/>
-                            <constraint firstItem="Bjb-el-4Ia" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="-1" id="cUi-Ul-VbG"/>
-                            <constraint firstItem="Ej4-z6-2Pv" firstAttribute="top" secondItem="mpc-jJ-26E" secondAttribute="bottom" constant="67.5" id="d7q-km-Xkd"/>
-                            <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerX" secondItem="mpc-jJ-26E" secondAttribute="centerX" id="dKw-4W-ORy"/>
-                            <constraint firstItem="YYQ-TC-w78" firstAttribute="centerX" secondItem="xhx-CE-Bd5" secondAttribute="centerX" constant="0.5" id="dXJ-vb-01Z"/>
-                            <constraint firstItem="naN-Pc-bGa" firstAttribute="top" secondItem="kZD-vA-Uyz" secondAttribute="bottom" constant="8" id="g50-oh-DIh"/>
-                            <constraint firstItem="lHA-i9-DB2" firstAttribute="top" secondItem="zIg-E4-7Aj" secondAttribute="bottom" constant="43" id="gPS-zb-iuO"/>
-                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="YYQ-TC-w78" secondAttribute="bottom" constant="96" id="jBZ-gj-EOd"/>
-                            <constraint firstItem="Bjb-el-4Ia" firstAttribute="top" secondItem="YYQ-TC-w78" secondAttribute="bottom" constant="60" id="t4j-jV-ZKz"/>
+                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="trailing" secondItem="naN-Pc-bGa" secondAttribute="trailing" id="5HY-cu-7dM"/>
+                            <constraint firstItem="TE0-3n-zw0" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="51" id="I2a-ah-Rnx"/>
+                            <constraint firstItem="KI5-p0-oTN" firstAttribute="top" secondItem="xhx-CE-Bd5" secondAttribute="bottom" constant="8" symbolic="YES" id="Nn1-KY-uyu"/>
+                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="QFy-Vp-X7c" secondAttribute="bottom" id="Sg6-p3-Qdp"/>
+                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="top" secondItem="TE0-3n-zw0" secondAttribute="bottom" constant="88" id="Urt-eg-R1j"/>
+                            <constraint firstItem="kZD-vA-Uyz" firstAttribute="leading" secondItem="naN-Pc-bGa" secondAttribute="leading" id="VAE-Jn-80E"/>
+                            <constraint firstItem="QFy-Vp-X7c" firstAttribute="top" secondItem="naN-Pc-bGa" secondAttribute="bottom" constant="90" id="VCc-zw-7UB"/>
+                            <constraint firstItem="QFy-Vp-X7c" firstAttribute="centerX" secondItem="xhx-CE-Bd5" secondAttribute="centerX" id="WtR-yH-cQE"/>
+                            <constraint firstItem="naN-Pc-bGa" firstAttribute="top" secondItem="kZD-vA-Uyz" secondAttribute="bottom" constant="8" symbolic="YES" id="YlI-29-fLV"/>
+                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="79" id="bZk-AK-dZY"/>
+                            <constraint firstItem="TE0-3n-zw0" firstAttribute="top" secondItem="zIg-E4-7Aj" secondAttribute="bottom" constant="97" id="da8-fx-5M2"/>
+                            <constraint firstItem="TE0-3n-zw0" firstAttribute="centerX" secondItem="ruX-Ri-7d7" secondAttribute="centerX" id="if3-TQ-9Hn"/>
+                            <constraint firstItem="TE0-3n-zw0" firstAttribute="centerX" secondItem="kZD-vA-Uyz" secondAttribute="centerX" id="jyC-LZ-7FR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xhx-CE-Bd5" secondAttribute="trailing" constant="75" id="vwr-ho-IjT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="XIh-3X-dwm">

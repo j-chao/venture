@@ -29,7 +29,7 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         self.setBackground()
         
-        self.developedByLbl.text = "Venture was developed by \nJustin Chao, Julianne Crea, and Connie Liu"
+        self.developedByLbl.text = "Developed by Justin Chao, \n Julianne Crea, and Connie Liu"
         
         super.viewDidLoad()
         if firEmail == nil {
