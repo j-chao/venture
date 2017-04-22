@@ -37,6 +37,8 @@ class FlightsSearchVC: UIViewController {
         activity.hidesWhenStopped = true
         self.setBackground()
         super.viewDidLoad()
+        pickerView.backgroundColor = .white
+        pickerView.setValue(0.6, forKeyPath: "alpha")
         origin.attributedPlaceholder = NSAttributedString(
             string: "origin",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])

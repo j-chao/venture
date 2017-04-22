@@ -30,6 +30,8 @@ class AddEventVC: UIViewController {
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
+        eventTime.backgroundColor = .white
+        eventTime.setValue(0.6, forKeyPath: "alpha")
         eventDesc.attributedPlaceholder = NSAttributedString(string: "event description", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         eventLoc.attributedPlaceholder = NSAttributedString(string: "event address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
        
@@ -42,11 +44,19 @@ class AddEventVC: UIViewController {
             eventLoc.text = eventLocStr
         }
         
-        if fromFlight == true {
-            eventDesc.text = eventDescStr
-            eventLoc.text = eventLocStr
-            eventTime.date = flightTime!
+        else{
+            if fromFlight == true {
+                eventDesc.text = eventDescStr
+                eventLoc.text = eventLocStr
+                eventTime.date = flightTime!
+                
+            }
         }
+      //  if fromFlight == true {
+      //      eventDesc.text = eventDescStr
+      //      eventLoc.text = eventLocStr
+      //      eventTime.date = flightTime!
+      //  }
         
     }
    
