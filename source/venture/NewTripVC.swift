@@ -28,7 +28,7 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
         tripName.delegate = self
         tripLocation.delegate = self
         datePick.backgroundColor = .white
-        datePick.setValue(0.7, forKeyPath: "alpha")
+        datePick.setValue(0.6, forKeyPath: "alpha")
 
     }
     

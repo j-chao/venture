@@ -108,7 +108,7 @@ class UITextFieldX: UITextField {
     
     
     // MARK: - Corner Radius
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+    @IBInspectable var cornerRadius: CGFloat = 6 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }

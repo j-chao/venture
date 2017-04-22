@@ -57,10 +57,10 @@
                                     <segue destination="z2P-7d-1ZN" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="fUH-FQ-ldu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UJ-gC-FpI">
-                                <rect key="frame" x="47" y="266" width="226" height="74"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UJ-gC-FpI">
+                                <rect key="frame" x="47" y="285" width="226" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="R9X-pk-cOF"/>
+                                    <constraint firstAttribute="height" constant="55" id="3bW-tN-zYd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -129,21 +129,22 @@
                         <constraints>
                             <constraint firstItem="zJ5-Yj-Jk0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1mC-Ac-8na"/>
                             <constraint firstItem="YSG-k2-L3I" firstAttribute="top" secondItem="FyF-0X-kua" secondAttribute="bottom" constant="30" id="6Ix-TX-NLP"/>
+                            <constraint firstItem="4UJ-gC-FpI" firstAttribute="centerX" secondItem="GnB-8P-Oew" secondAttribute="centerX" id="72Z-Ku-6cC"/>
+                            <constraint firstItem="4UJ-gC-FpI" firstAttribute="top" secondItem="YSG-k2-L3I" secondAttribute="bottom" constant="8" symbolic="YES" id="8Hl-n8-8Mq"/>
                             <constraint firstItem="of3-KP-eBR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="9SC-7Z-hpS"/>
-                            <constraint firstItem="4UJ-gC-FpI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="B12-KM-6JZ"/>
+                            <constraint firstItem="4UJ-gC-FpI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="FIe-op-ItX"/>
                             <constraint firstItem="of3-KP-eBR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="119" id="Gtg-L5-hzy"/>
                             <constraint firstItem="FyF-0X-kua" firstAttribute="top" secondItem="of3-KP-eBR" secondAttribute="bottom" constant="17" id="JLM-9W-32v"/>
                             <constraint firstItem="of3-KP-eBR" firstAttribute="trailing" secondItem="FyF-0X-kua" secondAttribute="trailing" id="Kcf-xw-fAG"/>
                             <constraint firstItem="of3-KP-eBR" firstAttribute="leading" secondItem="FyF-0X-kua" secondAttribute="leading" id="QLh-OG-AKv"/>
+                            <constraint firstItem="4UJ-gC-FpI" firstAttribute="centerX" secondItem="YSG-k2-L3I" secondAttribute="centerX" id="X8y-Um-74t"/>
                             <constraint firstAttribute="trailing" secondItem="zJ5-Yj-Jk0" secondAttribute="trailing" id="Y3w-UD-eMP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GnB-8P-Oew" secondAttribute="bottom" constant="44" id="c82-M0-6Dp"/>
-                            <constraint firstItem="YSG-k2-L3I" firstAttribute="centerX" secondItem="4UJ-gC-FpI" secondAttribute="centerX" id="h4n-RA-UTI"/>
                             <constraint firstItem="zJ5-Yj-Jk0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="h5j-8L-igD"/>
                             <constraint firstItem="FyF-0X-kua" firstAttribute="centerX" secondItem="YSG-k2-L3I" secondAttribute="centerX" id="hgv-ge-ZAB"/>
                             <constraint firstItem="GnB-8P-Oew" firstAttribute="centerX" secondItem="zJ5-Yj-Jk0" secondAttribute="centerX" id="jYH-8i-uw9"/>
                             <constraint firstItem="YSG-k2-L3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="90" id="qFi-ua-lwK"/>
                             <constraint firstItem="zJ5-Yj-Jk0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rF6-ha-nuz"/>
-                            <constraint firstItem="GnB-8P-Oew" firstAttribute="centerX" secondItem="4UJ-gC-FpI" secondAttribute="centerX" id="vQJ-MN-uTZ"/>
                             <constraint firstItem="Kpt-mR-wsv" firstAttribute="centerX" secondItem="GnB-8P-Oew" secondAttribute="centerX" id="xyo-Fn-Wh2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kpt-mR-wsv" secondAttribute="bottom" constant="24" id="zS5-q9-2PV"/>
                         </constraints>
@@ -157,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1695" y="33.802816901408448"/>
+            <point key="canvasLocation" x="1695" y="33"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="dNH-uf-fOm">
