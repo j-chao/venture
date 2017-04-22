@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ajN-LC-zAh">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ajN-LC-zAh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,19 +61,21 @@
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1av-Ll-9nR">
                                 <rect key="frame" x="27" y="321" width="321" height="158"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="511560136.879915">
                                     <!--2017-03-18 20:02:16 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV7-IE-fdQ" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="137" y="516" width="100" height="41"/>
-                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="137" y="516" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.82352941180000006" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="1Lj-km-yav"/>
-                                    <constraint firstAttribute="width" constant="100" id="3Wo-B5-DjW"/>
+                                    <constraint firstAttribute="width" constant="100" id="GlT-0x-GIp"/>
+                                    <constraint firstAttribute="height" constant="30" id="fmZ-Lp-zqh"/>
                                 </constraints>
                                 <state key="normal" title="Create Trip">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -90,23 +92,23 @@
                                     <constraint firstAttribute="height" constant="29" id="Plf-a5-pI9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im9-Qu-USY">
                                 <rect key="frame" x="217" y="284" width="120" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyL-lG-F87" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="38" y="246" width="120" height="30"/>
-                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.82352941180000006" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="rXb-3w-vJ7"/>
                                 </constraints>
                                 <state key="normal" title="set start date">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -119,9 +121,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gt-sh-cXa" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="217" y="246" width="120" height="30"/>
-                                <color key="backgroundColor" red="0.26859004279999998" green="0.69434543640000002" blue="0.92998963589999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.82352941180000006" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="set end date">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -135,27 +137,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ncW-dx-QNJ" firstAttribute="top" secondItem="WV7-IE-fdQ" secondAttribute="bottom" constant="121" id="4uD-2u-wnh"/>
                             <constraint firstItem="XyL-lG-F87" firstAttribute="top" secondItem="4gt-sh-cXa" secondAttribute="top" id="70c-zJ-yUe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4gt-sh-cXa" secondAttribute="trailing" constant="22" id="7L1-pu-eyJ"/>
                             <constraint firstItem="4gt-sh-cXa" firstAttribute="leading" secondItem="im9-Qu-USY" secondAttribute="leading" id="8TR-Mb-89G"/>
+                            <constraint firstItem="WV7-IE-fdQ" firstAttribute="top" secondItem="1av-Ll-9nR" secondAttribute="bottom" constant="37" id="B2g-x6-qEC"/>
+                            <constraint firstItem="WV7-IE-fdQ" firstAttribute="centerX" secondItem="1av-Ll-9nR" secondAttribute="centerX" id="Dp1-wT-D3X"/>
+                            <constraint firstItem="WV7-IE-fdQ" firstAttribute="centerX" secondItem="loH-xm-Mux" secondAttribute="centerX" id="I9x-TM-Kp7"/>
                             <constraint firstItem="cRC-nD-X43" firstAttribute="top" secondItem="ag8-qc-phW" secondAttribute="bottom" constant="30" id="JCM-2n-9TR"/>
-                            <constraint firstItem="WV7-IE-fdQ" firstAttribute="centerX" secondItem="loH-xm-Mux" secondAttribute="centerX" id="MnR-O6-yHk"/>
                             <constraint firstItem="eTN-sP-Cjj" firstAttribute="centerX" secondItem="1av-Ll-9nR" secondAttribute="centerX" id="OnP-CX-Cl3"/>
                             <constraint firstItem="1av-Ll-9nR" firstAttribute="top" secondItem="c2R-BI-aUx" secondAttribute="bottom" constant="8" symbolic="YES" id="RIF-N2-xdN"/>
                             <constraint firstItem="c2R-BI-aUx" firstAttribute="firstBaseline" secondItem="im9-Qu-USY" secondAttribute="firstBaseline" id="Sg4-jG-kV2"/>
                             <constraint firstItem="XyL-lG-F87" firstAttribute="top" secondItem="eTN-sP-Cjj" secondAttribute="bottom" constant="56" id="Xyt-5r-Ebf"/>
                             <constraint firstItem="4gt-sh-cXa" firstAttribute="trailing" secondItem="im9-Qu-USY" secondAttribute="trailing" id="bro-U5-KzU"/>
-                            <constraint firstItem="1av-Ll-9nR" firstAttribute="centerX" secondItem="WV7-IE-fdQ" secondAttribute="centerX" id="crB-fJ-JLo"/>
                             <constraint firstItem="XyL-lG-F87" firstAttribute="leading" secondItem="c2R-BI-aUx" secondAttribute="leading" id="crV-OD-pr8"/>
                             <constraint firstItem="c2R-BI-aUx" firstAttribute="top" secondItem="XyL-lG-F87" secondAttribute="bottom" constant="8" symbolic="YES" id="d7d-zz-dLK"/>
                             <constraint firstItem="c2R-BI-aUx" firstAttribute="baseline" secondItem="im9-Qu-USY" secondAttribute="baseline" id="dhs-Do-YV8"/>
-                            <constraint firstItem="ncW-dx-QNJ" firstAttribute="top" secondItem="WV7-IE-fdQ" secondAttribute="bottom" constant="110" id="e1I-B0-wJe"/>
                             <constraint firstItem="4gt-sh-cXa" firstAttribute="leading" secondItem="XyL-lG-F87" secondAttribute="trailing" constant="59" id="eLC-EH-U20"/>
                             <constraint firstItem="XyL-lG-F87" firstAttribute="leading" secondItem="loH-xm-Mux" secondAttribute="leadingMargin" constant="22" id="f9H-eL-fco"/>
                             <constraint firstItem="cRC-nD-X43" firstAttribute="trailing" secondItem="eTN-sP-Cjj" secondAttribute="trailing" id="jG9-b4-i6D"/>
                             <constraint firstItem="XyL-lG-F87" firstAttribute="baseline" secondItem="4gt-sh-cXa" secondAttribute="baseline" id="jZA-yJ-40e"/>
                             <constraint firstItem="cRC-nD-X43" firstAttribute="leading" secondItem="loH-xm-Mux" secondAttribute="leadingMargin" constant="68" id="sg5-JI-wX8"/>
-                            <constraint firstItem="WV7-IE-fdQ" firstAttribute="top" secondItem="1av-Ll-9nR" secondAttribute="bottom" constant="37" id="siT-qY-4oA"/>
                             <constraint firstItem="XyL-lG-F87" firstAttribute="trailing" secondItem="c2R-BI-aUx" secondAttribute="trailing" id="u62-WX-Muv"/>
                             <constraint firstItem="1av-Ll-9nR" firstAttribute="leading" secondItem="loH-xm-Mux" secondAttribute="leadingMargin" constant="11" id="wvo-KN-oaG"/>
                             <constraint firstItem="eTN-sP-Cjj" firstAttribute="top" secondItem="cRC-nD-X43" secondAttribute="bottom" constant="36" id="x3e-C0-qbc"/>
@@ -235,7 +237,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="eMD-fd-wJ2" firstAttribute="leading" secondItem="xTt-Vl-C6V" secondAttribute="leadingMargin" constant="46" id="2g6-66-6PP"/>
                                             <constraint firstItem="E3g-va-DXT" firstAttribute="leading" secondItem="xTt-Vl-C6V" secondAttribute="leadingMargin" id="6MA-zM-BoZ"/>

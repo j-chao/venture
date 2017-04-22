@@ -27,6 +27,9 @@ class NewTripVC: UIViewController, UITextFieldDelegate {
         tripLocation.attributedPlaceholder = NSAttributedString(string: "location", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         tripName.delegate = self
         tripLocation.delegate = self
+        datePick.backgroundColor = .white
+        datePick.setValue(0.7, forKeyPath: "alpha")
+
     }
     
     var startingDate:Date? = nil

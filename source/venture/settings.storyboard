@@ -54,6 +54,7 @@
                                         <rect key="frame" x="23" y="53" width="194" height="28"/>
                                         <color key="backgroundColor" red="0.9882352941176471" green="0.82352941176470584" blue="0.41568627450980394" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.98823529409999999" green="0.84705882349999995" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Change Password">
                                             <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -68,7 +69,7 @@
                                     </button>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-i9-DB2">
                                         <rect key="frame" x="23" y="17" width="194" height="28"/>
-                                        <color key="backgroundColor" red="0.9882352941176471" green="0.82352941176470584" blue="0.41568627450980394" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.9882352941176471" green="0.84705882352941175" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="L0i-5T-CRy"/>
                                         </constraints>
