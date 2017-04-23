@@ -43,7 +43,6 @@ class FlightDetailsVC: UIViewController {
         self.destArrivalLabel.text = self.destArrival
         self.dateLabel.text = stringLongFromDate(date: eventDate)
         self.flightLabel.text = self.flightNumber
-        self.airlineLabel.text = "airline label"
         self.departureLabel.text = self.departureTimeStr
         self.arrivalLabel.text = self.arrivalTimeStr
         self.durationLabel.text = self.duration

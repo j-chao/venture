@@ -33,6 +33,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     override func viewDidLoad() {
         self.setBackground()
         super.viewDidLoad()
+        locationSwitch.setOn(false, animated: true)
         locationManager.delegate = self
         self.title = "Search for Food"
         

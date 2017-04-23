@@ -17,7 +17,7 @@
 \title{Venture}
 \author{Group 1}
 \institute{CS 329E \\ The Universty of Texas at Austin}
-\date{March 26, 2017}
+\date{April 26, 2017}
 
 \begin{document}
 \frame{\titlepage}
@@ -25,23 +25,24 @@
 \section{Group Members}
 \begin{frame}
 \frametitle{Group Members}
-    \begin{itemize}
-        \item Justin Chao
-        \item Julianne Crea
-        \item Connie Liu
-    \end{itemize}
+    \begin{center}
+        Justin Chao \\
+        Julianne Crea \\
+        Connie Liu 
+    \end{center}
 \end{frame}
 
 \section{Application Description}
 \begin{frame}
 \frametitle{Application Description}
+        Trip-planning often involves just making a Word/Google doc and inserting links to
+            other websites for resources. \\ 
+        Venture provides simple and convenient planning of trip itineraries.
     \begin{itemize}
-        \item trip-planning often involves just making a Word or Google doc and inserting links to
-            other websites.
-        \item Venture provides simple and convenient planning of trip itineraries 
-        \item reinforces safe-spending-habits by actively tracking your expenses.
-        \item increases efficiency in planning for travel to multiple places by putting it all in one app.
+        \item increases efficiency in planning for travel to multiple places by putting it all in
+            one app.
         \item provides for a more organized and therefore, more enjoyable travel experience.
+        \item reinforces safe-spending-habits by actively tracking your expenses.
     \end{itemize}
 \end{frame}
 
@@ -57,11 +58,11 @@
 \begin{frame}
 \frametitle{Application Functionality}
     \begin{itemize}
-        \item Firebase backend with Google user authentication will be implemented.
-        \item user options (user profile, themes)
-		\item search for non-stop flights.
-		\item search for food/restaurants.
-		\item search for tourist attractions.
+        \item Firebase backend with Google \& Facebook user auth will be implemented
+        \item appearance customization (background, time format)
+		\item search for non-stop flights
+		\item search for food/restaurants
+		\item search for tourist attractions
 		\item save customized event details to an itinerary page
 		\item set reminders for any event 
 		\item set budgets for trip categories
@@ -72,8 +73,9 @@
 \begin{frame}
 \frametitle{Application Challenges}
     \begin{itemize}
-		\item learning Firebase and various APIs
-		\item setting constraints for views with many UI elements.
+		\item implementing Firebase and various APIs
+		\item learning how to parse JSON data objects
+		\item setting constraints for views with many UI elements
     \end{itemize}
 \end{frame}
 
@@ -83,18 +85,18 @@
     \begin{tabular}{l|l}
         Group Member & Contribution \\
         \hline
-        Justin Chao & - Firebase auth and database implementation \\
-         & - Facebook auth implementation \\
-         & - trip, itinerary, and event views \\
-         & - background switching functionality \\
+        Justin Chao & - Firebase database \\
+         & - Firebase \& Facebook auth \\
+         & - background \& time format customization \\
          & - MapKit implementation \\
-         & - searching for flights w/ Google QPX Express API \\
+         & - flights search w/ Google QPX Express API \\
          &  \\
 
-        Julianne Crea & - searching for places using Yelp API and Alamofire \\ 
+        Julianne Crea & - places search using Yelp API and Alamofire \\ 
+         & - UI appearance \\
          &  \\
          
-        Connie Liu & - searching for foods using Yelp API and Alamofire \\
+        Connie Liu & - foods search using Yelp API and Alamofire \\
          &  \\
     \end{tabular}
 \end{frame}
@@ -112,12 +114,12 @@
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{login}
+            \includegraphics[scale=0.08]{login}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{registration}
+            \includegraphics[scale=0.08]{registration}
         \end{center}
     \end{column}
 \end{columns}
@@ -128,21 +130,18 @@
 \frametitle{Settings}
 \begin{columns}
     \begin{column}{0.3\textwidth}
-        Settings View
-        \begin{itemize}
-            \item background \& time format switching
-            \item logout
-            \item delete account
-        \end{itemize}
-    \end{column}
-    \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{settings}
+            \includegraphics[scale=0.08]{settings1}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{settings2}
+            \includegraphics[scale=0.08]{settings2}
+        \end{center}
+    \end{column}
+    \begin{column}{0.3\textwidth}  %%<--- here
+        \begin{center}
+            \includegraphics[scale=0.08]{settings3}
         \end{center}
     \end{column}
 \end{columns}
@@ -161,12 +160,12 @@
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{newTrip}
+            \includegraphics[scale=0.08]{trips}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{trips}
+            \includegraphics[scale=0.08]{tripsCreation}
         \end{center}
     \end{column}
 \end{columns}
@@ -178,18 +177,15 @@
 \begin{columns}
     \begin{column}{0.3\textwidth}
         Itinerary View
-        \begin{itemize}
-            \item itinerary views
-        \end{itemize}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{itinerary}
+            \includegraphics[scale=0.08]{itinerary1}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{itinerary2}
+            \includegraphics[scale=0.08]{itinerary2}
         \end{center}
     \end{column}
 \end{columns}
@@ -207,12 +203,12 @@
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{addEvent}
+            \includegraphics[scale=0.08]{eventCreation}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{budget}
+            \includegraphics[scale=0.08]{budget}
         \end{center}
     \end{column}
 \end{columns}
@@ -224,17 +220,17 @@
 \begin{columns}
     \begin{column}{0.3\textwidth}
         \begin{center}
-            \includegraphics[scale=0.3]{foodSearch}
+            \includegraphics[scale=0.08]{foodSearch}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{foodTable}
+            \includegraphics[scale=0.08]{foodTable}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{foodDetail}
+            \includegraphics[scale=0.08]{foodDetail}
         \end{center}
     \end{column}
 \end{columns}
@@ -246,17 +242,17 @@
 \begin{columns}
     \begin{column}{0.3\textwidth}
         \begin{center}
-            \includegraphics[scale=0.3]{placeSearch}
+            \includegraphics[scale=0.08]{placesSearch}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{placeTable}
+            \includegraphics[scale=0.08]{placesTable} 
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{placeDetail}
+            \includegraphics[scale=0.08]{placesDetail}
         \end{center}
     \end{column}
 \end{columns}
@@ -268,17 +264,17 @@
 \begin{columns}
     \begin{column}{0.3\textwidth}
         \begin{center}
-            \includegraphics[scale=0.3]{flightSearch}
+            \includegraphics[scale=0.08]{flightsSearch}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
         \begin{center}
-            \includegraphics[scale=0.3]{flightSearch}
+            \includegraphics[scale=0.08]{flightsTable}
         \end{center}
     \end{column}
     \begin{column}{0.3\textwidth}  %%<--- here
-        \begin{center}
-            \includegraphics[scale=0.3]{flightSearch}
+        \begin{center} 
+            \includegraphics[scale=0.08]{flightsDetail}
         \end{center}
     \end{column}
 \end{columns}
@@ -288,14 +284,18 @@
 \begin{frame}
 \frametitle{Demo}
     \begin{center}
-        \includegraphics[scale=0.3]{home}
+        \includegraphics[scale=0.33]{home}
     \end{center}
 \end{frame}
 
 \section{Questions \& Answers}
 \begin{frame}
 \frametitle{Questions \& Answers}
-Find it on GitHub: https://github.com/j-chao/venture
+    \begin{center}
+        Find it on \\
+        \includegraphics[scale=0.08]{github} \\
+        https://github.com/j-chao/venture
+    \end{center}
 \end{frame}
 
 \end{document}

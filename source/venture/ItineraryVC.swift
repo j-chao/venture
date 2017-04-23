@@ -30,7 +30,7 @@ class ItineraryVC: UIViewController {
     @IBOutlet weak var eventsTableView: UITableView!
     
     override func viewDidLoad() {
-        self.eventsTableView.backgroundColor = UIColor.clear
+        self.eventsTableView.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
         self.setBackground()
         super.viewDidLoad()
         self.tripDateString = stringLongFromDate(date: tripDate)
