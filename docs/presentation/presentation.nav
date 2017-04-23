@@ -143,7 +143,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {15}{15}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {15}{Demo}{16}{Demo}{0}}
+\headcommand {\sectionentry {15}{Firebase Auth}{16}{Firebase Auth}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {15}{15}}
 \defcounter {refsection}{0}\relax 
@@ -153,7 +153,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {16}{16}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {16}{Questions \& Answers}{17}{Questions \& Answers}{0}}
+\headcommand {\sectionentry {16}{Firebase Database}{17}{Firebase Database}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {16}{16}}
 \defcounter {refsection}{0}\relax 
@@ -162,8 +162,28 @@
 \headcommand {\slideentry {16}{0}{1}{17/17}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@partpages {1}{17}}
-\headcommand {\beamer@subsectionpages {17}{17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {17}{Demo}{18}{Demo}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {17}{17}}
-\headcommand {\beamer@documentpages {17}}
-\headcommand {\def \inserttotalframenumber {17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {17}{17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {17}{0}{1}{18/18}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {18}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {18}{Questions \& Answers}{19}{Questions \& Answers}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {18}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {18}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {18}{0}{1}{19/19}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@partpages {1}{19}}
+\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\beamer@sectionpages {19}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\def \inserttotalframenumber {19}}
