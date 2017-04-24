@@ -208,7 +208,9 @@ extension TripsVC: UICollectionViewDelegate {
     
     func deleteTripFromFirebase(trip:String) -> Int {
         let userID = FIRAuth.auth()?.currentUser!.uid
-        let ref = FIRDatabase.database().reference().child("users/\(userID!)/trips")
+        var ref = FIRDatabase.database().reference().child("users/\(userID!)/trips")
+        ref.child(trip).removeValue()
+        ref = FIRDatabase.database().reference().child("users/\(userID!)/budgets")
         ref.child(trip).removeValue()
         return 0
     }

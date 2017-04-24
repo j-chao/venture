@@ -31,10 +31,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jLm-9A-HfG">
-                                <rect key="frame" x="16" y="163" width="343" height="435"/>
+                                <rect key="frame" x="16" y="88" width="343" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="435" id="Sso-Bv-wNz"/>
+                                    <constraint firstAttribute="height" constant="510" id="Sso-Bv-wNz"/>
                                     <constraint firstAttribute="width" constant="343" id="hhC-8A-NsB"/>
                                 </constraints>
                                 <prototypes>
@@ -334,7 +334,7 @@
                                 <color key="textColor" red="0.32526159501282059" green="0.31206662474250862" blue="0.30900164187563739" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="XDs-9x-XFX" userLabel="Event Time">
+                            <datePicker alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="XDs-9x-XFX" userLabel="Event Time">
                                 <rect key="frame" x="53" y="191" width="269" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="38Y-Mg-n70"/>
@@ -350,11 +350,10 @@
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WvM-yL-iJE" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="53" y="96" width="269" height="71"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="PAa-iE-4F6"/>
                                 </constraints>
-                                <color key="textColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -365,11 +364,10 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-Jl-wbz" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="53" y="382" width="269" height="80"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="HaZ-rw-B5j"/>
                                 </constraints>
-                                <color key="textColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -379,10 +377,11 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-lg-PM1" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="122" y="525" width="130" height="39"/>
+                                <rect key="frame" x="122" y="525" width="130" height="30"/>
                                 <color key="backgroundColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="AHH-ND-AZn"/>
+                                    <constraint firstAttribute="height" constant="30" id="r7a-9j-PCW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -410,7 +409,7 @@
                             <constraint firstItem="kaf-Jl-wbz" firstAttribute="top" secondItem="XDs-9x-XFX" secondAttribute="bottom" constant="20" id="Np5-W6-0qF"/>
                             <constraint firstItem="4Nm-5b-WSE" firstAttribute="top" secondItem="d7k-G0-rxj" secondAttribute="bottom" constant="25" id="QCB-xa-kag"/>
                             <constraint firstItem="WvM-yL-iJE" firstAttribute="leading" secondItem="1XY-aV-4xk" secondAttribute="leadingMargin" constant="37" id="SIc-iA-XyU"/>
-                            <constraint firstItem="WGe-40-Ppy" firstAttribute="top" secondItem="x8k-lg-PM1" secondAttribute="bottom" constant="103" id="ace-OA-98l"/>
+                            <constraint firstItem="WGe-40-Ppy" firstAttribute="top" secondItem="x8k-lg-PM1" secondAttribute="bottom" constant="112" id="ace-OA-98l"/>
                             <constraint firstItem="XDs-9x-XFX" firstAttribute="top" secondItem="WvM-yL-iJE" secondAttribute="bottom" constant="24" id="dgW-1O-sgV"/>
                             <constraint firstItem="x8k-lg-PM1" firstAttribute="centerX" secondItem="kaf-Jl-wbz" secondAttribute="centerX" id="jd8-0R-7c8"/>
                             <constraint firstItem="WvM-yL-iJE" firstAttribute="top" secondItem="4Nm-5b-WSE" secondAttribute="bottom" constant="30" id="lwy-YK-YPk"/>

@@ -22,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="origin" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwh-tW-yYA" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="58" y="156" width="259" height="30"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="origin airport code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwh-tW-yYA" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
+                                <rect key="frame" x="57" y="88" width="259" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="uNc-8E-ruc"/>
+                                    <constraint firstAttribute="height" constant="30" id="bX2-9o-Daf"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,37 +37,34 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <pickerView alpha="0.59999999999999998" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="5Zm-01-6Tt">
-                                <rect key="frame" x="47" y="353" width="281" height="138"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <pickerView alpha="0.80000000000000004" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="5Zm-01-6Tt">
+                                <rect key="frame" x="27" y="198" width="320" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pickerView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-P4-XNU">
-                                <rect key="frame" x="177" y="333" width="20" height="0.0"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-6Z-8ep" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="138" y="518" width="99" height="30"/>
+                                <rect key="frame" x="137" y="462" width="99" height="30"/>
                                 <color key="backgroundColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="j99-UM-CBs"/>
+                                    <constraint firstAttribute="width" constant="99" id="S6A-6o-nmM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Find Flights">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="findFlights:" destination="E80-dB-34h" eventType="touchUpInside" id="aZu-P5-MdO"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="destination" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3x-bk-lr7" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="58" y="205" width="259" height="30"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="destination airport code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3x-bk-lr7" customClass="UITextFieldX" customModule="venture" customModuleProvider="target">
+                                <rect key="frame" x="57" y="137" width="259" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9ed-Nn-RE1"/>
+                                    <constraint firstAttribute="height" constant="30" id="96y-Un-he8"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -81,24 +78,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p3x-bk-lr7" firstAttribute="top" secondItem="kwh-tW-yYA" secondAttribute="bottom" constant="19" id="Fei-OV-4N4"/>
-                            <constraint firstItem="p3x-bk-lr7" firstAttribute="leading" secondItem="kwh-tW-yYA" secondAttribute="leading" id="MlV-EP-wC6"/>
-                            <constraint firstItem="5Zm-01-6Tt" firstAttribute="leading" secondItem="cS8-6K-Amy" secondAttribute="leadingMargin" constant="31" id="OB2-H7-Dct"/>
-                            <constraint firstItem="kwh-tW-yYA" firstAttribute="centerX" secondItem="cS8-6K-Amy" secondAttribute="centerX" id="OVK-T7-H1t"/>
-                            <constraint firstItem="kwh-tW-yYA" firstAttribute="top" secondItem="fxw-xi-Gea" secondAttribute="bottom" constant="136" id="UPn-Qz-638"/>
-                            <constraint firstAttribute="bottom" secondItem="5Zm-01-6Tt" secondAttribute="bottom" constant="176" id="ccV-hl-cS0"/>
-                            <constraint firstItem="HhB-6Z-8ep" firstAttribute="top" secondItem="5Zm-01-6Tt" secondAttribute="bottom" constant="27" id="hlm-yL-WQD"/>
-                            <constraint firstItem="0fE-P4-XNU" firstAttribute="centerX" secondItem="p3x-bk-lr7" secondAttribute="centerX" id="iB4-5t-5Ej"/>
-                            <constraint firstItem="p3x-bk-lr7" firstAttribute="trailing" secondItem="kwh-tW-yYA" secondAttribute="trailing" id="iI8-qc-h5m"/>
-                            <constraint firstItem="kwh-tW-yYA" firstAttribute="leading" secondItem="cS8-6K-Amy" secondAttribute="leadingMargin" constant="42" id="nAM-8H-FmZ"/>
-                            <constraint firstItem="0fE-P4-XNU" firstAttribute="centerY" secondItem="cS8-6K-Amy" secondAttribute="centerY" id="qyP-EU-WrR"/>
-                            <constraint firstItem="5Zm-01-6Tt" firstAttribute="top" secondItem="0fE-P4-XNU" secondAttribute="bottom" constant="20" id="shQ-AD-CoP"/>
-                            <constraint firstItem="0fE-P4-XNU" firstAttribute="centerX" secondItem="5Zm-01-6Tt" secondAttribute="centerX" id="tsy-fW-SFL"/>
-                            <constraint firstItem="HhB-6Z-8ep" firstAttribute="centerX" secondItem="5Zm-01-6Tt" secondAttribute="centerX" id="vwl-rr-XqS"/>
+                            <constraint firstItem="5Zm-01-6Tt" firstAttribute="top" secondItem="p3x-bk-lr7" secondAttribute="bottom" constant="31" id="5JA-li-vrN"/>
+                            <constraint firstItem="5Zm-01-6Tt" firstAttribute="centerX" secondItem="HhB-6Z-8ep" secondAttribute="centerX" id="5RY-Bd-0sh"/>
+                            <constraint firstItem="kwh-tW-yYA" firstAttribute="leading" secondItem="p3x-bk-lr7" secondAttribute="leading" id="7Nh-Gc-Wr7"/>
+                            <constraint firstItem="5Zm-01-6Tt" firstAttribute="centerX" secondItem="cS8-6K-Amy" secondAttribute="centerX" id="GNJ-sh-uDg"/>
+                            <constraint firstItem="p3x-bk-lr7" firstAttribute="centerX" secondItem="5Zm-01-6Tt" secondAttribute="centerX" id="IBk-KZ-6Iy"/>
+                            <constraint firstItem="kwh-tW-yYA" firstAttribute="trailing" secondItem="p3x-bk-lr7" secondAttribute="trailing" id="T7U-n3-p0Y"/>
+                            <constraint firstItem="kwh-tW-yYA" firstAttribute="leading" secondItem="cS8-6K-Amy" secondAttribute="leadingMargin" constant="41" id="UX1-0d-TTd"/>
+                            <constraint firstItem="p3x-bk-lr7" firstAttribute="top" secondItem="kwh-tW-yYA" secondAttribute="bottom" constant="19" id="UdO-ow-Lw2"/>
+                            <constraint firstItem="kwh-tW-yYA" firstAttribute="top" secondItem="fxw-xi-Gea" secondAttribute="bottom" constant="68" id="XeS-uy-fR1"/>
+                            <constraint firstItem="HhB-6Z-8ep" firstAttribute="top" secondItem="5Zm-01-6Tt" secondAttribute="bottom" constant="48" id="aMg-K1-4Uj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activity" destination="0fE-P4-XNU" id="BEm-Y1-Ipd"/>
                         <outlet property="destination" destination="p3x-bk-lr7" id="SJz-eM-Oso"/>
                         <outlet property="origin" destination="kwh-tW-yYA" id="86J-PW-d3o"/>
                         <outlet property="pickerView" destination="5Zm-01-6Tt" id="hAR-Dj-dPA"/>
@@ -204,8 +196,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fib-2t-eVY" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="115" y="560" width="143" height="30"/>
                                 <color key="backgroundColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add to Itinerary">
-                                    <color key="titleColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

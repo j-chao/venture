@@ -31,14 +31,11 @@ class FlightsSearchVC: UIViewController {
     var saleTotalArray = [String]()
     var flightNumberArray = [String]()
     
-    @IBOutlet weak var activity: UIActivityIndicatorView!
-    
     override func viewDidLoad() {
-        activity.hidesWhenStopped = true
         self.setBackground()
         super.viewDidLoad()
         pickerView.backgroundColor = .white
-        pickerView.setValue(0.6, forKeyPath: "alpha")
+        pickerView.setValue(0.8, forKeyPath: "alpha")
         origin.attributedPlaceholder = NSAttributedString(
             string: "origin",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
@@ -59,13 +56,11 @@ class FlightsSearchVC: UIViewController {
     }
     
     @IBAction func findFlights(_ sender: UIButton) {
-        self.activity.startAnimating()
         if origin.text!.isEmpty || destination.text!.isEmpty {
             self.presentAllFieldsAlert()
         } else {
             self.googleFlights()
         }
-        self.activity.stopAnimating()
     }
 
     func googleFlights() {

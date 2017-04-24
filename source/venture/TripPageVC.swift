@@ -47,8 +47,8 @@ class TripPageVC: UIPageViewController {
         
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
-        pageControl.currentPageIndicatorTintColor = UIColor.blue
-        pageControl.backgroundColor = UIColor(colorLiteralRed: 37, green: 53, blue: 79, alpha: 0.8)
+        pageControl.currentPageIndicatorTintColor = UIColor.yellow
+        pageControl.backgroundColor = UIColor.clear
         
         if tripLength == 1 {
             self.removeSwipeGesture()

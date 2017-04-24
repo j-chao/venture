@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NNw-Sw-Suc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NNw-Sw-Suc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,30 +23,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8b-IK-oKb">
-                                <rect key="frame" x="63" y="233" width="248" height="30"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="63" y="141" width="248" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="minimum rating (0-5)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5h-jd-9iI">
-                                <rect key="frame" x="63" y="288" width="248" height="30"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="63" y="196" width="248" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEK-cL-D5u">
-                                <rect key="frame" x="114" y="403" width="146" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEK-cL-D5u" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
+                                <rect key="frame" x="114" y="311" width="146" height="30"/>
                                 <color key="backgroundColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cJ1-cQ-7dg"/>
+                                </constraints>
                                 <state key="normal" title="find places">
-                                    <color key="titleColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -57,7 +63,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iEK-cL-D5u" firstAttribute="leading" secondItem="X6E-av-mU5" secondAttribute="leadingMargin" constant="98" id="3I3-nu-4Z2"/>
-                            <constraint firstItem="A8b-IK-oKb" firstAttribute="top" secondItem="sc2-VE-jRp" secondAttribute="bottom" constant="213" id="61R-Ns-cco"/>
+                            <constraint firstItem="A8b-IK-oKb" firstAttribute="top" secondItem="sc2-VE-jRp" secondAttribute="bottom" constant="121" id="61R-Ns-cco"/>
                             <constraint firstItem="A8b-IK-oKb" firstAttribute="centerX" secondItem="X6E-av-mU5" secondAttribute="centerX" id="Mbo-eM-pzc"/>
                             <constraint firstItem="iEK-cL-D5u" firstAttribute="top" secondItem="b5h-jd-9iI" secondAttribute="bottom" constant="85" id="Sog-IA-YLO"/>
                             <constraint firstItem="A8b-IK-oKb" firstAttribute="leading" secondItem="b5h-jd-9iI" secondAttribute="leading" id="gAi-7k-09Y"/>
@@ -74,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nl2-vw-F2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="-99.400299850074973"/>
+            <point key="canvasLocation" x="2474" y="-104"/>
         </scene>
         <!--Places TableVC-->
         <scene sceneID="me8-ue-Yzf">
@@ -289,19 +295,23 @@
                                     <constraint firstAttribute="height" constant="220" id="o2c-OK-Qya"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw5-bB-Gxn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw5-bB-Gxn" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="125" y="553" width="126" height="30"/>
                                 <color key="backgroundColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="99X-F0-jGQ"/>
                                     <constraint firstAttribute="width" constant="126" id="QUp-yT-Y77"/>
                                 </constraints>
                                 <color key="tintColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="add to itinerary">
-                                    <color key="titleColor" red="0.2156862745" green="0.20784313730000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>

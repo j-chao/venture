@@ -31,7 +31,7 @@ class AddEventVC: UIViewController {
         self.setBackground()
         super.viewDidLoad()
         eventTime.backgroundColor = .white
-        eventTime.setValue(0.6, forKeyPath: "alpha")
+        eventTime.setValue(0.8, forKeyPath: "alpha")
         eventDesc.attributedPlaceholder = NSAttributedString(string: "event description", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         eventLoc.attributedPlaceholder = NSAttributedString(string: "event address", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
        
