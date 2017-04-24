@@ -19,17 +19,17 @@ https://github.com/j-chao/venture
 
 ### Deadlines
   * 3/24 alpha
-    - login/registration
-    - configuration/settings
-    - itinerary
+    - login/registration views
+    - configuration/settings view
+    - itinerary views
 
   * 4/12 beta
-    - pull food
-    - pull places
+    - foods search
+    - places search
 
   * 5/3 final
-    - transportation/flights (challenge feature)
-    - budget
+    - flights search (challenge feature)
+    - budget view
 
 
 ### contributors:
