@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import YelpAPI
-import BrightFutures
 import Alamofire
 import CoreLocation
+import SwiftyJSON
 
 class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     
-    var restaurants = [Restauraunt]()
     var eventDate:Date!
     let myRequest = DispatchGroup()
     let tokenRequest = DispatchGroup()
@@ -23,7 +21,25 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     var currentLocation:CLLocation!
     var alertController:UIAlertController? = nil
     
+    
+    @IBOutlet weak var pricePicker: UIPickerView!
+    var pickerValues = [[String]]()
+    var maxPrice:String!
+    
     var token:String? = nil
+    var parseJSON: JSON!
+    
+    var resultCount = -1
+    var restaurants = [String]()
+    var id = [String]()
+    var distance = [Decimal]()
+    var address1 = [String]()
+    var address2 = [String]()
+    var category = [String]()
+    var rating = [Decimal]()
+    var phone = [String]()
+    var price = [String]()
+    var hours = [Array<Any>]()
     
     @IBOutlet weak var addressTxt: UITextField!
     @IBOutlet weak var openSwitch: UISwitch!
@@ -36,6 +52,10 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         locationSwitch.setOn(false, animated: true)
         locationManager.delegate = self
         self.title = "Search for Food"
+        pricePicker.setValue(0.6, forKeyPath: "alpha")
+        pricePicker.delegate = self
+        pricePicker.dataSource = self
+        pickerValues = [["$", "$$", "$$$", "$$$$"]]
         
         // requesting the access_token from Yelp takes time and therefore, it is necessary to wait until the request is complete before we can proceed with using the obtained token to request results from Yelp.
         tokenRequest.enter()
@@ -44,18 +64,27 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         // execute after getToken() is finished
         tokenRequest.notify(queue: DispatchQueue.main, execute: {
             print("finished getToken()")
-//            self.yelpBusinessDetails()
-            //self.yelpSearch()
         })
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        resultCount = -1
         restaurants.removeAll()
+        id.removeAll()
+        distance.removeAll()
+        address1.removeAll()
+        address2.removeAll()
+        category.removeAll()
+        rating.removeAll()
+        phone.removeAll()
+        price.removeAll()
+        //hours.removeAll()
+        
         locationSwitch.setOn(false, animated: false)
         addressTxt.text = ""
     }
-    
+
     @IBAction func locationSwitchOn(_ sender: UISwitch) {
         if self.locationSwitch.isOn{
             print ("location check")
@@ -86,90 +115,16 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         print (error)
     }
     
-    func yelpFood(query:YLPQuery) {
-        myRequest.enter()
-        let appId = "7MvZ6dze7A0CJ7LnQqzeeA"
-        let appSecret = "NqyyQzN25eWVlUhAa5SCius0uNNqd3DS2DDDBUwrQLd3dftFnwr3BySJXBZr7KzA"
-        
-        //implement parameters for open_now and price later
-        query.term = "food, restaurants"
-        query.sort = YLPSortType.distance
-        
-        YLPClient.authorize(withAppId: appId, secret: appSecret).flatMap {
-            client in
-            client.search(withQuery: query)
-            }.onSuccess { search in
-                
-                for business in search.businesses{
-                    let foodId = business.identifier
-                    let foodName = business.name
-                    let foodCat = business.categories[0].name
-                    let foodRating = (business.rating)
-                    
-                    var foodSt:String?
-                    if business.location.address.count != 0{
-                        foodSt = (business.location.address[0])
-                    } else{
-                        foodSt = " "
-                    }
-                    
-                    let foodCity = business.location.city
-                    let foodState = business.location.stateCode
-                    let foodZip = business.location.postalCode
-                    let foodPhone = business.phone
-                    
-                    let currentBusiness = Restauraunt(id: foodId, name: foodName, category: foodCat, rating: foodRating, address: foodSt, city: foodCity, state:foodState, zip:foodZip, phone: foodPhone)
-                    self.restaurants.append(currentBusiness)
-                    
-                }
-               
-            self.myRequest.leave()
-                
-                //exit(EXIT_SUCCESS)
-            }.onFailure { error in
-                print("Search errored: \(error)")
-                //exit(EXIT_FAILURE)
-            }
-        
-    }
     
     @IBAction func searchFood(_ sender: Any) {
         if addressTxt.text!.isEmpty && self.locationSwitch.isOn == false{
             self.displayAlert("Error", message: "Please provide a location.")
         } else{
-            if self.locationSwitch.isOn {
-                let coordinate = YLPCoordinate(latitude:currentLocation.coordinate.latitude, longitude:currentLocation.coordinate.longitude)
-                self.yelpFood(query:YLPQuery(coordinate: coordinate))
-            } else{
-                self.yelpFood(query:YLPQuery(location: addressTxt.text!))
+                self.yelpSearch()
         }
         locationManager.stopUpdatingLocation()
-        myRequest.notify(queue: DispatchQueue.main, execute: {
-            print("Finished all requests.")
-            self.segueToTable()
-        })
-        }
     }
-    
-    func displayAlert(_ title:String, message:String) {
-        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-        }
-        self.alertController!.addAction(okAction)
-        self.present(self.alertController!, animated: true, completion:nil)
-    }
-    
-    func segueToTable() {
-        let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
-        vc.restaurants = self.restaurants
-        vc.eventDate = self.eventDate
-        self.show(vc, sender: self)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -241,15 +196,28 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     // To get detailed information and reviews, please use the business id returned here and refer to yelpBusinessDetails() endpoints.
     // documentation: https://www.yelp.com/developers/documentation/v3/business_search
     func yelpSearch() {
+        myRequest.enter()
         let url:String = "https://api.yelp.com/v3/businesses/search"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
         
-        let params: [String: Any] =
-            ["location": "Austin, TX",
-             "term": "restaurants, food",
-             "sort_by": "best_match",
-             "price": "1,2"]
+        var params:[String:Any]!
         
+        if locationSwitch.isOn {
+            params =
+                ["latitude": currentLocation.coordinate.latitude,
+                 "longitude": currentLocation.coordinate.longitude,
+                 "term": "restaurants, food",
+                 "sort_by": "distance",
+                 "price": self.maxPrice,
+                 "open_now": self.openSwitch.isOn] as [String : Any]
+        } else{
+            params =
+                ["location": addressTxt.text!,
+                 "term": "restaurants, food",
+                 "sort_by": "distance",
+                 "price": self.maxPrice,
+                 "open_now": self.openSwitch.isOn] as [String : Any]
+        }
         Alamofire.request(url, parameters: params, headers: headers).responseJSON {response in
             guard response.result.error == nil else {
                 print("error calling GET on Yelp")
@@ -261,8 +229,156 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 print("Error: \(response.result.error)")
                 return
             }
+            
             print (json)
+            self.parseJSON = JSON(json)
+            var i = 0
+            var total = self.parseJSON["businesses"][0]["name"]
+            
+            if total != JSON.null {
+                while total != JSON.null {
+                    total = self.parseJSON["businesses"][i]["name"]
+                    self.resultCount = self.resultCount + 1
+                    i = i + 1
+                }
+            }
+
+            self.myRequest.leave()
+            self.myRequest.notify(queue: DispatchQueue.main, execute:{
+                if self.resultCount < 0 {
+                    self.displayAlert("Sorry", message: "No restauraunts were found.")
+                } else{
+                    self.getRestaurants()
+                    self.getID()
+                    self.getDistance()
+                    self.getAddress()
+                    self.getCategory()
+                    self.getRating()
+                    self.getPhone()
+                    self.getPrice()
+                    //self.getHours()
+                    self.segueToTable()
+                }
+            })
         }
     }
+    
+    func getRestaurants() {
+        for i in (0..<self.resultCount) {
+            let name = self.parseJSON["businesses"][i]["name"].string
+            self.restaurants.append(name!)
+        }
+    }
+    func getID() {
+        for i in (0..<self.resultCount) {
+            let id = self.parseJSON["businesses"][i]["id"].string
+            self.id.append(id!)
+        }
+    }
+    
+    func getDistance() {
+        for i in (0..<self.resultCount) {
+            let distance = self.parseJSON["businesses"][i]["distance"].int
+            self.distance.append(Decimal(distance!))
+        }
+    }
+    func getAddress() {
+        for i in (0..<self.resultCount) {
+            let address = self.parseJSON["businesses"][i]["location"]["address1"].string
+            self.address1.append(address!)
+            
+            let city = self.parseJSON["businesses"][i]["location"]["city"].string
+            let state = self.parseJSON["businesses"][i]["location"]["state"].string
+            let zip = self.parseJSON["businesses"][i]["location"]["zip_code"].string
+            self.address2.append("\(city!), \(state!) \(zip!)")
+        }
+    }
+    func getCategory() {
+        for i in (0..<self.resultCount) {
+            let category = self.parseJSON["businesses"][i]["categories"][0]["title"].string
+            self.category.append(category!)
+        }
+    }
+    
+    func getRating() {
+        for i in (0..<self.resultCount) {
+            let rating = self.parseJSON["businesses"][i]["rating"].int
+            self.rating.append(Decimal(rating!))
+        }
+    }
+    func getPhone() {
+        for i in (0..<self.resultCount) {
+            let phone = self.parseJSON["businesses"][i]["phone"].string
+            self.phone.append(phone!)
+        }
+    }
+    func getPrice() {
+        for i in (0..<self.resultCount) {
+            let price = self.parseJSON["businesses"][i]["price"].string
+            self.price.append(price!)
+        }
+    }
+    /*func getHours() {
+        for i in (0..<self.resultCount) {
+            let name = self.parseJSON["businesses"][i]["id"].string
+            self.id.append(name!)
+        }
+    }*/
 
+    func displayAlert(_ title:String, message:String) {
+        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+        }
+        self.alertController!.addAction(okAction)
+        self.present(self.alertController!, animated: true, completion:nil)
+    }
+    
+    func segueToTable() {
+        let vc = UIStoryboard(name:"food", bundle:nil).instantiateViewController(withIdentifier: "foodTable") as! foodTableVC
+        vc.restaurants = self.restaurants
+        vc.id = self.id
+        vc.distance = self.distance
+        vc.address1 = self.address1
+        vc.address2 = self.address2
+        vc.category = self.category
+        vc.rating = self.rating
+        vc.phone = self.phone
+        vc.price = self.price
+        //vc.hours = self.hours
+        vc.eventDate = self.eventDate
+        self.show(vc, sender: self)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
+
+
+extension searchFoodVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerValues[component].count
+    }
+    
+    func pickerView(_ pickerview: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerValues[component][row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0 {
+            maxPrice = "1"
+        } else if row == 1 {
+            maxPrice = "1,2"
+        } else if row == 2 {
+            maxPrice = "1,2,3"
+        } else if row == 3 {
+            maxPrice = "1,2,3,4"
+        }
+    }
+}
+
