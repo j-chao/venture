@@ -24,12 +24,13 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     
     @IBOutlet weak var pricePicker: UIPickerView!
     var pickerValues = [[String]]()
-    var maxPrice:String!
+    var maxPrice = "1"
     
     var token:String? = nil
     var parseJSON: JSON!
     
     var resultCount = -1
+    var resultCountDetails = -1
     var restaurants = [String]()
     var id = [String]()
     var distance = [Decimal]()
@@ -39,7 +40,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     var rating = [Decimal]()
     var phone = [String]()
     var price = [String]()
-    var hours = [Array<Any>]()
+    var hours = [[String:[String]]]()
     
     @IBOutlet weak var addressTxt: UITextField!
     @IBOutlet weak var openSwitch: UISwitch!
@@ -70,6 +71,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         resultCount = -1
+        resultCountDetails = -1
         restaurants.removeAll()
         id.removeAll()
         distance.removeAll()
@@ -79,8 +81,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         rating.removeAll()
         phone.removeAll()
         price.removeAll()
-        //hours.removeAll()
-        
+        hours.removeAll()
         locationSwitch.setOn(false, animated: false)
         addressTxt.text = ""
     }
@@ -168,11 +169,12 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     // modify the url:String with the business ID to return business specific details.
     // ie: current url:String is hard-coded for Keybey Lane Cafe
     
-    func yelpBusinessDetails() {
-        let url:String = "https://api.yelp.com/v3/businesses/kerbey-lane-cafe-austin-4"
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(self.token!)"
-        ]
+    func yelpBusinessDetails(ID:String) {
+        myRequest.enter()
+        print ("pls", ID)
+        let url:String = "https://api.yelp.com/v3/businesses/"+ID
+        //let url:String = "https://api.yelp.com/v3/businesses/asian-box-san-francisco"
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
         Alamofire.request(url, headers: headers).responseJSON { response in
             guard response.result.error == nil else {
                 print("error getting business details from Yelp")
@@ -184,12 +186,75 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 print("Error: \(response.result.error)")
                 return
             }
-            print (json)
-        }
         
+            //print (json)
+            self.parseJSON = JSON(json)
+        
+            self.myRequest.leave()
+            
+            var monHours = [String]()
+            var tueHours = [String]()
+            var wedHours = [String]()
+            var thuHours = [String]()
+            var friHours = [String]()
+            var satHours = [String]()
+            var sunHours = [String]()
+            
+            var i = 0
+            var total = self.parseJSON["hours"][0]["open"][0]["day"]
+             
+            if total != JSON.null {
+                while total != JSON.null {
+                    total = self.parseJSON["hours"][0]["open"][i]["day"]
+                    self.resultCountDetails = self.resultCountDetails + 1
+                    i = i + 1
+                }
+            }
+         
+            for i in (0..<self.resultCountDetails) {
+                var open = self.parseJSON["hours"][0]["open"][i]["start"].string! as String
+                open.insert(":", at: open.index(open.startIndex, offsetBy: +2))
+                open = militaryToRegular(timeStr: open)
+                
+                var close = self.parseJSON["hours"][0]["open"][i]["end"].string! as String
+                close.insert(":", at: open.index(open.startIndex, offsetBy: +2))
+                close = militaryToRegular(timeStr: close)
+                
+                let day = self.parseJSON["hours"][0]["open"][i]["day"].int
+                if day == 0 {
+                    monHours.append(open+" - "+close)
+                }else if day == 1 {
+                    tueHours.append(open+" - "+close)
+                }else if day == 2 {
+                    wedHours.append(open+" - "+close)
+                }else if day == 3 {
+                    thuHours.append(open+" - "+close)
+                }else if day == 4 {
+                    friHours.append(open+" - "+close)
+                }else if day == 5 {
+                    satHours.append(open+" - "+close)
+                }else {
+                    sunHours.append(open+" - "+close)
+                }
+            }
+            self.resultCountDetails = -1
+            var hoursDict = [String:[String]]()
+            hoursDict["Mon"] = monHours
+            hoursDict["Tue"] = tueHours
+            hoursDict["Wed"] = wedHours
+            hoursDict["Thu"] = thuHours
+            hoursDict["Fri"] = friHours
+            hoursDict["Sat"] = satHours
+            hoursDict["Sun"] = sunHours
+            
+            self.hours.append(hoursDict)
+            print ("SCREAMING")
+            
+        }
+
     }
-    
-    
+
+
     // yelpSearch() returns up to 1000 businesses based on the provided search criteria as a JSON formatted data object. It has some basic information about the business.
     // user can add/remove/change search criteria by modifying the parameters argument. Location is a required parameter.
     // currently, the location parameter has been hard-coded in as Austin, TX
@@ -230,7 +295,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 return
             }
             
-            print (json)
+            //print (json)
             self.parseJSON = JSON(json)
             var i = 0
             var total = self.parseJSON["businesses"][0]["name"]
@@ -256,8 +321,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                     self.getRating()
                     self.getPhone()
                     self.getPrice()
-                    //self.getHours()
-                    self.segueToTable()
+                    self.getHours()
                 }
             })
         }
@@ -271,7 +335,8 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
     func getID() {
         for i in (0..<self.resultCount) {
-            let id = self.parseJSON["businesses"][i]["id"].string
+            var id = self.parseJSON["businesses"][i]["id"].string
+            id = id?.folding(options: .diacriticInsensitive, locale: .current)
             self.id.append(id!)
         }
     }
@@ -308,7 +373,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
     func getPhone() {
         for i in (0..<self.resultCount) {
-            let phone = self.parseJSON["businesses"][i]["phone"].string
+            let phone = self.parseJSON["businesses"][i]["display_phone"].string
             self.phone.append(phone!)
         }
     }
@@ -318,12 +383,15 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             self.price.append(price!)
         }
     }
-    /*func getHours() {
-        for i in (0..<self.resultCount) {
-            let name = self.parseJSON["businesses"][i]["id"].string
-            self.id.append(name!)
+    func getHours() {
+       for ID in id {
+            self.yelpBusinessDetails(ID: ID)
         }
-    }*/
+        self.myRequest.notify(queue: DispatchQueue.main, execute: {
+            print (self.hours)
+            self.segueToTable()
+        })
+    }
 
     func displayAlert(_ title:String, message:String) {
         self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
@@ -344,7 +412,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         vc.rating = self.rating
         vc.phone = self.phone
         vc.price = self.price
-        //vc.hours = self.hours
+        vc.hours = self.hours
         vc.eventDate = self.eventDate
         self.show(vc, sender: self)
     }

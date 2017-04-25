@@ -82,6 +82,14 @@ func timeFromString (timeStr:String) -> Date {
     return dateFormatter.date(from: timeStr)!
 }
 
+func militaryToRegular (timeStr:String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    let date = dateFormatter.date(from: timeStr)
+    dateFormatter.dateFormat = "h:mm a"
+    return dateFormatter.string(from: date!)
+}
+
 func calculateDays(start: Date, end: Date) -> Int {
     let currentCalendar = Calendar.current
     guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {

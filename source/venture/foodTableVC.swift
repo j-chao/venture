@@ -19,6 +19,7 @@ class foodTableVC: UITableViewController {
     var rating = [Decimal]()
     var phone = [String]()
     var price = [String]()
+    var hours = [[String:[String]]]()
     
     var eventDate:Date!
 
@@ -39,7 +40,7 @@ class foodTableVC: UITableViewController {
             rating.removeAll()
             phone.removeAll()
             price.removeAll()
-            //hours.removeAll()
+            hours.removeAll()
         }
     }
 
@@ -72,6 +73,8 @@ class foodTableVC: UITableViewController {
             vc.rating = self.rating[indexPath.row]
             vc.phoneStr = self.phone[indexPath.row]
             vc.priceStr = self.price[indexPath.row]
+            print (indexPath.row)
+            vc.hours = self.hours[indexPath.row]
             vc.eventDate = self.eventDate
             }
         }

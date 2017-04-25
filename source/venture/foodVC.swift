@@ -17,6 +17,7 @@ class foodVC: UIViewController {
     var rating:Decimal?
     var phoneStr:String?
     var priceStr:String?
+    var hours = [String:[String]]()
     
     var eventDate:Date!
     
@@ -26,6 +27,13 @@ class foodVC: UIViewController {
     @IBOutlet weak var foodRatingLbl: UILabel!
     @IBOutlet weak var foodCategoryLbl: UILabel!
     @IBOutlet weak var foodPriceLbl: UILabel!
+    @IBOutlet weak var monHours: UILabel!
+    @IBOutlet weak var tueHours: UILabel!
+    @IBOutlet weak var wedHours: UILabel!
+    @IBOutlet weak var thuHours: UILabel!
+    @IBOutlet weak var friHours: UILabel!
+    @IBOutlet weak var satHours: UILabel!
+    @IBOutlet weak var sunHours: UILabel!
     
     override func viewDidLoad() {
         self.setBackground()
@@ -37,6 +45,15 @@ class foodVC: UIViewController {
         foodRatingLbl.text = "\(rating!) / 5"
         foodCategoryLbl.text = categoryStr
         foodPriceLbl.text = priceStr
+        monHours.text = hours["Mon"]?.joined(separator: ", ")
+        tueHours.text = hours["Tue"]?.joined(separator: ", ")
+        wedHours.text = hours["Wed"]?.joined(separator: ", ")
+        thuHours.text = hours["Thu"]?.joined(separator: ", ")
+        friHours.text = hours["Fri"]?.joined(separator: ", ")
+        satHours.text = hours["Sat"]?.joined(separator: ", ")
+        sunHours.text = hours["Sun"]?.joined(separator: ", ")
+        
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
