@@ -45,7 +45,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     
     @IBOutlet weak var addressTxt: UITextField!
     @IBOutlet weak var openSwitch: UISwitch!
-
+    
     @IBOutlet weak var locationSwitch: UISwitch!
     
     override func viewDidLoad() {
@@ -88,7 +88,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         locationSwitch.setOn(false, animated: false)
         addressTxt.text = ""
     }
-
+    
     @IBAction func locationSwitchOn(_ sender: UISwitch) {
         if self.locationSwitch.isOn{
             print ("location check")
@@ -124,16 +124,16 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         if addressTxt.text!.isEmpty && self.locationSwitch.isOn == false{
             self.displayAlert("Error", message: "Please provide a location.")
         } else{
-                self.yelpSearch()
+            self.yelpSearch()
         }
         locationManager.stopUpdatingLocation()
     }
-
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     func getToken() {
         let url: String = "https://api.yelp.com/oauth2/token"
         let params: [String: Any] =
@@ -163,28 +163,30 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         
     }
     
-    func yelpBusinessDetails(id:[String]) {
+    func yelpBusinessDetails(ID:String) {
+        detailsRequest.enter()
+        print ("businessID: ", ID)
+        let url:String = "https://api.yelp.com/v3/businesses/"+ID
         let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
-
-        for ID in id {
-            print ("businessID: ", ID)
-            detailsRequest.enter()
-            let url:String = "https://api.yelp.com/v3/businesses/"+ID
-            Alamofire.request(url, headers: headers).responseJSON { response in
-                guard response.result.error == nil else {
-                    print("error getting business details from Yelp")
-                    print(response.result.error!)
-                    return
-                }
-                guard let json = response.result.value as? [String: Any] else {
-                    print("didn't get businessID object as JSON from API")
-                    print("Error: \(response.result.error)")
-                    return
-                }
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            guard response.result.error == nil else {
+                print("error getting business details from Yelp")
+                print(response.result.error!)
+                return
+            }
+            guard let json = response.result.value as? [String: Any] else {
+                print("didn't get businessID object as JSON from API")
+                print("Error: \(response.result.error)")
+                return
+            }
+            
+            self.parseJSON = JSON(json)
+            
+            self.detailsRequest.leave()
+            
+            
+            self.detailsRequest.notify(queue: DispatchQueue.main, execute: {
                 
-                self.parseJSON = JSON(json)
-                
-                self.detailsRequest.leave()
                 var monHours = [String]()
                 var tueHours = [String]()
                 var wedHours = [String]()
@@ -241,14 +243,13 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 hoursDict["Sun"] = sunHours
                 
                 self.hours.append(hoursDict)
-
-            }
+            })
+            
         }
-        self.detailsRequest.notify(queue: DispatchQueue.main, execute: {
-            self.segueToTable()
-        })
+        
+        
     }
-
+    
     func yelpSearch() {
         myRequest.enter()
         let url:String = "https://api.yelp.com/v3/businesses/search"
@@ -298,7 +299,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             }
             
             print (self.resultCount)
-
+            
             self.myRequest.leave()
             self.myRequest.notify(queue: DispatchQueue.main, execute:{
                 if self.resultCount < 0 {
@@ -374,11 +375,15 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
     
     func getHours() {
-        self.yelpBusinessDetails(id: id)
+        for ID in id {
+            self.yelpBusinessDetails(ID: ID)
+        }
+        self.myRequest.notify(queue: DispatchQueue.main, execute: {
+            print (self.hours)
+            self.segueToTable()
+        })
     }
     
-
-
     func displayAlert(_ title:String, message:String) {
         self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -435,4 +440,3 @@ extension searchFoodVC: UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
 }
-
