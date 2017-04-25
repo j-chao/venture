@@ -37,10 +37,10 @@ class FlightsSearchVC: UIViewController {
         pickerView.backgroundColor = .white
         pickerView.setValue(0.8, forKeyPath: "alpha")
         origin.attributedPlaceholder = NSAttributedString(
-            string: "origin",
+            string: "origin airport code",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
         destination.attributedPlaceholder = NSAttributedString(
-            string: "destination",
+            string: "destination airport code",
             attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
        
         pickerView.delegate = self

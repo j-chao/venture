@@ -42,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c73-zT-Inc" id="wCf-E7-rgk">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -254,6 +254,7 @@
                             <constraint firstItem="YUA-TV-yWS" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leading" id="G4V-Ee-E35"/>
                             <constraint firstItem="gps-kv-WWu" firstAttribute="trailing" secondItem="jLm-9A-HfG" secondAttribute="trailing" id="KLL-Sq-Rpd"/>
                             <constraint firstItem="jYs-Lp-ODh" firstAttribute="centerX" secondItem="jLm-9A-HfG" secondAttribute="centerX" id="TON-HI-OcU"/>
+                            <constraint firstItem="jLm-9A-HfG" firstAttribute="top" secondItem="gps-kv-WWu" secondAttribute="bottom" constant="19" id="UAa-oq-8WZ"/>
                             <constraint firstItem="jYs-Lp-ODh" firstAttribute="centerY" secondItem="5Nt-ex-ern" secondAttribute="centerY" constant="-5" id="aVW-cI-8ro"/>
                             <constraint firstItem="jYs-Lp-ODh" firstAttribute="leading" secondItem="5Nt-ex-ern" secondAttribute="trailing" constant="42" id="bRJ-59-xQZ"/>
                             <constraint firstItem="gps-kv-WWu" firstAttribute="leading" secondItem="jYs-Lp-ODh" secondAttribute="trailing" constant="42" id="hVs-To-SX2"/>

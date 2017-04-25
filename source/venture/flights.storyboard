@@ -196,6 +196,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fib-2t-eVY" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                 <rect key="frame" x="115" y="560" width="143" height="30"/>
                                 <color key="backgroundColor" red="0.97383814099999999" green="0.74096690430000001" blue="0.22298247869999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9YZ-eT-SXD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add to Itinerary">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -277,6 +280,7 @@
                                 <constraints>
                                     <constraint firstItem="Ehh-ZT-V3T" firstAttribute="trailing" secondItem="FM8-JD-26t" secondAttribute="trailing" id="0Cm-SY-hnN"/>
                                     <constraint firstItem="FfC-Pf-2vF" firstAttribute="baseline" secondItem="320-Le-SVn" secondAttribute="baseline" id="2Ca-HZ-U5p"/>
+                                    <constraint firstItem="wk8-y2-lmL" firstAttribute="top" secondItem="g9d-OX-hrT" secondAttribute="top" constant="36" id="3JC-cB-07C"/>
                                     <constraint firstItem="wk8-y2-lmL" firstAttribute="leading" secondItem="pSA-8q-wld" secondAttribute="leading" id="6Eh-fh-ZC5"/>
                                     <constraint firstItem="ii0-4N-E06" firstAttribute="trailing" secondItem="NUh-bR-JFs" secondAttribute="trailing" id="7wJ-3r-FlA"/>
                                     <constraint firstItem="NUh-bR-JFs" firstAttribute="baseline" secondItem="cOm-2y-aJI" secondAttribute="baseline" id="HvM-rQ-eGk"/>
