@@ -16,6 +16,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     var eventDate:Date!
     let myRequest = DispatchGroup()
     let tokenRequest = DispatchGroup()
+    let detailsRequest = DispatchGroup()
     
     let locationManager = CLLocationManager()
     var currentLocation:CLLocation!
@@ -24,13 +25,13 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     
     @IBOutlet weak var pricePicker: UIPickerView!
     var pickerValues = [[String]]()
-    var maxPrice = "1"
+    var maxPrice:String!
     
     var token:String? = nil
     var parseJSON: JSON!
     
-    var resultCount = -1
-    var resultCountDetails = -1
+    var resultCount:Int!
+    var resultCountDetails:Int!
     var restaurants = [String]()
     var id = [String]()
     var distance = [Decimal]()
@@ -48,6 +49,10 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var locationSwitch: UISwitch!
     
     override func viewDidLoad() {
+        self.maxPrice = "1"
+        self.resultCount = -1
+        self.resultCountDetails = -1
+        
         self.setBackground()
         super.viewDidLoad()
         locationSwitch.setOn(false, animated: true)
@@ -58,13 +63,11 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         pricePicker.dataSource = self
         pickerValues = [["$", "$$", "$$$", "$$$$"]]
         
-        // requesting the access_token from Yelp takes time and therefore, it is necessary to wait until the request is complete before we can proceed with using the obtained token to request results from Yelp.
         tokenRequest.enter()
         self.getToken()
-       
-        // execute after getToken() is finished
         tokenRequest.notify(queue: DispatchQueue.main, execute: {
             print("finished getToken()")
+            
         })
     }
     
@@ -131,7 +134,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         self.view.endEditing(true)
     }
 
-    // getToken() gets the access_token from Yelp, and is necessary for all HTTP requests
     func getToken() {
         let url: String = "https://api.yelp.com/oauth2/token"
         let params: [String: Any] =
@@ -142,18 +144,15 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default)
             .responseJSON { response in
                 guard response.result.error == nil else {
-                    // got an error in getting the data, need to handle it
                     print("error getting YELP access_token")
                     print(response.result.error!)
                     return
                 }
-                // make sure we got some JSON since that's what we expect
                 guard let json = response.result.value as? [String: Any] else {
                     print("error getting JSON from YELP")
                     print("Error: \(response.result.error)")
                     return
                 }
-                
                 guard let access_token = json["access_token"] as? String else {
                     print("error getting access_token from JSON")
                     return
@@ -164,16 +163,10 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         
     }
     
-    // yelpBusinessDetails() requests business specific details from Yelp and returns a JSON formatted data object
-    // documentation: https://www.yelp.com/developers/documentation/v3/business
-    // modify the url:String with the business ID to return business specific details.
-    // ie: current url:String is hard-coded for Keybey Lane Cafe
-    
     func yelpBusinessDetails(ID:String) {
-        myRequest.enter()
-        print ("pls", ID)
+        detailsRequest.enter()
+        print ("businessID: ", ID)
         let url:String = "https://api.yelp.com/v3/businesses/"+ID
-        //let url:String = "https://api.yelp.com/v3/businesses/asian-box-san-francisco"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
         Alamofire.request(url, headers: headers).responseJSON { response in
             guard response.result.error == nil else {
@@ -187,11 +180,13 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
                 return
             }
         
-            //print (json)
             self.parseJSON = JSON(json)
         
-            self.myRequest.leave()
+            self.detailsRequest.leave()
+           
             
+            self.detailsRequest.notify(queue: DispatchQueue.main, execute: {
+                
             var monHours = [String]()
             var tueHours = [String]()
             var wedHours = [String]()
@@ -248,18 +243,13 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             hoursDict["Sun"] = sunHours
             
             self.hours.append(hoursDict)
-            print ("SCREAMING")
+            })
             
         }
+            
 
     }
 
-
-    // yelpSearch() returns up to 1000 businesses based on the provided search criteria as a JSON formatted data object. It has some basic information about the business.
-    // user can add/remove/change search criteria by modifying the parameters argument. Location is a required parameter.
-    // currently, the location parameter has been hard-coded in as Austin, TX
-    // To get detailed information and reviews, please use the business id returned here and refer to yelpBusinessDetails() endpoints.
-    // documentation: https://www.yelp.com/developers/documentation/v3/business_search
     func yelpSearch() {
         myRequest.enter()
         let url:String = "https://api.yelp.com/v3/businesses/search"
@@ -298,21 +288,23 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             //print (json)
             self.parseJSON = JSON(json)
             var i = 0
-            var total = self.parseJSON["businesses"][0]["name"]
+            var businessName = self.parseJSON["businesses"][0]["name"]
             
-            if total != JSON.null {
-                while total != JSON.null {
-                    total = self.parseJSON["businesses"][i]["name"]
+            if businessName != JSON.null {
+                while businessName != JSON.null {
+                    businessName = self.parseJSON["businesses"][i]["name"]
                     self.resultCount = self.resultCount + 1
                     i = i + 1
                 }
             }
+            
+            print (self.resultCount)
 
             self.myRequest.leave()
             self.myRequest.notify(queue: DispatchQueue.main, execute:{
                 if self.resultCount < 0 {
                     self.displayAlert("Sorry", message: "No restauraunts were found.")
-                } else{
+                } else {
                     self.getRestaurants()
                     self.getID()
                     self.getDistance()
@@ -340,7 +332,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             self.id.append(id!)
         }
     }
-    
     func getDistance() {
         for i in (0..<self.resultCount) {
             let distance = self.parseJSON["businesses"][i]["distance"].int
@@ -364,7 +355,6 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             self.category.append(category!)
         }
     }
-    
     func getRating() {
         for i in (0..<self.resultCount) {
             let rating = self.parseJSON["businesses"][i]["rating"].int
@@ -383,6 +373,7 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
             self.price.append(price!)
         }
     }
+    
     func getHours() {
        for ID in id {
             self.yelpBusinessDetails(ID: ID)
