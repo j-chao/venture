@@ -42,24 +42,29 @@ class AddEventVC: UIViewController {
         if fromFoodorPlace == true {
             eventDesc.text = eventDescStr
             eventLoc.text = eventLocStr
+        } else if fromFlight == true {
+            eventDesc.text = eventDescStr
+            let code = eventLocStr!
+            eventLoc.text = self.airportAddress(code: code)
+            eventTime.date = flightTime!
         }
-        
-        else{
-            if fromFlight == true {
-                eventDesc.text = eventDescStr
-                eventLoc.text = eventLocStr
-                eventTime.date = flightTime!
-                
-            }
-        }
-      //  if fromFlight == true {
-      //      eventDesc.text = eventDescStr
-      //      eventLoc.text = eventLocStr
-      //      eventTime.date = flightTime!
-      //  }
-        
     }
-   
+    
+    func airportAddress(code:String) -> String {
+        if code == "DFW " {
+            return "2400 Aviation Dr, DFW Airport, TX 75261"
+        } else if code == "JFK " {
+            return "Queens, NY 11430"
+        } else if code == "ORD " {
+            return "10000 W O'Hare Ave, Chicago, IL 60666"
+        } else if code == "SFO " {
+            return "San Francisco, CA 94128"
+        } else if code == "LAX " {
+            return "1 World Way, Los Angeles, CA 90045"
+        } else {
+            return code + "(airport address not supported)"
+        }
+    }
     
     @IBAction func addEventButton(_ sender: Any) {
         if eventDesc.text!.isEmpty || eventLoc.text!.isEmpty {
@@ -94,7 +99,6 @@ class AddEventVC: UIViewController {
         self.view.endEditing(true)
     }
    
-    
     func presentAllFieldsAlert() {
         let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {

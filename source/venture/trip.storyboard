@@ -17,7 +17,7 @@
                 <viewControllerPlaceholder storyboardName="settings" id="Zoi-2O-yrf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rg4-5b-8Uu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3355" y="-233"/>
+            <point key="canvasLocation" x="3337" y="-172"/>
         </scene>
         <!--itinerary-->
         <scene sceneID="Tcf-Rr-reh">
@@ -25,7 +25,7 @@
                 <viewControllerPlaceholder storyboardName="itinerary" id="MhN-lO-l91" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urh-dr-8Xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357" y="-34"/>
+            <point key="canvasLocation" x="3335" y="29"/>
         </scene>
         <!--Trip Creation-->
         <scene sceneID="nBg-x8-gti">
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAI-iT-MJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3589.5999999999999" y="427.73613193403304"/>
+            <point key="canvasLocation" x="3487" y="430"/>
         </scene>
         <!--Your Trips-->
         <scene sceneID="LrF-g6-jr4">
@@ -322,7 +322,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNT-bk-IHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="63"/>
+            <point key="canvasLocation" x="1927" y="63"/>
         </scene>
     </scenes>
     <resources>
