@@ -27,6 +27,7 @@ class foodTableVC: UITableViewController {
         self.setBackground()
         super.viewDidLoad()
         self.title = "Food"
+        print ("hours array:", self.hours)
     }
     
     override func willMove(toParentViewController parent: UIViewController?) {

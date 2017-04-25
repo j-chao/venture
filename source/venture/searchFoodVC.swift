@@ -163,91 +163,90 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
         
     }
     
-    func yelpBusinessDetails(ID:String) {
-        detailsRequest.enter()
-        print ("businessID: ", ID)
-        let url:String = "https://api.yelp.com/v3/businesses/"+ID
+    func yelpBusinessDetails(id:[String]) {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(self.token!)"]
-        Alamofire.request(url, headers: headers).responseJSON { response in
-            guard response.result.error == nil else {
-                print("error getting business details from Yelp")
-                print(response.result.error!)
-                return
-            }
-            guard let json = response.result.value as? [String: Any] else {
-                print("didn't get businessID object as JSON from API")
-                print("Error: \(response.result.error)")
-                return
-            }
-        
-            self.parseJSON = JSON(json)
-        
-            self.detailsRequest.leave()
-           
-            
-            self.detailsRequest.notify(queue: DispatchQueue.main, execute: {
-                
-            var monHours = [String]()
-            var tueHours = [String]()
-            var wedHours = [String]()
-            var thuHours = [String]()
-            var friHours = [String]()
-            var satHours = [String]()
-            var sunHours = [String]()
-            
-            var i = 0
-            var total = self.parseJSON["hours"][0]["open"][0]["day"]
-             
-            if total != JSON.null {
-                while total != JSON.null {
-                    total = self.parseJSON["hours"][0]["open"][i]["day"]
-                    self.resultCountDetails = self.resultCountDetails + 1
-                    i = i + 1
-                }
-            }
-         
-            for i in (0..<self.resultCountDetails) {
-                var open = self.parseJSON["hours"][0]["open"][i]["start"].string! as String
-                open.insert(":", at: open.index(open.startIndex, offsetBy: +2))
-                open = militaryToRegular(timeStr: open)
-                
-                var close = self.parseJSON["hours"][0]["open"][i]["end"].string! as String
-                close.insert(":", at: open.index(open.startIndex, offsetBy: +2))
-                close = militaryToRegular(timeStr: close)
-                
-                let day = self.parseJSON["hours"][0]["open"][i]["day"].int
-                if day == 0 {
-                    monHours.append(open+" - "+close)
-                }else if day == 1 {
-                    tueHours.append(open+" - "+close)
-                }else if day == 2 {
-                    wedHours.append(open+" - "+close)
-                }else if day == 3 {
-                    thuHours.append(open+" - "+close)
-                }else if day == 4 {
-                    friHours.append(open+" - "+close)
-                }else if day == 5 {
-                    satHours.append(open+" - "+close)
-                }else {
-                    sunHours.append(open+" - "+close)
-                }
-            }
-            self.resultCountDetails = -1
-            var hoursDict = [String:[String]]()
-            hoursDict["Mon"] = monHours
-            hoursDict["Tue"] = tueHours
-            hoursDict["Wed"] = wedHours
-            hoursDict["Thu"] = thuHours
-            hoursDict["Fri"] = friHours
-            hoursDict["Sat"] = satHours
-            hoursDict["Sun"] = sunHours
-            
-            self.hours.append(hoursDict)
-            })
-            
-        }
-            
 
+        for ID in id {
+            print ("businessID: ", ID)
+            detailsRequest.enter()
+            let url:String = "https://api.yelp.com/v3/businesses/"+ID
+            Alamofire.request(url, headers: headers).responseJSON { response in
+                guard response.result.error == nil else {
+                    print("error getting business details from Yelp")
+                    print(response.result.error!)
+                    return
+                }
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get businessID object as JSON from API")
+                    print("Error: \(response.result.error)")
+                    return
+                }
+                
+                self.parseJSON = JSON(json)
+                
+                self.detailsRequest.leave()
+                var monHours = [String]()
+                var tueHours = [String]()
+                var wedHours = [String]()
+                var thuHours = [String]()
+                var friHours = [String]()
+                var satHours = [String]()
+                var sunHours = [String]()
+                
+                var i = 0
+                var total = self.parseJSON["hours"][0]["open"][0]["day"]
+                
+                if total != JSON.null {
+                    while total != JSON.null {
+                        total = self.parseJSON["hours"][0]["open"][i]["day"]
+                        self.resultCountDetails = self.resultCountDetails + 1
+                        i = i + 1
+                    }
+                }
+                
+                for i in (0..<self.resultCountDetails) {
+                    var open = self.parseJSON["hours"][0]["open"][i]["start"].string! as String
+                    open.insert(":", at: open.index(open.startIndex, offsetBy: +2))
+                    open = militaryToRegular(timeStr: open)
+                    
+                    var close = self.parseJSON["hours"][0]["open"][i]["end"].string! as String
+                    close.insert(":", at: open.index(open.startIndex, offsetBy: +2))
+                    close = militaryToRegular(timeStr: close)
+                    
+                    let day = self.parseJSON["hours"][0]["open"][i]["day"].int
+                    if day == 0 {
+                        monHours.append(open+" - "+close)
+                    }else if day == 1 {
+                        tueHours.append(open+" - "+close)
+                    }else if day == 2 {
+                        wedHours.append(open+" - "+close)
+                    }else if day == 3 {
+                        thuHours.append(open+" - "+close)
+                    }else if day == 4 {
+                        friHours.append(open+" - "+close)
+                    }else if day == 5 {
+                        satHours.append(open+" - "+close)
+                    }else {
+                        sunHours.append(open+" - "+close)
+                    }
+                }
+                self.resultCountDetails = -1
+                var hoursDict = [String:[String]]()
+                hoursDict["Mon"] = monHours
+                hoursDict["Tue"] = tueHours
+                hoursDict["Wed"] = wedHours
+                hoursDict["Thu"] = thuHours
+                hoursDict["Fri"] = friHours
+                hoursDict["Sat"] = satHours
+                hoursDict["Sun"] = sunHours
+                
+                self.hours.append(hoursDict)
+
+            }
+        }
+        self.detailsRequest.notify(queue: DispatchQueue.main, execute: {
+            self.segueToTable()
+        })
     }
 
     func yelpSearch() {
@@ -375,14 +374,10 @@ class searchFoodVC: UIViewController, CLLocationManagerDelegate  {
     }
     
     func getHours() {
-       for ID in id {
-            self.yelpBusinessDetails(ID: ID)
-        }
-        self.myRequest.notify(queue: DispatchQueue.main, execute: {
-            print (self.hours)
-            self.segueToTable()
-        })
+        self.yelpBusinessDetails(id: id)
     }
+    
+
 
     func displayAlert(_ title:String, message:String) {
         self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
