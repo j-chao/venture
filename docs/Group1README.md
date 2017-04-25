@@ -19,6 +19,7 @@
 
 ## Differences  
 - For simplicity of the app, searching for flights will only return non-stop options.
+- Automated address lookup only spported for the following airports: DFW, JFK, ORD, SFO, and LAX)
 
 
 
