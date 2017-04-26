@@ -50,6 +50,7 @@ class AddEventVC: UIViewController {
         }
     }
     
+
     func airportAddress (code:String) -> String {
         if code == "DFW " {
             return "2400 Aviation Dr, DFW Airport, TX 75261"
@@ -64,9 +65,7 @@ class AddEventVC: UIViewController {
         } else {
             return code + " (airport address not supported)"
         }
-    
     }
-   
     
     @IBAction func addEventButton(_ sender: Any) {
         if eventDesc.text!.isEmpty || eventLoc.text!.isEmpty {
@@ -101,7 +100,6 @@ class AddEventVC: UIViewController {
         self.view.endEditing(true)
     }
    
-    
     func presentAllFieldsAlert() {
         let alert = UIAlertController(title: "Error", message: "Please fill out all fields." , preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {

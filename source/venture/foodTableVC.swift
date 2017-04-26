@@ -19,7 +19,6 @@ class foodTableVC: UITableViewController {
     var rating = [Decimal]()
     var phone = [String]()
     var price = [String]()
-    var hours = [[String:[String]]]()
     
     var eventDate:Date!
 
@@ -27,7 +26,6 @@ class foodTableVC: UITableViewController {
         self.setBackground()
         super.viewDidLoad()
         self.title = "Food"
-        print ("hours array:", self.hours)
     }
     
     override func willMove(toParentViewController parent: UIViewController?) {
@@ -41,7 +39,6 @@ class foodTableVC: UITableViewController {
             rating.removeAll()
             phone.removeAll()
             price.removeAll()
-            hours.removeAll()
         }
     }
 
@@ -74,8 +71,6 @@ class foodTableVC: UITableViewController {
             vc.rating = self.rating[indexPath.row]
             vc.phoneStr = self.phone[indexPath.row]
             vc.priceStr = self.price[indexPath.row]
-            print (indexPath.row)
-            vc.hours = self.hours[indexPath.row]
             vc.eventDate = self.eventDate
             }
         }

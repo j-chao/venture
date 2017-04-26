@@ -220,4 +220,10 @@ class SettingsVC: UIViewController {
         self.view = nil
         parent?.addSubview(self.view)
     }
+    
+    
+    @IBAction func tripsButton(_ sender: UIBarButtonItem) {
+        _ = self.navigationController?.popViewController(animated:true)
+    }
+    
 }

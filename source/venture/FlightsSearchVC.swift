@@ -109,7 +109,6 @@ class FlightsSearchVC: UIViewController {
                 
                 self.myRequest.leave()
                 self.myRequest.notify(queue: DispatchQueue.main, execute: {
-                    print ("resultCount: \(self.resultCount)")
                     if self.resultCount < 0 {
                         self.presentNoFlightsAlert()
                     } else {
