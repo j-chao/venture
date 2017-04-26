@@ -181,7 +181,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="developed by..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-CE-Bd5">
-                                <rect key="frame" x="93" y="612" width="189" height="50"/>
+                                <rect key="frame" x="93" y="614" width="189" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cx8-zE-2FI"/>
                                 </constraints>
@@ -203,12 +203,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TE0-3n-zw0" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="51" id="0na-es-MaQ"/>
-                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="QFy-Vp-X7c" secondAttribute="bottom" constant="-12" id="2Gq-HF-VnL"/>
+                            <constraint firstItem="xhx-CE-Bd5" firstAttribute="top" secondItem="QFy-Vp-X7c" secondAttribute="bottom" constant="-10" id="2Gq-HF-VnL"/>
                             <constraint firstItem="xhx-CE-Bd5" firstAttribute="leading" secondItem="ruX-Ri-7d7" secondAttribute="leadingMargin" constant="77" id="40C-gn-vqi"/>
                             <constraint firstItem="TE0-3n-zw0" firstAttribute="centerX" secondItem="kZD-vA-Uyz" secondAttribute="centerX" id="7Ed-vj-joE"/>
                             <constraint firstItem="QFy-Vp-X7c" firstAttribute="top" secondItem="naN-Pc-bGa" secondAttribute="bottom" constant="75" id="8A9-Hn-bRr"/>
                             <constraint firstItem="QFy-Vp-X7c" firstAttribute="centerX" secondItem="xhx-CE-Bd5" secondAttribute="centerX" id="9up-so-qHe"/>
-                            <constraint firstAttribute="bottom" secondItem="xhx-CE-Bd5" secondAttribute="bottom" constant="5" id="RVQ-pT-7Bt"/>
+                            <constraint firstAttribute="bottom" secondItem="xhx-CE-Bd5" secondAttribute="bottom" constant="3" id="RVQ-pT-7Bt"/>
                             <constraint firstItem="kZD-vA-Uyz" firstAttribute="top" secondItem="TE0-3n-zw0" secondAttribute="bottom" constant="61" id="Vgx-Ns-PWu"/>
                             <constraint firstItem="TE0-3n-zw0" firstAttribute="centerX" secondItem="ruX-Ri-7d7" secondAttribute="centerX" id="XfQ-Qc-Vz9"/>
                             <constraint firstItem="naN-Pc-bGa" firstAttribute="centerX" secondItem="QFy-Vp-X7c" secondAttribute="centerX" id="YUE-fe-1ny"/>
