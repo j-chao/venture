@@ -3,14 +3,18 @@
 ## Implementation Contributions  
 - Justin Chao: 33%     
     * finished implementing Flights views using Google QPX Express API.
-    * added Budget view and read/write functionality to Firebase database.
+    * improved read/write functionality to Firebase database.
     * improved on UI throughout the app.
 
 
 - Julianne Crea: 33% 
+    * added Budget View.
+    * improved on UI throughout the app.
 
 
 - Connie Liu: 33% 
+    * improved on Foods Search feature.
+    * improved on UI throughout the app.
     
 
 ## Grading Level   
@@ -26,6 +30,6 @@
 
 ## Special Instructions   
 - requires CocoaPods version 1.0.0 or later
-- requires Xcode 7.0 or later (building with XCode 8.3.1 may result in Firebase
+- requires Xcode 7.0 or later (building with XCode 8.3 may result in Firebase
   compile warnings, but will not cause SIGABRT)
 - requires iOS 7 or later
