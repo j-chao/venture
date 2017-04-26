@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		065407295805CA8058A25EBF /* Pods_ventureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4E1484D99A0C6ADF021202 /* Pods_ventureUITests.framework */; };
 		07010DEAFC6FE4178310676C /* Pods_venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F469BE1278DCFDE718244A68 /* Pods_venture.framework */; };
-		900005AA1E9D807200ED8FC8 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900005A91E9D807200ED8FC8 /* restaurant.swift */; };
 		9042B1E91EA1D69300E0540D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9042B1E81EA1D69300E0540D /* CoreLocation.framework */; };
 		A824F923A8AD1303D5A97F6E /* Pods_ventureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425556A4BAE6A2E6B0AA0DA2 /* Pods_ventureTests.framework */; };
 		B50512AC1E70F3C3003F8ACA /* flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50512AB1E70F3C3003F8ACA /* flights.storyboard */; };
@@ -120,7 +119,6 @@
 		71C599A542A8038DF59A4AF3 /* Pods-ventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureTests/Pods-ventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		76BB950D1959F090CC76C33F /* Pods-ventureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ventureUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ventureUITests/Pods-ventureUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F346F116EAEEAA62FA14753 /* Pods-venture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-venture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-venture/Pods-venture.debug.xcconfig"; sourceTree = "<group>"; };
-		900005A91E9D807200ED8FC8 /* restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 		9042B1E81EA1D69300E0540D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B50512AB1E70F3C3003F8ACA /* flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = flights.storyboard; sourceTree = "<group>"; };
 		B50512AD1E70F3CA003F8ACA /* places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = places.storyboard; sourceTree = "<group>"; };
@@ -460,7 +458,6 @@
 		B59F6E991E9827DF00CEDE07 /* food VC */ = {
 			isa = PBXGroup;
 			children = (
-				900005A91E9D807200ED8FC8 /* restaurant.swift */,
 				B5A66C4B1E9C54C900D40D87 /* searchFoodVC.swift */,
 				B5A66C491E9C54C900D40D87 /* foodTableVC.swift */,
 				B5A66C4A1E9C54C900D40D87 /* foodVC.swift */,
@@ -821,7 +818,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900005AA1E9D807200ED8FC8 /* restaurant.swift in Sources */,
 				B5A66C4E1E9C54C900D40D87 /* foodVC.swift in Sources */,
 				B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */,
 				EA6320461E9C70A200D48CA0 /* yelpClient.swift in Sources */,
