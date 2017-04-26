@@ -55,7 +55,6 @@ class EventDetailsVC: UIViewController {
                 self.eventTime.text = timeDisplay as String?
                 self.eventDesc.text = desc as! String?
                 self.eventLoc.text = loc
-                
                 self.myRequest.leave()
             }
         })

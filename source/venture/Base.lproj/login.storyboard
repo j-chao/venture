@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -115,7 +115,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GnB-8P-Oew">
-                                <rect key="frame" x="102" y="495" width="116" height="29"/>
+                                <rect key="frame" x="102" y="465" width="116" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" red="0.98889657050000002" green="0.99242297329999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -139,7 +139,7 @@
                             <constraint firstItem="of3-KP-eBR" firstAttribute="leading" secondItem="FyF-0X-kua" secondAttribute="leading" id="QLh-OG-AKv"/>
                             <constraint firstItem="4UJ-gC-FpI" firstAttribute="centerX" secondItem="YSG-k2-L3I" secondAttribute="centerX" id="X8y-Um-74t"/>
                             <constraint firstAttribute="trailing" secondItem="zJ5-Yj-Jk0" secondAttribute="trailing" id="Y3w-UD-eMP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GnB-8P-Oew" secondAttribute="bottom" constant="44" id="c82-M0-6Dp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GnB-8P-Oew" secondAttribute="bottom" constant="74" id="c82-M0-6Dp"/>
                             <constraint firstItem="zJ5-Yj-Jk0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="h5j-8L-igD"/>
                             <constraint firstItem="FyF-0X-kua" firstAttribute="centerX" secondItem="YSG-k2-L3I" secondAttribute="centerX" id="hgv-ge-ZAB"/>
                             <constraint firstItem="GnB-8P-Oew" firstAttribute="centerX" secondItem="zJ5-Yj-Jk0" secondAttribute="centerX" id="jYH-8i-uw9"/>
@@ -210,7 +210,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwM-iD-7wd">
                                                     <rect key="frame" x="8" y="98" width="227" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.98823529409999999" green="0.99215686270000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -315,10 +314,9 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-Lr-vsG" customClass="MyCustomLabel" customModule="venture" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-Lr-vsG" customClass="UILabelX" customModule="venture" customModuleProvider="target">
                                             <rect key="frame" x="8" y="119" width="224" height="39"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.98823529409999999" green="0.99215686270000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVM-Pm-949">
@@ -371,7 +369,7 @@
                         <blurEffect style="extraLight"/>
                     </visualEffectView>
                     <connections>
-                        <outlet property="messageLbl" destination="cIE-Lr-vsG" id="aim-oK-NKY"/>
+                        <outlet property="messageLbl" destination="cIE-Lr-vsG" id="g0E-iO-uFf"/>
                         <outlet property="newEmail" destination="ua7-DS-onz" id="9DE-y2-H9w"/>
                         <outlet property="newPassword" destination="xVt-Jc-U81" id="ldj-SX-EOp"/>
                     </connections>

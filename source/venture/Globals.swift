@@ -12,7 +12,7 @@ import Firebase
 var tripLength:Int = 1
 var passedTrip:String = ""
 var timeFormat:String = "regular"
-var background:Int = 2
+var background:Int = 1
 
 func dateFromString (dateString:String) -> Date {
     let dateFormatter = DateFormatter()

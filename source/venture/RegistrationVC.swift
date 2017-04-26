@@ -13,7 +13,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var newEmail: UITextFieldX!
     @IBOutlet weak var newPassword: UITextFieldX!
-    @IBOutlet weak var messageLbl: MyCustomLabel!
+    @IBOutlet weak var messageLbl: UILabelX!
     
     override func viewDidLoad() {
         super.viewDidLoad()
