@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bdX-82-ErK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,7 +34,7 @@
                                 <rect key="frame" x="67" y="161" width="240" height="220"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-el-4Ia">
-                                        <rect key="frame" x="23" y="172" width="194" height="29"/>
+                                        <rect key="frame" x="23" y="165" width="194" height="29"/>
                                         <segments>
                                             <segment title="Regular Time"/>
                                             <segment title="Military Time"/>
@@ -115,21 +115,20 @@
                                 <color key="backgroundColor" red="0.94629171968717951" green="0.92002352817012178" blue="0.89172950578884547" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="0hQ-FT-b2A"/>
-                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="trailing" secondItem="YYQ-TC-w78" secondAttribute="trailing" id="1l6-RY-6WE"/>
-                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="top" secondItem="Ej4-z6-2Pv" secondAttribute="bottom" constant="8" symbolic="YES" id="2GY-C4-llj"/>
-                                    <constraint firstItem="Bjb-el-4Ia" firstAttribute="top" secondItem="YYQ-TC-w78" secondAttribute="bottom" constant="15" id="3DH-h7-4Ma"/>
-                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="trailing" secondItem="mpc-jJ-26E" secondAttribute="trailing" id="4uD-jW-Xbc"/>
-                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="top" secondItem="TE0-3n-zw0" secondAttribute="top" constant="17" id="Bit-cD-wpq"/>
-                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="top" secondItem="lHA-i9-DB2" secondAttribute="bottom" constant="6" id="CYk-Iy-4HL"/>
-                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="top" secondItem="mpc-jJ-26E" secondAttribute="bottom" constant="17" id="LMi-Hj-cud"/>
-                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="leading" secondItem="YYQ-TC-w78" secondAttribute="leading" id="Y8I-Bd-fyG"/>
-                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="mpc-jJ-26E" secondAttribute="leading" id="cY2-ew-CTN"/>
-                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerX" secondItem="YYQ-TC-w78" secondAttribute="centerX" id="iFa-8v-xOv"/>
-                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="centerX" secondItem="TE0-3n-zw0" secondAttribute="centerX" id="kSu-cc-Erj"/>
-                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="TE0-3n-zw0" secondAttribute="leading" constant="23" id="m7x-dO-vO2"/>
-                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="Bjb-el-4Ia" secondAttribute="leading" id="pk8-Vn-7zm"/>
-                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="trailing" secondItem="Bjb-el-4Ia" secondAttribute="trailing" id="re9-fv-DmQ"/>
-                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerY" secondItem="TE0-3n-zw0" secondAttribute="centerY" id="ysj-RB-JGN"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="mpc-jJ-26E" secondAttribute="leading" id="2tE-Nx-hOn"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="leading" secondItem="TE0-3n-zw0" secondAttribute="leading" constant="23" id="6zs-Hh-Jpe"/>
+                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerX" secondItem="YYQ-TC-w78" secondAttribute="centerX" id="C6a-XS-xoE"/>
+                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="centerY" secondItem="TE0-3n-zw0" secondAttribute="centerY" id="EOZ-ib-tFF"/>
+                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="top" secondItem="Ej4-z6-2Pv" secondAttribute="bottom" constant="8" symbolic="YES" id="P7r-nd-zJY"/>
+                                    <constraint firstItem="Bjb-el-4Ia" firstAttribute="top" secondItem="YYQ-TC-w78" secondAttribute="bottom" constant="8" symbolic="YES" id="Y3h-Gg-YU3"/>
+                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="trailing" secondItem="Bjb-el-4Ia" secondAttribute="trailing" id="fsI-o4-ElR"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="trailing" secondItem="mpc-jJ-26E" secondAttribute="trailing" id="gNP-Q3-Ro4"/>
+                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="top" secondItem="lHA-i9-DB2" secondAttribute="bottom" constant="6" id="iqC-fS-11s"/>
+                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="trailing" secondItem="YYQ-TC-w78" secondAttribute="trailing" id="jId-y0-VRx"/>
+                                    <constraint firstItem="mpc-jJ-26E" firstAttribute="leading" secondItem="YYQ-TC-w78" secondAttribute="leading" id="jQd-fw-TFt"/>
+                                    <constraint firstItem="Ej4-z6-2Pv" firstAttribute="top" secondItem="mpc-jJ-26E" secondAttribute="bottom" constant="17" id="nnq-ZM-ZuL"/>
+                                    <constraint firstItem="YYQ-TC-w78" firstAttribute="leading" secondItem="Bjb-el-4Ia" secondAttribute="leading" id="vAh-iY-L2p"/>
+                                    <constraint firstItem="lHA-i9-DB2" firstAttribute="centerX" secondItem="TE0-3n-zw0" secondAttribute="centerX" id="xLK-QQ-lqp"/>
                                     <constraint firstAttribute="width" constant="240" id="zpS-f2-GQm"/>
                                 </constraints>
                             </view>
