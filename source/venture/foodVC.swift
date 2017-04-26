@@ -38,9 +38,6 @@ class foodVC: UIViewController {
         foodRatingLbl.text = "\(rating!) / 5"
         foodCategoryLbl.text = categoryStr
         foodPriceLbl.text = priceStr
-
-        
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,7 +46,7 @@ class foodVC: UIViewController {
                 destinationVC.fromFoodorPlace = true
                 destinationVC.eventDate = self.eventDate
                 destinationVC.eventDescStr = nameStr
-                destinationVC.eventLocStr = "\(address1Str) \(address2Str)"
+                destinationVC.eventLocStr = "\(address1Str!) \(address2Str!)"
             }
         }
     }
