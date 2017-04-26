@@ -54,7 +54,6 @@
 		B5817E141EA621F8002D87C6 /* budget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5817E131EA621F8002D87C6 /* budget.storyboard */; };
 		B58266741E99970C007BA1E3 /* cityHorizon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266731E99970C007BA1E3 /* cityHorizon.jpg */; };
 		B58266761E99971E007BA1E3 /* blueMountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58266751E99971E007BA1E3 /* blueMountain.jpg */; };
-		B58653E21E9E27810040757B /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58653E11E9E27810040757B /* Appearance.swift */; };
 		B586929F1EA65E360069A048 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B586929E1EA65E360069A048 /* String.swift */; };
 		B58692A11EA6725A0069A048 /* FlightsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58692A01EA6725A0069A048 /* FlightsTableVC.swift */; };
 		B58D18471E7C70C000997360 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D18461E7C70C000997360 /* ResetPassVC.swift */; };
@@ -170,7 +169,6 @@
 		B5817E131EA621F8002D87C6 /* budget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = budget.storyboard; sourceTree = "<group>"; };
 		B58266731E99970C007BA1E3 /* cityHorizon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cityHorizon.jpg; sourceTree = "<group>"; };
 		B58266751E99971E007BA1E3 /* blueMountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueMountain.jpg; sourceTree = "<group>"; };
-		B58653E11E9E27810040757B /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		B586929E1EA65E360069A048 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B58692A01EA6725A0069A048 /* FlightsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsTableVC.swift; sourceTree = "<group>"; };
 		B58D18461E7C70C000997360 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 			children = (
 				B5F7383D1E99DB0300642B03 /* IBDesignables */,
 				B58DEEFA1E82D1F40044B28E /* Globals.swift */,
-				B58653E11E9E27810040757B /* Appearance.swift */,
 				B564700F1E9887B900251461 /* Background.swift */,
 				B586929E1EA65E360069A048 /* String.swift */,
 				B553333D1E6DE7CA0007A23D /* AppDelegate.swift */,
@@ -830,7 +827,6 @@
 				B5A66C4C1E9C54C900D40D87 /* foodCell.swift in Sources */,
 				EA29CDF91E98B35B008362E2 /* placeVC.swift in Sources */,
 				B54593D31E91BE2100308A14 /* ItineraryCellVC.swift in Sources */,
-				B58653E21E9E27810040757B /* Appearance.swift in Sources */,
 				B558AAF01E9EC11300DCED1B /* UIImageViewX.swift in Sources */,
 				B58692A11EA6725A0069A048 /* FlightsTableVC.swift in Sources */,
 				B5E2A09D1E7DCB5F002C48DC /* NewTripVC.swift in Sources */,
