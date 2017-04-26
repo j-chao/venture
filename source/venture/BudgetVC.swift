@@ -40,7 +40,7 @@ class BudgetVC: UIViewController {
             self.lodgingField.text = self.lodging!
             self.attractionsField.text = self.attractions!
             self.miscField.text = self.misc!
-            self.totalField.text = self.total!
+            self.totalField.text = String(Int(self.food!)! + Int(self.transportation!)! + Int(self.lodging!)! + Int(self.attractions!)! + Int(self.misc!)!)
         })
     }
     
