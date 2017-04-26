@@ -288,7 +288,7 @@
                     <navigationItem key="navigationItem" title="Your Trips" id="Soy-ky-utn">
                         <barButtonItem key="leftBarButtonItem" image="gear" style="done" id="1ff-Y2-bWw">
                             <connections>
-                                <segue destination="Zoi-2O-yrf" kind="show" id="LeS-zN-q8F"/>
+                                <segue destination="Zoi-2O-yrf" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="LeS-zN-q8F"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="n9Q-GR-0cR">

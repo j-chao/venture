@@ -32,6 +32,8 @@ extension UIViewController {
         }
         else if backgroundDefault == 5 {
             imageViewBackground.image = UIImage(named: "utah.jpg")
+        } else {
+            imageViewBackground.image = UIImage(named: "taiwan.jpg")
         }
         
         imageViewBackground.contentMode = .scaleAspectFill

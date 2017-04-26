@@ -42,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c73-zT-Inc" id="wCf-E7-rgk">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -72,8 +72,35 @@
                                     <action selector="editAction:" destination="wyV-0C-CFG" eventType="touchUpInside" id="Z1s-9O-QDG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYs-Lp-ODh">
+                                <rect key="frame" x="68" y="28" width="239" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <color key="textColor" red="0.32526159500000001" green="0.31206662470000002" blue="0.30900164190000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gps-kv-WWu" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
+                                <rect key="frame" x="315" y="25" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.31476326526393916" green="0.65873718781348989" blue="0.078159191970394198" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="budget">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="E0S-j2-gNk" kind="show" id="3Ix-uc-hzd"/>
+                                </connections>
+                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-TV-yWS">
-                                <rect key="frame" x="0.0" y="622" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="599" width="375" height="130"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqc-c5-QMX" customClass="DesignableView" customModule="venture" customModuleProvider="target">
                                         <rect key="frame" x="167" y="2" width="40" height="40"/>
@@ -101,7 +128,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="jK5-vO-R9L">
-                                        <rect key="frame" x="39" y="52" width="296" height="44"/>
+                                        <rect key="frame" x="39" y="63" width="296" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abc-w1-V14" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -211,36 +238,10 @@
                                     <constraint firstItem="hCg-f0-8c5" firstAttribute="centerX" secondItem="uqc-c5-QMX" secondAttribute="centerX" id="Xji-ym-1ts"/>
                                     <constraint firstItem="hCg-f0-8c5" firstAttribute="top" secondItem="YUA-TV-yWS" secondAttribute="top" id="oIw-Wd-9Pf"/>
                                     <constraint firstItem="hCg-f0-8c5" firstAttribute="centerX" secondItem="YUA-TV-yWS" secondAttribute="centerX" id="xC6-ww-y4O"/>
-                                    <constraint firstItem="jK5-vO-R9L" firstAttribute="top" secondItem="hCg-f0-8c5" secondAttribute="bottom" constant="8" id="yEw-E7-dJK"/>
+                                    <constraint firstItem="jK5-vO-R9L" firstAttribute="top" secondItem="hCg-f0-8c5" secondAttribute="bottom" constant="19" id="yEw-E7-dJK"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYs-Lp-ODh">
-                                <rect key="frame" x="68" y="28" width="239" height="28"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                <color key="textColor" red="0.32526159500000001" green="0.31206662470000002" blue="0.30900164190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gps-kv-WWu" customClass="UIButtonX" customModule="venture" customModuleProvider="target">
-                                <rect key="frame" x="315" y="25" width="44" height="44"/>
-                                <color key="backgroundColor" red="0.31476326526393916" green="0.65873718781348989" blue="0.078159191970394198" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="budget">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="E0S-j2-gNk" kind="show" id="3Ix-uc-hzd"/>
-                                </connections>
-                            </button>
+
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -248,8 +249,8 @@
                             <constraint firstItem="5Nt-ex-ern" firstAttribute="top" secondItem="5tX-Se-id5" secondAttribute="bottom" constant="5" id="1ig-NK-kGt"/>
                             <constraint firstItem="YUA-TV-yWS" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leading" id="9NI-SD-d8o"/>
                             <constraint firstItem="gps-kv-WWu" firstAttribute="top" secondItem="5Nt-ex-ern" secondAttribute="top" id="CUU-ex-acf"/>
-                            <constraint firstAttribute="bottom" secondItem="YUA-TV-yWS" secondAttribute="bottom" constant="-85" id="DWy-aq-S6C"/>
-                            <constraint firstItem="YUA-TV-yWS" firstAttribute="top" secondItem="jLm-9A-HfG" secondAttribute="bottom" constant="24" id="EmP-VO-N7m"/>
+                            <constraint firstAttribute="bottom" secondItem="YUA-TV-yWS" secondAttribute="bottom" constant="-62" id="DWy-aq-S6C"/>
+                            <constraint firstItem="YUA-TV-yWS" firstAttribute="top" secondItem="jLm-9A-HfG" secondAttribute="bottom" constant="1" id="EmP-VO-N7m"/>
                             <constraint firstItem="5Nt-ex-ern" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leadingMargin" id="FKR-TW-oA3"/>
                             <constraint firstItem="YUA-TV-yWS" firstAttribute="leading" secondItem="Ga3-Lk-kEh" secondAttribute="leading" id="G4V-Ee-E35"/>
                             <constraint firstItem="gps-kv-WWu" firstAttribute="trailing" secondItem="jLm-9A-HfG" secondAttribute="trailing" id="KLL-Sq-Rpd"/>

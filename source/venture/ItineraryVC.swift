@@ -77,7 +77,7 @@ class ItineraryVC: UIViewController {
         if darkFillView.transform == CGAffineTransform.identity {
             UIView.animate(withDuration: 0.5, animations: {
                 self.darkFillView.transform = CGAffineTransform(scaleX: 12, y: 12)
-                self.menuView.transform = CGAffineTransform(translationX: 0, y: -55)
+                self.menuView.transform = CGAffineTransform(translationX: 0, y: -70)
                 self.toggleMenuBtn.transform = CGAffineTransform(rotationAngle: self.radians(180))
             }, completion: nil)
             UIView.animate(withDuration: 0.5, animations: {

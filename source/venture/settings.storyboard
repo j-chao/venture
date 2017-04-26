@@ -217,7 +217,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="EOb-bO-RrU"/>
                         <barButtonItem key="leftBarButtonItem" title="Trips" id="q2F-P9-yop">
                             <connections>
-                                <action selector="tripsButton:" destination="Sef-ag-34M" id="Lud-rs-Ucu"/>
+                                <segue destination="Ata-sb-WaN" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ETT-fK-uCD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
