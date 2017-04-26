@@ -93,7 +93,7 @@ class placeVC: UIViewController {
                 destinationVC.fromFoodorPlace = true
                 destinationVC.eventDate = self.eventDate as Date!
                 destinationVC.eventDescStr = nameStr!
-                destinationVC.eventLocStr = "\(streetStr!) \(addressStr!)"
+                destinationVC.eventLocStr = "\(streetStr!) \(addressStr!) \(zipStr!)"
             }
         }
     }
