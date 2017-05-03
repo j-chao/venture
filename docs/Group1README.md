@@ -8,8 +8,10 @@
 
 
 - Julianne Crea: 33% 
-    * added Budget View.
-    * improved on UI throughout the app.
+    * Budget View.
+    * UI design throughout app (selection/editing of backgrounds, color scheme, rounding corners, etc)
+    * places search using Yelp API and Alamofire
+    * function to populate images with url from JSON result
 
 
 - Connie Liu: 33% 
