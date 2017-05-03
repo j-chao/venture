@@ -25,7 +25,7 @@ class BudgetVC: UIViewController {
     @IBOutlet weak var lodgingField: UITextField!
     @IBOutlet weak var attractionsField: UITextField!
     @IBOutlet weak var miscField: UITextField!
-    @IBOutlet weak var totalField: UITextField!
+    @IBOutlet weak var totalField: UILabel!
     
     override func viewDidLoad() {
         myRequest.enter()
@@ -40,7 +40,7 @@ class BudgetVC: UIViewController {
             self.lodgingField.text = self.lodging!
             self.attractionsField.text = self.attractions!
             self.miscField.text = self.misc!
-            self.totalField.text = String(Int(self.food!)! + Int(self.transportation!)! + Int(self.lodging!)! + Int(self.attractions!)! + Int(self.misc!)!)
+            self.totalField.text = "$" + String(Int(self.food!)! + Int(self.transportation!)! + Int(self.lodging!)! + Int(self.attractions!)! + Int(self.misc!)!)
         })
     }
     
@@ -61,7 +61,6 @@ class BudgetVC: UIViewController {
             ref.child("total").setValue(totalField.text)
         }
     }
-
     
     func observeDataFromFirebase() {
         let ref = FIRDatabase.database().reference().child("users/\(userID!)/budgets/\(passedTrip)")
@@ -76,6 +75,16 @@ class BudgetVC: UIViewController {
                 self.myRequest.leave()
             }
         })
+    }
+    
+    @IBAction func percentagesBtn(_ sender: Any) {
+        let foodAmt = Int(self.foodField.text!)!
+        let transportAmt = Int(self.transportationField.text!)!
+        let lodgingAmt = Int(self.lodgingField.text!)!
+        let attractionsAmt = Int(self.attractionsField.text!)!
+        let miscAmt = Int(self.miscField.text!)!
+        let totalAmt = foodAmt + transportAmt + lodgingAmt + attractionsAmt + miscAmt
+        self.totalField.text = "$" + "\(totalAmt)"
     }
     
     func presentAllFieldsAlert() {
